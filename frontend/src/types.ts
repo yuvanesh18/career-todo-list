@@ -1,70 +1,53 @@
-export type TaskCategory =
-  | 'System Design'
-  | 'DSA & Algorithms'
-  | 'Cloud & DevOps'
-  | 'Full Stack Projects'
-  | 'Interview Prep'
-  | 'Certifications'
-  | 'Soft Skills & Leadership'
-  | 'Daily Habit';
+export type GoalStatus = 'Active' | 'Completed' | 'On Hold';
 
-export type TaskPriority = 'Low' | 'Medium' | 'High' | 'Urgent';
-
-export type TaskStatus = 'Backlog' | 'To Do' | 'In Progress' | 'In Review' | 'Done';
-
-export interface Subtask {
+export interface Goal {
   id: string;
   title: string;
-  completed: boolean;
+  description: string;
+  targetMonths: number;
+  startDate: string; // YYYY-MM-DD
+  targetEndDate: string; // YYYY-MM-DD
+  status: GoalStatus;
+  category: string;
+  createdAt: string;
 }
 
 export interface Task {
   id: string;
+  goalId?: string | null;
   title: string;
-  description: string;
-  category: TaskCategory;
-  priority: TaskPriority;
-  status: TaskStatus;
-  tags: string[];
-  subtasks: Subtask[];
+  description?: string;
+  completed: boolean;
+  dueDate: string | null;
   estimatedHours: number;
   actualHours: number;
-  pomodoroSessions: number;
-  dueDate: string | null;
-  reflectionNotes: string;
+  priority: 'Low' | 'Medium' | 'High';
   createdAt: string;
-  updatedAt: string;
   completedAt: string | null;
 }
 
-export interface CategoryStats {
-  total: number;
-  completed: number;
-  hours: number;
+export interface DailyLog {
+  id: string;
+  date: string; // YYYY-MM-DD
+  goalId?: string | null;
+  statusSummary: string;
+  hoursSpent: number;
+  energyLevel: 'High' | 'Medium' | 'Low';
+  createdAt: string;
 }
 
-export interface AnalyticsSummary {
-  totalTasks: number;
-  completedTasks: number;
-  inProgressTasks: number;
-  completionRate: number;
-  totalEstimatedHours: number;
-  totalActualHours: number;
-  totalPomodoros: number;
-  currentStreakDays: number;
-  categoryBreakdown: Record<string, CategoryStats>;
-  priorityBreakdown: Record<string, number>;
-  weeklyCompleted: { date: string; count: number }[];
+export interface DashboardSummary {
+  activeGoal: Goal | null;
+  goalProgressPercent: number;
+  daysRemaining: number;
+  totalDays: number;
+  currentDayInGoal: number;
+  todayTasksTotal: number;
+  todayTasksCompleted: number;
+  todayLoggedStatus: boolean;
+  totalHoursSpent: number;
+  streakDays: number;
+  recentLogs: DailyLog[];
 }
 
-export interface FilterState {
-  search: string;
-  category: string;
-  priority: string;
-  status: string;
-  sortBy: 'dueDate' | 'priority' | 'createdAt' | 'estimatedHours';
-  sortOrder: 'asc' | 'desc';
-}
-
-export type ViewMode = 'kanban' | 'list' | 'analytics';
-
+export type ViewTab = 'tasks' | 'journal' | 'goals';

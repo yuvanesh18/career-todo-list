@@ -1,224 +1,127 @@
-import { AnalyticsSummary, FilterState, Task } from '../types';
+import { DailyLog, DashboardSummary, Goal, Task } from '../types';
 
-const STORAGE_KEY = 'career_pulse_tasks_v1';
+const STORAGE_KEY = 'career_pulse_v2_state';
 
-const DEFAULT_SEEDED_TASKS: Task[] = [
-  {
-    id: 'task-1',
-    title: 'Master CI/CD Pipelines with GitHub Actions',
-    description: 'Build an automated pipeline that lints, runs tests, creates Docker images, and deploys to registry on push.',
-    category: 'Cloud & DevOps',
-    priority: 'Urgent',
-    status: 'In Progress',
-    tags: ['ci-cd', 'github-actions', 'devops', 'docker'],
-    subtasks: [
-      { id: 'sub-1', title: 'Write unit tests with Vitest', completed: true },
-      { id: 'sub-2', title: 'Create multi-stage Dockerfile', completed: true },
-      { id: 'sub-3', title: 'Configure GitHub Actions workflow YAML', completed: true },
-      { id: 'sub-4', title: 'Publish container image to GHCR', completed: false }
-    ],
-    estimatedHours: 4,
-    actualHours: 2.5,
-    pomodoroSessions: 5,
-    dueDate: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
-    reflectionNotes: 'Automating tests on every PR prevents breaking changes. GHCR provides free unlimited container hosting for open-source repositories.',
-    createdAt: new Date(Date.now() - 86400000 * 3).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: null
-  },
-  {
-    id: 'task-2',
-    title: 'Design Distributed Rate Limiter (System Design)',
-    description: 'Study Token Bucket, Leaky Bucket, and Sliding Window algorithms with Redis for multi-node rate limiting.',
-    category: 'System Design',
-    priority: 'High',
-    status: 'To Do',
-    tags: ['system-design', 'redis', 'architecture', 'scalability'],
-    subtasks: [
-      { id: 'sub-5', title: 'Compare Token Bucket vs Sliding Window Counter', completed: true },
-      { id: 'sub-6', title: 'Draft high-level architecture diagram', completed: false },
-      { id: 'sub-7', title: 'Handle race conditions using Redis Lua scripts', completed: false }
-    ],
-    estimatedHours: 3.5,
-    actualHours: 1.0,
-    pomodoroSessions: 2,
-    dueDate: new Date(Date.now() + 86400000 * 4).toISOString().split('T')[0],
-    reflectionNotes: 'Token bucket is ideal for bursty traffic; sliding window log is accurate but memory-intensive.',
-    createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: null
-  },
-  {
-    id: 'task-3',
-    title: 'Blind 75: Two Pointers & Sliding Window Patterns',
-    description: 'Solve and analyze time/space complexity for 3 classic problems: 3Sum, Container With Most Water, Longest Substring Without Repeating Characters.',
-    category: 'DSA & Algorithms',
-    priority: 'High',
-    status: 'Done',
-    tags: ['leetcode', 'dsa', 'two-pointers', 'python', 'javascript'],
-    subtasks: [
-      { id: 'sub-8', title: 'Solve 3Sum with sorting and two pointers', completed: true },
-      { id: 'sub-9', title: 'Solve Container With Most Water in O(n)', completed: true },
-      { id: 'sub-10', title: 'Write clean explanation in notes', completed: true }
-    ],
-    estimatedHours: 3,
-    actualHours: 3,
-    pomodoroSessions: 6,
-    dueDate: new Date(Date.now() - 86400000 * 1).toISOString().split('T')[0],
-    reflectionNotes: 'Always sort first when applying two pointers on sums to eliminate duplicate triplets easily.',
-    createdAt: new Date(Date.now() - 86400000 * 5).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: new Date(Date.now() - 86400000 * 1).toISOString()
-  },
-  {
-    id: 'task-4',
-    title: 'Polish Resume & STAR Method Interview Stories',
-    description: 'Prepare 5 impactful behavioral stories demonstrating leadership, debugging under pressure, and cross-team collaboration.',
-    category: 'Interview Prep',
-    priority: 'Medium',
-    status: 'In Progress',
-    tags: ['resume', 'behavioral', 'star-method', 'career'],
-    subtasks: [
-      { id: 'sub-11', title: 'Draft Situation, Task, Action, Result for project lead story', completed: true },
-      { id: 'sub-12', title: 'Quantify metrics (reduced latency by 40%, improved test coverage to 85%)', completed: true },
-      { id: 'sub-13', title: 'Conduct mock behavioral session', completed: false }
-    ],
-    estimatedHours: 2.5,
-    actualHours: 1.5,
-    pomodoroSessions: 3,
-    dueDate: new Date(Date.now() + 86400000 * 5).toISOString().split('T')[0],
-    reflectionNotes: 'Focus heavily on the "Action" part of STAR - what specific architectural decisions did I make?',
-    createdAt: new Date(Date.now() - 86400000 * 4).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: null
-  },
-  {
-    id: 'task-5',
-    title: 'Daily Tech Reading: Kafka Partitioning & Rebalancing',
-    description: 'Read Apache Kafka documentation on consumer group rebalancing protocols (Eager vs Cooperative Sticky).',
-    category: 'Daily Habit',
-    priority: 'Low',
-    status: 'Done',
-    tags: ['kafka', 'distributed-systems', 'reading'],
-    subtasks: [
-      { id: 'sub-14', title: 'Read 2 articles on cooperative sticky assignor', completed: true },
-      { id: 'sub-15', title: 'Write down 3 bullet takeaways', completed: true }
-    ],
-    estimatedHours: 1,
-    actualHours: 0.8,
-    pomodoroSessions: 2,
-    dueDate: new Date().toISOString().split('T')[0],
-    reflectionNotes: 'Cooperative rebalancing avoids the stop-the-world pauses of eager rebalancing.',
-    createdAt: new Date(Date.now() - 86400000 * 1).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: new Date().toISOString()
-  }
-];
+const todayStr = new Date().toISOString().split('T')[0];
+const sixtyDaysLater = new Date(Date.now() + 86400000 * 60).toISOString().split('T')[0];
+const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+
+const DEFAULT_STATE = {
+  goals: [
+    {
+      id: 'goal-1',
+      title: 'Become Cloud & DevOps Job Ready',
+      description: 'Master Docker, Kubernetes, CI/CD with GitHub Actions, and complete 2 portfolio architectures.',
+      targetMonths: 2,
+      startDate: todayStr,
+      targetEndDate: sixtyDaysLater,
+      status: 'Active' as const,
+      category: 'Cloud & DevOps',
+      createdAt: new Date().toISOString()
+    }
+  ],
+  tasks: [
+    {
+      id: 'task-1',
+      goalId: 'goal-1',
+      title: 'Configure GitHub Actions CI/CD pipeline with automated tests',
+      description: 'Create multi-stage Docker build and test workflows.',
+      completed: true,
+      dueDate: todayStr,
+      estimatedHours: 2.5,
+      actualHours: 2.5,
+      priority: 'High' as const,
+      createdAt: new Date().toISOString(),
+      completedAt: new Date().toISOString()
+    },
+    {
+      id: 'task-2',
+      goalId: 'goal-1',
+      title: 'Study Docker multi-stage builds and Alpine container optimization',
+      description: 'Reduce final image footprint and run non-root security checks.',
+      completed: true,
+      dueDate: todayStr,
+      estimatedHours: 1.5,
+      actualHours: 1.5,
+      priority: 'High' as const,
+      createdAt: new Date().toISOString(),
+      completedAt: new Date().toISOString()
+    },
+    {
+      id: 'task-3',
+      goalId: 'goal-1',
+      title: 'Set up Kubernetes Minikube local cluster and deploy backend service',
+      description: 'Write Pod, Service, and Ingress YAML declarations.',
+      completed: false,
+      dueDate: new Date(Date.now() + 86400000).toISOString().split('T')[0],
+      estimatedHours: 3.0,
+      actualHours: 0,
+      priority: 'High' as const,
+      createdAt: new Date().toISOString(),
+      completedAt: null
+    },
+    {
+      id: 'task-4',
+      goalId: 'goal-1',
+      title: 'Practice 2 Medium LeetCode problems (Hashmap / Sliding Window)',
+      description: 'Maintain daily DSA problem solving habit.',
+      completed: false,
+      dueDate: todayStr,
+      estimatedHours: 1.0,
+      actualHours: 0,
+      priority: 'Medium' as const,
+      createdAt: new Date().toISOString(),
+      completedAt: null
+    }
+  ],
+  dailyLogs: [
+    {
+      id: 'log-1',
+      date: yesterdayStr,
+      goalId: 'goal-1',
+      statusSummary: 'Completed initial Dockerfile architecture and setup GitHub repo. Tested local builds.',
+      hoursSpent: 3.0,
+      energyLevel: 'High' as const,
+      createdAt: new Date(Date.now() - 86400000).toISOString()
+    }
+  ]
+};
 
 let serverAvailable: boolean | null = null;
 
-// Helper: Check local storage
-const getLocalTasks = (): Task[] => {
+const getLocalState = () => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SEEDED_TASKS));
-      return [...DEFAULT_SEEDED_TASKS];
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_STATE));
+      return JSON.parse(JSON.stringify(DEFAULT_STATE));
     }
-    return JSON.parse(raw);
+    const parsed = JSON.parse(raw);
+    if (!parsed.goals || !parsed.tasks || !parsed.dailyLogs) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_STATE));
+      return JSON.parse(JSON.stringify(DEFAULT_STATE));
+    }
+    return parsed;
   } catch {
-    return [...DEFAULT_SEEDED_TASKS];
+    return JSON.parse(JSON.stringify(DEFAULT_STATE));
   }
 };
 
-const saveLocalTasks = (tasks: Task[]): void => {
+const saveLocalState = (state: any) => {
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-  } catch (err) {
-    console.error('Failed to save to localStorage:', err);
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+  } catch (e) {
+    console.error('LocalStorage save error:', e);
   }
-};
-
-const computeLocalAnalytics = (tasks: Task[]): AnalyticsSummary => {
-  const totalTasks = tasks.length;
-  const completedTasks = tasks.filter(t => t.status === 'Done').length;
-  const inProgressTasks = tasks.filter(t => t.status === 'In Progress').length;
-  const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
-
-  const totalEstimatedHours = Number(tasks.reduce((acc, t) => acc + (t.estimatedHours || 0), 0).toFixed(1));
-  const totalActualHours = Number(tasks.reduce((acc, t) => acc + (t.actualHours || 0), 0).toFixed(1));
-  const totalPomodoros = tasks.reduce((acc, t) => acc + (t.pomodoroSessions || 0), 0);
-
-  const categoryBreakdown: Record<string, { total: number; completed: number; hours: number }> = {};
-  for (const t of tasks) {
-    if (!categoryBreakdown[t.category]) {
-      categoryBreakdown[t.category] = { total: 0, completed: 0, hours: 0 };
-    }
-    categoryBreakdown[t.category].total += 1;
-    categoryBreakdown[t.category].hours = Number((categoryBreakdown[t.category].hours + (t.actualHours || 0)).toFixed(1));
-    if (t.status === 'Done') {
-      categoryBreakdown[t.category].completed += 1;
-    }
-  }
-
-  const priorityBreakdown: Record<string, number> = { Urgent: 0, High: 0, Medium: 0, Low: 0 };
-  for (const t of tasks) {
-    priorityBreakdown[t.priority] = (priorityBreakdown[t.priority] || 0) + 1;
-  }
-
-  const completedWithDates = tasks
-    .filter(t => t.status === 'Done' && t.completedAt)
-    .map(t => t.completedAt!.split('T')[0]);
-
-  const uniqueCompletedDates = Array.from(new Set(completedWithDates)).sort().reverse();
-  let currentStreakDays = 0;
-  const todayStr = new Date().toISOString().split('T')[0];
-  const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-
-  if (uniqueCompletedDates.includes(todayStr) || uniqueCompletedDates.includes(yesterday)) {
-    let checkDate = uniqueCompletedDates.includes(todayStr) ? new Date() : new Date(Date.now() - 86400000);
-    while (true) {
-      const dateKey = checkDate.toISOString().split('T')[0];
-      if (uniqueCompletedDates.includes(dateKey)) {
-        currentStreakDays++;
-        checkDate = new Date(checkDate.getTime() - 86400000);
-      } else {
-        break;
-      }
-    }
-  }
-
-  const weeklyCompleted: { date: string; count: number }[] = [];
-  for (let i = 6; i >= 0; i--) {
-    const d = new Date(Date.now() - i * 86400000).toISOString().split('T')[0];
-    const count = tasks.filter(t => t.completedAt && t.completedAt.startsWith(d)).length;
-    weeklyCompleted.push({ date: d, count });
-  }
-
-  return {
-    totalTasks,
-    completedTasks,
-    inProgressTasks,
-    completionRate,
-    totalEstimatedHours,
-    totalActualHours,
-    totalPomodoros,
-    currentStreakDays,
-    categoryBreakdown,
-    priorityBreakdown,
-    weeklyCompleted
-  };
 };
 
 export const api = {
-  isServerConnected: (): boolean => serverAvailable === true,
-
-  async checkServerConnection(): Promise<boolean> {
+  async checkServer(): Promise<boolean> {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 1200);
-      const res = await fetch('/api/tasks', { signal: controller.signal });
-      clearTimeout(timeoutId);
+      const timeout = setTimeout(() => controller.abort(), 1000);
+      const res = await fetch('/api/dashboard', { signal: controller.signal });
+      clearTimeout(timeout);
       serverAvailable = res.ok;
       return res.ok;
     } catch {
@@ -227,19 +130,10 @@ export const api = {
     }
   },
 
-  async getTasks(filters?: Partial<FilterState>): Promise<Task[]> {
+  async getDashboard(): Promise<DashboardSummary> {
     try {
-      const isConnected = serverAvailable ?? (await this.checkServerConnection());
-      if (isConnected) {
-        const params = new URLSearchParams();
-        if (filters?.category) params.append('category', filters.category);
-        if (filters?.priority) params.append('priority', filters.priority);
-        if (filters?.status) params.append('status', filters.status);
-        if (filters?.search) params.append('search', filters.search);
-        if (filters?.sortBy) params.append('sortBy', filters.sortBy);
-        if (filters?.sortOrder) params.append('sortOrder', filters.sortOrder);
-
-        const res = await fetch(`/api/tasks?${params.toString()}`);
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/dashboard');
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -249,25 +143,130 @@ export const api = {
       serverAvailable = false;
     }
 
-    // Fallback to localStorage
-    let tasks = getLocalTasks();
-    if (filters?.category) tasks = tasks.filter(t => t.category === filters.category);
-    if (filters?.priority) tasks = tasks.filter(t => t.priority === filters.priority);
-    if (filters?.status) tasks = tasks.filter(t => t.status === filters.status);
-    if (filters?.search) {
-      const q = filters.search.toLowerCase();
-      tasks = tasks.filter(t =>
-        t.title.toLowerCase().includes(q) ||
-        t.description.toLowerCase().includes(q) ||
-        t.tags.some(tag => tag.toLowerCase().includes(q))
-      );
+    // Local calculation
+    const state = getLocalState();
+    const activeGoal = state.goals.find((g: Goal) => g.status === 'Active') || state.goals[0] || null;
+    const today = new Date().toISOString().split('T')[0];
+
+    let daysRemaining = 0;
+    let totalDays = 30;
+    let currentDayInGoal = 1;
+
+    if (activeGoal) {
+      const start = new Date(activeGoal.startDate).getTime();
+      const end = new Date(activeGoal.targetEndDate).getTime();
+      const now = new Date().getTime();
+      totalDays = Math.max(Math.ceil((end - start) / (1000 * 60 * 60 * 24)), 1);
+      const daysPassed = Math.max(Math.floor((now - start) / (1000 * 60 * 60 * 24)), 0);
+      daysRemaining = Math.max(Math.ceil((end - now) / (1000 * 60 * 60 * 24)), 0);
+      currentDayInGoal = Math.min(daysPassed + 1, totalDays);
     }
+
+    const goalTasks = activeGoal ? state.tasks.filter((t: Task) => t.goalId === activeGoal.id) : state.tasks;
+    const completedGoalTasks = goalTasks.filter((t: Task) => t.completed).length;
+    const goalProgressPercent = goalTasks.length > 0 ? Math.round((completedGoalTasks / goalTasks.length) * 100) : 0;
+
+    const todayTasks = state.tasks.filter((t: Task) => t.dueDate === today);
+    const todayTasksCompleted = todayTasks.filter((t: Task) => t.completed).length;
+    const todayLoggedStatus = state.dailyLogs.some((l: DailyLog) => l.date === today);
+
+    const totalHoursSpent = Number(
+      state.dailyLogs.reduce((acc: number, l: DailyLog) => acc + (l.hoursSpent || 0), 0) +
+      state.tasks.reduce((acc: number, t: Task) => acc + (t.actualHours || 0), 0)
+    ).toFixed(1);
+
+    return {
+      activeGoal,
+      goalProgressPercent,
+      daysRemaining,
+      totalDays,
+      currentDayInGoal,
+      todayTasksTotal: todayTasks.length,
+      todayTasksCompleted,
+      todayLoggedStatus,
+      totalHoursSpent: Number(totalHoursSpent),
+      streakDays: 3,
+      recentLogs: state.dailyLogs.slice(0, 7)
+    };
+  },
+
+  // Goals
+  async getGoals(): Promise<Goal[]> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/goals');
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+    return getLocalState().goals;
+  },
+
+  async createGoal(data: Partial<Goal>): Promise<Goal> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/goals', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+
+    const state = getLocalState();
+    const newGoal: Goal = {
+      id: `goal-${Date.now()}`,
+      title: data.title || 'New Short Term Goal',
+      description: data.description || '',
+      targetMonths: data.targetMonths || 1,
+      startDate: data.startDate || new Date().toISOString().split('T')[0],
+      targetEndDate: data.targetEndDate || new Date(Date.now() + 86400000 * 30).toISOString().split('T')[0],
+      status: data.status || 'Active',
+      category: data.category || 'Career Growth',
+      createdAt: new Date().toISOString()
+    };
+    if (newGoal.status === 'Active') {
+      state.goals.forEach((g: Goal) => { g.status = 'On Hold'; });
+    }
+    state.goals.unshift(newGoal);
+    saveLocalState(state);
+    return newGoal;
+  },
+
+  // Tasks
+  async getTasks(goalId?: string): Promise<Task[]> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const url = goalId ? `/api/tasks?goalId=${encodeURIComponent(goalId)}` : '/api/tasks';
+        const res = await fetch(url);
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+
+    const state = getLocalState();
+    let tasks = state.tasks;
+    if (goalId) tasks = tasks.filter((t: Task) => t.goalId === goalId);
     return tasks;
   },
 
   async createTask(data: Partial<Task>): Promise<Task> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
+      if (serverAvailable ?? (await this.checkServer())) {
         const res = await fetch('/api/tasks', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -282,35 +281,29 @@ export const api = {
       serverAvailable = false;
     }
 
-    // Local fallback
-    const tasks = getLocalTasks();
+    const state = getLocalState();
     const now = new Date().toISOString();
     const newTask: Task = {
-      id: `task-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
-      title: data.title || 'Untitled Goal',
+      id: `task-${Date.now()}`,
+      goalId: data.goalId || null,
+      title: data.title || 'Untitled task',
       description: data.description || '',
-      category: data.category || 'System Design',
-      priority: data.priority || 'Medium',
-      status: data.status || 'To Do',
-      tags: data.tags || [],
-      subtasks: data.subtasks || [],
+      completed: Boolean(data.completed),
+      dueDate: data.dueDate || new Date().toISOString().split('T')[0],
       estimatedHours: data.estimatedHours || 1,
       actualHours: data.actualHours || 0,
-      pomodoroSessions: data.pomodoroSessions || 0,
-      dueDate: data.dueDate || null,
-      reflectionNotes: data.reflectionNotes || '',
+      priority: data.priority || 'Medium',
       createdAt: now,
-      updatedAt: now,
-      completedAt: data.status === 'Done' ? now : null
+      completedAt: data.completed ? now : null
     };
-    tasks.unshift(newTask);
-    saveLocalTasks(tasks);
+    state.tasks.unshift(newTask);
+    saveLocalState(state);
     return newTask;
   },
 
   async updateTask(id: string, updates: Partial<Task>): Promise<Task> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
+      if (serverAvailable ?? (await this.checkServer())) {
         const res = await fetch(`/api/tasks/${id}`, {
           method: 'PUT',
           headers: { 'Content-Type': 'application/json' },
@@ -325,38 +318,26 @@ export const api = {
       serverAvailable = false;
     }
 
-    // Local fallback
-    const tasks = getLocalTasks();
-    const index = tasks.findIndex(t => t.id === id);
+    const state = getLocalState();
+    const index = state.tasks.findIndex((t: Task) => t.id === id);
     if (index === -1) throw new Error('Task not found');
-
-    const existing = tasks[index];
+    const existing = state.tasks[index];
     const now = new Date().toISOString();
-    let completedAt = existing.completedAt;
 
-    if (updates.status) {
-      if (updates.status === 'Done' && existing.status !== 'Done') {
-        completedAt = now;
-      } else if (updates.status !== 'Done') {
-        completedAt = null;
-      }
+    let completedAt = existing.completedAt;
+    if (updates.completed !== undefined) {
+      completedAt = updates.completed ? now : null;
     }
 
-    const updated: Task = {
-      ...existing,
-      ...updates,
-      updatedAt: now,
-      completedAt
-    };
-
-    tasks[index] = updated;
-    saveLocalTasks(tasks);
+    const updated = { ...existing, ...updates, completedAt };
+    state.tasks[index] = updated;
+    saveLocalState(state);
     return updated;
   },
 
   async deleteTask(id: string): Promise<void> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
+      if (serverAvailable ?? (await this.checkServer())) {
         const res = await fetch(`/api/tasks/${id}`, { method: 'DELETE' });
         if (res.ok) return;
       }
@@ -364,17 +345,34 @@ export const api = {
       serverAvailable = false;
     }
 
-    const tasks = getLocalTasks().filter(t => t.id !== id);
-    saveLocalTasks(tasks);
+    const state = getLocalState();
+    state.tasks = state.tasks.filter((t: Task) => t.id !== id);
+    saveLocalState(state);
   },
 
-  async logPomodoro(id: string, minutes = 25): Promise<Task> {
+  // Daily Logs / Status Updates
+  async getDailyLogs(): Promise<DailyLog[]> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch(`/api/tasks/${id}/pomodoro`, {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/daily-logs');
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+    return getLocalState().dailyLogs;
+  },
+
+  async recordDailyStatus(data: Partial<DailyLog>): Promise<DailyLog> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/daily-logs', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ minutes })
+          body: JSON.stringify(data)
         });
         if (res.ok) {
           const json = await res.json();
@@ -385,63 +383,32 @@ export const api = {
       serverAvailable = false;
     }
 
-    const tasks = getLocalTasks();
-    const task = tasks.find(t => t.id === id);
-    if (!task) throw new Error('Task not found');
+    const state = getLocalState();
+    const targetDate = data.date || new Date().toISOString().split('T')[0];
+    const existingIdx = state.dailyLogs.findIndex((l: DailyLog) => l.date === targetDate);
 
-    const addedHours = Number((minutes / 60).toFixed(2));
-    task.actualHours = Number((task.actualHours + addedHours).toFixed(2));
-    task.pomodoroSessions = (task.pomodoroSessions || 0) + 1;
-    task.updatedAt = new Date().toISOString();
-
-    saveLocalTasks(tasks);
-    return task;
-  },
-
-  async getAnalytics(): Promise<AnalyticsSummary> {
-    try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch('/api/analytics');
-        if (res.ok) {
-          const json = await res.json();
-          return json.data;
-        }
-      }
-    } catch {
-      serverAvailable = false;
+    if (existingIdx !== -1) {
+      state.dailyLogs[existingIdx] = {
+        ...state.dailyLogs[existingIdx],
+        statusSummary: data.statusSummary || '',
+        hoursSpent: data.hoursSpent || 1,
+        energyLevel: data.energyLevel || 'Medium'
+      };
+      saveLocalState(state);
+      return state.dailyLogs[existingIdx];
     }
 
-    return computeLocalAnalytics(getLocalTasks());
-  },
-
-  async resetSeed(): Promise<Task[]> {
-    try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch('/api/seed', { method: 'POST' });
-        if (res.ok) {
-          const json = await res.json();
-          return json.data;
-        }
-      }
-    } catch {
-      serverAvailable = false;
-    }
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SEEDED_TASKS));
-    return [...DEFAULT_SEEDED_TASKS];
-  },
-
-  exportData(): string {
-    const tasks = getLocalTasks();
-    return JSON.stringify({ version: '1.0', exportedAt: new Date().toISOString(), tasks }, null, 2);
-  },
-
-  importData(jsonData: string): number {
-    const parsed = JSON.parse(jsonData);
-    const tasks = parsed.tasks || parsed;
-    if (!Array.isArray(tasks)) throw new Error('Invalid format: array of tasks expected');
-    saveLocalTasks(tasks);
-    return tasks.length;
+    const newLog: DailyLog = {
+      id: `log-${Date.now()}`,
+      date: targetDate,
+      goalId: data.goalId || null,
+      statusSummary: data.statusSummary || '',
+      hoursSpent: data.hoursSpent || 1,
+      energyLevel: data.energyLevel || 'Medium',
+      createdAt: new Date().toISOString()
+    };
+    state.dailyLogs.unshift(newLog);
+    saveLocalState(state);
+    return newLog;
   }
 };
-

@@ -1,0 +1,80 @@
+{
+  "goals": [
+    {
+      "id": "goal-1",
+      "title": "Become Cloud & DevOps Job Ready",
+      "description": "Master Docker, Kubernetes, CI/CD with GitHub Actions, and complete 2 portfolio architectures.",
+      "targetMonths": 2,
+      "startDate": "2026-11-13",
+      "targetEndDate": "2027-01-12",
+      "status": "Active",
+      "category": "Cloud & DevOps",
+      "createdAt": "2026-11-13T08:10:05.698Z"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "goalId": "goal-1",
+      "title": "Configure GitHub Actions CI/CD pipeline with automated tests",
+      "description": "Create multi-stage Docker build and test workflows.",
+      "completed": true,
+      "dueDate": "2026-11-13",
+      "estimatedHours": 2.5,
+      "actualHours": 2.5,
+      "priority": "High",
+      "createdAt": "2026-11-13T08:10:05.698Z",
+      "completedAt": "2026-11-13T08:10:05.698Z"
+    },
+    {
+      "id": "task-2",
+      "goalId": "goal-1",
+      "title": "Study Docker multi-stage builds and Alpine container optimization",
+      "description": "Reduce final image footprint and run non-root security checks.",
+      "completed": true,
+      "dueDate": "2026-11-13",
+      "estimatedHours": 1.5,
+      "actualHours": 1.5,
+      "priority": "High",
+      "createdAt": "2026-11-13T08:10:05.698Z",
+      "completedAt": "2026-11-13T08:10:05.698Z"
+    },
+    {
+      "id": "task-3",
+      "goalId": "goal-1",
+      "title": "Set up Kubernetes Minikube local cluster and deploy backend service",
+      "description": "Write Pod, Service, and Ingress YAML declarations.",
+      "completed": false,
+      "dueDate": "2026-11-14",
+      "estimatedHours": 3,
+      "actualHours": 0,
+      "priority": "High",
+      "createdAt": "2026-11-13T08:10:05.698Z",
+      "completedAt": null
+    },
+    {
+      "id": "task-4",
+      "goalId": "goal-1",
+      "title": "Practice 2 Medium LeetCode problems (Hashmap / Sliding Window)",
+      "description": "Maintain daily DSA problem solving habit.",
+      "completed": false,
+      "dueDate": "2026-11-13",
+      "estimatedHours": 1,
+      "actualHours": 0,
+      "priority": "Medium",
+      "createdAt": "2026-11-13T08:10:05.698Z",
+      "completedAt": null
+    }
+  ],
+  "dailyLogs": [
+    {
+      "id": "log-1",
+      "date": "2026-11-12",
+      "goalId": "goal-1",
+      "statusSummary": "Completed initial Dockerfile architecture and setup GitHub repo. Tested local builds.",
+      "hoursSpent": 3,
+      "energyLevel": "High",
+      "createdAt": "2026-11-12T08:10:05.698Z"
+    }
+  ]
+}

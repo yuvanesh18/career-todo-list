@@ -1,236 +1,145 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { api } from './services/api';
-import { AnalyticsSummary, FilterState, Task, TaskStatus, ViewMode } from './types';
+import { DailyLog, DashboardSummary, Goal, Task, ViewTab } from './types';
 import { Navbar } from './components/Navbar';
-import { StatsOverview } from './components/StatsOverview';
-import { KanbanBoard } from './components/KanbanBoard';
-import { TaskList } from './components/TaskList';
-import { AnalyticsView } from './components/AnalyticsView';
-import { TaskModal } from './components/TaskModal';
-import { PomodoroTimer } from './components/PomodoroTimer';
-import { DailyStandupModal } from './components/DailyStandupModal';
+import { GoalBanner } from './components/GoalBanner';
+import { DailyTodoList } from './components/DailyTodoList';
+import { DailyStatusTimeline } from './components/DailyStatusTimeline';
+import { DailyStatusModal } from './components/DailyStatusModal';
+import { GoalsModal } from './components/GoalsModal';
 
 export const App: React.FC = () => {
+  const [summary, setSummary] = useState<DashboardSummary | null>(null);
+  const [goals, setGoals] = useState<Goal[]>([]);
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [analytics, setAnalytics] = useState<AnalyticsSummary | null>(null);
-  const [currentView, setCurrentView] = useState<ViewMode>('kanban');
-  const [isServerConnected, setIsServerConnected] = useState(false);
-
-  // Filters State
-  const [filters, setFilters] = useState<FilterState>({
-    search: '',
-    category: '',
-    priority: '',
-    status: '',
-    sortBy: 'createdAt',
-    sortOrder: 'desc'
-  });
+  const [dailyLogs, setDailyLogs] = useState<DailyLog[]>([]);
+  const [currentTab, setCurrentTab] = useState<ViewTab>('tasks');
 
   // Modals
-  const [isTaskModalOpen, setIsTaskModalOpen] = useState(false);
-  const [editingTask, setEditingTask] = useState<Task | null>(null);
-  const [isPomodoroOpen, setIsPomodoroOpen] = useState(false);
-  const [pomodoroTask, setPomodoroTask] = useState<Task | null>(null);
-  const [isStandupOpen, setIsStandupOpen] = useState(false);
-
-  // Notification Toast
-  const [toastMessage, setToastMessage] = useState<string | null>(null);
-
-  const showToast = (msg: string) => {
-    setToastMessage(msg);
-    setTimeout(() => setToastMessage(null), 3500);
-  };
+  const [isStatusModalOpen, setIsStatusModalOpen] = useState(false);
+  const [isGoalsModalOpen, setIsGoalsModalOpen] = useState(false);
 
   const loadData = useCallback(async () => {
-    const connected = await api.checkServerConnection();
-    setIsServerConnected(connected);
+    const dash = await api.getDashboard();
+    setSummary(dash);
 
-    const fetchedTasks = await api.getTasks(filters);
-    setTasks(fetchedTasks);
+    const allGoals = await api.getGoals();
+    setGoals(allGoals);
 
-    const fetchedAnalytics = await api.getAnalytics();
-    setAnalytics(fetchedAnalytics);
-  }, [filters]);
+    const activeGoalId = dash.activeGoal?.id;
+    const allTasks = await api.getTasks(activeGoalId);
+    setTasks(allTasks);
+
+    const logs = await api.getDailyLogs();
+    setDailyLogs(logs);
+  }, []);
 
   useEffect(() => {
     loadData();
   }, [loadData]);
 
   // Task actions
-  const handleSaveTask = async (taskData: Partial<Task>) => {
-    if (editingTask) {
-      await api.updateTask(editingTask.id, taskData);
-      showToast('Career goal updated successfully');
-    } else {
-      await api.createTask(taskData);
-      showToast('New career goal added to roadmap');
-    }
-    setEditingTask(null);
+  const handleAddTask = async (taskData: Partial<Task>) => {
+    await api.createTask(taskData);
     loadData();
   };
 
-  const handleUpdateStatus = async (id: string, newStatus: TaskStatus) => {
-    await api.updateTask(id, { status: newStatus });
+  const handleToggleTask = async (id: string, currentCompleted: boolean) => {
+    await api.updateTask(id, { completed: !currentCompleted });
     loadData();
   };
 
   const handleDeleteTask = async (id: string) => {
-    if (window.confirm('Are you sure you want to delete this career goal?')) {
-      await api.deleteTask(id);
-      showToast('Goal deleted');
-      loadData();
-    }
-  };
-
-  const handleStartPomodoro = (task: Task) => {
-    setPomodoroTask(task);
-    setIsPomodoroOpen(true);
-  };
-
-  const handlePomodoroSessionComplete = async (taskId: string, durationMinutes: number) => {
-    await api.logPomodoro(taskId, durationMinutes);
-    showToast(`Logged ${durationMinutes}m focus session! Actual hours updated.`);
+    await api.deleteTask(id);
     loadData();
   };
 
-  const handleResetSeed = async () => {
-    if (window.confirm('Reset database to the standard high-impact career roadmap?')) {
-      await api.resetSeed();
-      showToast('Restored default career development goals');
-      loadData();
-    }
+  // Status actions
+  const handleSaveStatus = async (logData: Partial<DailyLog>) => {
+    await api.recordDailyStatus(logData);
+    loadData();
   };
 
-  const handleExport = () => {
-    const data = api.exportData();
-    const blob = new Blob([data], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `career-pulse-backup-${new Date().toISOString().split('T')[0]}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-    showToast('Career data exported as JSON');
+  // Goal actions
+  const handleSelectActiveGoal = async (goalId: string) => {
+    await api.createGoal({ id: goalId, status: 'Active' });
+    loadData();
   };
 
-  const handleImport = (jsonData: string) => {
-    try {
-      const count = api.importData(jsonData);
-      showToast(`Successfully imported ${count} career tasks`);
-      loadData();
-    } catch (err: any) {
-      alert(`Import failed: ${err.message}`);
-    }
+  const handleCreateGoal = async (goalData: Partial<Goal>) => {
+    await api.createGoal(goalData);
+    loadData();
   };
+
+  const todayStr = new Date().toISOString().split('T')[0];
+  const existingTodayLog = dailyLogs.find(l => l.date === todayStr);
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col selection:bg-indigo-500 selection:text-white">
-      {/* Toast Notification */}
-      {toastMessage && (
-        <div className="fixed bottom-6 right-6 z-50 px-4 py-3 rounded-2xl bg-slate-900 border border-indigo-500/40 text-indigo-300 text-xs font-semibold shadow-2xl shadow-indigo-500/20 flex items-center gap-2 animate-bounce">
-          <span>✨</span> {toastMessage}
-        </div>
-      )}
-
+    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
       {/* Top Navbar */}
       <Navbar
-        currentView={currentView}
-        onViewChange={setCurrentView}
-        streakDays={analytics?.currentStreakDays || 0}
-        totalActualHours={analytics?.totalActualHours || 0}
-        isServerConnected={isServerConnected}
-        onOpenNewTaskModal={() => {
-          setEditingTask(null);
-          setIsTaskModalOpen(true);
-        }}
-        onOpenPomodoroModal={() => {
-          setPomodoroTask(null);
-          setIsPomodoroOpen(true);
-        }}
-        onOpenStandupModal={() => setIsStandupOpen(true)}
-        onResetSeed={handleResetSeed}
-        onExport={handleExport}
-        onImport={handleImport}
+        currentTab={currentTab}
+        onTabChange={setCurrentTab}
+        streakDays={summary?.streakDays || 0}
+        totalHours={summary?.totalHoursSpent || 0}
+        todayLogged={summary?.todayLoggedStatus || false}
+        onOpenStatusModal={() => setIsStatusModalOpen(true)}
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
-        {/* High-level Stats bar */}
-        {analytics && <StatsOverview analytics={analytics} />}
-
-        {/* View Content */}
-        {currentView === 'kanban' && (
-          <KanbanBoard
-            tasks={tasks}
-            onUpdateStatus={handleUpdateStatus}
-            onEditTask={task => {
-              setEditingTask(task);
-              setIsTaskModalOpen(true);
-            }}
-            onDeleteTask={handleDeleteTask}
-            onStartPomodoroForTask={handleStartPomodoro}
+      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6">
+        {/* Short-Term Goal Banner (Months Countdown & Status) */}
+        {summary && (
+          <GoalBanner
+            summary={summary}
+            onOpenStatusModal={() => setIsStatusModalOpen(true)}
+            onOpenGoalsModal={() => setIsGoalsModalOpen(true)}
           />
         )}
 
-        {currentView === 'list' && (
-          <TaskList
+        {/* Tab 1: Daily To-Do List */}
+        {currentTab === 'tasks' && (
+          <DailyTodoList
             tasks={tasks}
-            filters={filters}
-            onFilterChange={setFilters}
-            onUpdateStatus={handleUpdateStatus}
-            onEditTask={task => {
-              setEditingTask(task);
-              setIsTaskModalOpen(true);
-            }}
+            activeGoal={summary?.activeGoal || null}
+            onAddTask={handleAddTask}
+            onToggleTask={handleToggleTask}
             onDeleteTask={handleDeleteTask}
-            onStartPomodoroForTask={handleStartPomodoro}
           />
         )}
 
-        {currentView === 'analytics' && analytics && (
-          <AnalyticsView analytics={analytics} tasks={tasks} />
+        {/* Tab 2: Daily Status Journal */}
+        {currentTab === 'journal' && (
+          <DailyStatusTimeline
+            logs={dailyLogs}
+            onOpenStatusModal={() => setIsStatusModalOpen(true)}
+          />
         )}
       </main>
 
       {/* Modals */}
-      <TaskModal
-        isOpen={isTaskModalOpen}
-        onClose={() => {
-          setIsTaskModalOpen(false);
-          setEditingTask(null);
-        }}
-        onSave={handleSaveTask}
-        initialTask={editingTask}
+      <DailyStatusModal
+        isOpen={isStatusModalOpen}
+        onClose={() => setIsStatusModalOpen(false)}
+        activeGoal={summary?.activeGoal || null}
+        onSaveStatus={handleSaveStatus}
+        existingTodayLog={existingTodayLog}
       />
 
-      <PomodoroTimer
-        isOpen={isPomodoroOpen}
-        onClose={() => {
-          setIsPomodoroOpen(false);
-          setPomodoroTask(null);
-        }}
-        tasks={tasks}
-        initialTask={pomodoroTask}
-        onSessionComplete={handlePomodoroSessionComplete}
+      <GoalsModal
+        isOpen={isGoalsModalOpen}
+        onClose={() => setIsGoalsModalOpen(false)}
+        goals={goals}
+        onSelectActiveGoal={handleSelectActiveGoal}
+        onCreateGoal={handleCreateGoal}
       />
 
-      <DailyStandupModal
-        isOpen={isStandupOpen}
-        onClose={() => setIsStandupOpen(false)}
-        tasks={tasks}
-        streakDays={analytics?.currentStreakDays || 0}
-        totalHours={analytics?.totalActualHours || 0}
-      />
-
-      {/* Footer */}
+      {/* Clean Footer */}
       <footer className="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
-        <p>
-          CareerPulse • Advanced Career Improvement & Goal Tracking Engine • Ready for Docker & CI/CD
-        </p>
+        <p>CareerPulse • Short-Term Goal & Daily Status Tracker</p>
       </footer>
     </div>
   );
 };
 
 export default App;
-

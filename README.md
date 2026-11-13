@@ -12,27 +12,21 @@
 
 ## 🌟 Key Features
 
-### 1. 🎯 Career-Centric Goal Management
+### 1. 🎯 Short-Term Goals (in Months)
+- **Month-Based Goal Tracking**: Set concrete 1-month, 2-month, 3-month, or 6-month career targets (e.g., "Become Cloud & DevOps Job Ready in 2 Months", "Crack Full-Stack Interviews in 3 Months").
+- **Live Goal Countdown**: Real-time progress bar displaying current day in goal, total days, and days remaining.
+- **Multiple Roadmaps**: Manage active goals, completed goals, and pause/switch goals at any time.
 
-- **Pillar Categorization**: System Design, DSA & Algorithms, Cloud & DevOps, Full Stack Projects, Interview Prep, Certifications, Soft Skills & Leadership, and Daily Habits.
-- **Priority Matrix**: Urgent, High, Medium, and Low triage indicators.
-- **Milestones & Checklists**: Interactive subtasks with dynamic progress bars.
-- **Skill Tagging**: Tag goals with tech skills (`#docker`, `#kubernetes`, `#system-design`, `#redis`, `#python`) for radar tracking.
-- **Interview Reflection Notes**: Dedicated learning journal to jot down technical interview talking points, hurdles overcome, and key architectural takeaways.
+### 2. 📋 Daily Actionable To-Do List
+- **Quick-Add Input**: Add tasks for today in seconds with target due date, estimated hours, and priority level.
+- **Satisfying Check-offs**: Interactive completion with celebration confetti and automatic goal progress updates.
+- **Focused Views**: Filter between *Today's To-Do*, *All Roadmap Tasks*, and *Completed*.
 
-### 2. ⚡ Multi-View Productivity System
-
-- **Interactive Kanban Board**: Visual 5-stage pipeline (`Backlog` ➔ `To Do` ➔ `In Progress` ➔ `In Review / Testing` ➔ `Completed`) with celebratory confetti animations.
-- **Power Search & Filter Table**: Filter by pillar, priority, status, or keyword search with sorting by due date, priority, or creation time.
-- **Pomodoro Focus Timer**: Built-in 25m work / 5m break timer with chime sound synthesis that automatically calculates and logs focused study hours to your selected goal.
-- **1-Click Daily Standup Generator**: Automatically compiles your day's achievements, active sprints, and learnings into a Markdown summary ready to copy for Discord, Slack, LinkedIn, or your journal.
-
-### 3. 📊 Career Velocity & Growth Analytics
-
-- **Daily Learning Streak**: Real-time flame counter calculating consecutive active days.
-- **Total Hours Invested**: Compares estimated effort vs. actual focused study time.
-- **7-Day Velocity Chart**: Visual daily completion chart.
-- **Skill Cloud**: Visual distribution of your top technical competencies.
+### 3. 📖 Daily Status Check-in & Journal ("Keep Track")
+- **Daily Status Updates**: Log what you accomplished today, key learnings, and obstacles encountered.
+- **Daily Hours & Focus Tracker**: Record study/building hours and energy levels (High, Steady, Low).
+- **Progress Journal**: A persistent timeline to review your daily consistency and effort over the months.
+- **Consistency Streak**: Flame badge tracking active daily streaks.
 
 ### 4. 🔒 Reliability & Offline Sync
 
