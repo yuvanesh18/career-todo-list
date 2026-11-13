@@ -85,8 +85,13 @@ class Database {
         fs.mkdirSync(dir, { recursive: true });
       }
       const tempPath = `${this.stateFile}.tmp.${Date.now()}`;
-      fs.writeFileSync(tempPath, JSON.stringify(this.state, null, 2), 'utf-8');
+      const jsonContent = JSON.stringify(this.state, null, 2);
+      fs.writeFileSync(tempPath, jsonContent, 'utf-8');
       fs.renameSync(tempPath, this.stateFile);
+
+      // Create backup copy for disaster recovery
+      const backupPath = `${this.stateFile}.bak`;
+      fs.writeFileSync(backupPath, jsonContent, 'utf-8');
     } catch (err) {
       console.error('Error persisting database:', err);
     }

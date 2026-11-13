@@ -173,3 +173,26 @@ export const resetData = (_req: Request, res: Response): void => {
     res.status(500).json({ success: false, error: err.message });
   }
 };
+
+export const backupDatabase = (_req: Request, res: Response): void => {
+  try {
+    const data = taskService.exportData();
+    res.json({
+      success: true,
+      timestamp: new Date().toISOString(),
+      data
+    });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+};
+
+export const restoreDatabase = (req: Request, res: Response): void => {
+  try {
+    const backup = req.body.data || req.body;
+    taskService.importData(backup);
+    res.json({ success: true, message: 'Database successfully restored' });
+  } catch (err: any) {
+    res.status(400).json({ success: false, error: err.message });
+  }
+};

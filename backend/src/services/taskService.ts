@@ -300,6 +300,18 @@ export class TaskService {
   public resetSeed() {
     return db.resetSeed();
   }
+
+  public exportData() {
+    return db.getState();
+  }
+
+  public importData(newState: any) {
+    if (!newState || !Array.isArray(newState.goals) || !Array.isArray(newState.tasks)) {
+      throw new Error('Invalid backup format: goals and tasks arrays are required.');
+    }
+    db.setState(newState);
+    return true;
+  }
 }
 
 export const taskService = new TaskService();

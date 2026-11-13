@@ -58,6 +58,28 @@ export const App: React.FC = () => {
     loadData();
   };
 
+  const handleExportBackup = async () => {
+    const data = await api.backupDatabase();
+    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `career_pulse_db_backup_${new Date().toISOString().split('T')[0]}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleImportBackup = async (jsonContent: string) => {
+    try {
+      const parsed = JSON.parse(jsonContent);
+      await api.restoreDatabase(parsed);
+      alert('Database successfully restored from backup!');
+      loadData();
+    } catch (err: any) {
+      alert(`Failed to restore database: ${err.message}`);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
       {/* Top Navbar */}
@@ -67,6 +89,8 @@ export const App: React.FC = () => {
         streakDays={summary?.streakDays || 0}
         completedTodayCount={summary?.completedTodayCount || 0}
         onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
+        onExportBackup={handleExportBackup}
+        onImportBackup={handleImportBackup}
       />
 
       {/* Main Container */}
@@ -78,7 +102,6 @@ export const App: React.FC = () => {
             onSelectGoal={setSelectedGoalId}
             tasks={tasks}
             onToggleTask={handleToggleTask}
-            onAddTask={handleAddTask}
             onDeleteTask={handleDeleteTask}
             onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
           />

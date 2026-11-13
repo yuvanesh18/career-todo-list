@@ -307,5 +307,39 @@ export const api = {
       result.push({ date, count: items.length, items });
     });
     return result;
+  },
+
+  async backupDatabase(): Promise<{ goals: Goal[]; tasks: Task[] }> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/backup');
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+    return getLocalState();
+  },
+
+  async restoreDatabase(backupData: any): Promise<void> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/restore', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(backupData)
+        });
+        if (res.ok) return;
+      }
+    } catch {
+      serverAvailable = false;
+    }
+    const state = backupData.data || backupData;
+    if (state && Array.isArray(state.goals) && Array.isArray(state.tasks)) {
+      saveLocalState(state);
+    }
   }
 };

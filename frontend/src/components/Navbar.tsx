@@ -1,5 +1,5 @@
-import React from 'react';
-import { Target, CalendarCheck, Flame, CheckCircle2, Plus, Sparkles, Layers } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Target, CalendarCheck, Flame, CheckCircle2, Plus, Layers, Download, Upload, Database } from 'lucide-react';
 import { ActiveTab } from '../types';
 
 interface NavbarProps {
@@ -8,6 +8,8 @@ interface NavbarProps {
   streakDays: number;
   completedTodayCount: number;
   onOpenNewGoalModal: () => void;
+  onExportBackup: () => void;
+  onImportBackup: (jsonContent: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -15,8 +17,24 @@ export const Navbar: React.FC<NavbarProps> = ({
   onTabChange,
   streakDays,
   completedTodayCount,
-  onOpenNewGoalModal
+  onOpenNewGoalModal,
+  onExportBackup,
+  onImportBackup
 }) => {
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const text = event.target?.result as string;
+      if (text) onImportBackup(text);
+    };
+    reader.readAsText(file);
+    e.target.value = '';
+  };
+
   return (
     <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -65,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           </div>
 
           {/* Quick Metrics & Action */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2.5">
             <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-300 text-xs font-bold">
               <Flame className="w-3.5 h-3.5 text-orange-400" />
               <span>{streakDays}d Streak</span>
@@ -89,6 +107,34 @@ export const Navbar: React.FC<NavbarProps> = ({
               <Plus className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">New Goal</span>
             </button>
+
+            {/* Permanent DB Backup & Restore Controls */}
+            <div className="flex items-center border-l border-slate-800 pl-2 gap-1">
+              <button
+                onClick={onExportBackup}
+                title="Backup Entire Database to File"
+                className="p-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition text-xs flex items-center gap-1"
+              >
+                <Download className="w-3.5 h-3.5" />
+                <span className="hidden xl:inline text-[11px]">Backup DB</span>
+              </button>
+
+              <button
+                onClick={() => fileInputRef.current?.click()}
+                title="Restore Database from Backup File"
+                className="p-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition text-xs flex items-center gap-1"
+              >
+                <Upload className="w-3.5 h-3.5" />
+                <span className="hidden xl:inline text-[11px]">Restore</span>
+              </button>
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept=".json"
+                className="hidden"
+                onChange={handleFileChange}
+              />
+            </div>
           </div>
         </div>
       </div>

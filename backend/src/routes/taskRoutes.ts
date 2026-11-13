@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+  backupDatabase,
   createGoal,
   createTask,
   deleteGoal,
@@ -9,6 +10,7 @@ import {
   getSummary,
   getTasks,
   resetData,
+  restoreDatabase,
   toggleTask,
   updateGoal,
   updateTask
@@ -20,6 +22,8 @@ const router = Router();
 router.get('/summary', getSummary);
 router.get('/daily-activity', getDailyActivity);
 router.post('/seed', resetData);
+router.get('/backup', backupDatabase);
+router.post('/restore', restoreDatabase);
 
 // Goals
 router.get('/goals', getGoals);

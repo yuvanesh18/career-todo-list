@@ -23,7 +23,6 @@ interface GoalDetailViewProps {
   onSelectGoal: (id: string) => void;
   tasks: Task[];
   onToggleTask: (id: string) => void;
-  onAddTask: (task: Partial<Task>) => void;
   onDeleteTask: (id: string) => void;
   onOpenNewGoalModal: () => void;
 }
@@ -34,7 +33,6 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
   onSelectGoal,
   tasks,
   onToggleTask,
-  onAddTask,
   onDeleteTask,
   onOpenNewGoalModal
 }) => {
@@ -43,12 +41,6 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
   const [selectedDifficulty, setSelectedDifficulty] = useState('All');
   const [selectedStatus, setSelectedStatus] = useState<'All' | 'Incomplete' | 'Completed'>('All');
   const [collapsedTopics, setCollapsedTopics] = useState<Record<string, boolean>>({});
-
-  // Quick Add Task state
-  const [newTaskTitle, setNewTaskTitle] = useState('');
-  const [newTaskTopic, setNewTaskTopic] = useState('');
-  const [newTaskDifficulty, setNewTaskDifficulty] = useState<Difficulty>('Medium');
-  const [newTaskUrl, setNewTaskUrl] = useState('');
 
   const currentGoal = goals.find(g => g.id === selectedGoalId) || goals[0];
   const goalTasks = tasks.filter(t => t.goalId === currentGoal?.id);
@@ -103,23 +95,6 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
       });
     }
     onToggleTask(task.id);
-  };
-
-  const handleCreateTask = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!newTaskTitle.trim() || !currentGoal) return;
-
-    onAddTask({
-      goalId: currentGoal.id,
-      title: newTaskTitle.trim(),
-      topic: newTaskTopic.trim() || (topicsList[0] || 'General'),
-      difficulty: newTaskDifficulty,
-      url: newTaskUrl.trim() || undefined,
-      completed: false
-    });
-
-    setNewTaskTitle('');
-    setNewTaskUrl('');
   };
 
   const todayStr = new Date().toISOString().split('T')[0];
@@ -213,58 +188,6 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
           </div>
         </div>
       )}
-
-      {/* Quick Add Custom Question / Task Input */}
-      <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-sm">
-        <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-2 flex items-center gap-1.5">
-          <Plus className="w-4 h-4 text-indigo-400" />
-          Add Custom Question / Task under {currentGoal?.title}
-        </span>
-
-        <form onSubmit={handleCreateTask} className="flex flex-col sm:flex-row gap-2">
-          <input
-            type="text"
-            required
-            value={newTaskTitle}
-            onChange={e => setNewTaskTitle(e.target.value)}
-            placeholder="Question / Task name (e.g. Subarray Sum Equals K)..."
-            className="flex-1 px-4 py-2.5 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-          />
-
-          <input
-            type="text"
-            value={newTaskTopic}
-            onChange={e => setNewTaskTopic(e.target.value)}
-            placeholder="Topic (e.g. Array, Stack)..."
-            className="w-full sm:w-40 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-          />
-
-          <select
-            value={newTaskDifficulty}
-            onChange={e => setNewTaskDifficulty(e.target.value as Difficulty)}
-            className="px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-slate-300 focus:outline-none focus:border-indigo-500"
-          >
-            <option value="Easy">Easy</option>
-            <option value="Medium">Medium</option>
-            <option value="Hard">Hard</option>
-          </select>
-
-          <input
-            type="url"
-            value={newTaskUrl}
-            onChange={e => setNewTaskUrl(e.target.value)}
-            placeholder="LeetCode / Reference URL (optional)..."
-            className="w-full sm:w-48 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-xs text-white placeholder-slate-500 focus:outline-none focus:border-indigo-500"
-          />
-
-          <button
-            type="submit"
-            className="px-4 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition shadow-md shadow-indigo-600/30 flex-shrink-0"
-          >
-            Add Task
-          </button>
-        </form>
-      </div>
 
       {/* Filter and Search Bar */}
       <div className="p-3.5 rounded-2xl bg-slate-900 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-3">
