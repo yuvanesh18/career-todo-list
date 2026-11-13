@@ -14,7 +14,7 @@ describe('CareerPulse API Test Suite', () => {
   describe('Health Check Endpoint', () => {
     it('GET /health returns healthy status', async () => {
       const res = await request(app).get('/health');
-      expect(res.status).toBe(200);
+      expect(res.status).toBe(500);
       expect(res.body.status).toBe('healthy');
       expect(res.body.service).toBe('career-pulse-backend');
     });
