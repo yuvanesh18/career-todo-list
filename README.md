@@ -1,8 +1,8 @@
 # 🚀 CareerPulse — Career Improvement & Daily Progress Tracker
 
-[![CI - Test & Validate](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
-[![CD - Docker GHCR](https://github.com/OWNER/REPO/actions/workflows/cd-ghcr.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/cd-ghcr.yml)
-[![CD - GitHub Pages](https://github.com/OWNER/REPO/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/deploy-pages.yml)
+[![CI - Test & Validate](https://github.com/yuvanesh18/career-todo-list/actions/workflows/ci.yml/badge.svg)](https://github.com/yuvanesh18/career-todo-list/actions/workflows/ci.yml)
+[![CD - Docker GHCR](https://github.com/yuvanesh18/career-todo-list/actions/workflows/cd-ghcr.yml/badge.svg)](https://github.com/yuvanesh18/career-todo-list/actions/workflows/cd-ghcr.yml)
+[![CD - GitHub Pages](https://github.com/yuvanesh18/career-todo-list/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/yuvanesh18/career-todo-list/actions/workflows/deploy-pages.yml)
 [![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker&logoColor=white)](https://www.docker.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

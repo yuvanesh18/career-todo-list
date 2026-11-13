@@ -5,19 +5,20 @@ Welcome! This guide is designed to take you from beginner to confident practitio
 ---
 
 ## 📑 Table of Contents
+
 1. [What is CI/CD and Why Does It Matter?](#1-what-is-cicd-and-why-does-it-matter)
 2. [The 100% Free Stack We Are Using](#2-the-100-free-stack-we-are-using)
 3. [Step 1: Create a GitHub Repository](#step-1-create-a-github-repository)
-4. [Step 2: Commit & Push Your Project](#step-2-commit--push-your-project)
+4. [Step 2: Commit &amp; Push Your Project](#step-2-commit--push-your-project)
 5. [Step 3: Enable Free GitHub Pages Deployment](#step-3-enable-free-github-pages-deployment)
 6. [Step 4: Deep Dive into Your Workflows](#step-4-deep-dive-into-your-workflows)
 7. [Step 5: Practical Hands-On CI/CD Exercises](#step-5-practical-hands-on-cicd-exercises)
    - [Exercise A: Verify Your First Green Build](#exercise-a-verify-your-first-green-build)
-   - [Exercise B: Simulate a Bug & Watch CI Catch It](#exercise-b-simulate-a-bug--watch-ci-catch-it)
+   - [Exercise B: Simulate a Bug &amp; Watch CI Catch It](#exercise-b-simulate-a-bug--watch-ci-catch-it)
    - [Exercise C: Practice Pull Request Branch Protection](#exercise-c-practice-pull-request-branch-protection)
    - [Exercise D: Pull Your Container from GHCR with Docker](#exercise-d-pull-your-container-from-ghcr-with-docker)
 8. [Step 6: Displaying Status Badges on Your Profile](#step-6-displaying-status-badges-on-your-profile)
-9. [Troubleshooting & Pro Tips](#troubleshooting--pro-tips)
+9. [Troubleshooting &amp; Pro Tips](#troubleshooting--pro-tips)
 
 ---
 
@@ -32,12 +33,12 @@ Welcome! This guide is designed to take you from beginner to confident practitio
 
 You do **NOT** need an AWS credit card or paid servers to practice production-grade CI/CD:
 
-| Tool | Cost | What It Does In This Project |
-| :--- | :--- | :--- |
-| **GitHub Actions** | **Free** (2,000 mins/mo for private repos, **unlimited** for public repos) | Spins up clean virtual Linux machines (`ubuntu-latest`) to run tests and builds. |
-| **GitHub Container Registry (GHCR)** | **Free** (Unlimited for public packages) | Stores and hosts your built Docker container images at `ghcr.io`. |
-| **GitHub Pages** | **Free** | Hosts your live interactive frontend web app with SSL enabled. |
-| **Vitest & Supertest** | **Free Open Source** | Automated unit and REST API testing framework. |
+| Tool                                       | Cost                                                                                   | What It Does In This Project                                                       |
+| :----------------------------------------- | :------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------- |
+| **GitHub Actions**                   | **Free** (2,000 mins/mo for private repos, **unlimited** for public repos) | Spins up clean virtual Linux machines (`ubuntu-latest`) to run tests and builds. |
+| **GitHub Container Registry (GHCR)** | **Free** (Unlimited for public packages)                                         | Stores and hosts your built Docker container images at `ghcr.io`.                |
+| **GitHub Pages**                     | **Free**                                                                         | Hosts your live interactive frontend web app with SSL enabled.                     |
+| **Vitest & Supertest**               | **Free Open Source**                                                             | Automated unit and REST API testing framework.                                     |
 
 ---
 
@@ -101,6 +102,7 @@ To let GitHub host your live frontend website for free:
 In your `.github/workflows/` folder, you have 3 specialized automation pipelines:
 
 ### 1. `ci.yml` (Continuous Integration)
+
 ```yaml
 name: CI - Test & Validate
 on:
@@ -109,11 +111,13 @@ on:
   pull_request:
     branches: [ main, master ]
 ```
+
 - **Backend Job**: Spins up Node 22 on Ubuntu, runs `npm test` (testing all REST API endpoints like `/health`, `/api/tasks`, `/api/analytics`), and tests TypeScript compilation (`npm run build`).
 - **Frontend Job**: Spins up Node 22, runs Vitest unit tests, and tests Vite production bundling.
 - **Docker Validation Job**: Tests that the multi-stage Dockerfiles build successfully without caching errors.
 
 ### 2. `cd-ghcr.yml` (Continuous Delivery to Container Registry)
+
 - Runs on push to `main`.
 - Authenticates using GitHub's automatic built-in token:
   ```yaml
@@ -124,6 +128,7 @@ on:
   `ghcr.io/<your-username>/career-pulse-frontend:latest`
 
 ### 3. `deploy-pages.yml` (Continuous Deployment of Demo)
+
 - Runs on push to `main`.
 - Bundles the frontend and deploys it to GitHub's global CDN at zero cost.
 
@@ -134,6 +139,7 @@ on:
 Here are 4 exercises to practice real DevOps workflows:
 
 ### Exercise A: Verify Your First Green Build
+
 1. Go to your repository on GitHub and click the **Actions** tab at the top.
 2. You will see your workflows running:
    - `CI - Test & Validate`
@@ -145,28 +151,34 @@ Here are 4 exercises to practice real DevOps workflows:
 ---
 
 ### Exercise B: Simulate a Bug & Watch CI Catch It
+
 In engineering teams, CI protects main branches from human error. Let's intentionally trigger a failure to see CI in action!
 
 1. Open `backend/tests/api.test.ts`.
 2. Change line 19 from:
+
    ```typescript
    expect(res.status).toBe(200);
    ```
+
    to:
    ```typescript
    expect(res.status).toBe(500); // Intentionally incorrect expectation!
    ```
 3. Commit and push:
+
    ```bash
    git add backend/tests/api.test.ts
    git commit -m "test: simulate failing test"
    git push origin main
    ```
 4. Now check the **Actions** tab on GitHub:
+
    - The workflow will turn **Red ❌**!
    - GitHub will send you an email alert.
    - Click into the job to see Vitest pinpointing the exact failure line.
 5. Now fix the test back to `toBe(200)`, commit, and push again:
+
    ```bash
    git add backend/tests/api.test.ts
    git commit -m "fix: restore passing test assertion"
@@ -177,6 +189,7 @@ In engineering teams, CI protects main branches from human error. Let's intentio
 ---
 
 ### Exercise C: Practice Pull Request Branch Protection
+
 This is how modern software engineers collaborate:
 
 1. Create a feature branch locally:
@@ -197,9 +210,11 @@ This is how modern software engineers collaborate:
 ---
 
 ### Exercise D: Pull Your Container from GHCR with Docker
+
 Once the `CD - Build & Push Docker to GHCR` workflow finishes, your Docker images are publicly stored in GitHub Packages!
 
 To pull and run your newly minted container on any machine:
+
 ```bash
 # Pull your backend image
 docker pull ghcr.io/<your-username>/<your-repo-name>/backend:latest
@@ -207,6 +222,7 @@ docker pull ghcr.io/<your-username>/<your-repo-name>/backend:latest
 # Run it
 docker run -p 5000:5000 ghcr.io/<your-username>/<your-repo-name>/backend:latest
 ```
+
 Test it in your browser: `http://localhost:5000/health`.
 You have just built an automated container release pipeline from scratch!
 
@@ -229,19 +245,23 @@ Now, anyone visiting your GitHub profile or repository will see live passing sta
 ## Troubleshooting & Pro Tips
 
 ### 1. "Permission to ghcr.io denied"
+
 - In your GitHub repo, go to **Settings** ➔ **Actions** ➔ **General**.
 - Scroll to **Workflow permissions**.
 - Select **"Read and write permissions"** and click **Save**.
-*(Our workflows also explicitly declare `permissions: packages: write`, ensuring automatic authorization).*
+  *(Our workflows also explicitly declare `permissions: packages: write`, ensuring automatic authorization).*
 
 ### 2. GitHub Pages shows 404
+
 - Verify that **Settings** ➔ **Pages** ➔ **Source** is set to **GitHub Actions**.
 - Ensure the `CD - Deploy Demo to GitHub Pages` workflow has run successfully on `main`.
 
 ### 3. Running tests locally before pushing
+
 Always run:
+
 ```bash
 npm test
 ```
-before pushing so you catch any mistakes before the cloud runner does!
 
+before pushing so you catch any mistakes before the cloud runner does!
