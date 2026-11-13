@@ -6,11 +6,14 @@ import { GoalDetailView } from './components/GoalDetailView';
 import { DailyActivityView } from './components/DailyActivityView';
 import { NewGoalModal } from './components/NewGoalModal';
 import { AuthModal } from './components/AuthModal';
+import { ServerModal } from './components/ServerModal';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('goals');
   const [user, setUser] = useState<UserProfile | null>(() => api.getCurrentUser());
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isServerModalOpen, setIsServerModalOpen] = useState(false);
+  const [isServerOnline, setIsServerOnline] = useState(false);
   const [goals, setGoals] = useState<Goal[]>([]);
   const [selectedGoalId, setSelectedGoalId] = useState<string>('goal-dsa');
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -19,6 +22,9 @@ export const App: React.FC = () => {
   const [isNewGoalModalOpen, setIsNewGoalModalOpen] = useState(false);
 
   const loadData = useCallback(async () => {
+    const online = await api.checkServer();
+    setIsServerOnline(online);
+
     const fetchedGoals = await api.getGoals();
     setGoals(fetchedGoals);
 
@@ -99,6 +105,8 @@ export const App: React.FC = () => {
         streakDays={summary?.streakDays || 0}
         completedTodayCount={summary?.completedTodayCount || 0}
         user={user}
+        isServerOnline={isServerOnline}
+        onOpenServerModal={() => setIsServerModalOpen(true)}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onLogout={handleLogout}
         onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
@@ -127,6 +135,13 @@ export const App: React.FC = () => {
           />
         )}
       </main>
+
+      {/* Cloud Server Connection Modal */}
+      <ServerModal
+        isOpen={isServerModalOpen}
+        onClose={() => setIsServerModalOpen(false)}
+        onServerConfigured={loadData}
+      />
 
       {/* Auth Modal (Login & Register) */}
       <AuthModal

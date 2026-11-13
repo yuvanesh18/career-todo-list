@@ -4,6 +4,7 @@ import seedData from '../data/seed_data.json';
 const AUTH_TOKEN_KEY = 'career_pulse_auth_token';
 const AUTH_USER_KEY = 'career_pulse_auth_user';
 const USERS_KEY = 'career_pulse_registered_users';
+const BACKEND_URL_KEY = 'career_pulse_backend_url';
 
 let serverAvailable: boolean | null = null;
 
@@ -18,6 +19,25 @@ export const getCurrentUser = (): UserProfile | null => {
 
 export const getToken = (): string | null => {
   return localStorage.getItem(AUTH_TOKEN_KEY);
+};
+
+export const getStoredBackendUrl = (): string => {
+  return localStorage.getItem(BACKEND_URL_KEY) || (import.meta.env.VITE_API_BASE_URL as string) || '';
+};
+
+export const setStoredBackendUrl = (url: string): void => {
+  if (!url || !url.trim()) {
+    localStorage.removeItem(BACKEND_URL_KEY);
+  } else {
+    localStorage.setItem(BACKEND_URL_KEY, url.trim().replace(/\/$/, ''));
+  }
+  serverAvailable = null; // force re-check
+};
+
+export const getApiUrl = (endpoint: string): string => {
+  const base = getStoredBackendUrl().trim().replace(/\/$/, '');
+  const path = endpoint.startsWith('/') ? endpoint : `/${endpoint}`;
+  return base ? `${base}${path}` : path;
 };
 
 const getStorageKeyForUser = (): string => {
@@ -61,13 +81,14 @@ const saveLocalState = (state: { goals: Goal[]; tasks: Task[] }) => {
 export const api = {
   getCurrentUser,
   getToken,
+  getStoredBackendUrl,
+  setStoredBackendUrl,
 
   async checkServer(): Promise<boolean> {
     try {
       const controller = new AbortController();
-      const timeout = setTimeout(() => controller.abort(), 1200);
-      const res = await fetch('/api/summary', {
-        headers: getAuthHeaders(),
+      const timeout = setTimeout(() => controller.abort(), 2000);
+      const res = await fetch(getApiUrl('/health'), {
         signal: controller.signal
       });
       clearTimeout(timeout);
@@ -82,7 +103,7 @@ export const api = {
   async register(name: string, email: string, password: string): Promise<AuthResponse> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/auth/register', {
+        const res = await fetch(getApiUrl('/api/auth/register'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, password })
@@ -124,8 +145,6 @@ export const api = {
 
     localStorage.setItem(AUTH_TOKEN_KEY, authRes.token);
     localStorage.setItem(AUTH_USER_KEY, JSON.stringify(authRes.user));
-
-    // Seed state for this new user in localStorage
     localStorage.setItem(`career_pulse_goals_${newUser.id}`, JSON.stringify(seedData));
     return authRes;
   },
@@ -133,7 +152,7 @@ export const api = {
   async login(email: string, password: string): Promise<AuthResponse> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/auth/login', {
+        const res = await fetch(getApiUrl('/api/auth/login'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password })
@@ -181,7 +200,7 @@ export const api = {
   async getSummary(): Promise<OverallSummary> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/summary', { headers: getAuthHeaders() });
+        const res = await fetch(getApiUrl('/api/summary'), { headers: getAuthHeaders() });
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -249,7 +268,7 @@ export const api = {
   async getGoals(): Promise<Goal[]> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/goals', { headers: getAuthHeaders() });
+        const res = await fetch(getApiUrl('/api/goals'), { headers: getAuthHeaders() });
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -264,7 +283,7 @@ export const api = {
   async createGoal(data: Partial<Goal>): Promise<Goal> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/goals', {
+        const res = await fetch(getApiUrl('/api/goals'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           body: JSON.stringify(data)
@@ -296,7 +315,7 @@ export const api = {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
         const url = goalId ? `/api/tasks?goalId=${encodeURIComponent(goalId)}` : '/api/tasks';
-        const res = await fetch(url, { headers: getAuthHeaders() });
+        const res = await fetch(getApiUrl(url), { headers: getAuthHeaders() });
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -316,7 +335,7 @@ export const api = {
   async toggleTask(id: string): Promise<Task> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch(`/api/tasks/${id}/toggle`, {
+        const res = await fetch(getApiUrl(`/api/tasks/${id}/toggle`), {
           method: 'POST',
           headers: getAuthHeaders()
         });
@@ -353,7 +372,7 @@ export const api = {
   async createTask(data: Partial<Task>): Promise<Task> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/tasks', {
+        const res = await fetch(getApiUrl('/api/tasks'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           body: JSON.stringify(data)
@@ -389,7 +408,7 @@ export const api = {
   async deleteTask(id: string): Promise<void> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch(`/api/tasks/${id}`, {
+        const res = await fetch(getApiUrl(`/api/tasks/${id}`), {
           method: 'DELETE',
           headers: getAuthHeaders()
         });
@@ -407,7 +426,7 @@ export const api = {
   async getDailyActivity(): Promise<DailyGroupedActivity[]> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/daily-activity', { headers: getAuthHeaders() });
+        const res = await fetch(getApiUrl('/api/daily-activity'), { headers: getAuthHeaders() });
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -450,7 +469,7 @@ export const api = {
   async backupDatabase(): Promise<{ goals: Goal[]; tasks: Task[] }> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/backup', { headers: getAuthHeaders() });
+        const res = await fetch(getApiUrl('/api/backup'), { headers: getAuthHeaders() });
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -465,7 +484,7 @@ export const api = {
   async restoreDatabase(backupData: any): Promise<void> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/restore', {
+        const res = await fetch(getApiUrl('/api/restore'), {
           method: 'POST',
           headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           body: JSON.stringify(backupData)

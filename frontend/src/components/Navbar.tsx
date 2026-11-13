@@ -10,7 +10,8 @@ import {
   Upload,
   User as UserIcon,
   LogOut,
-  LogIn
+  LogIn,
+  Server
 } from 'lucide-react';
 import { ActiveTab, UserProfile } from '../types';
 
@@ -20,6 +21,8 @@ interface NavbarProps {
   streakDays: number;
   completedTodayCount: number;
   user: UserProfile | null;
+  isServerOnline: boolean;
+  onOpenServerModal: () => void;
   onOpenAuthModal: () => void;
   onLogout: () => void;
   onOpenNewGoalModal: () => void;
@@ -33,6 +36,8 @@ export const Navbar: React.FC<NavbarProps> = ({
   streakDays,
   completedTodayCount,
   user,
+  isServerOnline,
+  onOpenServerModal,
   onOpenAuthModal,
   onLogout,
   onOpenNewGoalModal,
@@ -152,6 +157,21 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="hidden"
                 onChange={handleFileChange}
               />
+
+              <button
+                onClick={onOpenServerModal}
+                title="Cloud Backend / Render Connection"
+                className={`p-1.5 rounded-lg border transition text-xs flex items-center gap-1.5 ${
+                  isServerOnline
+                    ? 'bg-emerald-950/40 border-emerald-500/30 text-emerald-400 hover:bg-emerald-900/40'
+                    : 'bg-slate-950 hover:bg-slate-800 border-slate-800 text-slate-400 hover:text-white'
+                }`}
+              >
+                <Server className="w-3.5 h-3.5" />
+                <span className="hidden xl:inline text-[11px]">
+                  {isServerOnline ? 'Cloud DB Active' : 'Local / Offline'}
+                </span>
+              </button>
             </div>
 
             {/* User Profile / Auth Button */}
