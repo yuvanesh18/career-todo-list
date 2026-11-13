@@ -1,16 +1,12 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import {
   Target,
   CalendarCheck,
   Flame,
   CheckCircle2,
   Layers,
-  Download,
-  Upload,
   LogOut,
-  LogIn,
-  Server,
-  Cloud
+  LogIn
 } from 'lucide-react';
 import { ActiveTab, UserProfile } from '../types';
 
@@ -21,11 +17,8 @@ interface NavbarProps {
   completedTodayCount: number;
   user: UserProfile | null;
   isServerOnline: boolean;
-  onOpenServerModal: () => void;
   onOpenAuthModal: () => void;
   onLogout: () => void;
-  onExportBackup: () => void;
-  onImportBackup: (jsonContent: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
@@ -35,26 +28,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   completedTodayCount,
   user,
   isServerOnline,
-  onOpenServerModal,
   onOpenAuthModal,
-  onLogout,
-  onExportBackup,
-  onImportBackup
+  onLogout
 }) => {
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      const text = event.target?.result as string;
-      if (text) onImportBackup(text);
-    };
-    reader.readAsText(file);
-    e.target.value = '';
-  };
-
   return (
     <header className="border-b border-slate-200 bg-white/95 backdrop-blur-md sticky top-0 z-30 shadow-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -69,7 +45,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 CareerPulse
               </span>
               <p className="text-[11px] text-slate-500 hidden sm:block font-medium">
-                169 DSA Grind & Goal Tracker
+                169 DSA Grind & Career Roadmap
               </p>
             </div>
           </div>
@@ -102,6 +78,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Right Metrics & Session Actions */}
           <div className="flex items-center gap-2">
+            {/* Live Server Indicator */}
+            <div
+              title={isServerOnline ? 'Live Render Backend & Supabase Connected' : 'Connecting to Render Backend...'}
+              className="hidden lg:flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-slate-50 border border-slate-200 text-slate-600"
+            >
+              <span className={`w-2 h-2 rounded-full ${isServerOnline ? 'bg-emerald-500 animate-pulse' : 'bg-amber-400'}`} />
+              <span>{isServerOnline ? 'Cloud DB Active' : 'Connecting...'}</span>
+            </div>
+
             {/* Streak Counter */}
             <div
               title={`${streakDays} consecutive active days`}
@@ -122,54 +107,6 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               <CheckCircle2 className={`w-3.5 h-3.5 ${completedTodayCount > 0 ? 'text-emerald-600' : 'text-slate-400'}`} />
               <span>{completedTodayCount} Done Today</span>
-            </div>
-
-            {/* Cloud Server / Render Status */}
-            <button
-              onClick={onOpenServerModal}
-              title="Click to configure Cloud Backend (Render + Supabase)"
-              className={`p-1.5 px-2.5 rounded-xl border text-xs font-semibold transition-all flex items-center gap-1.5 shadow-xs ${
-                isServerOnline
-                  ? 'bg-emerald-50 border-emerald-200 text-emerald-700 hover:bg-emerald-100'
-                  : 'bg-slate-50 border-slate-200 text-slate-600 hover:bg-slate-100'
-              }`}
-            >
-              {isServerOnline ? (
-                <>
-                  <Cloud className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="hidden xl:inline text-[11px]">Cloud DB Active</span>
-                </>
-              ) : (
-                <>
-                  <Server className="w-3.5 h-3.5 text-slate-500" />
-                  <span className="hidden xl:inline text-[11px]">Local / Offline</span>
-                </>
-              )}
-            </button>
-
-            {/* Quick Data Backup Tools */}
-            <div className="hidden lg:flex items-center border-l border-slate-200 pl-2 gap-1">
-              <button
-                onClick={onExportBackup}
-                title="Backup Data to JSON file"
-                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition text-xs"
-              >
-                <Download className="w-3.5 h-3.5" />
-              </button>
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                title="Restore from JSON file"
-                className="p-1.5 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition text-xs"
-              >
-                <Upload className="w-3.5 h-3.5" />
-              </button>
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept=".json"
-                className="hidden"
-                onChange={handleFileChange}
-              />
             </div>
 
             {/* User Session / Account */}
