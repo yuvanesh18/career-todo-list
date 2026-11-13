@@ -12,6 +12,47 @@ import {
   UserProfile
 } from '../types.js';
 
+function getLocalDateString(d: Date = new Date()): string {
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function calculateStreak(completedDatesList: (string | null | undefined)[]): number {
+  const validDates = new Set(
+    completedDatesList.filter((d): d is string => typeof d === 'string' && d.length === 10)
+  );
+
+  const todayStr = getLocalDateString(new Date());
+  const yesterday = new Date();
+  yesterday.setDate(yesterday.getDate() - 1);
+  const yesterdayStr = getLocalDateString(yesterday);
+
+  let streak = 0;
+  let checkDate: Date;
+
+  if (validDates.has(todayStr)) {
+    checkDate = new Date();
+  } else if (validDates.has(yesterdayStr)) {
+    checkDate = yesterday;
+  } else {
+    return 0;
+  }
+
+  while (true) {
+    const dStr = getLocalDateString(checkDate);
+    if (validDates.has(dStr)) {
+      streak++;
+      checkDate = new Date(checkDate.getFullYear(), checkDate.getMonth(), checkDate.getDate() - 1);
+    } else {
+      break;
+    }
+  }
+
+  return streak;
+}
+
 export class TaskService {
   // --- AUTHENTICATION ---
   public async register(name: string, email: string, password: string): Promise<AuthResponse> {
@@ -217,7 +258,7 @@ export class TaskService {
     goals.forEach(g => goalMap.set(g.id, g.title));
 
     const userTasks = await this.getTasks(userId);
-    const todayStr = new Date().toISOString().split('T')[0];
+    const todayStr = getLocalDateString(new Date());
 
     const totalTasks = userTasks.length;
     const completedTasksTotal = userTasks.filter(t => t.completed).length;
@@ -262,23 +303,8 @@ export class TaskService {
       };
     });
 
-    // Consecutive streak days
-    const completedDates = Array.from(new Set(userTasks.filter(t => t.completed && t.completedDate).map(t => t.completedDate!))).sort().reverse();
-    let streakDays = 0;
-    const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-
-    if (completedDates.includes(todayStr) || completedDates.includes(yesterdayStr)) {
-      let checkDate = completedDates.includes(todayStr) ? new Date() : new Date(Date.now() - 86400000);
-      while (true) {
-        const dKey = checkDate.toISOString().split('T')[0];
-        if (completedDates.includes(dKey)) {
-          streakDays++;
-          checkDate = new Date(checkDate.getTime() - 86400000);
-        } else {
-          break;
-        }
-      }
-    }
+    // Consecutive streak days monitored by local calendar
+    const streakDays = calculateStreak(userTasks.filter(t => t.completed).map(t => t.completedDate));
 
     const recentActivity = await this.getDailyActivity(userId);
 

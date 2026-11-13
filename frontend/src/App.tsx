@@ -1,16 +1,18 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useMemo } from 'react';
 import { api } from './services/api';
 import { ActiveTab, DailyGroupedActivity, Goal, OverallSummary, Task, UserProfile } from './types';
 import { Navbar } from './components/Navbar';
 import { GoalDetailView } from './components/GoalDetailView';
 import { DailyActivityView } from './components/DailyActivityView';
-import { NewGoalModal } from './components/NewGoalModal';
 import { AuthModal } from './components/AuthModal';
 import { ServerModal } from './components/ServerModal';
+import { LoginPage } from './components/LoginPage';
+import { calculateStreak, getLocalDateString } from './utils/dateUtils';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('goals');
   const [user, setUser] = useState<UserProfile | null>(() => api.getCurrentUser());
+  const [isGuest, setIsGuest] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isServerModalOpen, setIsServerModalOpen] = useState(false);
   const [isServerOnline, setIsServerOnline] = useState(false);
@@ -19,7 +21,6 @@ export const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [summary, setSummary] = useState<OverallSummary | null>(null);
   const [activityList, setActivityList] = useState<DailyGroupedActivity[]>([]);
-  const [isNewGoalModalOpen, setIsNewGoalModalOpen] = useState(false);
 
   const loadData = useCallback(async () => {
     const online = await api.checkServer();
@@ -56,20 +57,16 @@ export const App: React.FC = () => {
     loadData();
   };
 
-  const handleCreateGoal = async (goalData: Partial<Goal>) => {
-    const newGoal = await api.createGoal(goalData);
-    setSelectedGoalId(newGoal.id);
-    loadData();
-  };
-
   const handleAuthSuccess = (authenticatedUser: UserProfile) => {
     setUser(authenticatedUser);
+    setIsGuest(false);
     loadData();
   };
 
   const handleLogout = () => {
     api.logout();
     setUser(null);
+    setIsGuest(false);
     loadData();
   };
 
@@ -80,7 +77,8 @@ export const App: React.FC = () => {
     const a = document.createElement('a');
     a.href = url;
     const namePrefix = user ? `${user.name.toLowerCase().replace(/\s+/g, '_')}_` : '';
-    a.download = `career_pulse_${namePrefix}db_backup_${new Date().toISOString().split('T')[0]}.json`;
+    const dateStr = getLocalDateString(new Date());
+    a.download = `career_pulse_${namePrefix}db_backup_${dateStr}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -96,26 +94,46 @@ export const App: React.FC = () => {
     }
   };
 
+  // Accurate local calendar streak & today's count calculated directly from tasks state
+  const todayStr = useMemo(() => getLocalDateString(new Date()), []);
+  const accurateStreak = useMemo(() => {
+    const completedDates = tasks.filter(t => t.completed && t.completedDate).map(t => t.completedDate);
+    return calculateStreak(completedDates);
+  }, [tasks]);
+
+  const completedTodayCount = useMemo(() => {
+    return tasks.filter(t => t.completed && t.completedDate === todayStr).length;
+  }, [tasks, todayStr]);
+
+  // If user is not logged in and hasn't chosen to explore as guest, show the dedicated LoginPage
+  if (!user && !isGuest) {
+    return (
+      <LoginPage
+        onLoginSuccess={handleAuthSuccess}
+        onContinueGuest={() => setIsGuest(true)}
+      />
+    );
+  }
+
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-800 flex flex-col font-sans selection:bg-indigo-600 selection:text-white">
       {/* Top Navbar */}
       <Navbar
         activeTab={activeTab}
         onTabChange={setActiveTab}
-        streakDays={summary?.streakDays || 0}
-        completedTodayCount={summary?.completedTodayCount || 0}
+        streakDays={accurateStreak}
+        completedTodayCount={completedTodayCount}
         user={user}
         isServerOnline={isServerOnline}
         onOpenServerModal={() => setIsServerModalOpen(true)}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onLogout={handleLogout}
-        onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
         onExportBackup={handleExportBackup}
         onImportBackup={handleImportBackup}
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6">
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-8">
         {activeTab === 'goals' && (
           <GoalDetailView
             goals={goals}
@@ -124,14 +142,13 @@ export const App: React.FC = () => {
             tasks={tasks}
             onToggleTask={handleToggleTask}
             onDeleteTask={handleDeleteTask}
-            onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
           />
         )}
 
         {activeTab === 'daily-tracker' && (
           <DailyActivityView
             activityList={activityList}
-            streakDays={summary?.streakDays || 0}
+            streakDays={accurateStreak}
           />
         )}
       </main>
@@ -143,22 +160,15 @@ export const App: React.FC = () => {
         onServerConfigured={loadData}
       />
 
-      {/* Auth Modal (Login & Register) */}
+      {/* Auth Modal (For in-dashboard quick sign in / register) */}
       <AuthModal
         isOpen={isAuthModalOpen}
         onClose={() => setIsAuthModalOpen(false)}
         onAuthSuccess={handleAuthSuccess}
       />
 
-      {/* Create New Goal Modal */}
-      <NewGoalModal
-        isOpen={isNewGoalModalOpen}
-        onClose={() => setIsNewGoalModalOpen(false)}
-        onCreateGoal={handleCreateGoal}
-      />
-
       {/* Footer */}
-      <footer className="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
+      <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
         <p>CareerPulse • Master DSA (Grind 169) & Multi-Goal Daily Progress Tracker</p>
       </footer>
     </div>
