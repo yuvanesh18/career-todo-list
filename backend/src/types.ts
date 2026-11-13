@@ -1,57 +1,61 @@
-export type GoalStatus = 'Active' | 'Completed' | 'On Hold';
+export type Difficulty = 'Easy' | 'Medium' | 'Hard';
 
 export interface Goal {
   id: string;
   title: string;
   description: string;
-  targetMonths: number; // e.g. 1, 2, 3, 6 months
-  startDate: string; // YYYY-MM-DD
-  targetEndDate: string; // YYYY-MM-DD
-  status: GoalStatus;
   category: string;
+  icon?: string;
   createdAt: string;
 }
 
 export interface Task {
   id: string;
-  goalId?: string | null;
+  goalId: string;
   title: string;
-  description?: string;
+  topic: string; // e.g. "Array", "Stack", "Linked List", "Networking"
+  difficulty?: Difficulty;
+  url?: string; // e.g. LeetCode link
+  duration?: number; // estimated minutes
   completed: boolean;
-  dueDate: string | null; // YYYY-MM-DD
-  estimatedHours: number;
-  actualHours: number;
-  priority: 'Low' | 'Medium' | 'High';
+  completedAt: string | null; // ISO timestamp
+  completedDate: string | null; // YYYY-MM-DD
   createdAt: string;
-  completedAt: string | null;
 }
 
-export interface DailyLog {
-  id: string;
+export interface DailyActivityItem {
+  taskId: string;
+  taskTitle: string;
+  goalId: string;
+  goalTitle: string;
+  topic: string;
+  difficulty?: Difficulty;
+  url?: string;
+  completedAt: string;
+}
+
+export interface DailyGroupedActivity {
   date: string; // YYYY-MM-DD
-  goalId?: string | null;
-  statusSummary: string; // What did I do today?
-  hoursSpent: number;
-  energyLevel: 'High' | 'Medium' | 'Low';
-  createdAt: string;
+  count: number;
+  items: DailyActivityItem[];
 }
 
-export interface AppStateData {
-  goals: Goal[];
-  tasks: Task[];
-  dailyLogs: DailyLog[];
+export interface GoalStats {
+  goalId: string;
+  goalTitle: string;
+  totalTasks: number;
+  completedTasks: number;
+  percent: number;
+  byTopic: Record<string, { total: number; completed: number }>;
 }
 
-export interface DashboardSummary {
-  activeGoal: Goal | null;
-  goalProgressPercent: number;
-  daysRemaining: number;
-  totalDays: number;
-  currentDayInGoal: number;
-  todayTasksTotal: number;
-  todayTasksCompleted: number;
-  todayLoggedStatus: boolean;
-  totalHoursSpent: number;
+export interface OverallSummary {
+  totalGoals: number;
+  totalTasks: number;
+  completedTasksTotal: number;
+  completedTodayCount: number;
+  todayCompletedItems: DailyActivityItem[];
+  recentDailyActivity: DailyGroupedActivity[];
   streakDays: number;
-  recentLogs: DailyLog[];
+  goalStats: GoalStats[];
 }

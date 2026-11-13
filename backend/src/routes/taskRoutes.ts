@@ -4,36 +4,34 @@ import {
   createTask,
   deleteGoal,
   deleteTask,
-  getDailyLogs,
-  getDashboard,
+  getDailyActivity,
   getGoals,
+  getSummary,
   getTasks,
-  recordDailyStatus,
   resetData,
+  toggleTask,
   updateGoal,
   updateTask
 } from '../controllers/taskController.js';
 
 const router = Router();
 
-// Dashboard Summary
-router.get('/dashboard', getDashboard);
+// Overall & Daily Tracking
+router.get('/summary', getSummary);
+router.get('/daily-activity', getDailyActivity);
 router.post('/seed', resetData);
 
-// Goals (Short-term goals in months)
+// Goals
 router.get('/goals', getGoals);
 router.post('/goals', createGoal);
 router.put('/goals/:id', updateGoal);
 router.delete('/goals/:id', deleteGoal);
 
-// Tasks (Daily to-do tasks linked to goals)
+// Tasks
 router.get('/tasks', getTasks);
 router.post('/tasks', createTask);
+router.post('/tasks/:id/toggle', toggleTask);
 router.put('/tasks/:id', updateTask);
 router.delete('/tasks/:id', deleteTask);
-
-// Daily Status Updates & Logs
-router.get('/daily-logs', getDailyLogs);
-router.post('/daily-logs', recordDailyStatus);
 
 export default router;

@@ -1,117 +1,33 @@
-import { DailyLog, DashboardSummary, Goal, Task } from '../types';
+import { DailyGroupedActivity, Goal, OverallSummary, Task } from '../types';
+import seedData from '../data/seed_data.json';
 
-const STORAGE_KEY = 'career_pulse_v2_state';
-
-const todayStr = new Date().toISOString().split('T')[0];
-const sixtyDaysLater = new Date(Date.now() + 86400000 * 60).toISOString().split('T')[0];
-const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-
-const DEFAULT_STATE = {
-  goals: [
-    {
-      id: 'goal-1',
-      title: 'Become Cloud & DevOps Job Ready',
-      description: 'Master Docker, Kubernetes, CI/CD with GitHub Actions, and complete 2 portfolio architectures.',
-      targetMonths: 2,
-      startDate: todayStr,
-      targetEndDate: sixtyDaysLater,
-      status: 'Active' as const,
-      category: 'Cloud & DevOps',
-      createdAt: new Date().toISOString()
-    }
-  ],
-  tasks: [
-    {
-      id: 'task-1',
-      goalId: 'goal-1',
-      title: 'Configure GitHub Actions CI/CD pipeline with automated tests',
-      description: 'Create multi-stage Docker build and test workflows.',
-      completed: true,
-      dueDate: todayStr,
-      estimatedHours: 2.5,
-      actualHours: 2.5,
-      priority: 'High' as const,
-      createdAt: new Date().toISOString(),
-      completedAt: new Date().toISOString()
-    },
-    {
-      id: 'task-2',
-      goalId: 'goal-1',
-      title: 'Study Docker multi-stage builds and Alpine container optimization',
-      description: 'Reduce final image footprint and run non-root security checks.',
-      completed: true,
-      dueDate: todayStr,
-      estimatedHours: 1.5,
-      actualHours: 1.5,
-      priority: 'High' as const,
-      createdAt: new Date().toISOString(),
-      completedAt: new Date().toISOString()
-    },
-    {
-      id: 'task-3',
-      goalId: 'goal-1',
-      title: 'Set up Kubernetes Minikube local cluster and deploy backend service',
-      description: 'Write Pod, Service, and Ingress YAML declarations.',
-      completed: false,
-      dueDate: new Date(Date.now() + 86400000).toISOString().split('T')[0],
-      estimatedHours: 3.0,
-      actualHours: 0,
-      priority: 'High' as const,
-      createdAt: new Date().toISOString(),
-      completedAt: null
-    },
-    {
-      id: 'task-4',
-      goalId: 'goal-1',
-      title: 'Practice 2 Medium LeetCode problems (Hashmap / Sliding Window)',
-      description: 'Maintain daily DSA problem solving habit.',
-      completed: false,
-      dueDate: todayStr,
-      estimatedHours: 1.0,
-      actualHours: 0,
-      priority: 'Medium' as const,
-      createdAt: new Date().toISOString(),
-      completedAt: null
-    }
-  ],
-  dailyLogs: [
-    {
-      id: 'log-1',
-      date: yesterdayStr,
-      goalId: 'goal-1',
-      statusSummary: 'Completed initial Dockerfile architecture and setup GitHub repo. Tested local builds.',
-      hoursSpent: 3.0,
-      energyLevel: 'High' as const,
-      createdAt: new Date(Date.now() - 86400000).toISOString()
-    }
-  ]
-};
+const STORAGE_KEY = 'career_pulse_goals_v3';
 
 let serverAvailable: boolean | null = null;
 
-const getLocalState = () => {
+const getLocalState = (): { goals: Goal[]; tasks: Task[] } => {
   try {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (!raw) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_STATE));
-      return JSON.parse(JSON.stringify(DEFAULT_STATE));
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(seedData));
+      return JSON.parse(JSON.stringify(seedData));
     }
     const parsed = JSON.parse(raw);
-    if (!parsed.goals || !parsed.tasks || !parsed.dailyLogs) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_STATE));
-      return JSON.parse(JSON.stringify(DEFAULT_STATE));
+    if (!parsed.goals || !parsed.tasks || parsed.tasks.length === 0) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(seedData));
+      return JSON.parse(JSON.stringify(seedData));
     }
     return parsed;
   } catch {
-    return JSON.parse(JSON.stringify(DEFAULT_STATE));
+    return JSON.parse(JSON.stringify(seedData));
   }
 };
 
-const saveLocalState = (state: any) => {
+const saveLocalState = (state: { goals: Goal[]; tasks: Task[] }) => {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-  } catch (e) {
-    console.error('LocalStorage save error:', e);
+  } catch (err) {
+    console.error('LocalStorage save error:', err);
   }
 };
 
@@ -120,7 +36,7 @@ export const api = {
     try {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), 1000);
-      const res = await fetch('/api/dashboard', { signal: controller.signal });
+      const res = await fetch('/api/summary', { signal: controller.signal });
       clearTimeout(timeout);
       serverAvailable = res.ok;
       return res.ok;
@@ -130,10 +46,10 @@ export const api = {
     }
   },
 
-  async getDashboard(): Promise<DashboardSummary> {
+  async getSummary(): Promise<OverallSummary> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/dashboard');
+        const res = await fetch('/api/summary');
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -145,52 +61,59 @@ export const api = {
 
     // Local calculation
     const state = getLocalState();
-    const activeGoal = state.goals.find((g: Goal) => g.status === 'Active') || state.goals[0] || null;
-    const today = new Date().toISOString().split('T')[0];
+    const todayStr = new Date().toISOString().split('T')[0];
+    const goalMap = new Map<string, string>();
+    state.goals.forEach(g => goalMap.set(g.id, g.title));
 
-    let daysRemaining = 0;
-    let totalDays = 30;
-    let currentDayInGoal = 1;
+    const totalTasks = state.tasks.length;
+    const completedTasksTotal = state.tasks.filter(t => t.completed).length;
 
-    if (activeGoal) {
-      const start = new Date(activeGoal.startDate).getTime();
-      const end = new Date(activeGoal.targetEndDate).getTime();
-      const now = new Date().getTime();
-      totalDays = Math.max(Math.ceil((end - start) / (1000 * 60 * 60 * 24)), 1);
-      const daysPassed = Math.max(Math.floor((now - start) / (1000 * 60 * 60 * 24)), 0);
-      daysRemaining = Math.max(Math.ceil((end - now) / (1000 * 60 * 60 * 24)), 0);
-      currentDayInGoal = Math.min(daysPassed + 1, totalDays);
-    }
+    const todayTasks = state.tasks.filter(t => t.completed && t.completedDate === todayStr);
+    const todayCompletedItems = todayTasks.map(t => ({
+      taskId: t.id,
+      taskTitle: t.title,
+      goalId: t.goalId,
+      goalTitle: goalMap.get(t.goalId) || 'Goal',
+      topic: t.topic,
+      difficulty: t.difficulty,
+      url: t.url,
+      completedAt: t.completedAt || todayStr
+    }));
 
-    const goalTasks = activeGoal ? state.tasks.filter((t: Task) => t.goalId === activeGoal.id) : state.tasks;
-    const completedGoalTasks = goalTasks.filter((t: Task) => t.completed).length;
-    const goalProgressPercent = goalTasks.length > 0 ? Math.round((completedGoalTasks / goalTasks.length) * 100) : 0;
+    const goalStats = state.goals.map(g => {
+      const tasks = state.tasks.filter(t => t.goalId === g.id);
+      const completed = tasks.filter(t => t.completed).length;
+      const percent = tasks.length > 0 ? Math.round((completed / tasks.length) * 100) : 0;
+      const byTopic: Record<string, { total: number; completed: number }> = {};
+      tasks.forEach(t => {
+        if (!byTopic[t.topic]) byTopic[t.topic] = { total: 0, completed: 0 };
+        byTopic[t.topic].total += 1;
+        if (t.completed) byTopic[t.topic].completed += 1;
+      });
+      return {
+        goalId: g.id,
+        goalTitle: g.title,
+        totalTasks: tasks.length,
+        completedTasks: completed,
+        percent,
+        byTopic
+      };
+    });
 
-    const todayTasks = state.tasks.filter((t: Task) => t.dueDate === today);
-    const todayTasksCompleted = todayTasks.filter((t: Task) => t.completed).length;
-    const todayLoggedStatus = state.dailyLogs.some((l: DailyLog) => l.date === today);
-
-    const totalHoursSpent = Number(
-      state.dailyLogs.reduce((acc: number, l: DailyLog) => acc + (l.hoursSpent || 0), 0) +
-      state.tasks.reduce((acc: number, t: Task) => acc + (t.actualHours || 0), 0)
-    ).toFixed(1);
+    const recentDailyActivity = await this.getDailyActivity();
 
     return {
-      activeGoal,
-      goalProgressPercent,
-      daysRemaining,
-      totalDays,
-      currentDayInGoal,
-      todayTasksTotal: todayTasks.length,
-      todayTasksCompleted,
-      todayLoggedStatus,
-      totalHoursSpent: Number(totalHoursSpent),
+      totalGoals: state.goals.length,
+      totalTasks,
+      completedTasksTotal,
+      completedTodayCount: todayTasks.length,
+      todayCompletedItems,
+      recentDailyActivity,
       streakDays: 3,
-      recentLogs: state.dailyLogs.slice(0, 7)
+      goalStats
     };
   },
 
-  // Goals
   async getGoals(): Promise<Goal[]> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
@@ -226,24 +149,17 @@ export const api = {
     const state = getLocalState();
     const newGoal: Goal = {
       id: `goal-${Date.now()}`,
-      title: data.title || 'New Short Term Goal',
+      title: data.title || 'Custom Goal',
       description: data.description || '',
-      targetMonths: data.targetMonths || 1,
-      startDate: data.startDate || new Date().toISOString().split('T')[0],
-      targetEndDate: data.targetEndDate || new Date(Date.now() + 86400000 * 30).toISOString().split('T')[0],
-      status: data.status || 'Active',
-      category: data.category || 'Career Growth',
+      category: data.category || 'General',
+      icon: data.icon || 'Target',
       createdAt: new Date().toISOString()
     };
-    if (newGoal.status === 'Active') {
-      state.goals.forEach((g: Goal) => { g.status = 'On Hold'; });
-    }
-    state.goals.unshift(newGoal);
+    state.goals.push(newGoal);
     saveLocalState(state);
     return newGoal;
   },
 
-  // Tasks
   async getTasks(goalId?: string): Promise<Task[]> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
@@ -259,9 +175,44 @@ export const api = {
     }
 
     const state = getLocalState();
-    let tasks = state.tasks;
-    if (goalId) tasks = tasks.filter((t: Task) => t.goalId === goalId);
-    return tasks;
+    if (goalId) {
+      return state.tasks.filter(t => t.goalId === goalId);
+    }
+    return state.tasks;
+  },
+
+  async toggleTask(id: string): Promise<Task> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch(`/api/tasks/${id}/toggle`, { method: 'POST' });
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+
+    const state = getLocalState();
+    const idx = state.tasks.findIndex(t => t.id === id);
+    if (idx === -1) throw new Error('Task not found');
+    const task = state.tasks[idx];
+    const now = new Date();
+    const todayStr = now.toISOString().split('T')[0];
+
+    if (!task.completed) {
+      task.completed = true;
+      task.completedAt = now.toISOString();
+      task.completedDate = todayStr;
+    } else {
+      task.completed = false;
+      task.completedAt = null;
+      task.completedDate = null;
+    }
+
+    saveLocalState(state);
+    return task;
   },
 
   async createTask(data: Partial<Task>): Promise<Task> {
@@ -282,57 +233,22 @@ export const api = {
     }
 
     const state = getLocalState();
-    const now = new Date().toISOString();
     const newTask: Task = {
       id: `task-${Date.now()}`,
-      goalId: data.goalId || null,
-      title: data.title || 'Untitled task',
-      description: data.description || '',
-      completed: Boolean(data.completed),
-      dueDate: data.dueDate || new Date().toISOString().split('T')[0],
-      estimatedHours: data.estimatedHours || 1,
-      actualHours: data.actualHours || 0,
-      priority: data.priority || 'Medium',
-      createdAt: now,
-      completedAt: data.completed ? now : null
+      goalId: data.goalId || 'goal-dsa',
+      title: data.title || 'New Task',
+      topic: data.topic || 'General',
+      difficulty: data.difficulty,
+      url: data.url,
+      duration: data.duration,
+      completed: false,
+      completedAt: null,
+      completedDate: null,
+      createdAt: new Date().toISOString()
     };
     state.tasks.unshift(newTask);
     saveLocalState(state);
     return newTask;
-  },
-
-  async updateTask(id: string, updates: Partial<Task>): Promise<Task> {
-    try {
-      if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch(`/api/tasks/${id}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(updates)
-        });
-        if (res.ok) {
-          const json = await res.json();
-          return json.data;
-        }
-      }
-    } catch {
-      serverAvailable = false;
-    }
-
-    const state = getLocalState();
-    const index = state.tasks.findIndex((t: Task) => t.id === id);
-    if (index === -1) throw new Error('Task not found');
-    const existing = state.tasks[index];
-    const now = new Date().toISOString();
-
-    let completedAt = existing.completedAt;
-    if (updates.completed !== undefined) {
-      completedAt = updates.completed ? now : null;
-    }
-
-    const updated = { ...existing, ...updates, completedAt };
-    state.tasks[index] = updated;
-    saveLocalState(state);
-    return updated;
   },
 
   async deleteTask(id: string): Promise<void> {
@@ -346,34 +262,14 @@ export const api = {
     }
 
     const state = getLocalState();
-    state.tasks = state.tasks.filter((t: Task) => t.id !== id);
+    state.tasks = state.tasks.filter(t => t.id !== id);
     saveLocalState(state);
   },
 
-  // Daily Logs / Status Updates
-  async getDailyLogs(): Promise<DailyLog[]> {
+  async getDailyActivity(): Promise<DailyGroupedActivity[]> {
     try {
       if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/daily-logs');
-        if (res.ok) {
-          const json = await res.json();
-          return json.data;
-        }
-      }
-    } catch {
-      serverAvailable = false;
-    }
-    return getLocalState().dailyLogs;
-  },
-
-  async recordDailyStatus(data: Partial<DailyLog>): Promise<DailyLog> {
-    try {
-      if (serverAvailable ?? (await this.checkServer())) {
-        const res = await fetch('/api/daily-logs', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(data)
-        });
+        const res = await fetch('/api/daily-activity');
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -384,31 +280,32 @@ export const api = {
     }
 
     const state = getLocalState();
-    const targetDate = data.date || new Date().toISOString().split('T')[0];
-    const existingIdx = state.dailyLogs.findIndex((l: DailyLog) => l.date === targetDate);
+    const goalMap = new Map<string, string>();
+    state.goals.forEach(g => goalMap.set(g.id, g.title));
 
-    if (existingIdx !== -1) {
-      state.dailyLogs[existingIdx] = {
-        ...state.dailyLogs[existingIdx],
-        statusSummary: data.statusSummary || '',
-        hoursSpent: data.hoursSpent || 1,
-        energyLevel: data.energyLevel || 'Medium'
-      };
-      saveLocalState(state);
-      return state.dailyLogs[existingIdx];
-    }
+    const completedTasks = state.tasks.filter(t => t.completed && t.completedDate);
+    const groups = new Map<string, any[]>();
 
-    const newLog: DailyLog = {
-      id: `log-${Date.now()}`,
-      date: targetDate,
-      goalId: data.goalId || null,
-      statusSummary: data.statusSummary || '',
-      hoursSpent: data.hoursSpent || 1,
-      energyLevel: data.energyLevel || 'Medium',
-      createdAt: new Date().toISOString()
-    };
-    state.dailyLogs.unshift(newLog);
-    saveLocalState(state);
-    return newLog;
+    completedTasks.forEach(t => {
+      const date = t.completedDate!;
+      if (!groups.has(date)) groups.set(date, []);
+      groups.get(date)!.push({
+        taskId: t.id,
+        taskTitle: t.title,
+        goalId: t.goalId,
+        goalTitle: goalMap.get(t.goalId) || 'Goal',
+        topic: t.topic,
+        difficulty: t.difficulty,
+        url: t.url,
+        completedAt: t.completedAt || date
+      });
+    });
+
+    const result: DailyGroupedActivity[] = [];
+    Array.from(groups.keys()).sort().reverse().forEach(date => {
+      const items = groups.get(date)!;
+      result.push({ date, count: items.length, items });
+    });
+    return result;
   }
 };

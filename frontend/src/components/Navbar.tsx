@@ -1,31 +1,29 @@
 import React from 'react';
-import { Sparkles, Flame, Clock, CheckCircle2, ListTodo, BookOpen, Target } from 'lucide-react';
-import { ViewTab } from '../types';
+import { Target, CalendarCheck, Flame, CheckCircle2, Plus, Sparkles, Layers } from 'lucide-react';
+import { ActiveTab } from '../types';
 
 interface NavbarProps {
-  currentTab: ViewTab;
-  onTabChange: (tab: ViewTab) => void;
+  activeTab: ActiveTab;
+  onTabChange: (tab: ActiveTab) => void;
   streakDays: number;
-  totalHours: number;
-  todayLogged: boolean;
-  onOpenStatusModal: () => void;
+  completedTodayCount: number;
+  onOpenNewGoalModal: () => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  currentTab,
+  activeTab,
   onTabChange,
   streakDays,
-  totalHours,
-  todayLogged,
-  onOpenStatusModal
+  completedTodayCount,
+  onOpenNewGoalModal
 }) => {
   return (
     <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 gap-4">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-400 p-0.5 shadow-md shadow-indigo-500/20 flex items-center justify-center">
+            <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-md shadow-indigo-500/20 flex items-center justify-center">
               <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
                 <Target className="w-4 h-4 text-indigo-400" />
               </div>
@@ -35,67 +33,61 @@ export const Navbar: React.FC<NavbarProps> = ({
                 CareerPulse
               </span>
               <p className="text-[10px] text-slate-400 hidden sm:block">
-                Short-Term Goals & Daily Progress Tracker
+                Multi-Goal & Daily Activity Tracker
               </p>
             </div>
           </div>
 
-          {/* Navigation Tabs */}
+          {/* Tab Switcher */}
           <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
             <button
-              onClick={() => onTabChange('tasks')}
+              onClick={() => onTabChange('goals')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
-                currentTab === 'tasks'
+                activeTab === 'goals'
                   ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <ListTodo className="w-3.5 h-3.5" />
-              <span>Daily To-Do</span>
+              <Layers className="w-3.5 h-3.5" />
+              <span>Goals & Tasks</span>
             </button>
             <button
-              onClick={() => onTabChange('journal')}
+              onClick={() => onTabChange('daily-tracker')}
               className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
-                currentTab === 'journal'
+                activeTab === 'daily-tracker'
                   ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
                   : 'text-slate-400 hover:text-white'
               }`}
             >
-              <BookOpen className="w-3.5 h-3.5" />
-              <span>Status Journal</span>
+              <CalendarCheck className="w-3.5 h-3.5" />
+              <span>Daily Activity Log</span>
             </button>
           </div>
 
-          {/* Quick Stats & Action */}
-          <div className="flex items-center gap-2.5">
+          {/* Quick Metrics & Action */}
+          <div className="flex items-center gap-3">
             <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-300 text-xs font-bold">
               <Flame className="w-3.5 h-3.5 text-orange-400" />
               <span>{streakDays}d Streak</span>
             </div>
 
-            <div className="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-slate-950 border border-slate-800 text-slate-300 text-xs font-medium">
-              <Clock className="w-3.5 h-3.5 text-indigo-400" />
-              <span>{totalHours}h Logged</span>
+            <div
+              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+                completedTodayCount > 0
+                  ? 'bg-emerald-950/50 border-emerald-500/30 text-emerald-300'
+                  : 'bg-slate-950 border-slate-800 text-slate-400'
+              }`}
+            >
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{completedTodayCount} Completed Today</span>
             </div>
 
             <button
-              onClick={onOpenStatusModal}
-              className={`px-3 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 ${
-                todayLogged
-                  ? 'bg-emerald-950/60 border border-emerald-500/30 text-emerald-300'
-                  : 'bg-indigo-600 hover:bg-indigo-500 text-white shadow-md shadow-indigo-600/20'
-              }`}
+              onClick={onOpenNewGoalModal}
+              className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition flex items-center gap-1 shadow-md shadow-indigo-600/25"
             >
-              {todayLogged ? (
-                <>
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="hidden md:inline">Today Logged</span>
-                </>
-              ) : (
-                <>
-                  <span>+ Log Status</span>
-                </>
-              )}
+              <Plus className="w-3.5 h-3.5" />
+              <span className="hidden sm:inline">New Goal</span>
             </button>
           </div>
         </div>

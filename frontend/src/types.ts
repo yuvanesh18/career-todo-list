@@ -1,53 +1,63 @@
-export type GoalStatus = 'Active' | 'Completed' | 'On Hold';
+export type Difficulty = 'Easy' | 'Medium' | 'Hard';
 
 export interface Goal {
   id: string;
   title: string;
   description: string;
-  targetMonths: number;
-  startDate: string; // YYYY-MM-DD
-  targetEndDate: string; // YYYY-MM-DD
-  status: GoalStatus;
   category: string;
+  icon?: string;
   createdAt: string;
 }
 
 export interface Task {
   id: string;
-  goalId?: string | null;
+  goalId: string;
   title: string;
-  description?: string;
+  topic: string;
+  difficulty?: Difficulty;
+  url?: string;
+  duration?: number;
   completed: boolean;
-  dueDate: string | null;
-  estimatedHours: number;
-  actualHours: number;
-  priority: 'Low' | 'Medium' | 'High';
-  createdAt: string;
   completedAt: string | null;
-}
-
-export interface DailyLog {
-  id: string;
-  date: string; // YYYY-MM-DD
-  goalId?: string | null;
-  statusSummary: string;
-  hoursSpent: number;
-  energyLevel: 'High' | 'Medium' | 'Low';
+  completedDate: string | null;
   createdAt: string;
 }
 
-export interface DashboardSummary {
-  activeGoal: Goal | null;
-  goalProgressPercent: number;
-  daysRemaining: number;
-  totalDays: number;
-  currentDayInGoal: number;
-  todayTasksTotal: number;
-  todayTasksCompleted: number;
-  todayLoggedStatus: boolean;
-  totalHoursSpent: number;
-  streakDays: number;
-  recentLogs: DailyLog[];
+export interface DailyActivityItem {
+  taskId: string;
+  taskTitle: string;
+  goalId: string;
+  goalTitle: string;
+  topic: string;
+  difficulty?: Difficulty;
+  url?: string;
+  completedAt: string;
 }
 
-export type ViewTab = 'tasks' | 'journal' | 'goals';
+export interface DailyGroupedActivity {
+  date: string;
+  count: number;
+  items: DailyActivityItem[];
+}
+
+export interface GoalStats {
+  goalId: string;
+  goalTitle: string;
+  totalTasks: number;
+  completedTasks: number;
+  percent: number;
+  byTopic: Record<string, { total: number; completed: number }>;
+}
+
+export interface OverallSummary {
+  totalGoals: number;
+  totalTasks: number;
+  completedTasksTotal: number;
+  completedTodayCount: number;
+  todayCompletedItems: DailyActivityItem[];
+  recentDailyActivity: DailyGroupedActivity[];
+  streakDays: number;
+  goalStats: GoalStats[];
+}
+
+export type ActiveTab = 'goals' | 'daily-tracker';

@@ -1,5 +1,12 @@
 import { db } from '../db.js';
-import { AppStateData, DailyLog, DashboardSummary, Goal, Task } from '../types.js';
+import {
+  DailyActivityItem,
+  DailyGroupedActivity,
+  Goal,
+  GoalStats,
+  OverallSummary,
+  Task
+} from '../types.js';
 
 export class TaskService {
   // --- GOALS ---
@@ -7,87 +14,96 @@ export class TaskService {
     return db.getState().goals;
   }
 
-  public getActiveGoal(): Goal | null {
-    const goals = this.getGoals();
-    return goals.find(g => g.status === 'Active') || goals[0] || null;
+  public getGoalById(id: string): Goal | null {
+    return db.getState().goals.find(g => g.id === id) || null;
   }
 
   public createGoal(data: Omit<Goal, 'id' | 'createdAt'>): Goal {
     const state = db.getState();
     const newGoal: Goal = {
-      id: `goal-${Date.now()}`,
+      id: `goal-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
       title: data.title.trim(),
       description: data.description || '',
-      targetMonths: Number(data.targetMonths) || 1,
-      startDate: data.startDate || new Date().toISOString().split('T')[0],
-      targetEndDate: data.targetEndDate,
-      status: data.status || 'Active',
-      category: data.category || 'Career Growth',
+      category: data.category || 'Career',
+      icon: data.icon || 'Target',
       createdAt: new Date().toISOString()
     };
-
-    // If marked active, set other goals to On Hold
-    if (newGoal.status === 'Active') {
-      state.goals.forEach(g => {
-        g.status = 'On Hold';
-      });
-    }
-
-    state.goals.unshift(newGoal);
+    state.goals.push(newGoal);
     db.setState(state);
     return newGoal;
   }
 
   public updateGoal(id: string, updates: Partial<Goal>): Goal | null {
     const state = db.getState();
-    const index = state.goals.findIndex(g => g.id === id);
-    if (index === -1) return null;
+    const idx = state.goals.findIndex(g => g.id === id);
+    if (idx === -1) return null;
 
-    if (updates.status === 'Active') {
-      state.goals.forEach(g => {
-        if (g.id !== id) g.status = 'On Hold';
-      });
-    }
-
-    state.goals[index] = { ...state.goals[index], ...updates };
+    state.goals[idx] = { ...state.goals[idx], ...updates };
     db.setState(state);
-    return state.goals[index];
+    return state.goals[idx];
   }
 
   public deleteGoal(id: string): boolean {
     const state = db.getState();
-    const initialLen = state.goals.length;
+    const initLen = state.goals.length;
     state.goals = state.goals.filter(g => g.id !== id);
-    if (state.goals.length === initialLen) return false;
+    if (state.goals.length === initLen) return false;
+
+    // Remove associated tasks
+    state.tasks = state.tasks.filter(t => t.goalId !== id);
     db.setState(state);
     return true;
   }
 
   // --- TASKS ---
-  public getTasks(goalId?: string): Task[] {
-    const state = db.getState();
-    let tasks = [...state.tasks];
-    if (goalId) {
-      tasks = tasks.filter(t => t.goalId === goalId);
+  public getTasks(filters: {
+    goalId?: string;
+    topic?: string;
+    completed?: boolean;
+    search?: string;
+  } = {}): Task[] {
+    let tasks = db.getState().tasks;
+
+    if (filters.goalId) {
+      tasks = tasks.filter(t => t.goalId === filters.goalId);
     }
-    return tasks.sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+
+    if (filters.topic) {
+      tasks = tasks.filter(t => t.topic.toLowerCase() === filters.topic!.toLowerCase());
+    }
+
+    if (filters.completed !== undefined) {
+      tasks = tasks.filter(t => t.completed === filters.completed);
+    }
+
+    if (filters.search) {
+      const q = filters.search.toLowerCase();
+      tasks = tasks.filter(t =>
+        t.title.toLowerCase().includes(q) ||
+        t.topic.toLowerCase().includes(q)
+      );
+    }
+
+    return tasks;
   }
 
-  public createTask(data: Omit<Task, 'id' | 'createdAt' | 'completedAt'> & { id?: string }): Task {
+  public createTask(data: Omit<Task, 'id' | 'createdAt' | 'completedAt' | 'completedDate'> & { id?: string }): Task {
     const state = db.getState();
-    const now = new Date().toISOString();
+    const now = new Date();
+    const todayStr = now.toISOString().split('T')[0];
+
     const newTask: Task = {
-      id: data.id || `task-${Date.now()}`,
-      goalId: data.goalId || null,
+      id: data.id || `task-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      goalId: data.goalId,
       title: data.title.trim(),
-      description: data.description || '',
+      topic: data.topic?.trim() || 'General',
+      difficulty: data.difficulty,
+      url: data.url || undefined,
+      duration: data.duration,
       completed: Boolean(data.completed),
-      dueDate: data.dueDate || null,
-      estimatedHours: Number(data.estimatedHours) || 1,
-      actualHours: Number(data.actualHours) || 0,
-      priority: data.priority || 'Medium',
-      createdAt: now,
-      completedAt: data.completed ? now : null
+      completedAt: data.completed ? now.toISOString() : null,
+      completedDate: data.completed ? todayStr : null,
+      createdAt: now.toISOString()
     };
 
     state.tasks.unshift(newTask);
@@ -95,145 +111,172 @@ export class TaskService {
     return newTask;
   }
 
+  public toggleTask(id: string): Task | null {
+    const state = db.getState();
+    const idx = state.tasks.findIndex(t => t.id === id);
+    if (idx === -1) return null;
+
+    const task = state.tasks[idx];
+    const now = new Date();
+    const todayStr = now.toISOString().split('T')[0];
+
+    if (!task.completed) {
+      task.completed = true;
+      task.completedAt = now.toISOString();
+      task.completedDate = todayStr;
+    } else {
+      task.completed = false;
+      task.completedAt = null;
+      task.completedDate = null;
+    }
+
+    db.setState(state);
+    return task;
+  }
+
   public updateTask(id: string, updates: Partial<Task>): Task | null {
     const state = db.getState();
-    const index = state.tasks.findIndex(t => t.id === id);
-    if (index === -1) return null;
+    const idx = state.tasks.findIndex(t => t.id === id);
+    if (idx === -1) return null;
 
-    const existing = state.tasks[index];
-    const now = new Date().toISOString();
+    const task = state.tasks[idx];
+    const now = new Date();
+    const todayStr = now.toISOString().split('T')[0];
 
-    let completedAt = existing.completedAt;
+    let completedAt = task.completedAt;
+    let completedDate = task.completedDate;
+
     if (updates.completed !== undefined) {
-      if (updates.completed && !existing.completed) {
-        completedAt = now;
+      if (updates.completed && !task.completed) {
+        completedAt = now.toISOString();
+        completedDate = todayStr;
       } else if (!updates.completed) {
         completedAt = null;
+        completedDate = null;
       }
     }
 
-    const updated: Task = {
-      ...existing,
+    state.tasks[idx] = {
+      ...task,
       ...updates,
-      completedAt
+      completedAt,
+      completedDate
     };
 
-    state.tasks[index] = updated;
     db.setState(state);
-    return updated;
+    return state.tasks[idx];
   }
 
   public deleteTask(id: string): boolean {
     const state = db.getState();
-    const initialLen = state.tasks.length;
+    const initLen = state.tasks.length;
     state.tasks = state.tasks.filter(t => t.id !== id);
-    if (state.tasks.length === initialLen) return false;
+    if (state.tasks.length === initLen) return false;
     db.setState(state);
     return true;
   }
 
-  // --- DAILY LOGS & STATUS UPDATES ---
-  public getDailyLogs(): DailyLog[] {
+  // --- DAILY TRACKING & ANALYTICS ---
+  public getDailyActivity(): DailyGroupedActivity[] {
     const state = db.getState();
-    return [...state.dailyLogs].sort((a, b) => b.date.localeCompare(a.date));
-  }
+    const goalMap = new Map<string, string>();
+    state.goals.forEach(g => goalMap.set(g.id, g.title));
 
-  public recordDailyStatus(data: Omit<DailyLog, 'id' | 'createdAt'>): DailyLog {
-    const state = db.getState();
-    const targetDate = data.date || new Date().toISOString().split('T')[0];
+    // Filter only completed tasks that have a completedDate
+    const completedTasks = state.tasks.filter(t => t.completed && t.completedDate);
 
-    // Check if a log for this date already exists; update it or create new
-    const existingIndex = state.dailyLogs.findIndex(l => l.date === targetDate);
-    const now = new Date().toISOString();
+    // Group by date
+    const groups = new Map<string, DailyActivityItem[]>();
 
-    if (existingIndex !== -1) {
-      state.dailyLogs[existingIndex] = {
-        ...state.dailyLogs[existingIndex],
-        statusSummary: data.statusSummary,
-        hoursSpent: Number(data.hoursSpent) || 0,
-        energyLevel: data.energyLevel || 'Medium',
-        goalId: data.goalId || state.dailyLogs[existingIndex].goalId
-      };
-      db.setState(state);
-      return state.dailyLogs[existingIndex];
-    }
-
-    const newLog: DailyLog = {
-      id: `log-${Date.now()}`,
-      date: targetDate,
-      goalId: data.goalId || null,
-      statusSummary: data.statusSummary,
-      hoursSpent: Number(data.hoursSpent) || 0,
-      energyLevel: data.energyLevel || 'Medium',
-      createdAt: now
-    };
-
-    state.dailyLogs.unshift(newLog);
-    db.setState(state);
-    return newLog;
-  }
-
-  // --- DASHBOARD SUMMARY ---
-  public getDashboard(): DashboardSummary {
-    const state = db.getState();
-    const activeGoal = this.getActiveGoal();
-    const todayStr = new Date().toISOString().split('T')[0];
-
-    // Goal time progress
-    let daysRemaining = 0;
-    let totalDays = 30;
-    let currentDayInGoal = 1;
-
-    if (activeGoal) {
-      const start = new Date(activeGoal.startDate).getTime();
-      const end = new Date(activeGoal.targetEndDate).getTime();
-      const now = new Date().getTime();
-
-      totalDays = Math.max(Math.ceil((end - start) / (1000 * 60 * 60 * 24)), 1);
-      const daysPassed = Math.max(Math.floor((now - start) / (1000 * 60 * 60 * 24)), 0);
-      daysRemaining = Math.max(Math.ceil((end - now) / (1000 * 60 * 60 * 24)), 0);
-      currentDayInGoal = Math.min(daysPassed + 1, totalDays);
-    }
-
-    // Goal tasks
-    const goalTasks = activeGoal ? state.tasks.filter(t => t.goalId === activeGoal.id) : state.tasks;
-    const completedGoalTasks = goalTasks.filter(t => t.completed).length;
-    const goalProgressPercent = goalTasks.length > 0
-      ? Math.round((completedGoalTasks / goalTasks.length) * 100)
-      : 0;
-
-    // Today's tasks
-    const todayTasks = state.tasks.filter(t => t.dueDate === todayStr);
-    const todayTasksCompleted = todayTasks.filter(t => t.completed).length;
-
-    // Today logged check
-    const todayLoggedStatus = state.dailyLogs.some(l => l.date === todayStr);
-
-    // Total hours
-    const totalHoursSpent = Number(
-      state.dailyLogs.reduce((acc, l) => acc + (l.hoursSpent || 0), 0) +
-      state.tasks.reduce((acc, t) => acc + (t.actualHours || 0), 0)
-    ).toFixed(1);
-
-    // Streak calculation (days with either task completed or daily log)
-    const activeDates = new Set<string>();
-    state.dailyLogs.forEach(l => activeDates.add(l.date));
-    state.tasks.filter(t => t.completed && t.completedAt).forEach(t => {
-      activeDates.add(t.completedAt!.split('T')[0]);
+    completedTasks.forEach(t => {
+      const date = t.completedDate!;
+      if (!groups.has(date)) {
+        groups.set(date, []);
+      }
+      groups.get(date)!.push({
+        taskId: t.id,
+        taskTitle: t.title,
+        goalId: t.goalId,
+        goalTitle: goalMap.get(t.goalId) || 'Unknown Goal',
+        topic: t.topic,
+        difficulty: t.difficulty,
+        url: t.url,
+        completedAt: t.completedAt || date
+      });
     });
 
-    const sortedDates = Array.from(activeDates).sort().reverse();
+    const result: DailyGroupedActivity[] = [];
+    Array.from(groups.keys()).sort().reverse().forEach(date => {
+      const items = groups.get(date)!;
+      result.push({
+        date,
+        count: items.length,
+        items
+      });
+    });
+
+    return result;
+  }
+
+  public getSummary(): OverallSummary {
+    const state = db.getState();
+    const todayStr = new Date().toISOString().split('T')[0];
+    const goalMap = new Map<string, string>();
+    state.goals.forEach(g => goalMap.set(g.id, g.title));
+
+    const totalTasks = state.tasks.length;
+    const completedTasksTotal = state.tasks.filter(t => t.completed).length;
+
+    // Today's completed tasks
+    const todayTasks = state.tasks.filter(t => t.completed && t.completedDate === todayStr);
+    const todayCompletedItems: DailyActivityItem[] = todayTasks.map(t => ({
+      taskId: t.id,
+      taskTitle: t.title,
+      goalId: t.goalId,
+      goalTitle: goalMap.get(t.goalId) || 'Goal',
+      topic: t.topic,
+      difficulty: t.difficulty,
+      url: t.url,
+      completedAt: t.completedAt || todayStr
+    }));
+
+    // Goal stats breakdown
+    const goalStats: GoalStats[] = state.goals.map(g => {
+      const tasks = state.tasks.filter(t => t.goalId === g.id);
+      const completed = tasks.filter(t => t.completed).length;
+      const percent = tasks.length > 0 ? Math.round((completed / tasks.length) * 100) : 0;
+
+      const byTopic: Record<string, { total: number; completed: number }> = {};
+      tasks.forEach(t => {
+        if (!byTopic[t.topic]) {
+          byTopic[t.topic] = { total: 0, completed: 0 };
+        }
+        byTopic[t.topic].total += 1;
+        if (t.completed) {
+          byTopic[t.topic].completed += 1;
+        }
+      });
+
+      return {
+        goalId: g.id,
+        goalTitle: g.title,
+        totalTasks: tasks.length,
+        completedTasks: completed,
+        percent,
+        byTopic
+      };
+    });
+
+    // Consecutive streak days with at least 1 completed task
+    const completedDates = Array.from(new Set(state.tasks.filter(t => t.completed && t.completedDate).map(t => t.completedDate!))).sort().reverse();
     let streakDays = 0;
     const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 
-    if (sortedDates.includes(todayStr) || sortedDates.includes(yesterdayStr)) {
-      let checkDate = sortedDates.includes(todayStr)
-        ? new Date()
-        : new Date(Date.now() - 86400000);
-
+    if (completedDates.includes(todayStr) || completedDates.includes(yesterdayStr)) {
+      let checkDate = completedDates.includes(todayStr) ? new Date() : new Date(Date.now() - 86400000);
       while (true) {
         const dKey = checkDate.toISOString().split('T')[0];
-        if (sortedDates.includes(dKey)) {
+        if (completedDates.includes(dKey)) {
           streakDays++;
           checkDate = new Date(checkDate.getTime() - 86400000);
         } else {
@@ -243,22 +286,19 @@ export class TaskService {
     }
 
     return {
-      activeGoal,
-      goalProgressPercent,
-      daysRemaining,
-      totalDays,
-      currentDayInGoal,
-      todayTasksTotal: todayTasks.length,
-      todayTasksCompleted,
-      todayLoggedStatus,
-      totalHoursSpent: Number(totalHoursSpent),
+      totalGoals: state.goals.length,
+      totalTasks,
+      completedTasksTotal,
+      completedTodayCount: todayTasks.length,
+      todayCompletedItems,
+      recentDailyActivity: this.getDailyActivity().slice(0, 7),
       streakDays,
-      recentLogs: state.dailyLogs.slice(0, 7)
+      goalStats
     };
   }
 
-  public resetSeed(): AppStateData {
-    return db.resetToDefault();
+  public resetSeed() {
+    return db.resetSeed();
   }
 }
 

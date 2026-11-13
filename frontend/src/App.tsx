@@ -1,51 +1,49 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { api } from './services/api';
-import { DailyLog, DashboardSummary, Goal, Task, ViewTab } from './types';
+import { ActiveTab, DailyGroupedActivity, Goal, OverallSummary, Task } from './types';
 import { Navbar } from './components/Navbar';
-import { GoalBanner } from './components/GoalBanner';
-import { DailyTodoList } from './components/DailyTodoList';
-import { DailyStatusTimeline } from './components/DailyStatusTimeline';
-import { DailyStatusModal } from './components/DailyStatusModal';
-import { GoalsModal } from './components/GoalsModal';
+import { GoalDetailView } from './components/GoalDetailView';
+import { DailyActivityView } from './components/DailyActivityView';
+import { NewGoalModal } from './components/NewGoalModal';
 
 export const App: React.FC = () => {
-  const [summary, setSummary] = useState<DashboardSummary | null>(null);
+  const [activeTab, setActiveTab] = useState<ActiveTab>('goals');
   const [goals, setGoals] = useState<Goal[]>([]);
+  const [selectedGoalId, setSelectedGoalId] = useState<string>('goal-dsa');
   const [tasks, setTasks] = useState<Task[]>([]);
-  const [dailyLogs, setDailyLogs] = useState<DailyLog[]>([]);
-  const [currentTab, setCurrentTab] = useState<ViewTab>('tasks');
-
-  // Modals
-  const [isStatusModalOpen, setIsStatusModalOpen] = useState(false);
-  const [isGoalsModalOpen, setIsGoalsModalOpen] = useState(false);
+  const [summary, setSummary] = useState<OverallSummary | null>(null);
+  const [activityList, setActivityList] = useState<DailyGroupedActivity[]>([]);
+  const [isNewGoalModalOpen, setIsNewGoalModalOpen] = useState(false);
 
   const loadData = useCallback(async () => {
-    const dash = await api.getDashboard();
-    setSummary(dash);
+    const fetchedGoals = await api.getGoals();
+    setGoals(fetchedGoals);
 
-    const allGoals = await api.getGoals();
-    setGoals(allGoals);
+    if (fetchedGoals.length > 0 && (!selectedGoalId || !fetchedGoals.some(g => g.id === selectedGoalId))) {
+      setSelectedGoalId(fetchedGoals[0].id);
+    }
 
-    const activeGoalId = dash.activeGoal?.id;
-    const allTasks = await api.getTasks(activeGoalId);
-    setTasks(allTasks);
+    const fetchedTasks = await api.getTasks();
+    setTasks(fetchedTasks);
 
-    const logs = await api.getDailyLogs();
-    setDailyLogs(logs);
-  }, []);
+    const fetchedSummary = await api.getSummary();
+    setSummary(fetchedSummary);
+
+    const fetchedActivity = await api.getDailyActivity();
+    setActivityList(fetchedActivity);
+  }, [selectedGoalId]);
 
   useEffect(() => {
     loadData();
   }, [loadData]);
 
-  // Task actions
-  const handleAddTask = async (taskData: Partial<Task>) => {
-    await api.createTask(taskData);
+  const handleToggleTask = async (id: string) => {
+    await api.toggleTask(id);
     loadData();
   };
 
-  const handleToggleTask = async (id: string, currentCompleted: boolean) => {
-    await api.updateTask(id, { completed: !currentCompleted });
+  const handleAddTask = async (taskData: Partial<Task>) => {
+    await api.createTask(taskData);
     loadData();
   };
 
@@ -54,89 +52,56 @@ export const App: React.FC = () => {
     loadData();
   };
 
-  // Status actions
-  const handleSaveStatus = async (logData: Partial<DailyLog>) => {
-    await api.recordDailyStatus(logData);
-    loadData();
-  };
-
-  // Goal actions
-  const handleSelectActiveGoal = async (goalId: string) => {
-    await api.createGoal({ id: goalId, status: 'Active' });
-    loadData();
-  };
-
   const handleCreateGoal = async (goalData: Partial<Goal>) => {
-    await api.createGoal(goalData);
+    const newGoal = await api.createGoal(goalData);
+    setSelectedGoalId(newGoal.id);
     loadData();
   };
-
-  const todayStr = new Date().toISOString().split('T')[0];
-  const existingTodayLog = dailyLogs.find(l => l.date === todayStr);
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex flex-col font-sans selection:bg-indigo-500 selection:text-white">
       {/* Top Navbar */}
       <Navbar
-        currentTab={currentTab}
-        onTabChange={setCurrentTab}
+        activeTab={activeTab}
+        onTabChange={setActiveTab}
         streakDays={summary?.streakDays || 0}
-        totalHours={summary?.totalHoursSpent || 0}
-        todayLogged={summary?.todayLoggedStatus || false}
-        onOpenStatusModal={() => setIsStatusModalOpen(true)}
+        completedTodayCount={summary?.completedTodayCount || 0}
+        onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
       />
 
       {/* Main Container */}
-      <main className="flex-1 max-w-5xl w-full mx-auto px-4 sm:px-6 py-6">
-        {/* Short-Term Goal Banner (Months Countdown & Status) */}
-        {summary && (
-          <GoalBanner
-            summary={summary}
-            onOpenStatusModal={() => setIsStatusModalOpen(true)}
-            onOpenGoalsModal={() => setIsGoalsModalOpen(true)}
-          />
-        )}
-
-        {/* Tab 1: Daily To-Do List */}
-        {currentTab === 'tasks' && (
-          <DailyTodoList
+      <main className="flex-1 max-w-6xl w-full mx-auto px-4 sm:px-6 py-6">
+        {activeTab === 'goals' && (
+          <GoalDetailView
+            goals={goals}
+            selectedGoalId={selectedGoalId}
+            onSelectGoal={setSelectedGoalId}
             tasks={tasks}
-            activeGoal={summary?.activeGoal || null}
-            onAddTask={handleAddTask}
             onToggleTask={handleToggleTask}
+            onAddTask={handleAddTask}
             onDeleteTask={handleDeleteTask}
+            onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
           />
         )}
 
-        {/* Tab 2: Daily Status Journal */}
-        {currentTab === 'journal' && (
-          <DailyStatusTimeline
-            logs={dailyLogs}
-            onOpenStatusModal={() => setIsStatusModalOpen(true)}
+        {activeTab === 'daily-tracker' && (
+          <DailyActivityView
+            activityList={activityList}
+            streakDays={summary?.streakDays || 0}
           />
         )}
       </main>
 
-      {/* Modals */}
-      <DailyStatusModal
-        isOpen={isStatusModalOpen}
-        onClose={() => setIsStatusModalOpen(false)}
-        activeGoal={summary?.activeGoal || null}
-        onSaveStatus={handleSaveStatus}
-        existingTodayLog={existingTodayLog}
-      />
-
-      <GoalsModal
-        isOpen={isGoalsModalOpen}
-        onClose={() => setIsGoalsModalOpen(false)}
-        goals={goals}
-        onSelectActiveGoal={handleSelectActiveGoal}
+      {/* Create New Goal Modal */}
+      <NewGoalModal
+        isOpen={isNewGoalModalOpen}
+        onClose={() => setIsNewGoalModalOpen(false)}
         onCreateGoal={handleCreateGoal}
       />
 
-      {/* Clean Footer */}
+      {/* Footer */}
       <footer className="border-t border-slate-900 py-6 text-center text-xs text-slate-500">
-        <p>CareerPulse • Short-Term Goal & Daily Status Tracker</p>
+        <p>CareerPulse • Master DSA (Grind 169) & Multi-Goal Daily Progress Tracker</p>
       </footer>
     </div>
   );
