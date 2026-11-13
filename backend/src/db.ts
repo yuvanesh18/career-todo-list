@@ -17,6 +17,13 @@ const TEMPLATE_SEED_FILE = path.join(__dirname, '..', 'seed_template', 'seed_dat
 
 export const DEFAULT_USER_ID = 'user-default';
 
+export function getLocalDateString(d: Date = new Date()): string {
+  const year = d.getFullYear();
+  const month = String(d.getMonth() + 1).padStart(2, '0');
+  const day = String(d.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
 export interface AppDatabaseState {
   users: User[];
   goals: Goal[];
@@ -58,7 +65,7 @@ export function createUserDataForUser(userId: string): { goals: Goal[]; tasks: T
     duration: t.duration,
     completed: Boolean(t.completed),
     completedAt: t.completed ? new Date().toISOString() : null,
-    completedDate: t.completed ? new Date().toISOString().split('T')[0] : null,
+    completedDate: t.completed ? getLocalDateString(new Date()) : null,
     createdAt: new Date().toISOString()
   }));
 
@@ -463,7 +470,7 @@ class Database {
 
       const isCompleted = checkRes.rows[0].completed;
       const now = new Date();
-      const todayStr = now.toISOString().split('T')[0];
+      const todayStr = getLocalDateString(now);
 
       const newCompleted = !isCompleted;
       const newCompletedAt = newCompleted ? now.toISOString() : null;
@@ -483,7 +490,7 @@ class Database {
     if (idx === -1) return null;
     const task = this.state.tasks[idx];
     const now = new Date();
-    const todayStr = now.toISOString().split('T')[0];
+    const todayStr = getLocalDateString(now);
 
     if (!task.completed) {
       task.completed = true;
@@ -515,7 +522,7 @@ class Database {
       if (updates.completed !== undefined) {
         if (updates.completed && !row.completed) {
           completedAt = now.toISOString();
-          completedDate = now.toISOString().split('T')[0];
+          completedDate = getLocalDateString(now);
         } else if (!updates.completed) {
           completedAt = null;
           completedDate = null;
@@ -561,7 +568,7 @@ class Database {
     if (updates.completed !== undefined) {
       if (updates.completed && !task.completed) {
         completedAt = now.toISOString();
-        completedDate = now.toISOString().split('T')[0];
+        completedDate = getLocalDateString(now);
       } else if (!updates.completed) {
         completedAt = null;
         completedDate = null;

@@ -7,10 +7,11 @@ import {
   ExternalLink,
   Flame,
   Award,
-  Clock,
-  Sparkles
+  Sparkles,
+  Check
 } from 'lucide-react';
-import { DailyGroupedActivity, DailyActivityItem } from '../types';
+import { DailyGroupedActivity } from '../types';
+import { getLocalDateString } from '../utils/dateUtils';
 
 interface DailyCalendarProps {
   activityList: DailyGroupedActivity[];
@@ -25,7 +26,7 @@ export const DailyCalendar: React.FC<DailyCalendarProps> = ({
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
   const [currentMonth, setCurrentMonth] = useState(today.getMonth()); // 0-indexed
 
-  const todayStr = today.toISOString().split('T')[0];
+  const todayStr = getLocalDateString(today);
   const [selectedDate, setSelectedDate] = useState<string>(todayStr);
 
   // Map of date string (YYYY-MM-DD) -> DailyGroupedActivity
@@ -57,7 +58,7 @@ export const DailyCalendar: React.FC<DailyCalendarProps> = ({
     setSelectedDate(todayStr);
   };
 
-  // Calculate calendar days
+  // Calculate calendar days in local month
   const firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay(); // 0 is Sunday
   const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
 
@@ -86,80 +87,77 @@ export const DailyCalendar: React.FC<DailyCalendarProps> = ({
     <div className="space-y-6">
       {/* Top Month Metrics Banner */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-sm flex items-center justify-between">
+        {/* Streak */}
+        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
               Active Streak
             </span>
-            <span className="text-2xl font-black text-orange-400 flex items-center gap-1.5 mt-0.5">
-              <Flame className="w-5 h-5 text-orange-500 animate-pulse" />
+            <span className="text-2xl font-black text-amber-600 flex items-center gap-1.5 mt-1">
+              <Flame className="w-5 h-5 text-amber-500" />
               {streakDays} Days
             </span>
           </div>
-          <span className="text-xs text-slate-500">Consecutive days active</span>
+          <span className="text-xs text-slate-400 font-medium">Local consecutive</span>
         </div>
 
-        <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-sm flex items-center justify-between">
+        {/* Active Days This Month */}
+        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
           <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
+              Active Days in {monthNames[currentMonth]}
+            </span>
+            <span className="text-2xl font-black text-indigo-600 flex items-center gap-1.5 mt-1">
+              <CalendarIcon className="w-5 h-5 text-indigo-500" />
+              {activeDaysThisMonth} Days
+            </span>
+          </div>
+          <span className="text-xs text-slate-400 font-medium">Recorded activity</span>
+        </div>
+
+        {/* Total Questions Solved This Month */}
+        <div className="p-5 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-between">
+          <div>
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500 block">
               Solved in {monthNames[currentMonth]}
             </span>
-            <span className="text-2xl font-black text-emerald-400 mt-0.5 block">
-              {problemsSolvedThisMonth} Tasks
+            <span className="text-2xl font-black text-emerald-600 flex items-center gap-1.5 mt-1">
+              <Award className="w-5 h-5 text-emerald-500" />
+              {problemsSolvedThisMonth} Solved
             </span>
           </div>
-          <span className="text-xs text-slate-500">{activeDaysThisMonth} active days</span>
-        </div>
-
-        <div className="p-4 rounded-2xl bg-slate-900 border border-slate-800 shadow-sm flex items-center justify-between">
-          <div>
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-              Total Solved All-Time
-            </span>
-            <span className="text-2xl font-black text-indigo-400 mt-0.5 block">
-              {activityList.reduce((acc, a) => acc + a.count, 0)} Tasks
-            </span>
-          </div>
-          <span className="text-xs text-slate-500">Across all goals</span>
+          <span className="text-xs text-slate-400 font-medium">DSA & Tasks</span>
         </div>
       </div>
 
       {/* Main Calendar Card */}
-      <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl">
-        {/* Calendar Month Navigation Header */}
-        <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
-          <div className="flex items-center gap-2">
-            <div className="p-2 rounded-xl bg-indigo-500/20 text-indigo-400 border border-indigo-500/30">
-              <CalendarIcon className="w-5 h-5" />
-            </div>
-            <div>
-              <h2 className="text-lg font-extrabold text-white">
-                {monthNames[currentMonth]} {currentYear}
-              </h2>
-              <p className="text-xs text-slate-400">
-                Click any day to see the exact questions & tasks you completed
-              </p>
-            </div>
-          </div>
-
-          <div className="flex items-center gap-2">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+        {/* Month Navigation Header */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-slate-100">
+          <div className="flex items-center gap-3">
+            <h2 className="text-xl font-black text-slate-900 tracking-tight">
+              {monthNames[currentMonth]} {currentYear}
+            </h2>
             <button
               onClick={handleGoToToday}
-              className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition"
+              className="text-xs px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold transition-colors"
             >
               Today
             </button>
+          </div>
+
+          <div className="flex items-center gap-1.5">
             <button
               onClick={handlePrevMonth}
               title="Previous Month"
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition"
+              className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 transition-colors"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={handleNextMonth}
               title="Next Month"
-              className="p-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white transition"
+              className="p-2 rounded-xl bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-600 hover:text-slate-900 transition-colors"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -167,191 +165,172 @@ export const DailyCalendar: React.FC<DailyCalendarProps> = ({
         </div>
 
         {/* Days of Week Header */}
-        <div className="grid grid-cols-7 gap-2 mb-2 text-center text-xs font-bold text-slate-500 uppercase tracking-wider">
-          <span>Sun</span>
-          <span>Mon</span>
-          <span>Tue</span>
-          <span>Wed</span>
-          <span>Thu</span>
-          <span>Fri</span>
-          <span>Sat</span>
+        <div className="grid grid-cols-7 gap-2 mt-4 text-center">
+          {['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].map(d => (
+            <div key={d} className="text-[11px] font-extrabold text-slate-400 uppercase tracking-wider py-1">
+              {d}
+            </div>
+          ))}
         </div>
 
         {/* Days Grid */}
-        <div className="grid grid-cols-7 gap-2">
-          {/* Empty prefix cells */}
-          {Array.from({ length: firstDayOfMonth }).map((_, i) => (
-            <div key={`empty-${i}`} className="h-20 sm:h-24 rounded-2xl bg-slate-950/20 border border-transparent" />
+        <div className="grid grid-cols-7 gap-2 mt-2">
+          {/* Empty padding slots before first day */}
+          {Array.from({ length: firstDayOfMonth }).map((_, idx) => (
+            <div
+              key={`empty-${idx}`}
+              className="h-20 sm:h-24 rounded-xl bg-slate-50/50 border border-dashed border-slate-200/60"
+            />
           ))}
 
-          {/* Month Day cells */}
-          {Array.from({ length: daysInMonth }).map((_, i) => {
-            const dayNum = i + 1;
-            const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
+          {/* Month days */}
+          {Array.from({ length: daysInMonth }).map((_, idx) => {
+            const dayNum = idx + 1;
+            const dayMonthStr = String(currentMonth + 1).padStart(2, '0');
+            const dayDayStr = String(dayNum).padStart(2, '0');
+            const dateStr = `${currentYear}-${dayMonthStr}-${dayDayStr}`;
+
             const isToday = dateStr === todayStr;
             const isSelected = dateStr === selectedDate;
-            const dayActivity = activityMap.get(dateStr);
-            const count = dayActivity ? dayActivity.count : 0;
+            const activity = activityMap.get(dateStr);
+            const count = activity ? activity.count : 0;
 
             return (
-              <div
+              <button
                 key={dateStr}
                 onClick={() => setSelectedDate(dateStr)}
-                className={`h-20 sm:h-24 p-2 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between relative group ${
+                className={`h-20 sm:h-24 p-2 rounded-xl border text-left flex flex-col justify-between transition-all relative overflow-hidden ${
                   isSelected
-                    ? 'bg-indigo-950/40 border-indigo-500 shadow-md shadow-indigo-500/20 ring-1 ring-indigo-500'
+                    ? 'bg-indigo-50/60 border-indigo-600 ring-2 ring-indigo-200 shadow-sm'
                     : isToday
-                    ? 'bg-slate-900 border-indigo-500/50 hover:border-indigo-400'
-                    : count > 0
-                    ? 'bg-slate-900/90 border-slate-700 hover:border-slate-600'
-                    : 'bg-slate-950/60 border-slate-800/80 hover:border-slate-700'
+                    ? 'bg-amber-50/40 border-amber-300'
+                    : 'bg-white hover:bg-slate-50/80 border-slate-200/80'
                 }`}
               >
-                {/* Day Number and Today Indicator */}
-                <div className="flex items-center justify-between">
+                {/* Day Number and Today Marker */}
+                <div className="flex items-center justify-between w-full">
                   <span
-                    className={`text-xs font-extrabold w-6 h-6 rounded-full flex items-center justify-center ${
-                      isToday
-                        ? 'bg-indigo-600 text-white'
-                        : isSelected
-                        ? 'text-indigo-400 font-black'
-                        : 'text-slate-300'
+                    className={`text-xs font-bold ${
+                      isSelected
+                        ? 'text-indigo-700 font-extrabold'
+                        : isToday
+                        ? 'text-amber-800 font-extrabold'
+                        : 'text-slate-700'
                     }`}
                   >
                     {dayNum}
                   </span>
-
                   {isToday && (
-                    <span className="text-[9px] font-bold text-indigo-400 uppercase tracking-widest hidden sm:inline">
+                    <span className="text-[9px] font-extrabold px-1.5 py-0.2 rounded-md bg-amber-500 text-white uppercase tracking-tight">
                       Today
                     </span>
                   )}
                 </div>
 
-                {/* Completed Badge Indicator */}
+                {/* Activity Badge */}
                 {count > 0 ? (
-                  <div className="flex items-center gap-1">
-                    <span className="w-full py-1 px-1.5 rounded-lg bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-[10px] sm:text-xs font-extrabold flex items-center justify-center gap-1 shadow-sm">
-                      <CheckCircle2 className="w-3 h-3 text-emerald-400 flex-shrink-0" />
-                      <span>{count} solved</span>
-                    </span>
+                  <div className="flex items-center gap-1 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded-lg text-emerald-800 text-[10px] font-extrabold self-start shadow-2xs">
+                    <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
+                    <span>{count} solved</span>
                   </div>
                 ) : (
-                  <span className="text-[10px] text-slate-700 opacity-0 group-hover:opacity-100 transition">
-                    No tasks
-                  </span>
+                  <div className="h-4" />
                 )}
-              </div>
+              </button>
             );
           })}
         </div>
       </div>
 
-      {/* Selected Date Activity Drill-down */}
-      <div className="p-6 rounded-3xl bg-slate-900 border border-slate-800 shadow-xl">
-        <div className="flex items-center justify-between pb-3 mb-4 border-b border-slate-800">
-          <div className="flex items-center gap-2">
-            <span className="p-2 rounded-xl bg-emerald-500/20 text-emerald-400">
-              <CheckCircle2 className="w-5 h-5" />
-            </span>
+      {/* Selected Day Drill-down Drawer */}
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-xs">
+        <div className="flex items-center justify-between pb-4 border-b border-slate-100">
+          <div className="flex items-center gap-2.5">
+            <div className="w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold">
+              <CalendarIcon className="w-5 h-5" />
+            </div>
             <div>
-              <h3 className="text-base font-bold text-white">
-                Activity for {selectedDateFormatted}
+              <h3 className="text-base font-extrabold text-slate-900 tracking-tight">
+                {selectedDateFormatted}
               </h3>
-              <p className="text-xs text-slate-400">
-                {selectedDayActivity
-                  ? `${selectedDayActivity.count} question(s) completed on this day`
-                  : 'No tasks completed on this date'}
+              <p className="text-xs text-slate-500">
+                {selectedDayActivity ? `${selectedDayActivity.count} questions solved` : 'No solved questions logged'}
               </p>
             </div>
           </div>
 
-          {selectedDate === todayStr && (
-            <span className="px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 text-xs font-bold">
-              Today's Log
+          {selectedDayActivity && (
+            <span className="text-xs font-bold px-3 py-1 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-xl flex items-center gap-1.5">
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>{selectedDayActivity.count} Completed</span>
             </span>
           )}
         </div>
 
-        {/* List of Tasks for this date */}
-        {!selectedDayActivity || selectedDayActivity.items.length === 0 ? (
-          <div className="p-8 text-center rounded-2xl bg-slate-950/50 border border-dashed border-slate-800 text-slate-400 text-xs">
-            <p className="font-semibold text-slate-300">No activity recorded on {selectedDate}</p>
-            <p className="text-slate-500 mt-1">
-              Select another day on the calendar or complete tasks under your goals to log activity!
-            </p>
-          </div>
-        ) : (
-          <div className="space-y-2.5">
-            {selectedDayActivity.items.map(item => {
-              const timeStr = item.completedAt
-                ? new Date(item.completedAt).toLocaleTimeString([], {
-                    hour: '2-digit',
-                    minute: '2-digit'
-                  })
-                : '';
-
-              return (
+        {/* Items List */}
+        <div className="mt-4">
+          {!selectedDayActivity || selectedDayActivity.items.length === 0 ? (
+            <div className="py-8 text-center text-slate-400">
+              <p className="text-sm font-semibold text-slate-600">No activity recorded for this day</p>
+              <p className="text-xs text-slate-400 mt-1">
+                Select another day with a green badge, or mark questions complete in the Goals tab!
+              </p>
+            </div>
+          ) : (
+            <div className="space-y-2.5">
+              {selectedDayActivity.items.map((item, idx) => (
                 <div
-                  key={item.taskId}
-                  className="p-3.5 rounded-2xl bg-slate-950 border border-slate-800/90 hover:border-slate-700 transition flex items-center justify-between gap-3 shadow-sm"
+                  key={`${item.taskId}-${idx}`}
+                  className="p-3.5 rounded-xl bg-slate-50 border border-slate-200/80 flex items-center justify-between gap-3 hover:bg-slate-100/60 transition-colors"
                 >
-                  <div className="flex items-center gap-3 min-w-0 flex-1">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-
-                    <div className="min-w-0 flex-1 flex items-center gap-2 flex-wrap">
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-950/80 text-indigo-300 border border-indigo-500/30">
-                        {item.goalTitle}
-                      </span>
-
-                      <span className="text-xs font-semibold text-white">
+                  <div className="flex items-center gap-3 min-w-0">
+                    <div className="w-6 h-6 rounded-lg bg-emerald-600 text-white flex items-center justify-center shrink-0">
+                      <Check className="w-3.5 h-3.5 stroke-[3]" />
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-bold text-slate-900 truncate">
                         {item.taskTitle}
-                      </span>
-
-                      {item.url && (
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          title="Open in LeetCode"
-                          className="text-slate-500 hover:text-cyan-400 transition"
-                        >
-                          <ExternalLink className="w-3.5 h-3.5" />
-                        </a>
-                      )}
+                      </h4>
+                      <div className="flex items-center gap-2 mt-0.5">
+                        <span className="text-[11px] font-medium text-slate-500">
+                          {item.goalTitle} • {item.topic}
+                        </span>
+                      </div>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-2 flex-shrink-0">
-                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded bg-slate-800 text-slate-400">
-                      {item.topic}
-                    </span>
-
+                  <div className="flex items-center gap-2 shrink-0">
                     {item.difficulty && (
                       <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
+                        className={`text-[11px] font-bold px-2 py-0.5 rounded-md border ${
                           item.difficulty === 'Easy'
-                            ? 'bg-emerald-950/60 text-emerald-400 border-emerald-500/30'
+                            ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
                             : item.difficulty === 'Medium'
-                            ? 'bg-amber-950/60 text-amber-400 border-amber-500/30'
-                            : 'bg-red-950/60 text-red-400 border-red-500/30'
+                            ? 'bg-amber-50 text-amber-700 border-amber-200'
+                            : 'bg-rose-50 text-rose-700 border-rose-200'
                         }`}
                       >
                         {item.difficulty}
                       </span>
                     )}
 
-                    {timeStr && (
-                      <span className="text-[10px] text-slate-500 font-mono hidden sm:inline">
-                        {timeStr}
-                      </span>
+                    {item.url && (
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="px-2.5 py-1 bg-white hover:bg-indigo-50 border border-slate-200 text-slate-600 hover:text-indigo-700 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1 shadow-2xs"
+                      >
+                        <span>LeetCode</span>
+                        <ExternalLink className="w-3 h-3" />
+                      </a>
                     )}
                   </div>
                 </div>
-              );
-            })}
-          </div>
-        )}
+              ))}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

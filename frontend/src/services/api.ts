@@ -1,5 +1,6 @@
 import { AuthResponse, DailyGroupedActivity, Goal, OverallSummary, Task, UserProfile } from '../types';
 import seedData from '../data/seed_data.json';
+import { calculateStreak, getLocalDateString } from '../utils/dateUtils';
 
 const AUTH_TOKEN_KEY = 'career_pulse_auth_token';
 const AUTH_USER_KEY = 'career_pulse_auth_user';
@@ -212,7 +213,7 @@ export const api = {
 
     // Local calculation
     const state = getLocalState();
-    const todayStr = new Date().toISOString().split('T')[0];
+    const todayStr = getLocalDateString(new Date());
     const goalMap = new Map<string, string>();
     state.goals.forEach(g => goalMap.set(g.id, g.title));
 
@@ -260,7 +261,7 @@ export const api = {
       completedTodayCount: todayTasks.length,
       todayCompletedItems,
       recentDailyActivity,
-      streakDays: 3,
+      streakDays: calculateStreak(state.tasks.filter(t => t.completed).map(t => t.completedDate)),
       goalStats
     };
   },
@@ -353,7 +354,7 @@ export const api = {
     if (idx === -1) throw new Error('Task not found');
     const task = state.tasks[idx];
     const now = new Date();
-    const todayStr = now.toISOString().split('T')[0];
+    const todayStr = getLocalDateString(now);
 
     if (!task.completed) {
       task.completed = true;
