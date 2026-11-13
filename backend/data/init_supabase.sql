@@ -59,7 +59,7 @@ ON CONFLICT (id) DO NOTHING;
 -- Insert 169 Grind DSA Questions
 INSERT INTO tasks (id, user_id, goal_id, title, topic, difficulty, url, duration, completed, created_at)
 VALUES 
-  ('dsa-1', 'user-default', 'goal-dsa', 'Two Sum', 'Array', 'Easy', 'https://leetcode.com/problems/two-sum', 15, true, NOW()),
+  ('dsa-1', 'user-default', 'goal-dsa', 'Two Sum', 'Array', 'Easy', 'https://leetcode.com/problems/two-sum', 15, false, NOW()),
   ('dsa-20', 'user-default', 'goal-dsa', 'Valid Parentheses', 'Stack', 'Easy', 'https://leetcode.com/problems/valid-parentheses', 20, false, NOW()),
   ('dsa-21', 'user-default', 'goal-dsa', 'Merge Two Sorted Lists', 'Linked List', 'Easy', 'https://leetcode.com/problems/merge-two-sorted-lists', 20, false, NOW()),
   ('dsa-121', 'user-default', 'goal-dsa', 'Best Time to Buy and Sell Stock', 'Array', 'Easy', 'https://leetcode.com/problems/best-time-to-buy-and-sell-stock', 20, false, NOW()),

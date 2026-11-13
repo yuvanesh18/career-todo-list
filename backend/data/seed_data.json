@@ -26,9 +26,9 @@
       "difficulty": "Easy",
       "url": "https://leetcode.com/problems/two-sum",
       "duration": 15,
-      "completed": true,
-      "completedAt": "2026-11-13T08:21:21.439Z",
-      "completedDate": "2026-11-13",
+      "completed": false,
+      "completedAt": null,
+      "completedDate": null,
       "createdAt": "2026-11-13T08:21:21.439Z"
     },
     {

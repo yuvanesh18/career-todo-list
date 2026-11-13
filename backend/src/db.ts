@@ -1,9 +1,15 @@
+import dns from 'node:dns';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import pg from 'pg';
 import { Goal, Task, User } from './types.js';
 import { hashPassword } from './auth.js';
+
+// Force Node.js DNS resolution to prioritize IPv4 over IPv6
+try {
+  dns.setDefaultResultOrder('ipv4first');
+} catch {}
 
 const { Pool } = pg;
 
@@ -172,9 +178,15 @@ class Database {
         await this.batchInsertTasks(tasks);
         console.log('Postgres successfully seeded with 169 Grind DSA questions and goals.');
       }
-    } catch (err) {
-      console.error('Error initializing PostgreSQL tables:', err);
-      throw err;
+    } catch (err: any) {
+      console.error('❌ Error initializing PostgreSQL tables:', err.message);
+      if (err.code === 'ENETUNREACH' || err.message?.includes('ENETUNREACH')) {
+        console.error('⚠️ IPv6 ENETUNREACH detected: Render free containers cannot route to Supabase direct IPv6.');
+        console.error('👉 FIX: In Supabase -> Project Settings -> Database -> Connection String, select "Session Pooler" (port 6543, e.g. aws-0-[region].pooler.supabase.com:6543) which has full IPv4 support!');
+      }
+      console.log('🔄 Fallback: Initializing local JSON database so API stays online and functional.');
+      this.pool = null;
+      this.initJson();
     }
   }
 

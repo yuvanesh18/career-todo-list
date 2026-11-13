@@ -5,7 +5,6 @@ import { Navbar } from './components/Navbar';
 import { GoalDetailView } from './components/GoalDetailView';
 import { DailyActivityView } from './components/DailyActivityView';
 import { AuthModal } from './components/AuthModal';
-import { ServerModal } from './components/ServerModal';
 import { LoginPage } from './components/LoginPage';
 import { calculateStreak, getLocalDateString } from './utils/dateUtils';
 
@@ -14,7 +13,6 @@ export const App: React.FC = () => {
   const [user, setUser] = useState<UserProfile | null>(() => api.getCurrentUser());
   const [isGuest, setIsGuest] = useState(false);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
-  const [isServerModalOpen, setIsServerModalOpen] = useState(false);
   const [isServerOnline, setIsServerOnline] = useState(false);
   const [goals, setGoals] = useState<Goal[]>([]);
   const [selectedGoalId, setSelectedGoalId] = useState<string>('goal-dsa');
@@ -23,24 +21,28 @@ export const App: React.FC = () => {
   const [activityList, setActivityList] = useState<DailyGroupedActivity[]>([]);
 
   const loadData = useCallback(async () => {
-    const online = await api.checkServer();
-    setIsServerOnline(online);
+    try {
+      const online = await api.checkServer();
+      setIsServerOnline(online);
 
-    const fetchedGoals = await api.getGoals();
-    setGoals(fetchedGoals);
+      const fetchedGoals = await api.getGoals();
+      setGoals(fetchedGoals);
 
-    if (fetchedGoals.length > 0 && (!selectedGoalId || !fetchedGoals.some(g => g.id === selectedGoalId))) {
-      setSelectedGoalId(fetchedGoals[0].id);
+      if (fetchedGoals.length > 0 && (!selectedGoalId || !fetchedGoals.some(g => g.id === selectedGoalId))) {
+        setSelectedGoalId(fetchedGoals[0].id);
+      }
+
+      const fetchedTasks = await api.getTasks();
+      setTasks(fetchedTasks);
+
+      const fetchedSummary = await api.getSummary();
+      setSummary(fetchedSummary);
+
+      const fetchedActivity = await api.getDailyActivity();
+      setActivityList(fetchedActivity);
+    } catch (err) {
+      console.warn('API fetch notice:', err);
     }
-
-    const fetchedTasks = await api.getTasks();
-    setTasks(fetchedTasks);
-
-    const fetchedSummary = await api.getSummary();
-    setSummary(fetchedSummary);
-
-    const fetchedActivity = await api.getDailyActivity();
-    setActivityList(fetchedActivity);
   }, [selectedGoalId]);
 
   useEffect(() => {
@@ -68,30 +70,6 @@ export const App: React.FC = () => {
     setUser(null);
     setIsGuest(false);
     loadData();
-  };
-
-  const handleExportBackup = async () => {
-    const data = await api.backupDatabase();
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    const namePrefix = user ? `${user.name.toLowerCase().replace(/\s+/g, '_')}_` : '';
-    const dateStr = getLocalDateString(new Date());
-    a.download = `career_pulse_${namePrefix}db_backup_${dateStr}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  const handleImportBackup = async (jsonContent: string) => {
-    try {
-      const parsed = JSON.parse(jsonContent);
-      await api.restoreDatabase(parsed);
-      alert('Database successfully restored from backup!');
-      loadData();
-    } catch (err: any) {
-      alert(`Failed to restore database: ${err.message}`);
-    }
   };
 
   // Accurate local calendar streak & today's count calculated directly from tasks state
@@ -125,11 +103,8 @@ export const App: React.FC = () => {
         completedTodayCount={completedTodayCount}
         user={user}
         isServerOnline={isServerOnline}
-        onOpenServerModal={() => setIsServerModalOpen(true)}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onLogout={handleLogout}
-        onExportBackup={handleExportBackup}
-        onImportBackup={handleImportBackup}
       />
 
       {/* Main Container */}
@@ -153,13 +128,6 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      {/* Cloud Server Connection Modal */}
-      <ServerModal
-        isOpen={isServerModalOpen}
-        onClose={() => setIsServerModalOpen(false)}
-        onServerConfigured={loadData}
-      />
-
       {/* Auth Modal (For in-dashboard quick sign in / register) */}
       <AuthModal
         isOpen={isAuthModalOpen}
@@ -169,7 +137,7 @@ export const App: React.FC = () => {
 
       {/* Footer */}
       <footer className="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500">
-        <p>CareerPulse • Master DSA (Grind 169) & Multi-Goal Daily Progress Tracker</p>
+        <p>CareerPulse • Master DSA (Grind 169) & Career Roadmap Tracker</p>
       </footer>
     </div>
   );
