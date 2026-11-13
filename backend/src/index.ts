@@ -12,14 +12,19 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const app = createApp();
 
-app.listen(PORT, async () => {
-  console.log(`🚀 CareerPulse API server running on http://localhost:${PORT}`);
-  console.log(`📊 Health check available at http://localhost:${PORT}/health`);
+async function startServer() {
   try {
     await db.init();
     console.log('✅ Database connected and initialized successfully');
-  } catch (err) {
-    console.error('❌ Database initialization error:', err);
+  } catch (err: any) {
+    console.error('❌ Database initialization error during startup:', err.message || err);
   }
-});
+
+  app.listen(PORT, () => {
+    console.log(`🚀 CareerPulse API server running on port ${PORT}`);
+    console.log(`📊 Health check available at /health`);
+  });
+}
+
+startServer();
 

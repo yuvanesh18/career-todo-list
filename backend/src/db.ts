@@ -84,6 +84,7 @@ class Database {
   private stateFile: string;
   private state: AppDatabaseState = { users: [], goals: [], tasks: [] };
   private initialized = false;
+  private initPromise: Promise<void> | null = null;
 
   constructor(stateFile: string) {
     this.stateFile = stateFile;
@@ -94,7 +95,10 @@ class Database {
         connectionString: dbUrl,
         ssl: {
           rejectUnauthorized: false
-        }
+        },
+        connectionTimeoutMillis: 10000,
+        idleTimeoutMillis: 30000,
+        max: 10
       });
     }
   }
@@ -105,13 +109,30 @@ class Database {
 
   public async init(): Promise<void> {
     if (this.initialized) return;
+    if (this.initPromise) return this.initPromise;
 
-    if (this.pool) {
-      await this.initPostgres();
-    } else {
-      this.initJson();
-    }
-    this.initialized = true;
+    this.initPromise = (async () => {
+      try {
+        if (this.pool) {
+          await this.initPostgres();
+        } else {
+          this.initJson();
+        }
+        this.initialized = true;
+      } catch (err: any) {
+        console.error('❌ Database initialization error:', err.message || err);
+        if (this.pool) {
+          console.log('🔄 Fallback: Initializing local JSON database so API stays online and functional.');
+          this.pool = null;
+          this.initJson();
+          this.initialized = true;
+        }
+      } finally {
+        this.initPromise = null;
+      }
+    })();
+
+    return this.initPromise;
   }
 
   // --- POSTGRES / SUPABASE IMPLEMENTATION ---
@@ -159,7 +180,8 @@ class Database {
 
       // Seed default user in Postgres if empty
       const userCheck = await this.pool.query('SELECT COUNT(*) FROM users');
-      if (parseInt(userCheck.rows[0].count, 10) === 0) {
+      const count = parseInt(userCheck.rows[0].count, 10);
+      if (count === 0) {
         console.log('Postgres users table is empty. Initializing default user and Grind 169 roadmap...');
         const { hash, salt } = hashPassword('password123');
         const defaultUser: User = {
@@ -170,13 +192,28 @@ class Database {
           salt,
           createdAt: new Date().toISOString()
         };
-        await this.addUser(defaultUser);
+
+        // DIRECT INSERT: Do NOT call this.addUser() here to avoid recursive init() deadlock!
+        await this.pool.query(
+          `INSERT INTO users (id, name, email, password_hash, salt, created_at)
+           VALUES ($1, $2, $3, $4, $5, $6)
+           ON CONFLICT (id) DO NOTHING`,
+          [defaultUser.id, defaultUser.name, defaultUser.email, defaultUser.passwordHash, defaultUser.salt, defaultUser.createdAt]
+        );
+
         const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
         for (const g of goals) {
-          await this.addGoal(g);
+          // DIRECT INSERT: Do NOT call this.addGoal() here to avoid recursive init() deadlock!
+          await this.pool.query(
+            `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
+             VALUES ($1, $2, $3, $4, $5, $6, $7)
+             ON CONFLICT (id) DO NOTHING`,
+            [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
+          );
         }
+
         await this.batchInsertTasks(tasks);
-        console.log('Postgres successfully seeded with 169 Grind DSA questions and goals.');
+        console.log('✅ Postgres successfully seeded with default user and 169 Grind DSA questions.');
       }
     } catch (err: any) {
       console.error('❌ Error initializing PostgreSQL tables:', err.message);
@@ -184,9 +221,7 @@ class Database {
         console.error('⚠️ IPv6 ENETUNREACH detected: Render free containers cannot route to Supabase direct IPv6.');
         console.error('👉 FIX: In Supabase -> Project Settings -> Database -> Connection String, select "Session Pooler" (port 6543, e.g. aws-0-[region].pooler.supabase.com:6543) which has full IPv4 support!');
       }
-      console.log('🔄 Fallback: Initializing local JSON database so API stays online and functional.');
-      this.pool = null;
-      this.initJson();
+      throw err;
     }
   }
 
@@ -335,19 +370,45 @@ class Database {
     await this.init();
     if (this.pool) {
       const res = await this.pool.query(
-        'SELECT id, user_id as "userId", title, description, category, icon, created_at as "createdAt" FROM goals WHERE user_id = $1 OR user_id = $2 ORDER BY created_at ASC',
-        [userId, DEFAULT_USER_ID]
+        'SELECT id, user_id as "userId", title, description, category, icon, created_at as "createdAt" FROM goals WHERE user_id = $1 ORDER BY created_at ASC',
+        [userId]
       );
+      // Auto-provision if registered user exists but has 0 goals seeded
+      if (res.rows.length === 0 && userId !== DEFAULT_USER_ID) {
+        const { goals, tasks } = createUserDataForUser(userId);
+        for (const g of goals) {
+          await this.addGoal(g);
+        }
+        await this.batchInsertTasks(tasks);
+        const refetch = await this.pool.query(
+          'SELECT id, user_id as "userId", title, description, category, icon, created_at as "createdAt" FROM goals WHERE user_id = $1 ORDER BY created_at ASC',
+          [userId]
+        );
+        return refetch.rows;
+      }
       return res.rows;
     }
-    return this.state.goals.filter(g => g.userId === userId || (!g.userId && userId === DEFAULT_USER_ID));
+    let goals = this.state.goals.filter(g => g.userId === userId);
+    if (goals.length === 0 && userId === DEFAULT_USER_ID) {
+      goals = this.state.goals.filter(g => !g.userId || g.userId === DEFAULT_USER_ID);
+    }
+    if (goals.length === 0 && userId !== DEFAULT_USER_ID) {
+      const { goals: newGoals, tasks: newTasks } = createUserDataForUser(userId);
+      this.state.goals.push(...newGoals);
+      this.state.tasks.push(...newTasks);
+      this.persistJson();
+      return newGoals;
+    }
+    return goals;
   }
 
   public async addGoal(goal: Goal): Promise<Goal> {
     await this.init();
     if (this.pool) {
       await this.pool.query(
-        'INSERT INTO goals (id, user_id, title, description, category, icon, created_at) VALUES ($1, $2, $3, $4, $5, $6, $7)',
+        `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
+         VALUES ($1, $2, $3, $4, $5, $6, $7)
+         ON CONFLICT (id) DO NOTHING`,
         [goal.id, goal.userId, goal.title, goal.description, goal.category, goal.icon, goal.createdAt]
       );
       return goal;
@@ -366,9 +427,9 @@ class Database {
              description = COALESCE($4, description), 
              category = COALESCE($5, category), 
              icon = COALESCE($6, icon)
-         WHERE id = $1 AND (user_id = $2 OR user_id = $7)
+         WHERE id = $1 AND user_id = $2
          RETURNING id, user_id as "userId", title, description, category, icon, created_at as "createdAt"`,
-        [id, userId, updates.title || null, updates.description || null, updates.category || null, updates.icon || null, DEFAULT_USER_ID]
+        [id, userId, updates.title || null, updates.description || null, updates.category || null, updates.icon || null]
       );
       return res.rows[0] || null;
     }
@@ -383,9 +444,9 @@ class Database {
   public async deleteGoal(userId: string, id: string): Promise<boolean> {
     await this.init();
     if (this.pool) {
-      const res = await this.pool.query('DELETE FROM goals WHERE id = $1 AND (user_id = $2 OR user_id = $3)', [id, userId, DEFAULT_USER_ID]);
+      const res = await this.pool.query('DELETE FROM goals WHERE id = $1 AND user_id = $2', [id, userId]);
       if (res.rowCount && res.rowCount > 0) {
-        await this.pool.query('DELETE FROM tasks WHERE goal_id = $1 AND (user_id = $2 OR user_id = $3)', [id, userId, DEFAULT_USER_ID]);
+        await this.pool.query('DELETE FROM tasks WHERE goal_id = $1 AND user_id = $2', [id, userId]);
         return true;
       }
       return false;
@@ -405,9 +466,9 @@ class Database {
       let query = `
         SELECT id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt"
         FROM tasks
-        WHERE (user_id = $1 OR user_id = $2)
+        WHERE user_id = $1
       `;
-      const values: any[] = [userId, DEFAULT_USER_ID];
+      const values: any[] = [userId];
 
       if (filters.goalId) {
         values.push(filters.goalId);
@@ -447,7 +508,8 @@ class Database {
     if (this.pool) {
       await this.pool.query(
         `INSERT INTO tasks (id, user_id, goal_id, title, topic, difficulty, url, duration, completed, completed_at, completed_date, created_at)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)`,
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+         ON CONFLICT (id) DO NOTHING`,
         [
           task.id,
           task.userId,
@@ -475,8 +537,8 @@ class Database {
     await this.init();
     if (this.pool) {
       const checkRes = await this.pool.query(
-        'SELECT completed FROM tasks WHERE id = $1 AND (user_id = $2 OR user_id = $3)',
-        [id, userId, DEFAULT_USER_ID]
+        'SELECT completed FROM tasks WHERE id = $1 AND user_id = $2',
+        [id, userId]
       );
       if (checkRes.rows.length === 0) return null;
 
@@ -491,9 +553,9 @@ class Database {
       const updateRes = await this.pool.query(
         `UPDATE tasks 
          SET completed = $1, completed_at = $2, completed_date = $3
-         WHERE id = $4 AND (user_id = $5 OR user_id = $6)
+         WHERE id = $4 AND user_id = $5
          RETURNING id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt"`,
-        [newCompleted, newCompletedAt, newCompletedDate, id, userId, DEFAULT_USER_ID]
+        [newCompleted, newCompletedAt, newCompletedDate, id, userId]
       );
       return updateRes.rows[0] || null;
     }
@@ -521,8 +583,8 @@ class Database {
     await this.init();
     if (this.pool) {
       const current = await this.pool.query(
-        'SELECT * FROM tasks WHERE id = $1 AND (user_id = $2 OR user_id = $3)',
-        [id, userId, DEFAULT_USER_ID]
+        'SELECT * FROM tasks WHERE id = $1 AND user_id = $2',
+        [id, userId]
       );
       if (current.rows.length === 0) return null;
 
@@ -551,7 +613,7 @@ class Database {
              completed = COALESCE($6, completed),
              completed_at = $7,
              completed_date = $8
-         WHERE id = $9 AND (user_id = $10 OR user_id = $11)
+         WHERE id = $9 AND user_id = $10
          RETURNING id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt"`,
         [
           updates.title || null,
@@ -563,8 +625,7 @@ class Database {
           completedAt,
           completedDate,
           id,
-          userId,
-          DEFAULT_USER_ID
+          userId
         ]
       );
       return res.rows[0] || null;
@@ -596,8 +657,8 @@ class Database {
     await this.init();
     if (this.pool) {
       const res = await this.pool.query(
-        'DELETE FROM tasks WHERE id = $1 AND (user_id = $2 OR user_id = $3)',
-        [id, userId, DEFAULT_USER_ID]
+        'DELETE FROM tasks WHERE id = $1 AND user_id = $2',
+        [id, userId]
       );
       return res.rowCount !== null && res.rowCount > 0;
     }
@@ -610,6 +671,7 @@ class Database {
   }
 
   public async resetSeed(): Promise<void> {
+    await this.init();
     if (this.pool) {
       await this.pool.query('DELETE FROM tasks WHERE user_id = $1', [DEFAULT_USER_ID]);
       await this.pool.query('DELETE FROM goals WHERE user_id = $1', [DEFAULT_USER_ID]);

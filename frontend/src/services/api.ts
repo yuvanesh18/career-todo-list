@@ -44,35 +44,59 @@ export const api = {
   },
 
   async register(name: string, email: string, password: string): Promise<AuthResponse> {
-    const res = await fetch(`${BACKEND_URL}/api/auth/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, email, password })
-    });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Registration failed');
-    }
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 25000);
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/auth/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, password }),
+        signal: controller.signal
+      });
+      const json = await res.json();
+      if (!res.ok || !json.success) {
+        throw new Error(json.error || 'Registration failed');
+      }
 
-    localStorage.setItem(AUTH_TOKEN_KEY, json.data.token);
-    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(json.data.user));
-    return json.data;
+      localStorage.setItem(AUTH_TOKEN_KEY, json.data.token);
+      localStorage.setItem(AUTH_USER_KEY, JSON.stringify(json.data.user));
+      return json.data;
+    } catch (err: any) {
+      if (err.name === 'AbortError') {
+        throw new Error('Connection timed out. The server might be waking up from sleep on Render, please try again in a few moments.');
+      }
+      throw err;
+    } finally {
+      clearTimeout(timeout);
+    }
   },
 
   async login(email: string, password: string): Promise<AuthResponse> {
-    const res = await fetch(`${BACKEND_URL}/api/auth/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, password })
-    });
-    const json = await res.json();
-    if (!res.ok || !json.success) {
-      throw new Error(json.error || 'Invalid email or password');
-    }
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 25000);
+    try {
+      const res = await fetch(`${BACKEND_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password }),
+        signal: controller.signal
+      });
+      const json = await res.json();
+      if (!res.ok || !json.success) {
+        throw new Error(json.error || 'Invalid email or password');
+      }
 
-    localStorage.setItem(AUTH_TOKEN_KEY, json.data.token);
-    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(json.data.user));
-    return json.data;
+      localStorage.setItem(AUTH_TOKEN_KEY, json.data.token);
+      localStorage.setItem(AUTH_USER_KEY, JSON.stringify(json.data.user));
+      return json.data;
+    } catch (err: any) {
+      if (err.name === 'AbortError') {
+        throw new Error('Connection timed out. The server might be waking up from sleep on Render, please try again in a few moments.');
+      }
+      throw err;
+    } finally {
+      clearTimeout(timeout);
+    }
   },
 
   logout(): void {
