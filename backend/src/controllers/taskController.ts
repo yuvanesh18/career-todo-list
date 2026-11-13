@@ -45,38 +45,38 @@ const CreateTaskSchema = z.object({
 });
 
 // --- AUTH CONTROLLERS ---
-export const register = (req: Request, res: Response): void => {
+export const register = async (req: Request, res: Response): Promise<void> => {
   try {
     const parsed = RegisterSchema.safeParse(req.body);
     if (!parsed.success) {
       res.status(400).json({ success: false, error: parsed.error.issues[0]?.message || 'Validation failed' });
       return;
     }
-    const result = taskService.register(parsed.data.name, parsed.data.email, parsed.data.password);
+    const result = await taskService.register(parsed.data.name, parsed.data.email, parsed.data.password);
     res.status(201).json({ success: true, data: result });
   } catch (err: any) {
     res.status(400).json({ success: false, error: err.message });
   }
 };
 
-export const login = (req: Request, res: Response): void => {
+export const login = async (req: Request, res: Response): Promise<void> => {
   try {
     const parsed = LoginSchema.safeParse(req.body);
     if (!parsed.success) {
       res.status(400).json({ success: false, error: parsed.error.issues[0]?.message || 'Validation failed' });
       return;
     }
-    const result = taskService.login(parsed.data.email, parsed.data.password);
+    const result = await taskService.login(parsed.data.email, parsed.data.password);
     res.json({ success: true, data: result });
   } catch (err: any) {
     res.status(401).json({ success: false, error: err.message });
   }
 };
 
-export const getMe = (req: Request, res: Response): void => {
+export const getMe = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
-    const user = taskService.getUserById(userId);
+    const user = await taskService.getUserById(userId);
     if (!user) {
       res.status(404).json({ success: false, error: 'User not found' });
       return;
@@ -88,20 +88,20 @@ export const getMe = (req: Request, res: Response): void => {
 };
 
 // --- SUMMARY & DAILY ACTIVITY ---
-export const getSummary = (req: Request, res: Response): void => {
+export const getSummary = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
-    const summary = taskService.getSummary(userId);
+    const summary = await taskService.getSummary(userId);
     res.json({ success: true, data: summary });
   } catch (err: any) {
     res.status(500).json({ success: false, error: err.message });
   }
 };
 
-export const getDailyActivity = (req: Request, res: Response): void => {
+export const getDailyActivity = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
-    const activity = taskService.getDailyActivity(userId);
+    const activity = await taskService.getDailyActivity(userId);
     res.json({ success: true, data: activity });
   } catch (err: any) {
     res.status(500).json({ success: false, error: err.message });
@@ -109,17 +109,17 @@ export const getDailyActivity = (req: Request, res: Response): void => {
 };
 
 // --- GOALS ---
-export const getGoals = (req: Request, res: Response): void => {
+export const getGoals = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
-    const goals = taskService.getGoals(userId);
+    const goals = await taskService.getGoals(userId);
     res.json({ success: true, count: goals.length, data: goals });
   } catch (err: any) {
     res.status(500).json({ success: false, error: err.message });
   }
 };
 
-export const createGoal = (req: Request, res: Response): void => {
+export const createGoal = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
     const parsed = CreateGoalSchema.safeParse(req.body);
@@ -127,18 +127,18 @@ export const createGoal = (req: Request, res: Response): void => {
       res.status(400).json({ success: false, error: parsed.error.format() });
       return;
     }
-    const goal = taskService.createGoal(userId, parsed.data);
+    const goal = await taskService.createGoal(userId, parsed.data);
     res.status(201).json({ success: true, data: goal });
   } catch (err: any) {
     res.status(500).json({ success: false, error: err.message });
   }
 };
 
-export const updateGoal = (req: Request, res: Response): void => {
+export const updateGoal = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
     const id = String(req.params.id);
-    const updated = taskService.updateGoal(userId, id, req.body);
+    const updated = await taskService.updateGoal(userId, id, req.body);
     if (!updated) {
       res.status(404).json({ success: false, error: 'Goal not found' });
       return;
@@ -149,11 +149,11 @@ export const updateGoal = (req: Request, res: Response): void => {
   }
 };
 
-export const deleteGoal = (req: Request, res: Response): void => {
+export const deleteGoal = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
     const id = String(req.params.id);
-    const deleted = taskService.deleteGoal(userId, id);
+    const deleted = await taskService.deleteGoal(userId, id);
     if (!deleted) {
       res.status(404).json({ success: false, error: 'Goal not found' });
       return;
@@ -165,7 +165,7 @@ export const deleteGoal = (req: Request, res: Response): void => {
 };
 
 // --- TASKS ---
-export const getTasks = (req: Request, res: Response): void => {
+export const getTasks = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
     const goalId = req.query.goalId ? String(req.query.goalId) : undefined;
@@ -173,14 +173,14 @@ export const getTasks = (req: Request, res: Response): void => {
     const completed = req.query.completed !== undefined ? req.query.completed === 'true' : undefined;
     const search = req.query.search ? String(req.query.search) : undefined;
 
-    const tasks = taskService.getTasks(userId, { goalId, topic, completed, search });
+    const tasks = await taskService.getTasks(userId, { goalId, topic, completed, search });
     res.json({ success: true, count: tasks.length, data: tasks });
   } catch (err: any) {
     res.status(500).json({ success: false, error: err.message });
   }
 };
 
-export const createTask = (req: Request, res: Response): void => {
+export const createTask = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
     const parsed = CreateTaskSchema.safeParse(req.body);
@@ -188,7 +188,7 @@ export const createTask = (req: Request, res: Response): void => {
       res.status(400).json({ success: false, error: parsed.error.format() });
       return;
     }
-    const task = taskService.createTask(userId, {
+    const task = await taskService.createTask(userId, {
       ...parsed.data,
       url: parsed.data.url || undefined
     });
@@ -198,11 +198,11 @@ export const createTask = (req: Request, res: Response): void => {
   }
 };
 
-export const toggleTask = (req: Request, res: Response): void => {
+export const toggleTask = async (req: Request, res: Response): Promise<void> => {
   try {
     const userId = getAuthUserId(req);
     const id = String(req.params.id);
-    const task = taskService.toggleTask(userId, id);
+    const task = await taskService.toggleTask(userId, id);
     if (!task) {
       res.status(404).json({ success: false, error: 'Task not found' });
       return;
@@ -213,11 +213,11 @@ export const toggleTask = (req: Request, res: Response): void => {
   }
 };
 
-export const updateTask = (req: Request, res: Response): void => {
+export const updateTask = async (req: Request, res: Response): Promise<void> => {
   try {
-    const userId = getAuthUserId(req);
     const id = String(req.params.id);
-    const updated = taskService.updateTask(userId, id, req.body);
+    const userId = getAuthUserId(req);
+    const updated = await taskService.updateTask(userId, id, req.body);
     if (!updated) {
       res.status(404).json({ success: false, error: 'Task not found' });
       return;
@@ -228,11 +228,11 @@ export const updateTask = (req: Request, res: Response): void => {
   }
 };
 
-export const deleteTask = (req: Request, res: Response): void => {
+export const deleteTask = async (req: Request, res: Response): Promise<void> => {
   try {
-    const userId = getAuthUserId(req);
     const id = String(req.params.id);
-    const deleted = taskService.deleteTask(userId, id);
+    const userId = getAuthUserId(req);
+    const deleted = await taskService.deleteTask(userId, id);
     if (!deleted) {
       res.status(404).json({ success: false, error: 'Task not found' });
       return;
@@ -243,18 +243,18 @@ export const deleteTask = (req: Request, res: Response): void => {
   }
 };
 
-export const resetData = (_req: Request, res: Response): void => {
+export const resetData = async (_req: Request, res: Response): Promise<void> => {
   try {
-    const state = taskService.resetSeed();
-    res.json({ success: true, message: 'Reset to initial seed', data: state });
+    await taskService.resetSeed();
+    res.json({ success: true, message: 'Reset to initial seed' });
   } catch (err: any) {
     res.status(500).json({ success: false, error: err.message });
   }
 };
 
-export const backupDatabase = (_req: Request, res: Response): void => {
+export const backupDatabase = async (_req: Request, res: Response): Promise<void> => {
   try {
-    const data = taskService.exportData();
+    const data = await taskService.exportData();
     res.json({
       success: true,
       timestamp: new Date().toISOString(),
@@ -265,10 +265,10 @@ export const backupDatabase = (_req: Request, res: Response): void => {
   }
 };
 
-export const restoreDatabase = (req: Request, res: Response): void => {
+export const restoreDatabase = async (req: Request, res: Response): Promise<void> => {
   try {
     const backup = req.body.data || req.body;
-    taskService.importData(backup);
+    await taskService.importData(backup);
     res.json({ success: true, message: 'Database successfully restored' });
   } catch (err: any) {
     res.status(400).json({ success: false, error: err.message });

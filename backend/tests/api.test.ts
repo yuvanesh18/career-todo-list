@@ -6,8 +6,8 @@ import { taskService } from '../src/services/taskService.js';
 const app = createApp();
 
 describe('Goal-Based Tasks & Daily Tracking API with Auth', () => {
-  beforeEach(() => {
-    taskService.resetSeed();
+  beforeEach(async () => {
+    await taskService.resetSeed();
   });
 
   describe('Health Endpoint', () => {
@@ -115,7 +115,7 @@ describe('Goal-Based Tasks & Daily Tracking API with Auth', () => {
 
     it('POST /api/tasks/:id/toggle toggles task completion and records completedDate', async () => {
       // Find an incomplete task
-      const incompleteTask = taskService.getTasks('user-default', { completed: false })[0];
+      const incompleteTask = (await taskService.getTasks('user-default', { completed: false }))[0];
       expect(incompleteTask).toBeDefined();
 
       const res = await request(app).post(`/api/tasks/${incompleteTask.id}/toggle`);
