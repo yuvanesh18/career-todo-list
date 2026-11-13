@@ -10,6 +10,7 @@ const __dirname = path.dirname(__filename);
 const DATA_DIR = process.env.DATA_DIR || path.join(__dirname, '..', 'data');
 const STATE_FILE = path.join(DATA_DIR, 'goals_and_tasks.json');
 const SEED_FILE = path.join(DATA_DIR, 'seed_data.json');
+const TEMPLATE_SEED_FILE = path.join(__dirname, '..', 'seed_template', 'seed_data.json');
 
 export interface AppDatabaseState {
   users: User[];
@@ -23,6 +24,12 @@ export function createUserDataForUser(userId: string): { goals: Goal[]; tasks: T
   let seedRaw: any = { goals: [], tasks: [] };
   if (fs.existsSync(SEED_FILE)) {
     seedRaw = JSON.parse(fs.readFileSync(SEED_FILE, 'utf-8'));
+  } else if (fs.existsSync(TEMPLATE_SEED_FILE)) {
+    seedRaw = JSON.parse(fs.readFileSync(TEMPLATE_SEED_FILE, 'utf-8'));
+    try {
+      if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
+      fs.copyFileSync(TEMPLATE_SEED_FILE, SEED_FILE);
+    } catch {}
   }
 
   const isDefault = userId === DEFAULT_USER_ID;
@@ -71,6 +78,12 @@ class Database {
       const dir = path.dirname(this.stateFile);
       if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, { recursive: true });
+      }
+
+      if (!fs.existsSync(SEED_FILE) && fs.existsSync(TEMPLATE_SEED_FILE)) {
+        try {
+          fs.copyFileSync(TEMPLATE_SEED_FILE, SEED_FILE);
+        } catch {}
       }
 
       if (fs.existsSync(this.stateFile)) {
