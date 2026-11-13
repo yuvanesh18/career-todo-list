@@ -1,7 +1,19 @@
 export type Difficulty = 'Easy' | 'Medium' | 'Hard';
 
+export interface UserProfile {
+  id: string;
+  name: string;
+  email: string;
+}
+
+export interface AuthResponse {
+  user: UserProfile;
+  token: string;
+}
+
 export interface Goal {
   id: string;
+  userId?: string;
   title: string;
   description: string;
   category: string;
@@ -11,6 +23,7 @@ export interface Goal {
 
 export interface Task {
   id: string;
+  userId?: string;
   goalId: string;
   title: string;
   topic: string;

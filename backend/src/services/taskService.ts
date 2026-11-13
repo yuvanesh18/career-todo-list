@@ -1,27 +1,110 @@
-import { db } from '../db.js';
+import { db, DEFAULT_USER_ID, createUserDataForUser } from '../db.js';
+import { generateToken, hashPassword, verifyPassword } from '../auth.js';
 import {
+  AuthResponse,
   DailyActivityItem,
   DailyGroupedActivity,
   Goal,
   GoalStats,
   OverallSummary,
-  Task
+  Task,
+  User,
+  UserProfile
 } from '../types.js';
 
 export class TaskService {
+  // --- AUTHENTICATION ---
+  public register(name: string, email: string, password: string): AuthResponse {
+    const trimmedEmail = email.trim().toLowerCase();
+    const trimmedName = name.trim();
+
+    if (!trimmedName || !trimmedEmail || !password) {
+      throw new Error('Name, email, and password are required');
+    }
+
+    const state = db.getState();
+    const existing = state.users.find(u => u.email.toLowerCase() === trimmedEmail);
+    if (existing) {
+      throw new Error('An account with this email already exists');
+    }
+
+    const { hash, salt } = hashPassword(password);
+    const userId = `user-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
+
+    const newUser: User = {
+      id: userId,
+      name: trimmedName,
+      email: trimmedEmail,
+      passwordHash: hash,
+      salt,
+      createdAt: new Date().toISOString()
+    };
+
+    // Initialize individual seeded goals & tasks for new user
+    const { goals: userGoals, tasks: userTasks } = createUserDataForUser(userId);
+
+    state.users.push(newUser);
+    state.goals.push(...userGoals);
+    state.tasks.push(...userTasks);
+    db.setState(state);
+
+    const token = generateToken(userId);
+    return {
+      user: {
+        id: newUser.id,
+        name: newUser.name,
+        email: newUser.email
+      },
+      token
+    };
+  }
+
+  public login(email: string, password: string): AuthResponse {
+    const trimmedEmail = email.trim().toLowerCase();
+    const state = db.getState();
+    const user = state.users.find(u => u.email.toLowerCase() === trimmedEmail);
+
+    if (!user || !verifyPassword(password, user.passwordHash, user.salt)) {
+      throw new Error('Invalid email or password');
+    }
+
+    const token = generateToken(user.id);
+    return {
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email
+      },
+      token
+    };
+  }
+
+  public getUserById(userId: string): UserProfile | null {
+    const state = db.getState();
+    const user = state.users.find(u => u.id === userId);
+    if (!user) return null;
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email
+    };
+  }
+
   // --- GOALS ---
-  public getGoals(): Goal[] {
-    return db.getState().goals;
+  public getGoals(userId: string = DEFAULT_USER_ID): Goal[] {
+    const state = db.getState();
+    return state.goals.filter(g => g.userId === userId || (!g.userId && userId === DEFAULT_USER_ID));
   }
 
-  public getGoalById(id: string): Goal | null {
-    return db.getState().goals.find(g => g.id === id) || null;
+  public getGoalById(userId: string = DEFAULT_USER_ID, id: string): Goal | null {
+    return this.getGoals(userId).find(g => g.id === id) || null;
   }
 
-  public createGoal(data: Omit<Goal, 'id' | 'createdAt'>): Goal {
+  public createGoal(userId: string = DEFAULT_USER_ID, data: Omit<Goal, 'id' | 'createdAt' | 'userId'>): Goal {
     const state = db.getState();
     const newGoal: Goal = {
       id: `goal-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      userId,
       title: data.title.trim(),
       description: data.description || '',
       category: data.category || 'Career',
@@ -33,36 +116,36 @@ export class TaskService {
     return newGoal;
   }
 
-  public updateGoal(id: string, updates: Partial<Goal>): Goal | null {
+  public updateGoal(userId: string = DEFAULT_USER_ID, id: string, updates: Partial<Goal>): Goal | null {
     const state = db.getState();
-    const idx = state.goals.findIndex(g => g.id === id);
+    const idx = state.goals.findIndex(g => g.id === id && (g.userId === userId || (!g.userId && userId === DEFAULT_USER_ID)));
     if (idx === -1) return null;
 
-    state.goals[idx] = { ...state.goals[idx], ...updates };
+    state.goals[idx] = { ...state.goals[idx], ...updates, userId };
     db.setState(state);
     return state.goals[idx];
   }
 
-  public deleteGoal(id: string): boolean {
+  public deleteGoal(userId: string = DEFAULT_USER_ID, id: string): boolean {
     const state = db.getState();
     const initLen = state.goals.length;
-    state.goals = state.goals.filter(g => g.id !== id);
+    state.goals = state.goals.filter(g => !(g.id === id && (g.userId === userId || (!g.userId && userId === DEFAULT_USER_ID))));
     if (state.goals.length === initLen) return false;
 
-    // Remove associated tasks
-    state.tasks = state.tasks.filter(t => t.goalId !== id);
+    // Remove associated tasks for this user
+    state.tasks = state.tasks.filter(t => !(t.goalId === id && (t.userId === userId || (!t.userId && userId === DEFAULT_USER_ID))));
     db.setState(state);
     return true;
   }
 
   // --- TASKS ---
-  public getTasks(filters: {
+  public getTasks(userId: string = DEFAULT_USER_ID, filters: {
     goalId?: string;
     topic?: string;
     completed?: boolean;
     search?: string;
   } = {}): Task[] {
-    let tasks = db.getState().tasks;
+    let tasks = db.getState().tasks.filter(t => t.userId === userId || (!t.userId && userId === DEFAULT_USER_ID));
 
     if (filters.goalId) {
       tasks = tasks.filter(t => t.goalId === filters.goalId);
@@ -87,13 +170,14 @@ export class TaskService {
     return tasks;
   }
 
-  public createTask(data: Omit<Task, 'id' | 'createdAt' | 'completedAt' | 'completedDate'> & { id?: string }): Task {
+  public createTask(userId: string = DEFAULT_USER_ID, data: Omit<Task, 'id' | 'createdAt' | 'completedAt' | 'completedDate' | 'userId'> & { id?: string }): Task {
     const state = db.getState();
     const now = new Date();
     const todayStr = now.toISOString().split('T')[0];
 
     const newTask: Task = {
       id: data.id || `task-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      userId,
       goalId: data.goalId,
       title: data.title.trim(),
       topic: data.topic?.trim() || 'General',
@@ -111,9 +195,9 @@ export class TaskService {
     return newTask;
   }
 
-  public toggleTask(id: string): Task | null {
+  public toggleTask(userId: string = DEFAULT_USER_ID, id: string): Task | null {
     const state = db.getState();
-    const idx = state.tasks.findIndex(t => t.id === id);
+    const idx = state.tasks.findIndex(t => t.id === id && (t.userId === userId || (!t.userId && userId === DEFAULT_USER_ID)));
     if (idx === -1) return null;
 
     const task = state.tasks[idx];
@@ -134,9 +218,9 @@ export class TaskService {
     return task;
   }
 
-  public updateTask(id: string, updates: Partial<Task>): Task | null {
+  public updateTask(userId: string = DEFAULT_USER_ID, id: string, updates: Partial<Task>): Task | null {
     const state = db.getState();
-    const idx = state.tasks.findIndex(t => t.id === id);
+    const idx = state.tasks.findIndex(t => t.id === id && (t.userId === userId || (!t.userId && userId === DEFAULT_USER_ID)));
     if (idx === -1) return null;
 
     const task = state.tasks[idx];
@@ -159,6 +243,7 @@ export class TaskService {
     state.tasks[idx] = {
       ...task,
       ...updates,
+      userId,
       completedAt,
       completedDate
     };
@@ -167,23 +252,24 @@ export class TaskService {
     return state.tasks[idx];
   }
 
-  public deleteTask(id: string): boolean {
+  public deleteTask(userId: string = DEFAULT_USER_ID, id: string): boolean {
     const state = db.getState();
     const initLen = state.tasks.length;
-    state.tasks = state.tasks.filter(t => t.id !== id);
+    state.tasks = state.tasks.filter(t => !(t.id === id && (t.userId === userId || (!t.userId && userId === DEFAULT_USER_ID))));
     if (state.tasks.length === initLen) return false;
     db.setState(state);
     return true;
   }
 
   // --- DAILY TRACKING & ANALYTICS ---
-  public getDailyActivity(): DailyGroupedActivity[] {
-    const state = db.getState();
+  public getDailyActivity(userId: string = DEFAULT_USER_ID): DailyGroupedActivity[] {
+    const goals = this.getGoals(userId);
     const goalMap = new Map<string, string>();
-    state.goals.forEach(g => goalMap.set(g.id, g.title));
+    goals.forEach(g => goalMap.set(g.id, g.title));
 
-    // Filter only completed tasks that have a completedDate
-    const completedTasks = state.tasks.filter(t => t.completed && t.completedDate);
+    // Filter only completed tasks for this user that have a completedDate
+    const userTasks = this.getTasks(userId);
+    const completedTasks = userTasks.filter(t => t.completed && t.completedDate);
 
     // Group by date
     const groups = new Map<string, DailyActivityItem[]>();
@@ -218,17 +304,19 @@ export class TaskService {
     return result;
   }
 
-  public getSummary(): OverallSummary {
-    const state = db.getState();
-    const todayStr = new Date().toISOString().split('T')[0];
+  public getSummary(userId: string = DEFAULT_USER_ID): OverallSummary {
+    const goals = this.getGoals(userId);
     const goalMap = new Map<string, string>();
-    state.goals.forEach(g => goalMap.set(g.id, g.title));
+    goals.forEach(g => goalMap.set(g.id, g.title));
 
-    const totalTasks = state.tasks.length;
-    const completedTasksTotal = state.tasks.filter(t => t.completed).length;
+    const userTasks = this.getTasks(userId);
+    const todayStr = new Date().toISOString().split('T')[0];
+
+    const totalTasks = userTasks.length;
+    const completedTasksTotal = userTasks.filter(t => t.completed).length;
 
     // Today's completed tasks
-    const todayTasks = state.tasks.filter(t => t.completed && t.completedDate === todayStr);
+    const todayTasks = userTasks.filter(t => t.completed && t.completedDate === todayStr);
     const todayCompletedItems: DailyActivityItem[] = todayTasks.map(t => ({
       taskId: t.id,
       taskTitle: t.title,
@@ -241,8 +329,8 @@ export class TaskService {
     }));
 
     // Goal stats breakdown
-    const goalStats: GoalStats[] = state.goals.map(g => {
-      const tasks = state.tasks.filter(t => t.goalId === g.id);
+    const goalStats: GoalStats[] = goals.map(g => {
+      const tasks = userTasks.filter(t => t.goalId === g.id);
       const completed = tasks.filter(t => t.completed).length;
       const percent = tasks.length > 0 ? Math.round((completed / tasks.length) * 100) : 0;
 
@@ -268,7 +356,7 @@ export class TaskService {
     });
 
     // Consecutive streak days with at least 1 completed task
-    const completedDates = Array.from(new Set(state.tasks.filter(t => t.completed && t.completedDate).map(t => t.completedDate!))).sort().reverse();
+    const completedDates = Array.from(new Set(userTasks.filter(t => t.completed && t.completedDate).map(t => t.completedDate!))).sort().reverse();
     let streakDays = 0;
     const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 
@@ -286,12 +374,12 @@ export class TaskService {
     }
 
     return {
-      totalGoals: state.goals.length,
+      totalGoals: goals.length,
       totalTasks,
       completedTasksTotal,
       completedTodayCount: todayTasks.length,
       todayCompletedItems,
-      recentDailyActivity: this.getDailyActivity().slice(0, 7),
+      recentDailyActivity: this.getDailyActivity(userId).slice(0, 7),
       streakDays,
       goalStats
     };

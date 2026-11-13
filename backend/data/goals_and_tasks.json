@@ -1,25 +1,38 @@
 {
+  "users": [
+    {
+      "id": "user-default",
+      "name": "Yuvanesh",
+      "email": "yuvanesh@example.com",
+      "passwordHash": "52c3b361234dd5fe3a1bd13249a7b5be60309d9d4728eee76974be855f82d9f9867fe4116f5249e458423cf047daa37c0bda10fffe25af9cbc0b2d3612d54f99",
+      "salt": "2ca101c1b331996ba23d6ce28881b192",
+      "createdAt": "2026-11-13T08:57:57.705Z"
+    }
+  ],
   "goals": [
     {
       "id": "goal-dsa",
+      "userId": "user-default",
       "title": "Master DSA (Grind 169)",
       "description": "Complete all 169 top interview questions grouped by topic from Tech Interview Handbook",
       "category": "Algorithms & Data Structures",
       "icon": "Code2",
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "goal-aws",
+      "userId": "user-default",
       "title": "AWS Certified Solutions Architect Associate",
       "description": "Pass the SAA-C03 certification exam with hands-on labs and practice exams",
       "category": "Cloud & DevOps",
       "icon": "Cloud",
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     }
   ],
   "tasks": [
     {
       "id": "dsa-1",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Two Sum",
       "topic": "Array",
@@ -27,12 +40,13 @@
       "url": "https://leetcode.com/problems/two-sum",
       "duration": 15,
       "completed": true,
-      "completedAt": "2026-11-13T08:21:21.439Z",
+      "completedAt": "2026-11-13T08:57:57.705Z",
       "completedDate": "2026-11-13",
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-20",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Valid Parentheses",
       "topic": "Stack",
@@ -42,10 +56,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-21",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Merge Two Sorted Lists",
       "topic": "Linked List",
@@ -55,10 +70,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-121",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Best Time to Buy and Sell Stock",
       "topic": "Array",
@@ -68,10 +84,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-125",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Valid Palindrome",
       "topic": "String",
@@ -81,10 +98,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-226",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Invert Binary Tree",
       "topic": "Binary Tree",
@@ -94,10 +112,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-242",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Valid Anagram",
       "topic": "String",
@@ -107,10 +126,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-792",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Binary Search",
       "topic": "Binary Search",
@@ -120,10 +140,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-733",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Flood Fill",
       "topic": "Graph",
@@ -133,10 +154,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-53",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Maximum Subarray",
       "topic": "Dynamic Programming",
@@ -146,10 +168,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-235",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Lowest Common Ancestor of a Binary Search Tree",
       "topic": "Binary Search Tree",
@@ -159,10 +182,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-57",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Insert Interval",
       "topic": "Array",
@@ -172,10 +196,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-542",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "01 Matrix",
       "topic": "Graph",
@@ -185,10 +210,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-1014",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "K Closest Points to Origin",
       "topic": "Heap",
@@ -198,10 +224,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-110",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Balanced Binary Tree",
       "topic": "Binary Tree",
@@ -211,10 +238,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-141",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Linked List Cycle",
       "topic": "Linked List",
@@ -224,10 +252,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-232",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Implement Queue using Stacks",
       "topic": "Stack",
@@ -237,10 +266,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-278",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "First Bad Version",
       "topic": "Binary Search",
@@ -250,10 +280,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-383",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Ransom Note",
       "topic": "Hash Table",
@@ -263,10 +294,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-3",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Substring Without Repeating Characters",
       "topic": "String",
@@ -276,10 +308,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-15",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "3Sum",
       "topic": "Array",
@@ -289,10 +322,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-102",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Binary Tree Level Order Traversal",
       "topic": "Binary Tree",
@@ -302,10 +336,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-133",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Clone Graph",
       "topic": "Graph",
@@ -315,10 +350,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-150",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Evaluate Reverse Polish Notation",
       "topic": "Stack",
@@ -328,10 +364,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-207",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Course Schedule",
       "topic": "Graph",
@@ -341,10 +378,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-208",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Implement Trie (Prefix Tree)",
       "topic": "Trie",
@@ -354,10 +392,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-322",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Coin Change",
       "topic": "Dynamic Programming",
@@ -367,10 +406,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-238",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Product of Array Except Self",
       "topic": "Array",
@@ -380,10 +420,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-70",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Climbing Stairs",
       "topic": "Dynamic Programming",
@@ -393,10 +434,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-409",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Palindrome",
       "topic": "String",
@@ -406,10 +448,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-155",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Min Stack",
       "topic": "Stack",
@@ -419,10 +462,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-206",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Reverse Linked List",
       "topic": "Linked List",
@@ -432,10 +476,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-98",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Validate Binary Search Tree",
       "topic": "Binary Search Tree",
@@ -445,10 +490,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-200",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Number of Islands",
       "topic": "Graph",
@@ -458,10 +504,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-1036",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Rotting Oranges",
       "topic": "Graph",
@@ -471,10 +518,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-33",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Search in Rotated Sorted Array",
       "topic": "Binary Search",
@@ -484,10 +532,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-39",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Combination Sum",
       "topic": "Array",
@@ -497,10 +546,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-46",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Permutations",
       "topic": "Recursion",
@@ -510,10 +560,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-56",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Merge Intervals",
       "topic": "Array",
@@ -523,10 +574,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-236",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Lowest Common Ancestor of a Binary Tree",
       "topic": "Binary Tree",
@@ -536,10 +588,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-1023",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Time Based Key-Value Store",
       "topic": "Binary Search",
@@ -549,10 +602,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-76",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Minimum Window Substring",
       "topic": "String",
@@ -562,10 +616,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-297",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Serialize and Deserialize Binary Tree",
       "topic": "Binary Tree",
@@ -575,10 +630,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-42",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Trapping Rain Water",
       "topic": "Stack",
@@ -588,10 +644,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-295",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Find Median from Data Stream",
       "topic": "Heap",
@@ -601,10 +658,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-169",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Majority Element",
       "topic": "Array",
@@ -614,10 +672,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-67",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Add Binary",
       "topic": "Binary / Bit Manipulation",
@@ -627,10 +686,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-543",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Diameter of Binary Tree",
       "topic": "Binary Tree",
@@ -640,10 +700,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-908",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Middle of the Linked List",
       "topic": "Linked List",
@@ -653,10 +714,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-721",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Accounts Merge",
       "topic": "Graph",
@@ -666,10 +728,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-75",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Sort Colors",
       "topic": "Array",
@@ -679,10 +742,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-139",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Word Break",
       "topic": "Trie",
@@ -692,10 +756,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-416",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Partition Equal Subset Sum",
       "topic": "Dynamic Programming",
@@ -705,10 +770,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-8",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "String to Integer (atoi)",
       "topic": "String",
@@ -718,10 +784,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-54",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Spiral Matrix",
       "topic": "Matrix",
@@ -731,10 +798,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-78",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Subsets",
       "topic": "Recursion",
@@ -744,10 +812,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-199",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Binary Tree Right Side View",
       "topic": "Binary Tree",
@@ -757,10 +826,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-5",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Palindromic Substring",
       "topic": "String",
@@ -770,10 +840,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-127",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Word Ladder",
       "topic": "Graph",
@@ -783,10 +854,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-224",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Basic Calculator",
       "topic": "Stack",
@@ -796,10 +868,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-1352",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Maximum Profit in Job Scheduling",
       "topic": "Binary Search",
@@ -809,10 +882,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-23",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Merge k Sorted Lists",
       "topic": "Heap",
@@ -822,10 +896,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-84",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Largest Rectangle in Histogram",
       "topic": "Stack",
@@ -835,10 +910,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-104",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Maximum Depth of Binary Tree",
       "topic": "Binary Tree",
@@ -848,10 +924,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-217",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Contains Duplicate",
       "topic": "Array",
@@ -861,10 +938,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-62",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Unique Paths",
       "topic": "Dynamic Programming",
@@ -874,10 +952,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-105",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Construct Binary Tree from Preorder and Inorder Traversal",
       "topic": "Binary Tree",
@@ -887,10 +966,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-11",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Container With Most Water",
       "topic": "Array",
@@ -900,10 +980,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-17",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Letter Combinations of a Phone Number",
       "topic": "Recursion",
@@ -913,10 +994,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-79",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Word Search",
       "topic": "Graph",
@@ -926,10 +1008,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-438",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Find All Anagrams in a String",
       "topic": "String",
@@ -939,10 +1022,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-310",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Minimum Height Trees",
       "topic": "Graph",
@@ -952,10 +1036,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-621",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Task Scheduler",
       "topic": "Heap",
@@ -965,10 +1050,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-146",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "LRU Cache",
       "topic": "Linked List",
@@ -978,10 +1064,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-230",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Kth Smallest Element in a BST",
       "topic": "Binary Search Tree",
@@ -991,10 +1078,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-739",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Daily Temperatures",
       "topic": "Stack",
@@ -1004,10 +1092,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-198",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "House Robber",
       "topic": "Dynamic Programming",
@@ -1017,10 +1106,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-252",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Meeting Rooms",
       "topic": "Array",
@@ -1030,10 +1120,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-13",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Roman to Integer",
       "topic": "Math",
@@ -1043,10 +1134,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-874",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Backspace String Compare",
       "topic": "Stack",
@@ -1056,10 +1148,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-134",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Gas Station",
       "topic": "Array",
@@ -1069,10 +1162,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-31",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Next Permutation",
       "topic": "Recursion",
@@ -1082,10 +1176,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-36",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Valid Sudoku",
       "topic": "Matrix",
@@ -1095,10 +1190,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-49",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Group Anagrams",
       "topic": "String",
@@ -1108,10 +1204,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-152",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Maximum Product Subarray",
       "topic": "Dynamic Programming",
@@ -1121,10 +1218,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-211",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Design Add and Search Words Data Structure",
       "topic": "Trie",
@@ -1134,10 +1232,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-417",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Pacific Atlantic Water Flow",
       "topic": "Graph",
@@ -1147,10 +1246,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-19",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Remove Nth Node From End of List",
       "topic": "Linked List",
@@ -1160,10 +1260,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-550",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Shortest Path to Get Food",
       "topic": "Graph",
@@ -1173,10 +1274,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-287",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Find the Duplicate Number",
       "topic": "Binary / Bit Manipulation",
@@ -1186,10 +1288,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-692",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Top K Frequent Words",
       "topic": "Heap",
@@ -1199,10 +1302,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-124",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Binary Tree Maximum Path Sum",
       "topic": "Binary Tree",
@@ -1212,10 +1316,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-931",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Maximum Frequency Stack",
       "topic": "Stack",
@@ -1225,10 +1330,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-338",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Counting Bits",
       "topic": "Binary / Bit Manipulation",
@@ -1238,10 +1344,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-300",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Increasing Subsequence",
       "topic": "Dynamic Programming",
@@ -1251,10 +1358,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-261",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Graph Valid Tree",
       "topic": "Graph",
@@ -1264,10 +1372,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-210",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Course Schedule II",
       "topic": "Graph",
@@ -1277,10 +1386,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-24",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Swap Nodes in Pairs",
       "topic": "Linked List",
@@ -1290,10 +1400,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-113",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Path Sum II",
       "topic": "Binary Tree",
@@ -1303,10 +1414,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-128",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Consecutive Sequence",
       "topic": "Array",
@@ -1316,10 +1428,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-189",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Rotate Array",
       "topic": "Array",
@@ -1329,10 +1442,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-328",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Odd Even Linked List",
       "topic": "Linked List",
@@ -1342,10 +1456,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-394",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Decode String",
       "topic": "Stack",
@@ -1355,10 +1470,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-525",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Contiguous Array",
       "topic": "Array",
@@ -1368,10 +1484,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-662",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Maximum Width of Binary Tree",
       "topic": "Binary Tree",
@@ -1381,10 +1498,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-658",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Find K Closest Elements",
       "topic": "Heap",
@@ -1394,10 +1512,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-424",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Repeating Character Replacement",
       "topic": "String",
@@ -1407,10 +1526,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-4",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Median of Two Sorted Arrays",
       "topic": "Binary Search",
@@ -1420,10 +1540,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-100",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Same Tree",
       "topic": "Binary Tree",
@@ -1433,10 +1554,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-191",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Number of 1 Bits",
       "topic": "Binary / Bit Manipulation",
@@ -1446,10 +1568,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-14",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Common Prefix",
       "topic": "String",
@@ -1459,10 +1582,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-285",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Inorder Successor in BST",
       "topic": "Binary Search Tree",
@@ -1472,10 +1596,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-55",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Jump Game",
       "topic": "Dynamic Programming",
@@ -1485,10 +1610,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-2",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Add Two Numbers",
       "topic": "Linked List",
@@ -1498,10 +1624,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-22",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Generate Parentheses",
       "topic": "Recursion",
@@ -1511,10 +1638,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-148",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Sort List",
       "topic": "Linked List",
@@ -1524,10 +1652,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-323",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Number of Connected Components in an Undirected Graph",
       "topic": "Graph",
@@ -1537,10 +1666,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-1142",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Minimum Knight Moves",
       "topic": "Graph",
@@ -1550,10 +1680,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-560",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Subarray Sum Equals K",
       "topic": "Array",
@@ -1563,10 +1694,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-735",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Asteroid Collision",
       "topic": "Stack",
@@ -1576,10 +1708,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-912",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Random Pick with Weight",
       "topic": "Math",
@@ -1589,10 +1722,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-215",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Kth Largest Element in an Array",
       "topic": "Heap",
@@ -1602,10 +1736,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-329",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Increasing Path in a Matrix",
       "topic": "Graph",
@@ -1615,10 +1750,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-32",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Longest Valid Parentheses",
       "topic": "Stack",
@@ -1628,10 +1764,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-588",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Design In-Memory File System",
       "topic": "Trie",
@@ -1641,10 +1778,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-761",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Employee Free Time",
       "topic": "Array",
@@ -1654,10 +1792,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-136",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Single Number",
       "topic": "Binary / Bit Manipulation",
@@ -1667,10 +1806,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-234",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Palindrome Linked List",
       "topic": "Linked List",
@@ -1680,10 +1820,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-283",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Move Zeroes",
       "topic": "Array",
@@ -1693,10 +1834,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-221",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Maximal Square",
       "topic": "Dynamic Programming",
@@ -1706,10 +1848,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-48",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Rotate Image",
       "topic": "Matrix",
@@ -1719,10 +1862,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-103",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Binary Tree Zigzag Level Order Traversal",
       "topic": "Binary Tree",
@@ -1732,10 +1876,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-362",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Design Hit Counter",
       "topic": "Queue",
@@ -1745,10 +1890,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-437",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Path Sum III",
       "topic": "Binary Tree",
@@ -1758,10 +1904,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-50",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Pow(x, n)",
       "topic": "Math",
@@ -1771,10 +1918,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-74",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Search a 2D Matrix",
       "topic": "Binary Search",
@@ -1784,10 +1932,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-179",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Largest Number",
       "topic": "String",
@@ -1797,10 +1946,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-212",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Word Search II",
       "topic": "Graph",
@@ -1810,10 +1960,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-269",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Alien Dictionary",
       "topic": "Graph",
@@ -1823,10 +1974,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-833",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Bus Routes",
       "topic": "Graph",
@@ -1836,10 +1988,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-101",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Symmetric Tree",
       "topic": "Binary Tree",
@@ -1849,10 +2002,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-268",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Missing Number",
       "topic": "Binary / Bit Manipulation",
@@ -1862,10 +2016,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-91",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Decode Ways",
       "topic": "Dynamic Programming",
@@ -1875,10 +2030,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-253",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Meeting Rooms II",
       "topic": "Array",
@@ -1888,10 +2044,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-7",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Reverse Integer",
       "topic": "Math",
@@ -1901,10 +2058,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-73",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Set Matrix Zeroes",
       "topic": "Matrix",
@@ -1914,10 +2072,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-143",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Reorder List",
       "topic": "Linked List",
@@ -1927,10 +2086,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-271",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Encode and Decode Strings",
       "topic": "String",
@@ -1940,10 +2100,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-803",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Cheapest Flights Within K Stops",
       "topic": "Graph",
@@ -1953,10 +2114,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-893",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "All Nodes Distance K in Binary Tree",
       "topic": "Binary Tree",
@@ -1966,10 +2128,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-239",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Sliding Window Maximum",
       "topic": "Array",
@@ -1979,10 +2142,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-9",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Palindrome Number",
       "topic": "Math",
@@ -1992,10 +2156,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-108",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Convert Sorted Array to Binary Search Tree",
       "topic": "Binary Search Tree",
@@ -2005,10 +2170,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-190",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Reverse Bits",
       "topic": "Binary / Bit Manipulation",
@@ -2018,10 +2184,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-572",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Subtree of Another Tree",
       "topic": "Binary Tree",
@@ -2031,10 +2198,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-1019",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Squares of a Sorted Array",
       "topic": "Array",
@@ -2044,10 +2212,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-16",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "3Sum Closest",
       "topic": "Array",
@@ -2057,10 +2226,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-61",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Rotate List",
       "topic": "Linked List",
@@ -2070,10 +2240,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-153",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Find Minimum in Rotated Sorted Array",
       "topic": "Binary Search",
@@ -2083,10 +2254,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-227",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Basic Calculator II",
       "topic": "Stack",
@@ -2096,10 +2268,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-377",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Combination Sum IV",
       "topic": "Dynamic Programming",
@@ -2109,10 +2282,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-380",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Insert Delete GetRandom O(1)",
       "topic": "Hash Table",
@@ -2122,10 +2296,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-435",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Non-overlapping Intervals",
       "topic": "Array",
@@ -2135,10 +2310,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-336",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Palindrome Pairs",
       "topic": "String",
@@ -2148,10 +2324,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-25",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Reverse Nodes in k-Group",
       "topic": "Linked List",
@@ -2161,10 +2338,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-37",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Sudoku Solver",
       "topic": "Matrix",
@@ -2174,10 +2352,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-41",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "First Missing Positive",
       "topic": "Hash Table",
@@ -2187,10 +2366,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-51",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "N-Queens",
       "topic": "Recursion",
@@ -2200,10 +2380,11 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     },
     {
       "id": "dsa-632",
+      "userId": "user-default",
       "goalId": "goal-dsa",
       "title": "Smallest Range Covering Elements from K Lists",
       "topic": "Heap",
@@ -2213,95 +2394,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-1",
-      "goalId": "goal-aws",
-      "title": "VPC & Subnet Architecture Lab (Public/Private subnets, NAT Gateway)",
-      "topic": "Networking & Content Delivery",
-      "difficulty": "Medium",
-      "completed": true,
-      "completedAt": "2026-11-13T08:21:21.439Z",
-      "completedDate": "2026-11-13",
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-2",
-      "goalId": "goal-aws",
-      "title": "IAM Policies, Roles & Cross-Account Access",
-      "topic": "Security & Identity",
-      "difficulty": "Easy",
-      "completed": false,
-      "completedAt": null,
-      "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-3",
-      "goalId": "goal-aws",
-      "title": "S3 Storage Classes, Versioning, and Lifecycle Rules",
-      "topic": "Storage",
-      "difficulty": "Easy",
-      "completed": false,
-      "completedAt": null,
-      "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-4",
-      "goalId": "goal-aws",
-      "title": "EC2 Auto Scaling Groups & Application Load Balancers",
-      "topic": "Compute",
-      "difficulty": "Medium",
-      "completed": false,
-      "completedAt": null,
-      "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-5",
-      "goalId": "goal-aws",
-      "title": "RDS Multi-AZ Failover vs Read Replicas & Aurora",
-      "topic": "Databases",
-      "difficulty": "Medium",
-      "completed": false,
-      "completedAt": null,
-      "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-6",
-      "goalId": "goal-aws",
-      "title": "Route 53 Routing Policies & CloudFront CDN Caching",
-      "topic": "Networking & Content Delivery",
-      "difficulty": "Medium",
-      "completed": false,
-      "completedAt": null,
-      "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-7",
-      "goalId": "goal-aws",
-      "title": "AWS KMS Encryption, Secrets Manager & Parameter Store",
-      "topic": "Security & Identity",
-      "difficulty": "Medium",
-      "completed": false,
-      "completedAt": null,
-      "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
-    },
-    {
-      "id": "aws-8",
-      "goalId": "goal-aws",
-      "title": "Full Practice Exam 1 Review (65 Questions)",
-      "topic": "Practice Exams",
-      "difficulty": "Hard",
-      "completed": false,
-      "completedAt": null,
-      "completedDate": null,
-      "createdAt": "2026-11-13T08:21:21.439Z"
+      "createdAt": "2026-11-13T08:57:57.705Z"
     }
   ]
 }

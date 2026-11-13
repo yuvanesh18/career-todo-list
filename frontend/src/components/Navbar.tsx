@@ -1,12 +1,27 @@
 import React, { useRef } from 'react';
-import { Target, CalendarCheck, Flame, CheckCircle2, Plus, Layers, Download, Upload, Database } from 'lucide-react';
-import { ActiveTab } from '../types';
+import {
+  Target,
+  CalendarCheck,
+  Flame,
+  CheckCircle2,
+  Plus,
+  Layers,
+  Download,
+  Upload,
+  User as UserIcon,
+  LogOut,
+  LogIn
+} from 'lucide-react';
+import { ActiveTab, UserProfile } from '../types';
 
 interface NavbarProps {
   activeTab: ActiveTab;
   onTabChange: (tab: ActiveTab) => void;
   streakDays: number;
   completedTodayCount: number;
+  user: UserProfile | null;
+  onOpenAuthModal: () => void;
+  onLogout: () => void;
   onOpenNewGoalModal: () => void;
   onExportBackup: () => void;
   onImportBackup: (jsonContent: string) => void;
@@ -17,6 +32,9 @@ export const Navbar: React.FC<NavbarProps> = ({
   onTabChange,
   streakDays,
   completedTodayCount,
+  user,
+  onOpenAuthModal,
+  onLogout,
   onOpenNewGoalModal,
   onExportBackup,
   onImportBackup
@@ -82,15 +100,15 @@ export const Navbar: React.FC<NavbarProps> = ({
             </button>
           </div>
 
-          {/* Quick Metrics & Action */}
+          {/* Quick Metrics & Actions */}
           <div className="flex items-center gap-2.5">
-            <div className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-300 text-xs font-bold">
+            <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-300 text-xs font-bold">
               <Flame className="w-3.5 h-3.5 text-orange-400" />
               <span>{streakDays}d Streak</span>
             </div>
 
             <div
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+              className={`hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition ${
                 completedTodayCount > 0
                   ? 'bg-emerald-950/50 border-emerald-500/30 text-emerald-300'
                   : 'bg-slate-950 border-slate-800 text-slate-400'
@@ -108,7 +126,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               <span className="hidden sm:inline">New Goal</span>
             </button>
 
-            {/* Permanent DB Backup & Restore Controls */}
+            {/* Permanent DB Backup & Restore */}
             <div className="flex items-center border-l border-slate-800 pl-2 gap-1">
               <button
                 onClick={onExportBackup}
@@ -134,6 +152,38 @@ export const Navbar: React.FC<NavbarProps> = ({
                 className="hidden"
                 onChange={handleFileChange}
               />
+            </div>
+
+            {/* User Profile / Auth Button */}
+            <div className="flex items-center border-l border-slate-800 pl-2">
+              {user ? (
+                <div className="flex items-center gap-2">
+                  <div
+                    title={user.email}
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-800/80 border border-slate-700/80 rounded-xl text-xs text-slate-200"
+                  >
+                    <div className="w-5 h-5 rounded-full bg-indigo-500 text-white font-bold text-[10px] flex items-center justify-center">
+                      {user.name.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="hidden sm:inline font-medium max-w-[100px] truncate">{user.name}</span>
+                  </div>
+                  <button
+                    onClick={onLogout}
+                    title="Sign Out"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 border border-transparent hover:border-rose-500/20 transition"
+                  >
+                    <LogOut className="w-4 h-4" />
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={onOpenAuthModal}
+                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-semibold transition flex items-center gap-1.5"
+                >
+                  <LogIn className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Sign In</span>
+                </button>
+              )}
             </div>
           </div>
         </div>

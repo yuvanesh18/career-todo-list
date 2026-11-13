@@ -7,8 +7,11 @@ import {
   deleteTask,
   getDailyActivity,
   getGoals,
+  getMe,
   getSummary,
   getTasks,
+  login,
+  register,
   resetData,
   restoreDatabase,
   toggleTask,
@@ -17,6 +20,11 @@ import {
 } from '../controllers/taskController.js';
 
 const router = Router();
+
+// Authentication
+router.post('/auth/register', register);
+router.post('/auth/login', login);
+router.get('/auth/me', getMe);
 
 // Overall & Daily Tracking
 router.get('/summary', getSummary);

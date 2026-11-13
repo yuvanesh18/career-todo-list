@@ -1,13 +1,16 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { api } from './services/api';
-import { ActiveTab, DailyGroupedActivity, Goal, OverallSummary, Task } from './types';
+import { ActiveTab, DailyGroupedActivity, Goal, OverallSummary, Task, UserProfile } from './types';
 import { Navbar } from './components/Navbar';
 import { GoalDetailView } from './components/GoalDetailView';
 import { DailyActivityView } from './components/DailyActivityView';
 import { NewGoalModal } from './components/NewGoalModal';
+import { AuthModal } from './components/AuthModal';
 
 export const App: React.FC = () => {
   const [activeTab, setActiveTab] = useState<ActiveTab>('goals');
+  const [user, setUser] = useState<UserProfile | null>(() => api.getCurrentUser());
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [goals, setGoals] = useState<Goal[]>([]);
   const [selectedGoalId, setSelectedGoalId] = useState<string>('goal-dsa');
   const [tasks, setTasks] = useState<Task[]>([]);
@@ -42,11 +45,6 @@ export const App: React.FC = () => {
     loadData();
   };
 
-  const handleAddTask = async (taskData: Partial<Task>) => {
-    await api.createTask(taskData);
-    loadData();
-  };
-
   const handleDeleteTask = async (id: string) => {
     await api.deleteTask(id);
     loadData();
@@ -58,13 +56,25 @@ export const App: React.FC = () => {
     loadData();
   };
 
+  const handleAuthSuccess = (authenticatedUser: UserProfile) => {
+    setUser(authenticatedUser);
+    loadData();
+  };
+
+  const handleLogout = () => {
+    api.logout();
+    setUser(null);
+    loadData();
+  };
+
   const handleExportBackup = async () => {
     const data = await api.backupDatabase();
     const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `career_pulse_db_backup_${new Date().toISOString().split('T')[0]}.json`;
+    const namePrefix = user ? `${user.name.toLowerCase().replace(/\s+/g, '_')}_` : '';
+    a.download = `career_pulse_${namePrefix}db_backup_${new Date().toISOString().split('T')[0]}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
@@ -88,6 +98,9 @@ export const App: React.FC = () => {
         onTabChange={setActiveTab}
         streakDays={summary?.streakDays || 0}
         completedTodayCount={summary?.completedTodayCount || 0}
+        user={user}
+        onOpenAuthModal={() => setIsAuthModalOpen(true)}
+        onLogout={handleLogout}
         onOpenNewGoalModal={() => setIsNewGoalModalOpen(true)}
         onExportBackup={handleExportBackup}
         onImportBackup={handleImportBackup}
@@ -114,6 +127,13 @@ export const App: React.FC = () => {
           />
         )}
       </main>
+
+      {/* Auth Modal (Login & Register) */}
+      <AuthModal
+        isOpen={isAuthModalOpen}
+        onClose={() => setIsAuthModalOpen(false)}
+        onAuthSuccess={handleAuthSuccess}
+      />
 
       {/* Create New Goal Modal */}
       <NewGoalModal

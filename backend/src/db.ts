@@ -1,7 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { Goal, Task } from './types.js';
+import { Goal, Task, User } from './types.js';
+import { hashPassword } from './auth.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,19 +12,56 @@ const STATE_FILE = path.join(DATA_DIR, 'goals_and_tasks.json');
 const SEED_FILE = path.join(DATA_DIR, 'seed_data.json');
 
 export interface AppDatabaseState {
+  users: User[];
   goals: Goal[];
   tasks: Task[];
 }
 
+export const DEFAULT_USER_ID = 'user-default';
+
+export function createUserDataForUser(userId: string): { goals: Goal[]; tasks: Task[] } {
+  let seedRaw: any = { goals: [], tasks: [] };
+  if (fs.existsSync(SEED_FILE)) {
+    seedRaw = JSON.parse(fs.readFileSync(SEED_FILE, 'utf-8'));
+  }
+
+  const isDefault = userId === DEFAULT_USER_ID;
+
+  const userGoals: Goal[] = seedRaw.goals.map((g: any) => ({
+    id: isDefault ? g.id : `${g.id}-${userId}`,
+    userId,
+    title: g.title,
+    description: g.description,
+    category: g.category,
+    icon: g.icon,
+    createdAt: new Date().toISOString()
+  }));
+
+  const userTasks: Task[] = seedRaw.tasks.map((t: any) => ({
+    id: isDefault ? t.id : `${t.id}-${userId}`,
+    userId,
+    goalId: isDefault ? t.goalId : `${t.goalId}-${userId}`,
+    title: t.title,
+    topic: t.topic,
+    difficulty: t.difficulty,
+    url: t.url,
+    duration: t.duration,
+    completed: Boolean(t.completed),
+    completedAt: t.completed ? new Date().toISOString() : null,
+    completedDate: t.completed ? new Date().toISOString().split('T')[0] : null,
+    createdAt: new Date().toISOString()
+  }));
+
+  return { goals: userGoals, tasks: userTasks };
+}
+
 class Database {
   private stateFile: string;
-  private seedFile: string;
-  private state: AppDatabaseState = { goals: [], tasks: [] };
+  private state: AppDatabaseState = { users: [], goals: [], tasks: [] };
   private initialized = false;
 
-  constructor(stateFile: string, seedFile: string) {
+  constructor(stateFile: string) {
     this.stateFile = stateFile;
-    this.seedFile = seedFile;
   }
 
   public init(): void {
@@ -38,27 +76,38 @@ class Database {
       if (fs.existsSync(this.stateFile)) {
         const raw = fs.readFileSync(this.stateFile, 'utf-8');
         this.state = JSON.parse(raw);
-        if (!this.state.goals || !this.state.tasks || this.state.tasks.length === 0) {
-          this.loadFromSeed();
+        if (!this.state.users || this.state.users.length === 0) {
+          this.initDefaultUser();
         }
       } else {
-        this.loadFromSeed();
+        this.initDefaultUser();
       }
       this.initialized = true;
     } catch (err) {
-      console.warn('DB initialization issue, falling back to seed data:', err);
-      this.loadFromSeed();
+      console.warn('DB initialization error, creating clean state:', err);
+      this.initDefaultUser();
       this.initialized = true;
     }
   }
 
-  private loadFromSeed(): void {
-    if (fs.existsSync(this.seedFile)) {
-      const raw = fs.readFileSync(this.seedFile, 'utf-8');
-      this.state = JSON.parse(raw);
-    } else {
-      this.state = { goals: [], tasks: [] };
-    }
+  public initDefaultUser(): void {
+    const { hash, salt } = hashPassword('password123');
+    const defaultUser: User = {
+      id: DEFAULT_USER_ID,
+      name: 'Yuvanesh',
+      email: 'yuvanesh@example.com',
+      passwordHash: hash,
+      salt,
+      createdAt: new Date().toISOString()
+    };
+
+    const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
+
+    this.state = {
+      users: [defaultUser],
+      goals,
+      tasks
+    };
     this.persist();
   }
 
@@ -74,11 +123,11 @@ class Database {
   }
 
   public resetSeed(): AppDatabaseState {
-    this.loadFromSeed();
+    this.initDefaultUser();
     return this.state;
   }
 
-  private persist(): void {
+  public persist(): void {
     try {
       const dir = path.dirname(this.stateFile);
       if (!fs.existsSync(dir)) {
@@ -98,4 +147,4 @@ class Database {
   }
 }
 
-export const db = new Database(STATE_FILE, SEED_FILE);
+export const db = new Database(STATE_FILE);
