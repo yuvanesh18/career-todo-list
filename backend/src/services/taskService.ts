@@ -1,201 +1,278 @@
-import { db } from '../db.js';
-import { AnalyticsSummary, CategoryStats, FilterOptions, Task, TaskStatus } from '../types.js';
+import { db, DEFAULT_USER_ID, createUserDataForUser } from '../db.js';
+import { generateToken, hashPassword, verifyPassword } from '../auth.js';
+import {
+  AuthResponse,
+  DailyActivityItem,
+  DailyGroupedActivity,
+  Goal,
+  GoalStats,
+  OverallSummary,
+  Task,
+  User,
+  UserProfile
+} from '../types.js';
 
 export class TaskService {
-  public getAll(filters: FilterOptions = {}): Task[] {
-    let tasks = db.getTasks();
+  // --- AUTHENTICATION ---
+  public async register(name: string, email: string, password: string): Promise<AuthResponse> {
+    const trimmedEmail = email.trim().toLowerCase();
+    const trimmedName = name.trim();
 
-    if (filters.status) {
-      tasks = tasks.filter(t => t.status === filters.status);
+    if (!trimmedName || !trimmedEmail || !password) {
+      throw new Error('Name, email, and password are required');
     }
 
-    if (filters.category) {
-      tasks = tasks.filter(t => t.category === filters.category);
+    const existing = await db.getUserByEmail(trimmedEmail);
+    if (existing) {
+      throw new Error('An account with this email already exists');
     }
 
-    if (filters.priority) {
-      tasks = tasks.filter(t => t.priority === filters.priority);
+    const { hash, salt } = hashPassword(password);
+    const userId = `user-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
+
+    const newUser: User = {
+      id: userId,
+      name: trimmedName,
+      email: trimmedEmail,
+      passwordHash: hash,
+      salt,
+      createdAt: new Date().toISOString()
+    };
+
+    // Save user
+    await db.addUser(newUser);
+
+    // Initialize individual seeded goals & tasks for new user
+    const { goals: userGoals, tasks: userTasks } = createUserDataForUser(userId);
+    for (const g of userGoals) {
+      await db.addGoal(g);
     }
-
-    if (filters.tag) {
-      const searchTag = filters.tag.toLowerCase();
-      tasks = tasks.filter(t => t.tags.some(tag => tag.toLowerCase() === searchTag));
-    }
-
-    if (filters.search) {
-      const q = filters.search.toLowerCase();
-      tasks = tasks.filter(t =>
-        t.title.toLowerCase().includes(q) ||
-        t.description.toLowerCase().includes(q) ||
-        t.tags.some(tag => tag.toLowerCase().includes(q)) ||
-        t.reflectionNotes.toLowerCase().includes(q)
-      );
-    }
-
-    // Sorting
-    const sortBy = filters.sortBy || 'createdAt';
-    const sortOrder = filters.sortOrder === 'asc' ? 1 : -1;
-
-    tasks.sort((a, b) => {
-      if (sortBy === 'dueDate') {
-        if (!a.dueDate) return 1;
-        if (!b.dueDate) return -1;
-        return a.dueDate.localeCompare(b.dueDate) * sortOrder;
+    if (db.isPostgres()) {
+      await db.batchInsertTasks(userTasks);
+    } else {
+      for (const t of userTasks) {
+        await db.addTask(t);
       }
-      if (sortBy === 'priority') {
-        const pOrder: Record<string, number> = { Urgent: 4, High: 3, Medium: 2, Low: 1 };
-        return ((pOrder[a.priority] || 0) - (pOrder[b.priority] || 0)) * sortOrder;
-      }
-      if (sortBy === 'estimatedHours') {
-        return (a.estimatedHours - b.estimatedHours) * sortOrder;
-      }
-      // default createdAt
-      return a.createdAt.localeCompare(b.createdAt) * sortOrder;
-    });
+    }
 
-    return tasks;
+    const token = generateToken(userId);
+    return {
+      user: {
+        id: newUser.id,
+        name: newUser.name,
+        email: newUser.email
+      },
+      token
+    };
   }
 
-  public getById(id: string): Task | null {
-    const tasks = db.getTasks();
-    return tasks.find(t => t.id === id) || null;
+  public async login(email: string, password: string): Promise<AuthResponse> {
+    const trimmedEmail = email.trim().toLowerCase();
+    const user = await db.getUserByEmail(trimmedEmail);
+
+    if (!user || !verifyPassword(password, user.passwordHash, user.salt)) {
+      throw new Error('Invalid email or password');
+    }
+
+    const token = generateToken(user.id);
+    return {
+      user: {
+        id: user.id,
+        name: user.name,
+        email: user.email
+      },
+      token
+    };
   }
 
-  public create(data: Omit<Task, 'id' | 'createdAt' | 'updatedAt' | 'completedAt'> & { id?: string }): Task {
-    const tasks = db.getTasks();
-    const now = new Date().toISOString();
-    const newTask: Task = {
-      id: data.id || `task-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`,
+  public async getUserById(userId: string): Promise<UserProfile | null> {
+    const user = await db.getUserById(userId);
+    if (!user) return null;
+    return {
+      id: user.id,
+      name: user.name,
+      email: user.email
+    };
+  }
+
+  // --- GOALS ---
+  public async getGoals(userId: string = DEFAULT_USER_ID): Promise<Goal[]> {
+    return db.getGoals(userId);
+  }
+
+  public async getGoalById(userId: string = DEFAULT_USER_ID, id: string): Promise<Goal | null> {
+    const goals = await this.getGoals(userId);
+    return goals.find(g => g.id === id) || null;
+  }
+
+  public async createGoal(userId: string = DEFAULT_USER_ID, data: Omit<Goal, 'id' | 'createdAt' | 'userId'>): Promise<Goal> {
+    const newGoal: Goal = {
+      id: `goal-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      userId,
       title: data.title.trim(),
       description: data.description || '',
-      category: data.category,
-      priority: data.priority,
-      status: data.status,
-      tags: data.tags || [],
-      subtasks: data.subtasks || [],
-      estimatedHours: Number(data.estimatedHours) || 0,
-      actualHours: Number(data.actualHours) || 0,
-      pomodoroSessions: Number(data.pomodoroSessions) || 0,
-      dueDate: data.dueDate || null,
-      reflectionNotes: data.reflectionNotes || '',
-      createdAt: now,
-      updatedAt: now,
-      completedAt: data.status === 'Done' ? now : null
+      category: data.category || 'Career',
+      icon: data.icon || 'Target',
+      createdAt: new Date().toISOString()
     };
-
-    tasks.unshift(newTask);
-    db.setTasks(tasks);
-    return newTask;
+    return db.addGoal(newGoal);
   }
 
-  public update(id: string, updates: Partial<Task>): Task | null {
-    const tasks = db.getTasks();
-    const index = tasks.findIndex(t => t.id === id);
-    if (index === -1) return null;
+  public async updateGoal(userId: string = DEFAULT_USER_ID, id: string, updates: Partial<Goal>): Promise<Goal | null> {
+    return db.updateGoal(userId, id, updates);
+  }
 
-    const existing = tasks[index];
-    const now = new Date().toISOString();
+  public async deleteGoal(userId: string = DEFAULT_USER_ID, id: string): Promise<boolean> {
+    return db.deleteGoal(userId, id);
+  }
 
-    let completedAt = existing.completedAt;
-    if (updates.status) {
-      if (updates.status === 'Done' && existing.status !== 'Done') {
-        completedAt = now;
-      } else if (updates.status !== 'Done') {
-        completedAt = null;
+  // --- TASKS ---
+  public async getTasks(userId: string = DEFAULT_USER_ID, filters: {
+    goalId?: string;
+    topic?: string;
+    completed?: boolean;
+    search?: string;
+  } = {}): Promise<Task[]> {
+    return db.getTasks(userId, filters);
+  }
+
+  public async createTask(userId: string = DEFAULT_USER_ID, data: Omit<Task, 'id' | 'createdAt' | 'completedAt' | 'completedDate' | 'userId'> & { id?: string }): Promise<Task> {
+    const now = new Date();
+    const todayStr = now.toISOString().split('T')[0];
+
+    const newTask: Task = {
+      id: data.id || `task-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+      userId,
+      goalId: data.goalId,
+      title: data.title.trim(),
+      topic: data.topic?.trim() || 'General',
+      difficulty: data.difficulty,
+      url: data.url || undefined,
+      duration: data.duration,
+      completed: Boolean(data.completed),
+      completedAt: data.completed ? now.toISOString() : null,
+      completedDate: data.completed ? todayStr : null,
+      createdAt: now.toISOString()
+    };
+
+    return db.addTask(newTask);
+  }
+
+  public async toggleTask(userId: string = DEFAULT_USER_ID, id: string): Promise<Task | null> {
+    return db.toggleTask(userId, id);
+  }
+
+  public async updateTask(userId: string = DEFAULT_USER_ID, id: string, updates: Partial<Task>): Promise<Task | null> {
+    return db.updateTask(userId, id, updates);
+  }
+
+  public async deleteTask(userId: string = DEFAULT_USER_ID, id: string): Promise<boolean> {
+    return db.deleteTask(userId, id);
+  }
+
+  // --- DAILY TRACKING & ANALYTICS ---
+  public async getDailyActivity(userId: string = DEFAULT_USER_ID): Promise<DailyGroupedActivity[]> {
+    const goals = await this.getGoals(userId);
+    const goalMap = new Map<string, string>();
+    goals.forEach(g => goalMap.set(g.id, g.title));
+
+    const userTasks = await this.getTasks(userId);
+    const completedTasks = userTasks.filter(t => t.completed && t.completedDate);
+
+    const groups = new Map<string, DailyActivityItem[]>();
+
+    completedTasks.forEach(t => {
+      const date = t.completedDate!;
+      if (!groups.has(date)) {
+        groups.set(date, []);
       }
-    }
-
-    const updatedTask: Task = {
-      ...existing,
-      ...updates,
-      id: existing.id,
-      createdAt: existing.createdAt,
-      updatedAt: now,
-      completedAt
-    };
-
-    tasks[index] = updatedTask;
-    db.setTasks(tasks);
-    return updatedTask;
-  }
-
-  public delete(id: string): boolean {
-    const tasks = db.getTasks();
-    const filtered = tasks.filter(t => t.id !== id);
-    if (filtered.length === tasks.length) return false;
-    db.setTasks(filtered);
-    return true;
-  }
-
-  public logPomodoro(id: string, durationMinutes = 25): Task | null {
-    const task = this.getById(id);
-    if (!task) return null;
-
-    const addedHours = Number((durationMinutes / 60).toFixed(2));
-    const newActualHours = Number((task.actualHours + addedHours).toFixed(2));
-    const newSessions = task.pomodoroSessions + 1;
-
-    return this.update(id, {
-      actualHours: newActualHours,
-      pomodoroSessions: newSessions
+      groups.get(date)!.push({
+        taskId: t.id,
+        taskTitle: t.title,
+        goalId: t.goalId,
+        goalTitle: goalMap.get(t.goalId) || 'Unknown Goal',
+        topic: t.topic,
+        difficulty: t.difficulty,
+        url: t.url,
+        completedAt: t.completedAt || date
+      });
     });
+
+    const result: DailyGroupedActivity[] = [];
+    Array.from(groups.keys()).sort().reverse().forEach(date => {
+      const items = groups.get(date)!;
+      result.push({
+        date,
+        count: items.length,
+        items
+      });
+    });
+
+    return result;
   }
 
-  public getAnalytics(): AnalyticsSummary {
-    const tasks = db.getTasks();
-    const totalTasks = tasks.length;
-    const completedTasks = tasks.filter(t => t.status === 'Done').length;
-    const inProgressTasks = tasks.filter(t => t.status === 'In Progress').length;
-    const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
+  public async getSummary(userId: string = DEFAULT_USER_ID): Promise<OverallSummary> {
+    const goals = await this.getGoals(userId);
+    const goalMap = new Map<string, string>();
+    goals.forEach(g => goalMap.set(g.id, g.title));
 
-    const totalEstimatedHours = Number(tasks.reduce((acc, t) => acc + (t.estimatedHours || 0), 0).toFixed(1));
-    const totalActualHours = Number(tasks.reduce((acc, t) => acc + (t.actualHours || 0), 0).toFixed(1));
-    const totalPomodoros = tasks.reduce((acc, t) => acc + (t.pomodoroSessions || 0), 0);
-
-    // Category breakdown
-    const categoryBreakdown: Record<string, CategoryStats> = {};
-    for (const t of tasks) {
-      if (!categoryBreakdown[t.category]) {
-        categoryBreakdown[t.category] = { total: 0, completed: 0, hours: 0 };
-      }
-      categoryBreakdown[t.category].total += 1;
-      categoryBreakdown[t.category].hours = Number((categoryBreakdown[t.category].hours + (t.actualHours || 0)).toFixed(1));
-      if (t.status === 'Done') {
-        categoryBreakdown[t.category].completed += 1;
-      }
-    }
-
-    // Priority breakdown
-    const priorityBreakdown: Record<string, number> = {
-      Urgent: 0,
-      High: 0,
-      Medium: 0,
-      Low: 0
-    };
-    for (const t of tasks) {
-      priorityBreakdown[t.priority] = (priorityBreakdown[t.priority] || 0) + 1;
-    }
-
-    // Streak calculation (consecutive days with completed activity)
-    const completedWithDates = tasks
-      .filter(t => t.status === 'Done' && t.completedAt)
-      .map(t => t.completedAt!.split('T')[0]);
-
-    const uniqueCompletedDates = Array.from(new Set(completedWithDates)).sort().reverse();
-    let currentStreakDays = 0;
-
+    const userTasks = await this.getTasks(userId);
     const todayStr = new Date().toISOString().split('T')[0];
-    const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
 
-    if (uniqueCompletedDates.includes(todayStr) || uniqueCompletedDates.includes(yesterday)) {
-      let checkDate = uniqueCompletedDates.includes(todayStr)
-        ? new Date()
-        : new Date(Date.now() - 86400000);
+    const totalTasks = userTasks.length;
+    const completedTasksTotal = userTasks.filter(t => t.completed).length;
 
+    // Today's completed tasks
+    const todayTasks = userTasks.filter(t => t.completed && t.completedDate === todayStr);
+    const todayCompletedItems: DailyActivityItem[] = todayTasks.map(t => ({
+      taskId: t.id,
+      taskTitle: t.title,
+      goalId: t.goalId,
+      goalTitle: goalMap.get(t.goalId) || 'Goal',
+      topic: t.topic,
+      difficulty: t.difficulty,
+      url: t.url,
+      completedAt: t.completedAt || todayStr
+    }));
+
+    // Goal stats breakdown
+    const goalStats: GoalStats[] = goals.map(g => {
+      const tasks = userTasks.filter(t => t.goalId === g.id);
+      const completed = tasks.filter(t => t.completed).length;
+      const percent = tasks.length > 0 ? Math.round((completed / tasks.length) * 100) : 0;
+
+      const byTopic: Record<string, { total: number; completed: number }> = {};
+      tasks.forEach(t => {
+        if (!byTopic[t.topic]) {
+          byTopic[t.topic] = { total: 0, completed: 0 };
+        }
+        byTopic[t.topic].total += 1;
+        if (t.completed) {
+          byTopic[t.topic].completed += 1;
+        }
+      });
+
+      return {
+        goalId: g.id,
+        goalTitle: g.title,
+        totalTasks: tasks.length,
+        completedTasks: completed,
+        percent,
+        byTopic
+      };
+    });
+
+    // Consecutive streak days
+    const completedDates = Array.from(new Set(userTasks.filter(t => t.completed && t.completedDate).map(t => t.completedDate!))).sort().reverse();
+    let streakDays = 0;
+    const yesterdayStr = new Date(Date.now() - 86400000).toISOString().split('T')[0];
+
+    if (completedDates.includes(todayStr) || completedDates.includes(yesterdayStr)) {
+      let checkDate = completedDates.includes(todayStr) ? new Date() : new Date(Date.now() - 86400000);
       while (true) {
-        const dateKey = checkDate.toISOString().split('T')[0];
-        if (uniqueCompletedDates.includes(dateKey)) {
-          currentStreakDays++;
+        const dKey = checkDate.toISOString().split('T')[0];
+        if (completedDates.includes(dKey)) {
+          streakDays++;
           checkDate = new Date(checkDate.getTime() - 86400000);
         } else {
           break;
@@ -203,48 +280,34 @@ export class TaskService {
       }
     }
 
-    // Past 7 days activity
-    const weeklyCompleted: { date: string; count: number }[] = [];
-    for (let i = 6; i >= 0; i--) {
-      const d = new Date(Date.now() - i * 86400000).toISOString().split('T')[0];
-      const count = tasks.filter(t => t.completedAt && t.completedAt.startsWith(d)).length;
-      weeklyCompleted.push({ date: d, count });
-    }
+    const recentActivity = await this.getDailyActivity(userId);
 
     return {
+      totalGoals: goals.length,
       totalTasks,
-      completedTasks,
-      inProgressTasks,
-      completionRate,
-      totalEstimatedHours,
-      totalActualHours,
-      totalPomodoros,
-      currentStreakDays,
-      categoryBreakdown,
-      priorityBreakdown,
-      weeklyCompleted
+      completedTasksTotal,
+      completedTodayCount: todayTasks.length,
+      todayCompletedItems,
+      recentDailyActivity: recentActivity.slice(0, 7),
+      streakDays,
+      goalStats
     };
   }
 
-  public resetSeed(): Task[] {
-    return db.resetToDefault();
+  public async resetSeed() {
+    return db.resetSeed();
   }
 
-  public exportAll(): { tasks: Task[]; exportedAt: string } {
-    return {
-      tasks: db.getTasks(),
-      exportedAt: new Date().toISOString()
-    };
+  public async exportData() {
+    return db.exportData();
   }
 
-  public importAll(importedTasks: Task[]): { importedCount: number } {
-    if (!Array.isArray(importedTasks)) {
-      throw new Error('Import data must contain an array of tasks');
+  public async importData(newState: any) {
+    if (!newState || !Array.isArray(newState.goals) || !Array.isArray(newState.tasks)) {
+      throw new Error('Invalid backup format: goals and tasks arrays are required.');
     }
-    db.setTasks(importedTasks);
-    return { importedCount: importedTasks.length };
+    return db.importData(newState);
   }
 }
 
 export const taskService = new TaskService();
-

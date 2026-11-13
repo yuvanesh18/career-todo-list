@@ -1,224 +1,76 @@
-import { AnalyticsSummary, FilterState, Task } from '../types';
+import { AuthResponse, DailyGroupedActivity, Goal, OverallSummary, Task, UserProfile } from '../types';
+import seedData from '../data/seed_data.json';
 
-const STORAGE_KEY = 'career_pulse_tasks_v1';
-
-const DEFAULT_SEEDED_TASKS: Task[] = [
-  {
-    id: 'task-1',
-    title: 'Master CI/CD Pipelines with GitHub Actions',
-    description: 'Build an automated pipeline that lints, runs tests, creates Docker images, and deploys to registry on push.',
-    category: 'Cloud & DevOps',
-    priority: 'Urgent',
-    status: 'In Progress',
-    tags: ['ci-cd', 'github-actions', 'devops', 'docker'],
-    subtasks: [
-      { id: 'sub-1', title: 'Write unit tests with Vitest', completed: true },
-      { id: 'sub-2', title: 'Create multi-stage Dockerfile', completed: true },
-      { id: 'sub-3', title: 'Configure GitHub Actions workflow YAML', completed: true },
-      { id: 'sub-4', title: 'Publish container image to GHCR', completed: false }
-    ],
-    estimatedHours: 4,
-    actualHours: 2.5,
-    pomodoroSessions: 5,
-    dueDate: new Date(Date.now() + 86400000 * 2).toISOString().split('T')[0],
-    reflectionNotes: 'Automating tests on every PR prevents breaking changes. GHCR provides free unlimited container hosting for open-source repositories.',
-    createdAt: new Date(Date.now() - 86400000 * 3).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: null
-  },
-  {
-    id: 'task-2',
-    title: 'Design Distributed Rate Limiter (System Design)',
-    description: 'Study Token Bucket, Leaky Bucket, and Sliding Window algorithms with Redis for multi-node rate limiting.',
-    category: 'System Design',
-    priority: 'High',
-    status: 'To Do',
-    tags: ['system-design', 'redis', 'architecture', 'scalability'],
-    subtasks: [
-      { id: 'sub-5', title: 'Compare Token Bucket vs Sliding Window Counter', completed: true },
-      { id: 'sub-6', title: 'Draft high-level architecture diagram', completed: false },
-      { id: 'sub-7', title: 'Handle race conditions using Redis Lua scripts', completed: false }
-    ],
-    estimatedHours: 3.5,
-    actualHours: 1.0,
-    pomodoroSessions: 2,
-    dueDate: new Date(Date.now() + 86400000 * 4).toISOString().split('T')[0],
-    reflectionNotes: 'Token bucket is ideal for bursty traffic; sliding window log is accurate but memory-intensive.',
-    createdAt: new Date(Date.now() - 86400000 * 2).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: null
-  },
-  {
-    id: 'task-3',
-    title: 'Blind 75: Two Pointers & Sliding Window Patterns',
-    description: 'Solve and analyze time/space complexity for 3 classic problems: 3Sum, Container With Most Water, Longest Substring Without Repeating Characters.',
-    category: 'DSA & Algorithms',
-    priority: 'High',
-    status: 'Done',
-    tags: ['leetcode', 'dsa', 'two-pointers', 'python', 'javascript'],
-    subtasks: [
-      { id: 'sub-8', title: 'Solve 3Sum with sorting and two pointers', completed: true },
-      { id: 'sub-9', title: 'Solve Container With Most Water in O(n)', completed: true },
-      { id: 'sub-10', title: 'Write clean explanation in notes', completed: true }
-    ],
-    estimatedHours: 3,
-    actualHours: 3,
-    pomodoroSessions: 6,
-    dueDate: new Date(Date.now() - 86400000 * 1).toISOString().split('T')[0],
-    reflectionNotes: 'Always sort first when applying two pointers on sums to eliminate duplicate triplets easily.',
-    createdAt: new Date(Date.now() - 86400000 * 5).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: new Date(Date.now() - 86400000 * 1).toISOString()
-  },
-  {
-    id: 'task-4',
-    title: 'Polish Resume & STAR Method Interview Stories',
-    description: 'Prepare 5 impactful behavioral stories demonstrating leadership, debugging under pressure, and cross-team collaboration.',
-    category: 'Interview Prep',
-    priority: 'Medium',
-    status: 'In Progress',
-    tags: ['resume', 'behavioral', 'star-method', 'career'],
-    subtasks: [
-      { id: 'sub-11', title: 'Draft Situation, Task, Action, Result for project lead story', completed: true },
-      { id: 'sub-12', title: 'Quantify metrics (reduced latency by 40%, improved test coverage to 85%)', completed: true },
-      { id: 'sub-13', title: 'Conduct mock behavioral session', completed: false }
-    ],
-    estimatedHours: 2.5,
-    actualHours: 1.5,
-    pomodoroSessions: 3,
-    dueDate: new Date(Date.now() + 86400000 * 5).toISOString().split('T')[0],
-    reflectionNotes: 'Focus heavily on the "Action" part of STAR - what specific architectural decisions did I make?',
-    createdAt: new Date(Date.now() - 86400000 * 4).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: null
-  },
-  {
-    id: 'task-5',
-    title: 'Daily Tech Reading: Kafka Partitioning & Rebalancing',
-    description: 'Read Apache Kafka documentation on consumer group rebalancing protocols (Eager vs Cooperative Sticky).',
-    category: 'Daily Habit',
-    priority: 'Low',
-    status: 'Done',
-    tags: ['kafka', 'distributed-systems', 'reading'],
-    subtasks: [
-      { id: 'sub-14', title: 'Read 2 articles on cooperative sticky assignor', completed: true },
-      { id: 'sub-15', title: 'Write down 3 bullet takeaways', completed: true }
-    ],
-    estimatedHours: 1,
-    actualHours: 0.8,
-    pomodoroSessions: 2,
-    dueDate: new Date().toISOString().split('T')[0],
-    reflectionNotes: 'Cooperative rebalancing avoids the stop-the-world pauses of eager rebalancing.',
-    createdAt: new Date(Date.now() - 86400000 * 1).toISOString(),
-    updatedAt: new Date().toISOString(),
-    completedAt: new Date().toISOString()
-  }
-];
+const AUTH_TOKEN_KEY = 'career_pulse_auth_token';
+const AUTH_USER_KEY = 'career_pulse_auth_user';
+const USERS_KEY = 'career_pulse_registered_users';
 
 let serverAvailable: boolean | null = null;
 
-// Helper: Check local storage
-const getLocalTasks = (): Task[] => {
+export const getCurrentUser = (): UserProfile | null => {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SEEDED_TASKS));
-      return [...DEFAULT_SEEDED_TASKS];
-    }
-    return JSON.parse(raw);
+    const raw = localStorage.getItem(AUTH_USER_KEY);
+    return raw ? JSON.parse(raw) : null;
   } catch {
-    return [...DEFAULT_SEEDED_TASKS];
+    return null;
   }
 };
 
-const saveLocalTasks = (tasks: Task[]): void => {
+export const getToken = (): string | null => {
+  return localStorage.getItem(AUTH_TOKEN_KEY);
+};
+
+const getStorageKeyForUser = (): string => {
+  const user = getCurrentUser();
+  return user ? `career_pulse_goals_${user.id}` : 'career_pulse_goals_v3';
+};
+
+const getAuthHeaders = (): Record<string, string> => {
+  const token = getToken();
+  return token ? { Authorization: `Bearer ${token}` } : {};
+};
+
+const getLocalState = (): { goals: Goal[]; tasks: Task[] } => {
+  const key = getStorageKeyForUser();
   try {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
-  } catch (err) {
-    console.error('Failed to save to localStorage:', err);
+    const raw = localStorage.getItem(key);
+    if (!raw) {
+      localStorage.setItem(key, JSON.stringify(seedData));
+      return JSON.parse(JSON.stringify(seedData));
+    }
+    const parsed = JSON.parse(raw);
+    if (!parsed.goals || !parsed.tasks || parsed.tasks.length === 0) {
+      localStorage.setItem(key, JSON.stringify(seedData));
+      return JSON.parse(JSON.stringify(seedData));
+    }
+    return parsed;
+  } catch {
+    return JSON.parse(JSON.stringify(seedData));
   }
 };
 
-const computeLocalAnalytics = (tasks: Task[]): AnalyticsSummary => {
-  const totalTasks = tasks.length;
-  const completedTasks = tasks.filter(t => t.status === 'Done').length;
-  const inProgressTasks = tasks.filter(t => t.status === 'In Progress').length;
-  const completionRate = totalTasks > 0 ? Math.round((completedTasks / totalTasks) * 100) : 0;
-
-  const totalEstimatedHours = Number(tasks.reduce((acc, t) => acc + (t.estimatedHours || 0), 0).toFixed(1));
-  const totalActualHours = Number(tasks.reduce((acc, t) => acc + (t.actualHours || 0), 0).toFixed(1));
-  const totalPomodoros = tasks.reduce((acc, t) => acc + (t.pomodoroSessions || 0), 0);
-
-  const categoryBreakdown: Record<string, { total: number; completed: number; hours: number }> = {};
-  for (const t of tasks) {
-    if (!categoryBreakdown[t.category]) {
-      categoryBreakdown[t.category] = { total: 0, completed: 0, hours: 0 };
-    }
-    categoryBreakdown[t.category].total += 1;
-    categoryBreakdown[t.category].hours = Number((categoryBreakdown[t.category].hours + (t.actualHours || 0)).toFixed(1));
-    if (t.status === 'Done') {
-      categoryBreakdown[t.category].completed += 1;
-    }
+const saveLocalState = (state: { goals: Goal[]; tasks: Task[] }) => {
+  const key = getStorageKeyForUser();
+  try {
+    localStorage.setItem(key, JSON.stringify(state));
+  } catch (err) {
+    console.error('LocalStorage save error:', err);
   }
-
-  const priorityBreakdown: Record<string, number> = { Urgent: 0, High: 0, Medium: 0, Low: 0 };
-  for (const t of tasks) {
-    priorityBreakdown[t.priority] = (priorityBreakdown[t.priority] || 0) + 1;
-  }
-
-  const completedWithDates = tasks
-    .filter(t => t.status === 'Done' && t.completedAt)
-    .map(t => t.completedAt!.split('T')[0]);
-
-  const uniqueCompletedDates = Array.from(new Set(completedWithDates)).sort().reverse();
-  let currentStreakDays = 0;
-  const todayStr = new Date().toISOString().split('T')[0];
-  const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-
-  if (uniqueCompletedDates.includes(todayStr) || uniqueCompletedDates.includes(yesterday)) {
-    let checkDate = uniqueCompletedDates.includes(todayStr) ? new Date() : new Date(Date.now() - 86400000);
-    while (true) {
-      const dateKey = checkDate.toISOString().split('T')[0];
-      if (uniqueCompletedDates.includes(dateKey)) {
-        currentStreakDays++;
-        checkDate = new Date(checkDate.getTime() - 86400000);
-      } else {
-        break;
-      }
-    }
-  }
-
-  const weeklyCompleted: { date: string; count: number }[] = [];
-  for (let i = 6; i >= 0; i--) {
-    const d = new Date(Date.now() - i * 86400000).toISOString().split('T')[0];
-    const count = tasks.filter(t => t.completedAt && t.completedAt.startsWith(d)).length;
-    weeklyCompleted.push({ date: d, count });
-  }
-
-  return {
-    totalTasks,
-    completedTasks,
-    inProgressTasks,
-    completionRate,
-    totalEstimatedHours,
-    totalActualHours,
-    totalPomodoros,
-    currentStreakDays,
-    categoryBreakdown,
-    priorityBreakdown,
-    weeklyCompleted
-  };
 };
 
 export const api = {
-  isServerConnected: (): boolean => serverAvailable === true,
+  getCurrentUser,
+  getToken,
 
-  async checkServerConnection(): Promise<boolean> {
+  async checkServer(): Promise<boolean> {
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 1200);
-      const res = await fetch('/api/tasks', { signal: controller.signal });
-      clearTimeout(timeoutId);
+      const timeout = setTimeout(() => controller.abort(), 1200);
+      const res = await fetch('/api/summary', {
+        headers: getAuthHeaders(),
+        signal: controller.signal
+      });
+      clearTimeout(timeout);
       serverAvailable = res.ok;
       return res.ok;
     } catch {
@@ -227,19 +79,109 @@ export const api = {
     }
   },
 
-  async getTasks(filters?: Partial<FilterState>): Promise<Task[]> {
+  async register(name: string, email: string, password: string): Promise<AuthResponse> {
     try {
-      const isConnected = serverAvailable ?? (await this.checkServerConnection());
-      if (isConnected) {
-        const params = new URLSearchParams();
-        if (filters?.category) params.append('category', filters.category);
-        if (filters?.priority) params.append('priority', filters.priority);
-        if (filters?.status) params.append('status', filters.status);
-        if (filters?.search) params.append('search', filters.search);
-        if (filters?.sortBy) params.append('sortBy', filters.sortBy);
-        if (filters?.sortOrder) params.append('sortOrder', filters.sortOrder);
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, password })
+        });
+        const json = await res.json();
+        if (res.ok && json.success) {
+          localStorage.setItem(AUTH_TOKEN_KEY, json.data.token);
+          localStorage.setItem(AUTH_USER_KEY, JSON.stringify(json.data.user));
+          return json.data;
+        } else {
+          throw new Error(json.error || 'Registration failed');
+        }
+      }
+    } catch (err: any) {
+      if (serverAvailable) throw err;
+      serverAvailable = false;
+    }
 
-        const res = await fetch(`/api/tasks?${params.toString()}`);
+    // LocalStorage fallback for offline demo / GitHub Pages
+    const usersRaw = localStorage.getItem(USERS_KEY);
+    const users: any[] = usersRaw ? JSON.parse(usersRaw) : [];
+    if (users.some(u => u.email.toLowerCase() === email.toLowerCase().trim())) {
+      throw new Error('An account with this email already exists');
+    }
+
+    const newUser = {
+      id: `user-${Date.now()}`,
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      password
+    };
+    users.push(newUser);
+    localStorage.setItem(USERS_KEY, JSON.stringify(users));
+
+    const authRes: AuthResponse = {
+      user: { id: newUser.id, name: newUser.name, email: newUser.email },
+      token: `local-token-${newUser.id}`
+    };
+
+    localStorage.setItem(AUTH_TOKEN_KEY, authRes.token);
+    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(authRes.user));
+
+    // Seed state for this new user in localStorage
+    localStorage.setItem(`career_pulse_goals_${newUser.id}`, JSON.stringify(seedData));
+    return authRes;
+  },
+
+  async login(email: string, password: string): Promise<AuthResponse> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password })
+        });
+        const json = await res.json();
+        if (res.ok && json.success) {
+          localStorage.setItem(AUTH_TOKEN_KEY, json.data.token);
+          localStorage.setItem(AUTH_USER_KEY, JSON.stringify(json.data.user));
+          return json.data;
+        } else {
+          throw new Error(json.error || 'Invalid email or password');
+        }
+      }
+    } catch (err: any) {
+      if (serverAvailable) throw err;
+      serverAvailable = false;
+    }
+
+    // LocalStorage fallback for offline demo / GitHub Pages
+    const usersRaw = localStorage.getItem(USERS_KEY);
+    const users: any[] = usersRaw ? JSON.parse(usersRaw) : [
+      { id: 'user-default', name: 'Yuvanesh', email: 'yuvanesh@example.com', password: 'password123' }
+    ];
+
+    const match = users.find(u => u.email.toLowerCase() === email.trim().toLowerCase());
+    if (!match || match.password !== password) {
+      throw new Error('Invalid email or password');
+    }
+
+    const authRes: AuthResponse = {
+      user: { id: match.id, name: match.name, email: match.email },
+      token: `local-token-${match.id}`
+    };
+
+    localStorage.setItem(AUTH_TOKEN_KEY, authRes.token);
+    localStorage.setItem(AUTH_USER_KEY, JSON.stringify(authRes.user));
+    return authRes;
+  },
+
+  logout(): void {
+    localStorage.removeItem(AUTH_TOKEN_KEY);
+    localStorage.removeItem(AUTH_USER_KEY);
+  },
+
+  async getSummary(): Promise<OverallSummary> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/summary', { headers: getAuthHeaders() });
         if (res.ok) {
           const json = await res.json();
           return json.data;
@@ -249,28 +191,82 @@ export const api = {
       serverAvailable = false;
     }
 
-    // Fallback to localStorage
-    let tasks = getLocalTasks();
-    if (filters?.category) tasks = tasks.filter(t => t.category === filters.category);
-    if (filters?.priority) tasks = tasks.filter(t => t.priority === filters.priority);
-    if (filters?.status) tasks = tasks.filter(t => t.status === filters.status);
-    if (filters?.search) {
-      const q = filters.search.toLowerCase();
-      tasks = tasks.filter(t =>
-        t.title.toLowerCase().includes(q) ||
-        t.description.toLowerCase().includes(q) ||
-        t.tags.some(tag => tag.toLowerCase().includes(q))
-      );
-    }
-    return tasks;
+    // Local calculation
+    const state = getLocalState();
+    const todayStr = new Date().toISOString().split('T')[0];
+    const goalMap = new Map<string, string>();
+    state.goals.forEach(g => goalMap.set(g.id, g.title));
+
+    const totalTasks = state.tasks.length;
+    const completedTasksTotal = state.tasks.filter(t => t.completed).length;
+
+    const todayTasks = state.tasks.filter(t => t.completed && t.completedDate === todayStr);
+    const todayCompletedItems = todayTasks.map(t => ({
+      taskId: t.id,
+      taskTitle: t.title,
+      goalId: t.goalId,
+      goalTitle: goalMap.get(t.goalId) || 'Goal',
+      topic: t.topic,
+      difficulty: t.difficulty,
+      url: t.url,
+      completedAt: t.completedAt || todayStr
+    }));
+
+    const goalStats = state.goals.map(g => {
+      const tasks = state.tasks.filter(t => t.goalId === g.id);
+      const completed = tasks.filter(t => t.completed).length;
+      const percent = tasks.length > 0 ? Math.round((completed / tasks.length) * 100) : 0;
+      const byTopic: Record<string, { total: number; completed: number }> = {};
+      tasks.forEach(t => {
+        if (!byTopic[t.topic]) byTopic[t.topic] = { total: 0, completed: 0 };
+        byTopic[t.topic].total += 1;
+        if (t.completed) byTopic[t.topic].completed += 1;
+      });
+      return {
+        goalId: g.id,
+        goalTitle: g.title,
+        totalTasks: tasks.length,
+        completedTasks: completed,
+        percent,
+        byTopic
+      };
+    });
+
+    const recentDailyActivity = await this.getDailyActivity();
+
+    return {
+      totalGoals: state.goals.length,
+      totalTasks,
+      completedTasksTotal,
+      completedTodayCount: todayTasks.length,
+      todayCompletedItems,
+      recentDailyActivity,
+      streakDays: 3,
+      goalStats
+    };
   },
 
-  async createTask(data: Partial<Task>): Promise<Task> {
+  async getGoals(): Promise<Goal[]> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch('/api/tasks', {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/goals', { headers: getAuthHeaders() });
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+    return getLocalState().goals;
+  },
+
+  async createGoal(data: Partial<Goal>): Promise<Goal> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/goals', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
           body: JSON.stringify(data)
         });
         if (res.ok) {
@@ -282,39 +278,47 @@ export const api = {
       serverAvailable = false;
     }
 
-    // Local fallback
-    const tasks = getLocalTasks();
-    const now = new Date().toISOString();
-    const newTask: Task = {
-      id: `task-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
-      title: data.title || 'Untitled Goal',
+    const state = getLocalState();
+    const newGoal: Goal = {
+      id: `goal-${Date.now()}`,
+      title: data.title || 'Custom Goal',
       description: data.description || '',
-      category: data.category || 'System Design',
-      priority: data.priority || 'Medium',
-      status: data.status || 'To Do',
-      tags: data.tags || [],
-      subtasks: data.subtasks || [],
-      estimatedHours: data.estimatedHours || 1,
-      actualHours: data.actualHours || 0,
-      pomodoroSessions: data.pomodoroSessions || 0,
-      dueDate: data.dueDate || null,
-      reflectionNotes: data.reflectionNotes || '',
-      createdAt: now,
-      updatedAt: now,
-      completedAt: data.status === 'Done' ? now : null
+      category: data.category || 'General',
+      icon: data.icon || 'Target',
+      createdAt: new Date().toISOString()
     };
-    tasks.unshift(newTask);
-    saveLocalTasks(tasks);
-    return newTask;
+    state.goals.push(newGoal);
+    saveLocalState(state);
+    return newGoal;
   },
 
-  async updateTask(id: string, updates: Partial<Task>): Promise<Task> {
+  async getTasks(goalId?: string): Promise<Task[]> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch(`/api/tasks/${id}`, {
-          method: 'PUT',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(updates)
+      if (serverAvailable ?? (await this.checkServer())) {
+        const url = goalId ? `/api/tasks?goalId=${encodeURIComponent(goalId)}` : '/api/tasks';
+        const res = await fetch(url, { headers: getAuthHeaders() });
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+
+    const state = getLocalState();
+    if (goalId) {
+      return state.tasks.filter(t => t.goalId === goalId);
+    }
+    return state.tasks;
+  },
+
+  async toggleTask(id: string): Promise<Task> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch(`/api/tasks/${id}/toggle`, {
+          method: 'POST',
+          headers: getAuthHeaders()
         });
         if (res.ok) {
           const json = await res.json();
@@ -325,123 +329,155 @@ export const api = {
       serverAvailable = false;
     }
 
-    // Local fallback
-    const tasks = getLocalTasks();
-    const index = tasks.findIndex(t => t.id === id);
-    if (index === -1) throw new Error('Task not found');
+    const state = getLocalState();
+    const idx = state.tasks.findIndex(t => t.id === id);
+    if (idx === -1) throw new Error('Task not found');
+    const task = state.tasks[idx];
+    const now = new Date();
+    const todayStr = now.toISOString().split('T')[0];
 
-    const existing = tasks[index];
-    const now = new Date().toISOString();
-    let completedAt = existing.completedAt;
-
-    if (updates.status) {
-      if (updates.status === 'Done' && existing.status !== 'Done') {
-        completedAt = now;
-      } else if (updates.status !== 'Done') {
-        completedAt = null;
-      }
+    if (!task.completed) {
+      task.completed = true;
+      task.completedAt = now.toISOString();
+      task.completedDate = todayStr;
+    } else {
+      task.completed = false;
+      task.completedAt = null;
+      task.completedDate = null;
     }
 
-    const updated: Task = {
-      ...existing,
-      ...updates,
-      updatedAt: now,
-      completedAt
-    };
+    saveLocalState(state);
+    return task;
+  },
 
-    tasks[index] = updated;
-    saveLocalTasks(tasks);
-    return updated;
+  async createTask(data: Partial<Task>): Promise<Task> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/tasks', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
+          body: JSON.stringify(data)
+        });
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+
+    const state = getLocalState();
+    const newTask: Task = {
+      id: `task-${Date.now()}`,
+      goalId: data.goalId || 'goal-dsa',
+      title: data.title || 'New Task',
+      topic: data.topic || 'General',
+      difficulty: data.difficulty,
+      url: data.url,
+      duration: data.duration,
+      completed: false,
+      completedAt: null,
+      completedDate: null,
+      createdAt: new Date().toISOString()
+    };
+    state.tasks.unshift(newTask);
+    saveLocalState(state);
+    return newTask;
   },
 
   async deleteTask(id: string): Promise<void> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch(`/api/tasks/${id}`, { method: 'DELETE' });
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch(`/api/tasks/${id}`, {
+          method: 'DELETE',
+          headers: getAuthHeaders()
+        });
         if (res.ok) return;
       }
     } catch {
       serverAvailable = false;
     }
 
-    const tasks = getLocalTasks().filter(t => t.id !== id);
-    saveLocalTasks(tasks);
+    const state = getLocalState();
+    state.tasks = state.tasks.filter(t => t.id !== id);
+    saveLocalState(state);
   },
 
-  async logPomodoro(id: string, minutes = 25): Promise<Task> {
+  async getDailyActivity(): Promise<DailyGroupedActivity[]> {
     try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch(`/api/tasks/${id}/pomodoro`, {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/daily-activity', { headers: getAuthHeaders() });
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+
+    const state = getLocalState();
+    const goalMap = new Map<string, string>();
+    state.goals.forEach(g => goalMap.set(g.id, g.title));
+
+    const completedTasks = state.tasks.filter(t => t.completed && t.completedDate);
+    const groups = new Map<string, any[]>();
+
+    completedTasks.forEach(t => {
+      const date = t.completedDate!;
+      if (!groups.has(date)) groups.set(date, []);
+      groups.get(date)!.push({
+        taskId: t.id,
+        taskTitle: t.title,
+        goalId: t.goalId,
+        goalTitle: goalMap.get(t.goalId) || 'Goal',
+        topic: t.topic,
+        difficulty: t.difficulty,
+        url: t.url,
+        completedAt: t.completedAt || date
+      });
+    });
+
+    const result: DailyGroupedActivity[] = [];
+    Array.from(groups.keys()).sort().reverse().forEach(date => {
+      const items = groups.get(date)!;
+      result.push({ date, count: items.length, items });
+    });
+    return result;
+  },
+
+  async backupDatabase(): Promise<{ goals: Goal[]; tasks: Task[] }> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/backup', { headers: getAuthHeaders() });
+        if (res.ok) {
+          const json = await res.json();
+          return json.data;
+        }
+      }
+    } catch {
+      serverAvailable = false;
+    }
+    return getLocalState();
+  },
+
+  async restoreDatabase(backupData: any): Promise<void> {
+    try {
+      if (serverAvailable ?? (await this.checkServer())) {
+        const res = await fetch('/api/restore', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ minutes })
+          headers: { 'Content-Type': 'application/json', ...getAuthHeaders() },
+          body: JSON.stringify(backupData)
         });
-        if (res.ok) {
-          const json = await res.json();
-          return json.data;
-        }
+        if (res.ok) return;
       }
     } catch {
       serverAvailable = false;
     }
-
-    const tasks = getLocalTasks();
-    const task = tasks.find(t => t.id === id);
-    if (!task) throw new Error('Task not found');
-
-    const addedHours = Number((minutes / 60).toFixed(2));
-    task.actualHours = Number((task.actualHours + addedHours).toFixed(2));
-    task.pomodoroSessions = (task.pomodoroSessions || 0) + 1;
-    task.updatedAt = new Date().toISOString();
-
-    saveLocalTasks(tasks);
-    return task;
-  },
-
-  async getAnalytics(): Promise<AnalyticsSummary> {
-    try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch('/api/analytics');
-        if (res.ok) {
-          const json = await res.json();
-          return json.data;
-        }
-      }
-    } catch {
-      serverAvailable = false;
+    const state = backupData.data || backupData;
+    if (state && Array.isArray(state.goals) && Array.isArray(state.tasks)) {
+      saveLocalState(state);
     }
-
-    return computeLocalAnalytics(getLocalTasks());
-  },
-
-  async resetSeed(): Promise<Task[]> {
-    try {
-      if (serverAvailable ?? (await this.checkServerConnection())) {
-        const res = await fetch('/api/seed', { method: 'POST' });
-        if (res.ok) {
-          const json = await res.json();
-          return json.data;
-        }
-      }
-    } catch {
-      serverAvailable = false;
-    }
-
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(DEFAULT_SEEDED_TASKS));
-    return [...DEFAULT_SEEDED_TASKS];
-  },
-
-  exportData(): string {
-    const tasks = getLocalTasks();
-    return JSON.stringify({ version: '1.0', exportedAt: new Date().toISOString(), tasks }, null, 2);
-  },
-
-  importData(jsonData: string): number {
-    const parsed = JSON.parse(jsonData);
-    const tasks = parsed.tasks || parsed;
-    if (!Array.isArray(tasks)) throw new Error('Invalid format: array of tasks expected');
-    saveLocalTasks(tasks);
-    return tasks.length;
   }
 };
-

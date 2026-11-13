@@ -1,32 +1,49 @@
 import { Router } from 'express';
 import {
+  backupDatabase,
+  createGoal,
   createTask,
+  deleteGoal,
   deleteTask,
-  exportData,
-  getAllTasks,
-  getAnalytics,
-  getTaskById,
-  importData,
-  logPomodoroSession,
-  resetSeedData,
+  getDailyActivity,
+  getGoals,
+  getMe,
+  getSummary,
+  getTasks,
+  login,
+  register,
+  resetData,
+  restoreDatabase,
+  toggleTask,
+  updateGoal,
   updateTask
 } from '../controllers/taskController.js';
 
 const router = Router();
 
-// Analytics & Utilities (defined before parameterized :id route)
-router.get('/analytics', getAnalytics);
-router.post('/seed', resetSeedData);
-router.get('/export', exportData);
-router.post('/import', importData);
+// Authentication
+router.post('/auth/register', register);
+router.post('/auth/login', login);
+router.get('/auth/me', getMe);
 
-// CRUD
-router.get('/tasks', getAllTasks);
-router.get('/tasks/:id', getTaskById);
+// Overall & Daily Tracking
+router.get('/summary', getSummary);
+router.get('/daily-activity', getDailyActivity);
+router.post('/seed', resetData);
+router.get('/backup', backupDatabase);
+router.post('/restore', restoreDatabase);
+
+// Goals
+router.get('/goals', getGoals);
+router.post('/goals', createGoal);
+router.put('/goals/:id', updateGoal);
+router.delete('/goals/:id', deleteGoal);
+
+// Tasks
+router.get('/tasks', getTasks);
 router.post('/tasks', createTask);
+router.post('/tasks/:id/toggle', toggleTask);
 router.put('/tasks/:id', updateTask);
 router.delete('/tasks/:id', deleteTask);
-router.post('/tasks/:id/pomodoro', logPomodoroSession);
 
 export default router;
-

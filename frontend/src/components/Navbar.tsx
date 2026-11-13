@@ -1,48 +1,43 @@
 import React, { useRef } from 'react';
 import {
+  Target,
+  CalendarCheck,
   Flame,
-  Clock,
+  CheckCircle2,
   Plus,
-  Timer,
-  FileText,
+  Layers,
   Download,
   Upload,
-  RotateCcw,
-  LayoutGrid,
-  ListTodo,
-  BarChart3,
-  Sparkles,
-  Server,
-  CloudOff
+  User as UserIcon,
+  LogOut,
+  LogIn
 } from 'lucide-react';
-import { ViewMode } from '../types';
+import { ActiveTab, UserProfile } from '../types';
 
 interface NavbarProps {
-  currentView: ViewMode;
-  onViewChange: (view: ViewMode) => void;
+  activeTab: ActiveTab;
+  onTabChange: (tab: ActiveTab) => void;
   streakDays: number;
-  totalActualHours: number;
-  isServerConnected: boolean;
-  onOpenNewTaskModal: () => void;
-  onOpenPomodoroModal: () => void;
-  onOpenStandupModal: () => void;
-  onResetSeed: () => void;
-  onExport: () => void;
-  onImport: (jsonData: string) => void;
+  completedTodayCount: number;
+  user: UserProfile | null;
+  onOpenAuthModal: () => void;
+  onLogout: () => void;
+  onOpenNewGoalModal: () => void;
+  onExportBackup: () => void;
+  onImportBackup: (jsonContent: string) => void;
 }
 
 export const Navbar: React.FC<NavbarProps> = ({
-  currentView,
-  onViewChange,
+  activeTab,
+  onTabChange,
   streakDays,
-  totalActualHours,
-  isServerConnected,
-  onOpenNewTaskModal,
-  onOpenPomodoroModal,
-  onOpenStandupModal,
-  onResetSeed,
-  onExport,
-  onImport
+  completedTodayCount,
+  user,
+  onOpenAuthModal,
+  onLogout,
+  onOpenNewGoalModal,
+  onExportBackup,
+  onImportBackup
 }) => {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -51,162 +46,104 @@ export const Navbar: React.FC<NavbarProps> = ({
     if (!file) return;
     const reader = new FileReader();
     reader.onload = (event) => {
-      const content = event.target?.result as string;
-      if (content) onImport(content);
+      const text = event.target?.result as string;
+      if (text) onImportBackup(text);
     };
     reader.readAsText(file);
     e.target.value = '';
   };
 
   return (
-    <header className="border-b border-slate-800 bg-slate-900/80 backdrop-blur-md sticky top-0 z-30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-30">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 gap-4">
-          {/* Logo and Tagline */}
+          {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-lg shadow-indigo-500/20 flex items-center justify-center">
+            <div className="h-9 w-9 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 p-0.5 shadow-md shadow-indigo-500/20 flex items-center justify-center">
               <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                <Sparkles className="w-5 h-5 text-indigo-400" />
+                <Target className="w-4 h-4 text-indigo-400" />
               </div>
             </div>
             <div>
-              <div className="flex items-center gap-2">
-                <span className="font-extrabold text-lg tracking-tight bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent">
-                  CareerPulse
-                </span>
-                <span className="text-[10px] uppercase font-bold tracking-widest px-1.5 py-0.5 rounded bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
-                  v1.0 Pro
-                </span>
-              </div>
-              <p className="text-xs text-slate-400 hidden sm:block">
-                Daily Engineering Progress & Goal Tracker
+              <span className="font-extrabold text-base tracking-tight bg-gradient-to-r from-white via-indigo-200 to-indigo-400 bg-clip-text text-transparent">
+                CareerPulse
+              </span>
+              <p className="text-[10px] text-slate-400 hidden sm:block">
+                Multi-Goal & Daily Activity Tracker
               </p>
             </div>
           </div>
 
-          {/* Quick Metrics (Streak & Hours) */}
-          <div className="hidden md:flex items-center gap-3">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-orange-950/40 border border-orange-500/30 text-orange-300 text-xs font-semibold shadow-inner">
-              <Flame className="w-4 h-4 text-orange-500 animate-pulse" />
-              <span>{streakDays} Day Streak</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-950/40 border border-indigo-500/30 text-indigo-300 text-xs font-semibold">
-              <Clock className="w-4 h-4 text-indigo-400" />
-              <span>{totalActualHours}h Invested</span>
-            </div>
-            <div
-              className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium border ${
-                isServerConnected
-                  ? 'bg-emerald-950/30 border-emerald-500/30 text-emerald-300'
-                  : 'bg-amber-950/30 border-amber-500/30 text-amber-300'
-              }`}
-              title={
-                isServerConnected
-                  ? 'Connected to local REST backend & SQLite database'
-                  : 'Running in offline / static mode with LocalStorage persistence'
-              }
-            >
-              {isServerConnected ? (
-                <>
-                  <Server className="w-3.5 h-3.5 text-emerald-400" />
-                  <span className="hidden lg:inline">Backend API</span>
-                </>
-              ) : (
-                <>
-                  <CloudOff className="w-3.5 h-3.5 text-amber-400" />
-                  <span className="hidden lg:inline">Local Sync</span>
-                </>
-              )}
-            </div>
-          </div>
-
-          {/* Navigation View Switcher */}
+          {/* Tab Switcher */}
           <div className="flex items-center bg-slate-950 p-1 rounded-xl border border-slate-800">
             <button
-              onClick={() => onViewChange('kanban')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                currentView === 'kanban'
+              onClick={() => onTabChange('goals')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
+                activeTab === 'goals'
                   ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-900'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
-              <LayoutGrid className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Kanban</span>
+              <Layers className="w-3.5 h-3.5" />
+              <span>Goals & Tasks</span>
             </button>
             <button
-              onClick={() => onViewChange('list')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                currentView === 'list'
+              onClick={() => onTabChange('daily-tracker')}
+              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition ${
+                activeTab === 'daily-tracker'
                   ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-900'
+                  : 'text-slate-400 hover:text-white'
               }`}
             >
-              <ListTodo className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">List</span>
-            </button>
-            <button
-              onClick={() => onViewChange('analytics')}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
-                currentView === 'analytics'
-                  ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/30'
-                  : 'text-slate-400 hover:text-white hover:bg-slate-900'
-              }`}
-            >
-              <BarChart3 className="w-3.5 h-3.5" />
-              <span className="hidden sm:inline">Insights</span>
+              <CalendarCheck className="w-3.5 h-3.5" />
+              <span>Daily Activity Log</span>
             </button>
           </div>
 
-          {/* Quick Actions */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={onOpenPomodoroModal}
-              title="Open Focus Pomodoro Timer"
-              className="p-2 sm:px-3 sm:py-2 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 hover:border-indigo-500/50 transition-all text-xs font-medium flex items-center gap-1.5"
+          {/* Quick Metrics & Actions */}
+          <div className="flex items-center gap-2.5">
+            <div className="hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-orange-950/40 border border-orange-500/30 text-orange-300 text-xs font-bold">
+              <Flame className="w-3.5 h-3.5 text-orange-400" />
+              <span>{streakDays}d Streak</span>
+            </div>
+
+            <div
+              className={`hidden md:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl text-xs font-bold border transition ${
+                completedTodayCount > 0
+                  ? 'bg-emerald-950/50 border-emerald-500/30 text-emerald-300'
+                  : 'bg-slate-950 border-slate-800 text-slate-400'
+              }`}
             >
-              <Timer className="w-4 h-4 text-indigo-400" />
-              <span className="hidden md:inline">Focus Timer</span>
-            </button>
+              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
+              <span>{completedTodayCount} Completed Today</span>
+            </div>
 
             <button
-              onClick={onOpenStandupModal}
-              title="Generate Daily Standup & Career Log"
-              className="p-2 sm:px-3 sm:py-2 rounded-xl bg-slate-800/80 hover:bg-slate-800 text-slate-200 border border-slate-700/60 hover:border-indigo-500/50 transition-all text-xs font-medium flex items-center gap-1.5"
+              onClick={onOpenNewGoalModal}
+              className="px-3 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition flex items-center gap-1 shadow-md shadow-indigo-600/25"
             >
-              <FileText className="w-4 h-4 text-cyan-400" />
-              <span className="hidden md:inline">Daily Standup</span>
-            </button>
-
-            <button
-              onClick={onOpenNewTaskModal}
-              className="px-3 py-2 rounded-xl bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 text-white text-xs font-semibold shadow-lg shadow-indigo-600/25 flex items-center gap-1.5 transition-all transform hover:-translate-y-0.5"
-            >
-              <Plus className="w-4 h-4" />
+              <Plus className="w-3.5 h-3.5" />
               <span className="hidden sm:inline">New Goal</span>
             </button>
 
-            {/* Overflow utility dropdown / buttons */}
-            <div className="flex items-center border-l border-slate-800 pl-2 ml-1 gap-1">
+            {/* Permanent DB Backup & Restore */}
+            <div className="flex items-center border-l border-slate-800 pl-2 gap-1">
               <button
-                onClick={onExport}
-                title="Export Career Data (JSON)"
-                className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition"
+                onClick={onExportBackup}
+                title="Backup Entire Database to File"
+                className="p-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition text-xs flex items-center gap-1"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-3.5 h-3.5" />
+                <span className="hidden xl:inline text-[11px]">Backup DB</span>
               </button>
+
               <button
                 onClick={() => fileInputRef.current?.click()}
-                title="Import Career Data (JSON)"
-                className="p-2 text-slate-400 hover:text-white hover:bg-slate-800 rounded-lg transition"
+                title="Restore Database from Backup File"
+                className="p-1.5 rounded-lg bg-slate-950 hover:bg-slate-800 text-slate-400 hover:text-white border border-slate-800 transition text-xs flex items-center gap-1"
               >
-                <Upload className="w-4 h-4" />
-              </button>
-              <button
-                onClick={onResetSeed}
-                title="Restore Sample Career Roadmap"
-                className="p-2 text-slate-400 hover:text-amber-400 hover:bg-slate-800 rounded-lg transition"
-              >
-                <RotateCcw className="w-4 h-4" />
+                <Upload className="w-3.5 h-3.5" />
+                <span className="hidden xl:inline text-[11px]">Restore</span>
               </button>
               <input
                 ref={fileInputRef}
@@ -216,10 +153,41 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onChange={handleFileChange}
               />
             </div>
+
+            {/* User Profile / Auth Button */}
+            <div className="flex items-center border-l border-slate-800 pl-2">
+              {user ? (
+                <div className="flex items-center gap-2">
+                  <div
+                    title={user.email}
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-800/80 border border-slate-700/80 rounded-xl text-xs text-slate-200"
+                  >
+                    <div className="w-5 h-5 rounded-full bg-indigo-500 text-white font-bold text-[10px] flex items-center justify-center">
+                      {user.name.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="hidden sm:inline font-medium max-w-[100px] truncate">{user.name}</span>
+                  </div>
+                  <button
+                    onClick={onLogout}
+                    title="Sign Out"
+                    className="p-1.5 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 border border-transparent hover:border-rose-500/20 transition"
+                  >
+                    <LogOut className="w-4 h-4" />
+                  </button>
+                </div>
+              ) : (
+                <button
+                  onClick={onOpenAuthModal}
+                  className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white text-xs font-semibold transition flex items-center gap-1.5"
+                >
+                  <LogIn className="w-3.5 h-3.5 text-indigo-400" />
+                  <span>Sign In</span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
     </header>
   );
 };
-

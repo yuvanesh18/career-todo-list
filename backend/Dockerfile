@@ -23,6 +23,8 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 COPY --from=builder /app/dist ./dist
+COPY data ./seed_template
+COPY data ./data
 
 # Create directory for persistent SQLite / JSON database
 RUN mkdir -p /app/data && chown -R node:node /app
