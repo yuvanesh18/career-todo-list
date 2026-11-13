@@ -1,0 +1,197 @@
+[
+  {
+    "id": "task-1",
+    "title": "Master CI/CD Pipelines with GitHub Actions",
+    "description": "Build an automated pipeline that lints, runs tests, creates Docker images, and deploys to registry on push.",
+    "category": "Cloud & DevOps",
+    "priority": "Urgent",
+    "status": "In Progress",
+    "tags": [
+      "ci-cd",
+      "github-actions",
+      "devops",
+      "docker"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-1",
+        "title": "Write unit tests with Vitest",
+        "completed": true
+      },
+      {
+        "id": "sub-2",
+        "title": "Create multi-stage Dockerfile",
+        "completed": true
+      },
+      {
+        "id": "sub-3",
+        "title": "Configure GitHub Actions workflow YAML",
+        "completed": true
+      },
+      {
+        "id": "sub-4",
+        "title": "Publish container image to GHCR",
+        "completed": false
+      }
+    ],
+    "estimatedHours": 4,
+    "actualHours": 2.5,
+    "pomodoroSessions": 5,
+    "dueDate": "2026-11-15",
+    "reflectionNotes": "Automating tests on every PR prevents breaking changes. GHCR provides free unlimited container hosting for open-source repositories.",
+    "createdAt": "2026-11-10T04:35:02.031Z",
+    "updatedAt": "2026-11-13T04:35:02.031Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-2",
+    "title": "Design Distributed Rate Limiter (System Design)",
+    "description": "Study Token Bucket, Leaky Bucket, and Sliding Window algorithms with Redis for multi-node rate limiting.",
+    "category": "System Design",
+    "priority": "High",
+    "status": "To Do",
+    "tags": [
+      "system-design",
+      "redis",
+      "architecture",
+      "scalability"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-5",
+        "title": "Compare Token Bucket vs Sliding Window Counter",
+        "completed": true
+      },
+      {
+        "id": "sub-6",
+        "title": "Draft high-level architecture diagram",
+        "completed": false
+      },
+      {
+        "id": "sub-7",
+        "title": "Handle race conditions using Redis Lua scripts",
+        "completed": false
+      }
+    ],
+    "estimatedHours": 3.5,
+    "actualHours": 1,
+    "pomodoroSessions": 2,
+    "dueDate": "2026-11-17",
+    "reflectionNotes": "Token bucket is ideal for bursty traffic; sliding window log is accurate but memory-intensive.",
+    "createdAt": "2026-11-11T04:35:02.031Z",
+    "updatedAt": "2026-11-13T04:35:02.031Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-3",
+    "title": "Blind 75: Two Pointers & Sliding Window Patterns",
+    "description": "Solve and analyze time/space complexity for 3 classic problems: 3Sum, Container With Most Water, Longest Substring Without Repeating Characters.",
+    "category": "DSA & Algorithms",
+    "priority": "High",
+    "status": "Done",
+    "tags": [
+      "leetcode",
+      "dsa",
+      "two-pointers",
+      "python",
+      "javascript"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-8",
+        "title": "Solve 3Sum with sorting and two pointers",
+        "completed": true
+      },
+      {
+        "id": "sub-9",
+        "title": "Solve Container With Most Water in O(n)",
+        "completed": true
+      },
+      {
+        "id": "sub-10",
+        "title": "Write clean explanation in notes",
+        "completed": true
+      }
+    ],
+    "estimatedHours": 3,
+    "actualHours": 3,
+    "pomodoroSessions": 6,
+    "dueDate": "2026-11-12",
+    "reflectionNotes": "Always sort first when applying two pointers on sums to eliminate duplicate triplets easily.",
+    "createdAt": "2026-11-08T04:35:02.031Z",
+    "updatedAt": "2026-11-13T04:35:02.031Z",
+    "completedAt": "2026-11-12T04:35:02.031Z"
+  },
+  {
+    "id": "task-4",
+    "title": "Polish Resume & STAR Method Interview Stories",
+    "description": "Prepare 5 impactful behavioral stories demonstrating leadership, debugging under pressure, and cross-team collaboration.",
+    "category": "Interview Prep",
+    "priority": "Medium",
+    "status": "In Progress",
+    "tags": [
+      "resume",
+      "behavioral",
+      "star-method",
+      "career"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-11",
+        "title": "Draft Situation, Task, Action, Result for project lead story",
+        "completed": true
+      },
+      {
+        "id": "sub-12",
+        "title": "Quantify metrics (reduced latency by 40%, improved test coverage to 85%)",
+        "completed": true
+      },
+      {
+        "id": "sub-13",
+        "title": "Conduct mock behavioral session",
+        "completed": false
+      }
+    ],
+    "estimatedHours": 2.5,
+    "actualHours": 1.5,
+    "pomodoroSessions": 3,
+    "dueDate": "2026-11-18",
+    "reflectionNotes": "Focus heavily on the \"Action\" part of STAR - what specific architectural decisions did I make?",
+    "createdAt": "2026-11-09T04:35:02.031Z",
+    "updatedAt": "2026-11-13T04:35:02.031Z",
+    "completedAt": null
+  },
+  {
+    "id": "task-5",
+    "title": "Daily Tech Reading: Kafka Partitioning & Rebalancing",
+    "description": "Read Apache Kafka documentation on consumer group rebalancing protocols (Eager vs Cooperative Sticky).",
+    "category": "Daily Habit",
+    "priority": "Low",
+    "status": "Done",
+    "tags": [
+      "kafka",
+      "distributed-systems",
+      "reading"
+    ],
+    "subtasks": [
+      {
+        "id": "sub-14",
+        "title": "Read 2 articles on cooperative sticky assignor",
+        "completed": true
+      },
+      {
+        "id": "sub-15",
+        "title": "Write down 3 bullet takeaways",
+        "completed": true
+      }
+    ],
+    "estimatedHours": 1,
+    "actualHours": 0.8,
+    "pomodoroSessions": 2,
+    "dueDate": "2026-11-13",
+    "reflectionNotes": "Cooperative rebalancing avoids the stop-the-world pauses of eager rebalancing.",
+    "createdAt": "2026-11-12T04:35:02.031Z",
+    "updatedAt": "2026-11-13T04:35:02.031Z",
+    "completedAt": "2026-11-13T04:35:02.031Z"
+  }
+]

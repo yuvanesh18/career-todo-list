@@ -1,0 +1,13 @@
+node_modules
+dist
+build
+coverage
+.git
+.gitignore
+.env
+*.log
+data/*.db
+data/*.sqlite
+README.md
+CICD_GUIDE.md
+.github
