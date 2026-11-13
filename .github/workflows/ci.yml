@@ -90,3 +90,4 @@ jobs:
           file: ./frontend/Dockerfile
           push: false
           tags: career-pulse-frontend:test
+

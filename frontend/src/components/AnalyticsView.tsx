@@ -241,3 +241,4 @@ export const AnalyticsView: React.FC<AnalyticsViewProps> = ({ analytics, tasks }
     </div>
   );
 };
+

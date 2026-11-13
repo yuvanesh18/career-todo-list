@@ -67,3 +67,4 @@ export interface FilterState {
 }
 
 export type ViewMode = 'kanban' | 'list' | 'analytics';
+

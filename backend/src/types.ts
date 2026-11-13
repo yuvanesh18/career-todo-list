@@ -66,3 +66,4 @@ export interface FilterOptions {
   sortBy?: 'dueDate' | 'priority' | 'createdAt' | 'estimatedHours';
   sortOrder?: 'asc' | 'desc';
 }
+

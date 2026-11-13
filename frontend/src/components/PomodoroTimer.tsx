@@ -252,3 +252,4 @@ export const PomodoroTimer: React.FC<PomodoroTimerProps> = ({
     </div>
   );
 };
+

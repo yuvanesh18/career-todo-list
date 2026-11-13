@@ -16,3 +16,4 @@ describe('Frontend Sanity & Type Tests', () => {
     expect(dateStr).toMatch(/^\d{4}-\d{2}-\d{2}$/);
   });
 });
+

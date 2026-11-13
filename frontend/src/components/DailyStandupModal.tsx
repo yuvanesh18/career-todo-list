@@ -131,3 +131,4 @@ export const DailyStandupModal: React.FC<DailyStandupModalProps> = ({
     </div>
   );
 };
+
