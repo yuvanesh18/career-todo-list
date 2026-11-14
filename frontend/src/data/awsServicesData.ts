@@ -39,7 +39,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Athena whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/athena/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
   },
   "svc-data-firehose": {
     "id": "svc-data-firehose",
@@ -62,7 +62,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Data Firehose whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/data-firehose/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
   },
   "svc-emr": {
     "id": "svc-emr",
@@ -85,7 +85,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon EMR whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/emr/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
   },
   "svc-glue": {
     "id": "svc-glue",
@@ -108,7 +108,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Glue whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/glue/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
   },
   "svc-glue-databrew": {
     "id": "svc-glue-databrew",
@@ -131,7 +131,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Glue DataBrew whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/glue-databrew/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/databrew/latest/dg/what-is.html"
   },
   "svc-glue-data-quality": {
     "id": "svc-glue-data-quality",
@@ -154,7 +154,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Glue Data Quality whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/glue-data-quality/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html"
   },
   "svc-kinesis": {
     "id": "svc-kinesis",
@@ -177,7 +177,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Kinesis whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/kinesis/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
   },
   "svc-lake-formation": {
     "id": "svc-lake-formation",
@@ -200,7 +200,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Lake Formation whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/lake-formation/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html"
   },
   "svc-flink": {
     "id": "svc-flink",
@@ -223,7 +223,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Managed Service for Apache Flink whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/flink/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/java/what-is.html"
   },
   "svc-opensearch": {
     "id": "svc-opensearch",
@@ -246,7 +246,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon OpenSearch Service whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/opensearch/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html"
   },
   "svc-quicksight": {
     "id": "svc-quicksight",
@@ -269,7 +269,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon QuickSight whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/quicksight/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html"
   },
   "svc-redshift": {
     "id": "svc-redshift",
@@ -292,7 +292,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Redshift whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/redshift/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
   },
   "svc-eventbridge": {
     "id": "svc-eventbridge",
@@ -315,7 +315,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon EventBridge whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
   },
   "svc-mwaa": {
     "id": "svc-mwaa",
@@ -338,7 +338,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Managed Workflows for Apache Airflow (Amazon MWAA) whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html"
   },
   "svc-sns": {
     "id": "svc-sns",
@@ -361,7 +361,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon SNS whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/sns/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
   },
   "svc-sqs": {
     "id": "svc-sqs",
@@ -384,7 +384,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon SQS whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/sqs/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
   },
   "svc-step-functions": {
     "id": "svc-step-functions",
@@ -407,7 +407,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Step Functions whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/step-functions/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
   },
   "svc-billing-cost-management": {
     "id": "svc-billing-cost-management",
@@ -430,7 +430,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Billing and Cost Management whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/billing-cost-management/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
   },
   "svc-budgets": {
     "id": "svc-budgets",
@@ -453,7 +453,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Budgets whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/budgets/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
   },
   "svc-cost-explorer": {
     "id": "svc-cost-explorer",
@@ -476,7 +476,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Cost Explorer whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/cost-explorer/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
   },
   "svc-batch": {
     "id": "svc-batch",
@@ -499,7 +499,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Batch whenever you need native, fully managed AWS capability for Compute workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/batch/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html"
   },
   "svc-ec2": {
     "id": "svc-ec2",
@@ -522,7 +522,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon EC2 whenever you need native, fully managed AWS capability for Compute workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/ec2/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
   },
   "svc-lambda": {
     "id": "svc-lambda",
@@ -545,7 +545,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Lambda whenever you need native, fully managed AWS capability for Compute workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/lambda/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
   },
   "svc-ecr": {
     "id": "svc-ecr",
@@ -568,7 +568,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon ECR whenever you need native, fully managed AWS capability for Containers workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/ecr/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html"
   },
   "svc-ecs": {
     "id": "svc-ecs",
@@ -591,7 +591,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon ECS whenever you need native, fully managed AWS capability for Containers workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/ecs/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
   },
   "svc-eks": {
     "id": "svc-eks",
@@ -614,7 +614,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon EKS whenever you need native, fully managed AWS capability for Containers workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
   },
   "svc-documentdb": {
     "id": "svc-documentdb",
@@ -637,7 +637,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon DocumentDB whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/documentdb/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html"
   },
   "svc-dynamodb": {
     "id": "svc-dynamodb",
@@ -660,7 +660,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon DynamoDB whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/dynamodb/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
   },
   "svc-elasticache": {
     "id": "svc-elasticache",
@@ -683,7 +683,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon ElastiCache whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/elasticache/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html"
   },
   "svc-neptune": {
     "id": "svc-neptune",
@@ -706,7 +706,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Neptune whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/neptune/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"
   },
   "svc-rds": {
     "id": "svc-rds",
@@ -729,7 +729,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon RDS whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/rds/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
   },
   "svc-cdk": {
     "id": "svc-cdk",
@@ -752,7 +752,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CDK whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/cdk/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/cdk/v2/guide/home.html"
   },
   "svc-codeartifact": {
     "id": "svc-codeartifact",
@@ -775,7 +775,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CodeArtifact whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html"
   },
   "svc-codebuild": {
     "id": "svc-codebuild",
@@ -798,7 +798,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CodeBuild whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html"
   },
   "svc-codecommit": {
     "id": "svc-codecommit",
@@ -821,7 +821,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CodeCommit whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html"
   },
   "svc-codeconnections": {
     "id": "svc-codeconnections",
@@ -844,7 +844,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CodeConnections whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/codeconnections/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html"
   },
   "svc-codedeploy": {
     "id": "svc-codedeploy",
@@ -867,7 +867,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CodeDeploy whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html"
   },
   "svc-codepipeline": {
     "id": "svc-codepipeline",
@@ -890,7 +890,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CodePipeline whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"
   },
   "svc-xray": {
     "id": "svc-xray",
@@ -913,7 +913,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS X-Ray whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/xray/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"
   },
   "svc-bedrock": {
     "id": "svc-bedrock",
@@ -936,7 +936,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Bedrock whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
   },
   "svc-bedrock-agentcore": {
     "id": "svc-bedrock-agentcore",
@@ -959,7 +959,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Bedrock AgentCore whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
   },
   "svc-codeguru": {
     "id": "svc-codeguru",
@@ -982,7 +982,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon CodeGuru whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/codeguru/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html"
   },
   "svc-comprehend": {
     "id": "svc-comprehend",
@@ -1005,7 +1005,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Comprehend whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/comprehend/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"
   },
   "svc-comprehend-medical": {
     "id": "svc-comprehend-medical",
@@ -1028,7 +1028,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Comprehend Medical whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/comprehend-medical/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-welcome.html"
   },
   "svc-devops-guru": {
     "id": "svc-devops-guru",
@@ -1051,7 +1051,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon DevOps Guru whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html"
   },
   "svc-healthlake": {
     "id": "svc-healthlake",
@@ -1074,7 +1074,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS HealthLake whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/healthlake/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-healthlake.html"
   },
   "svc-lex": {
     "id": "svc-lex",
@@ -1097,7 +1097,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Lex whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/lex/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html"
   },
   "svc-personalize": {
     "id": "svc-personalize",
@@ -1120,7 +1120,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Personalize whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/personalize/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/personalize/latest/dg/what-is-personalize.html"
   },
   "svc-polly": {
     "id": "svc-polly",
@@ -1143,7 +1143,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Polly whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/polly/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/polly/latest/dg/what-is.html"
   },
   "svc-rekognition": {
     "id": "svc-rekognition",
@@ -1166,7 +1166,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Rekognition whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/rekognition/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html"
   },
   "svc-sagemaker": {
     "id": "svc-sagemaker",
@@ -1189,7 +1189,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon SageMaker AI whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/sagemaker/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
   },
   "svc-textract": {
     "id": "svc-textract",
@@ -1212,7 +1212,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Textract whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/textract/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/textract/latest/dg/what-is.html"
   },
   "svc-transcribe": {
     "id": "svc-transcribe",
@@ -1235,7 +1235,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Transcribe whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/transcribe/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html"
   },
   "svc-translate": {
     "id": "svc-translate",
@@ -1258,7 +1258,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Translate whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/translate/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/translate/latest/dg/what-is.html"
   },
   "svc-auto-scaling": {
     "id": "svc-auto-scaling",
@@ -1281,7 +1281,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Auto Scaling whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/auto-scaling/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html"
   },
   "svc-cloudformation": {
     "id": "svc-cloudformation",
@@ -1304,7 +1304,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CloudFormation whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/cloudformation/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
   },
   "svc-cloudtrail": {
     "id": "svc-cloudtrail",
@@ -1327,7 +1327,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS CloudTrail whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/cloudtrail/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
   },
   "svc-cloudwatch": {
     "id": "svc-cloudwatch",
@@ -1350,7 +1350,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon CloudWatch whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/cloudwatch/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
   },
   "svc-compute-optimizer": {
     "id": "svc-compute-optimizer",
@@ -1373,7 +1373,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Compute Optimizer whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/compute-optimizer/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html"
   },
   "svc-config": {
     "id": "svc-config",
@@ -1396,7 +1396,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Config whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/config/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
   },
   "svc-organizations": {
     "id": "svc-organizations",
@@ -1419,7 +1419,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Organizations whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/organizations/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html"
   },
   "svc-service-catalog": {
     "id": "svc-service-catalog",
@@ -1442,7 +1442,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Service Catalog whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/service-catalog/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html"
   },
   "svc-systems-manager": {
     "id": "svc-systems-manager",
@@ -1465,7 +1465,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Systems Manager whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html"
   },
   "svc-trusted-advisor": {
     "id": "svc-trusted-advisor",
@@ -1488,7 +1488,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Trusted Advisor whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/trusted-advisor/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
   },
   "svc-kinesis-video-streams": {
     "id": "svc-kinesis-video-streams",
@@ -1511,7 +1511,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Kinesis Video Streams whenever you need native, fully managed AWS capability for Media workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/kinesis-video-streams/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html"
   },
   "svc-datasync": {
     "id": "svc-datasync",
@@ -1534,7 +1534,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS DataSync whenever you need native, fully managed AWS capability for Migration and Transfer workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
   },
   "svc-api-gateway": {
     "id": "svc-api-gateway",
@@ -1557,7 +1557,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon API Gateway whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/api-gateway/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
   },
   "svc-cloudfront": {
     "id": "svc-cloudfront",
@@ -1580,7 +1580,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon CloudFront whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/cloudfront/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
   },
   "svc-direct-connect": {
     "id": "svc-direct-connect",
@@ -1603,7 +1603,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Direct Connect whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/direct-connect/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
   },
   "svc-vpc": {
     "id": "svc-vpc",
@@ -1626,7 +1626,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon VPC whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
   },
   "svc-iam": {
     "id": "svc-iam",
@@ -1649,7 +1649,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose IAM whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/iam/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
   },
   "svc-inspector": {
     "id": "svc-inspector",
@@ -1672,7 +1672,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Inspector whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/inspector/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
   },
   "svc-kms": {
     "id": "svc-kms",
@@ -1695,7 +1695,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS KMS whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/kms/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
   },
   "svc-macie": {
     "id": "svc-macie",
@@ -1718,7 +1718,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon Macie whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/macie/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
   },
   "svc-secrets-manager": {
     "id": "svc-secrets-manager",
@@ -1741,7 +1741,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Secrets Manager whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/secrets-manager/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
   },
   "svc-ebs": {
     "id": "svc-ebs",
@@ -1764,7 +1764,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon EBS whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
   },
   "svc-efs": {
     "id": "svc-efs",
@@ -1787,7 +1787,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon EFS whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/efs/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
   },
   "svc-fsx": {
     "id": "svc-fsx",
@@ -1810,7 +1810,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon FSx whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/fsx/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html"
   },
   "svc-s3": {
     "id": "svc-s3",
@@ -1833,7 +1833,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon S3 whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/s3/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
   },
   "svc-s3-glacier": {
     "id": "svc-s3-glacier",
@@ -1856,7 +1856,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose Amazon S3 Glacier whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/s3-glacier/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html"
   },
   "svc-storage-gateway": {
     "id": "svc-storage-gateway",
@@ -1879,7 +1879,7 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
       "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
     "scenarioTip": "Choose AWS Storage Gateway whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
-    "url": "https://docs.aws.amazon.com/storage-gateway/latest/userguide/what-is.html"
+    "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html"
   }
 };
 

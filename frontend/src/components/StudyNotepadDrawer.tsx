@@ -633,30 +633,62 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                     <h3 className="font-extrabold text-sm text-slate-900 tracking-tight">
                       Recommended Learning Resources & Official Guides
                     </h3>
-                    <p className="text-xs text-slate-500">Pick the exact AWS documentation chapters to deepen your mastery</p>
+                    <p className="text-xs text-slate-500">Verified official documentation, SDK guides, and architectural whitepapers</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-2.5 mt-2">
-                  {studyGuide.recommendedResources.map((res, idx) => (
-                    <a
-                      key={idx}
-                      href={res.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-teal-50/60 border border-slate-200 hover:border-teal-300 transition-all group"
-                    >
-                      <div className="space-y-0.5">
-                        <span className="text-xs font-bold text-slate-800 group-hover:text-teal-800 transition-colors flex items-center gap-1.5">
-                          <span>{res.title}</span>
-                        </span>
-                        <span className="inline-block text-[10px] uppercase font-bold text-teal-700 bg-teal-100/60 px-2 py-0.5 rounded-md">
-                          {res.type}
-                        </span>
-                      </div>
-                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-teal-600 transition-colors shrink-0 ml-3" />
-                    </a>
-                  ))}
+                  {studyGuide.recommendedResources.map((res, idx) => {
+                    const isDoc = res.type.includes('Documentation') || res.type.includes('Guide');
+                    const isSdk = res.type.includes('SDK');
+                    const isWhitepaper = res.type.includes('Whitepaper');
+                    const isPricing = res.type.includes('Pricing');
+
+                    const badgeStyle = isSdk
+                      ? 'bg-blue-100 text-blue-800 border-blue-200'
+                      : isWhitepaper
+                      ? 'bg-purple-100 text-purple-800 border-purple-200'
+                      : isPricing
+                      ? 'bg-amber-100 text-amber-800 border-amber-200'
+                      : 'bg-emerald-100 text-emerald-800 border-emerald-200';
+
+                    let domain = 'docs.aws.amazon.com';
+                    try {
+                      domain = new URL(res.url).hostname;
+                    } catch {
+                      // fallback
+                    }
+
+                    return (
+                      <a
+                        key={idx}
+                        href={res.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-teal-50/70 border border-slate-200 hover:border-teal-400 transition-all group shadow-2xs"
+                      >
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-xs font-bold text-slate-900 group-hover:text-teal-900 transition-colors">
+                              {res.title}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className={`inline-block text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-md border ${badgeStyle}`}>
+                              {res.type}
+                            </span>
+                            <span className="text-[11px] text-slate-400 font-mono">
+                              {domain}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1 text-slate-400 group-hover:text-teal-700 transition-colors shrink-0 ml-3">
+                          <span className="text-xs font-semibold hidden sm:inline">Open</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </div>
+                      </a>
+                    );
+                  })}
                 </div>
               </section>
             )}

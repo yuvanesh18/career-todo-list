@@ -112,18 +112,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Extract data from data sources (for",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.1.1 focuses on: 'Extract data from data sources (for example, Amazon S3, Amazon EBS, Amazon EFS, Amazon RDS, Amazon DynamoDB, Amazon OpenSearch Service).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nFrom an architectural standpoint, AWS provides distinct storage tiers optimized for specific ML access patterns. Amazon S3 serves as the durable, virtually limitless object storage lake, offering storage tiers from S3 Standard (for active pipelines) to S3 Intelligent-Tiering and S3 Glacier (for long-term retention and compliance). For compute workloads, Amazon EBS provides ultra-low latency block volumes attached to single EC2/training nodes, Amazon EFS provides a scalable multi-AZ shared POSIX file system, and Amazon FSx for Lustre delivers parallel high-throughput scratch storage with hundreds of GB/s and sub-millisecond latencies, linking directly to S3 buckets to hydrate multi-GPU training clusters.\n\nWhen designing ingestion pipelines, ML engineers must account for throughput limits and pricing structures. For example, S3 supports 3,500 PUT/POST/DELETE and 5,500 GET/HEAD requests per second per prefix. Partitioning prefixes (e.g., date-based or hash-based paths) prevents throttling. For training large deep learning or foundation models, streaming data directly from S3 using Pipe Mode or caching through FSx for Lustre eliminates local disk saturation and accelerates time-to-first-epoch.",
@@ -193,18 +198,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Make storage decisions and con\ufb01gure",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.1.2 focuses on: 'Make storage decisions and con\ufb01gure storage services based on cost, performance, data structure, and data compliance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nFrom an architectural standpoint, AWS provides distinct storage tiers optimized for specific ML access patterns. Amazon S3 serves as the durable, virtually limitless object storage lake, offering storage tiers from S3 Standard (for active pipelines) to S3 Intelligent-Tiering and S3 Glacier (for long-term retention and compliance). For compute workloads, Amazon EBS provides ultra-low latency block volumes attached to single EC2/training nodes, Amazon EFS provides a scalable multi-AZ shared POSIX file system, and Amazon FSx for Lustre delivers parallel high-throughput scratch storage with hundreds of GB/s and sub-millisecond latencies, linking directly to S3 buckets to hydrate multi-GPU training clusters.\n\nWhen designing ingestion pipelines, ML engineers must account for throughput limits and pricing structures. For example, S3 supports 3,500 PUT/POST/DELETE and 5,500 GET/HEAD requests per second per prefix. Partitioning prefixes (e.g., date-based or hash-based paths) prevents throttling. For training large deep learning or foundation models, streaming data directly from S3 using Pipe Mode or caching through FSx for Lustre eliminates local disk saturation and accelerates time-to-first-epoch.",
@@ -274,18 +284,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Troubleshoot and debug data ingesti",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.1.3 focuses on: 'Troubleshoot and debug data ingestion and storage issues that involve capacity and scalability.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nFrom an architectural standpoint, AWS provides distinct storage tiers optimized for specific ML access patterns. Amazon S3 serves as the durable, virtually limitless object storage lake, offering storage tiers from S3 Standard (for active pipelines) to S3 Intelligent-Tiering and S3 Glacier (for long-term retention and compliance). For compute workloads, Amazon EBS provides ultra-low latency block volumes attached to single EC2/training nodes, Amazon EFS provides a scalable multi-AZ shared POSIX file system, and Amazon FSx for Lustre delivers parallel high-throughput scratch storage with hundreds of GB/s and sub-millisecond latencies, linking directly to S3 buckets to hydrate multi-GPU training clusters.\n\nWhen designing ingestion pipelines, ML engineers must account for throughput limits and pricing structures. For example, S3 supports 3,500 PUT/POST/DELETE and 5,500 GET/HEAD requests per second per prefix. Partitioning prefixes (e.g., date-based or hash-based paths) prevents throttling. For training large deep learning or foundation models, streaming data directly from S3 using Pipe Mode or caching through FSx for Lustre eliminates local disk saturation and accelerates time-to-first-epoch.",
@@ -355,18 +370,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Use AWS streaming data sources to i",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.1.4 focuses on: 'Use AWS streaming data sources to ingest data (for example, by using Amazon Kinesis, Apache Flink, Apache Kafka).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nStreaming ingestion architectures on AWS are designed to process continuous, high-velocity event data with zero data loss. Amazon Kinesis Data Streams provides ordered, partitioned sharded streams capable of ingesting 1MB/sec (or 1,000 records/sec) write and 2MB/sec read per shard in Provisioned mode, or automatic scaling in On-Demand mode. Amazon Data Firehose (formerly Kinesis Data Firehose) is the fully managed serverless delivery engine that automatically batches, compresses (GZIP, Snappy), and transforms streaming data before landing it into Amazon S3, Amazon Redshift, or Amazon OpenSearch.\n\nFor complex real-time analytics, Amazon Managed Service for Apache Flink runs stateful stream processing with sliding, tumbling, and session windows over streaming records. For organizations committed to open-source ecosystems, Amazon MSK (Managed Streaming for Apache Kafka) delivers fully managed Kafka clusters. Real-time inference pipelines frequently connect Kinesis streams to AWS Lambda or SageMaker endpoints for sub-second anomaly detection and feature extraction.",
@@ -395,7 +415,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.1.5 focuses on: 'Ingest from and write by using appropriate data formats (for example, Apache Parquet, JSON, CSV, ORC) based on data access patterns.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.1.5 focuses on: 'Ingest from and write by using appropriate data formats (for example, Apache Parquet, JSON, CSV, ORC) based on data access patterns.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A central international logistics hub: cargo arrives continuously via air, rail, and sea (Kinesis, Kafka, Direct Connect), is sorted into high-speed staging warehouses (FSx for Lustre, EFS), and stored permanently in secure climate-controlled vaults (S3 Standard, S3 Glacier).",
       "whyItMatters": "In enterprise production environments, failure to master ingest from and write by using appropriate data formats (for example, apache parquet, json, csv, orc) based on data access patterns. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -436,21 +456,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Ingest from and write by using appr",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.1.5 focuses on: 'Ingest from and write by using appropriate data formats (for example, Apache Parquet, JSON, CSV, ORC) based on data access patterns.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.1.5 focuses on: 'Ingest from and write by using appropriate data formats (for example, Apache Parquet, JSON, CSV, ORC) based on data access patterns.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.1: Collect and store data (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on Amazon S3, Amazon EFS, FSx for Lustre, Amazon Kinesis, Amazon MSK, AWS Glue, AWS Lake Formation.",
@@ -476,7 +501,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.1.6 focuses on: 'Merge data from multiple sources (for example, by using programming techniques, AWS Glue, Apache Spark).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.1.6 focuses on: 'Merge data from multiple sources (for example, by using programming techniques, AWS Glue, Apache Spark).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A central international logistics hub: cargo arrives continuously via air, rail, and sea (Kinesis, Kafka, Direct Connect), is sorted into high-speed staging warehouses (FSx for Lustre, EFS), and stored permanently in secure climate-controlled vaults (S3 Standard, S3 Glacier).",
       "whyItMatters": "In enterprise production environments, failure to master merge data from multiple sources (for example, by using programming techniques, aws glue, apache spark). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -517,21 +542,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Merge data from multiple sources (f",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.1.6 focuses on: 'Merge data from multiple sources (for example, by using programming techniques, AWS Glue, Apache Spark).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.1.6 focuses on: 'Merge data from multiple sources (for example, by using programming techniques, AWS Glue, Apache Spark).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.1: Collect and store data (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on Amazon S3, Amazon EFS, FSx for Lustre, Amazon Kinesis, Amazon MSK, AWS Glue, AWS Lake Formation.",
@@ -598,18 +628,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure scalable vector databases ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.1.7 focuses on: 'Con\ufb01gure scalable vector databases for AI applications (for example, OpenSearch Service, Amazon RDS with pgvector, Amazon S3) based on speci\ufb01cations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nFrom an architectural standpoint, AWS provides distinct storage tiers optimized for specific ML access patterns. Amazon S3 serves as the durable, virtually limitless object storage lake, offering storage tiers from S3 Standard (for active pipelines) to S3 Intelligent-Tiering and S3 Glacier (for long-term retention and compliance). For compute workloads, Amazon EBS provides ultra-low latency block volumes attached to single EC2/training nodes, Amazon EFS provides a scalable multi-AZ shared POSIX file system, and Amazon FSx for Lustre delivers parallel high-throughput scratch storage with hundreds of GB/s and sub-millisecond latencies, linking directly to S3 buckets to hydrate multi-GPU training clusters.\n\nWhen designing ingestion pipelines, ML engineers must account for throughput limits and pricing structures. For example, S3 supports 3,500 PUT/POST/DELETE and 5,500 GET/HEAD requests per second per prefix. Partitioning prefixes (e.g., date-based or hash-based paths) prevents throttling. For training large deep learning or foundation models, streaming data directly from S3 using Pipe Mode or caching through FSx for Lustre eliminates local disk saturation and accelerates time-to-first-epoch.",
@@ -638,7 +673,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.1.8 focuses on: 'Ingest and store diverse data types (for example, text, images, audio) for AI and ML applications.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.1.8 focuses on: 'Ingest and store diverse data types (for example, text, images, audio) for AI and ML applications.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A central international logistics hub: cargo arrives continuously via air, rail, and sea (Kinesis, Kafka, Direct Connect), is sorted into high-speed staging warehouses (FSx for Lustre, EFS), and stored permanently in secure climate-controlled vaults (S3 Standard, S3 Glacier).",
       "whyItMatters": "In enterprise production environments, failure to master ingest and store diverse data types (for example, text, images, audio) for ai and ml applications. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -679,21 +714,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Ingest and store diverse data types",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.1.8 focuses on: 'Ingest and store diverse data types (for example, text, images, audio) for AI and ML applications.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.1.8 focuses on: 'Ingest and store diverse data types (for example, text, images, audio) for AI and ML applications.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.1: Collect and store data (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on Amazon S3, Amazon EFS, FSx for Lustre, Amazon Kinesis, Amazon MSK, AWS Glue, AWS Lake Formation.",
@@ -760,18 +800,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.1: Collect and store data",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Ingest data into SageMaker Feature ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.1.9 focuses on: 'Ingest data into SageMaker Feature Store.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.1: Collect and store data under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker Feature Store is a purpose-built repository designed to create, share, and manage standardized ML features across training and inference workloads, solving the notorious 'train-serve skew' problem. It implements a Dual Store Architecture: an Online Store backed by Amazon DynamoDB for ultra-low latency (<10ms) single-record retrieval during real-time inference, and an Offline Store backed by Amazon S3 in Apache Parquet format for batch training and point-in-time historical queries.\n\nEach Feature Group is defined by a schema with a unique RecordIdentifier and an EventTime. The EventTime ensures point-in-time correctness: when training models on past historical data, engineers can query the exact feature values that existed at the exact timestamp of the historical event, completely preventing future data leakage into training sets.",
@@ -800,7 +845,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.2.1 focuses on: 'Transform data by using AWS tools (for example, AWS Glue, AWS Glue DataBrew, Spark on Amazon EMR, SageMaker Data Wrangler).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.2.1 focuses on: 'Transform data by using AWS tools (for example, AWS Glue, AWS Glue DataBrew, Spark on Amazon EMR, SageMaker Data Wrangler).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An oil refinery: crude petroleum (unstructured raw logs, images, text) passes through cracking towers and chemical catalysts (AWS Glue PySpark, SageMaker Data Wrangler, Tokenizers) to yield high-octane rocket fuel (curated Parquet vectors and normalized feature stores).",
       "whyItMatters": "In enterprise production environments, failure to master transform data by using aws tools (for example, aws glue, aws glue databrew, spark on amazon emr, sagemaker data wrangler). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -841,21 +886,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Transform data by using AWS tools (",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.2.1 focuses on: 'Transform data by using AWS tools (for example, AWS Glue, AWS Glue DataBrew, Spark on Amazon EMR, SageMaker Data Wrangler).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.2.1 focuses on: 'Transform data by using AWS tools (for example, AWS Glue, AWS Glue DataBrew, Spark on Amazon EMR, SageMaker Data Wrangler).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.2: Perform data transformation, feature engineering, and pre-processing (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on AWS Glue, Amazon EMR, SageMaker Data Wrangler, SageMaker Feature Store (Online & Offline), AWS Glue DataBrew.",
@@ -922,18 +972,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Create and manage features by using",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.2.2 focuses on: 'Create and manage features by using AWS tools (for example, SageMaker Feature Store).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker Feature Store is a purpose-built repository designed to create, share, and manage standardized ML features across training and inference workloads, solving the notorious 'train-serve skew' problem. It implements a Dual Store Architecture: an Online Store backed by Amazon DynamoDB for ultra-low latency (<10ms) single-record retrieval during real-time inference, and an Offline Store backed by Amazon S3 in Apache Parquet format for batch training and point-in-time historical queries.\n\nEach Feature Group is defined by a schema with a unique RecordIdentifier and an EventTime. The EventTime ensures point-in-time correctness: when training models on past historical data, engineers can query the exact feature values that existed at the exact timestamp of the historical event, completely preventing future data leakage into training sets.",
@@ -1003,18 +1058,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Transform streaming data (for examp",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.2.3 focuses on: 'Transform streaming data (for example, by using AWS Lambda, Spark).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nStreaming ingestion architectures on AWS are designed to process continuous, high-velocity event data with zero data loss. Amazon Kinesis Data Streams provides ordered, partitioned sharded streams capable of ingesting 1MB/sec (or 1,000 records/sec) write and 2MB/sec read per shard in Provisioned mode, or automatic scaling in On-Demand mode. Amazon Data Firehose (formerly Kinesis Data Firehose) is the fully managed serverless delivery engine that automatically batches, compresses (GZIP, Snappy), and transforms streaming data before landing it into Amazon S3, Amazon Redshift, or Amazon OpenSearch.\n\nFor complex real-time analytics, Amazon Managed Service for Apache Flink runs stateful stream processing with sliding, tumbling, and session windows over streaming records. For organizations committed to open-source ecosystems, Amazon MSK (Managed Streaming for Apache Kafka) delivers fully managed Kafka clusters. Real-time inference pipelines frequently connect Kinesis streams to AWS Lambda or SageMaker endpoints for sub-second anomaly detection and feature extraction.",
@@ -1043,7 +1103,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.2.4 focuses on: 'Perform feature engineering (for example, scaling, standardization, feature splitting, binning, log transformation, normalization).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.2.4 focuses on: 'Perform feature engineering (for example, scaling, standardization, feature splitting, binning, log transformation, normalization).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An oil refinery: crude petroleum (unstructured raw logs, images, text) passes through cracking towers and chemical catalysts (AWS Glue PySpark, SageMaker Data Wrangler, Tokenizers) to yield high-octane rocket fuel (curated Parquet vectors and normalized feature stores).",
       "whyItMatters": "In enterprise production environments, failure to master perform feature engineering (for example, scaling, standardization, feature splitting, binning, log transformation, normalization). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -1084,21 +1144,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Perform feature engineering (for ex",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.2.4 focuses on: 'Perform feature engineering (for example, scaling, standardization, feature splitting, binning, log transformation, normalization).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.2.4 focuses on: 'Perform feature engineering (for example, scaling, standardization, feature splitting, binning, log transformation, normalization).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.2: Perform data transformation, feature engineering, and pre-processing (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on AWS Glue, Amazon EMR, SageMaker Data Wrangler, SageMaker Feature Store (Online & Offline), AWS Glue DataBrew.",
@@ -1124,7 +1189,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.2.5 focuses on: 'Con\ufb01gure and use embedding models to transform text and image data into numerical representations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.2.5 focuses on: 'Con\ufb01gure and use embedding models to transform text and image data into numerical representations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An oil refinery: crude petroleum (unstructured raw logs, images, text) passes through cracking towers and chemical catalysts (AWS Glue PySpark, SageMaker Data Wrangler, Tokenizers) to yield high-octane rocket fuel (curated Parquet vectors and normalized feature stores).",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure and use embedding models to transform text and image data into numerical representations. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -1165,21 +1230,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure and use embedding models t",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.2.5 focuses on: 'Con\ufb01gure and use embedding models to transform text and image data into numerical representations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.2.5 focuses on: 'Con\ufb01gure and use embedding models to transform text and image data into numerical representations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.2: Perform data transformation, feature engineering, and pre-processing (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on AWS Glue, Amazon EMR, SageMaker Data Wrangler, SageMaker Feature Store (Online & Offline), AWS Glue DataBrew.",
@@ -1205,7 +1275,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.2.6 focuses on: 'Apply advanced text pre-processing techniques (for example, tokenization, domain- speci\ufb01c augmentation).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.2.6 focuses on: 'Apply advanced text pre-processing techniques (for example, tokenization, domain- speci\ufb01c augmentation).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An oil refinery: crude petroleum (unstructured raw logs, images, text) passes through cracking towers and chemical catalysts (AWS Glue PySpark, SageMaker Data Wrangler, Tokenizers) to yield high-octane rocket fuel (curated Parquet vectors and normalized feature stores).",
       "whyItMatters": "In enterprise production environments, failure to master apply advanced text pre-processing techniques (for example, tokenization, domain- speci\ufb01c augmentation). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -1246,21 +1316,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Apply advanced text pre-processing ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.2.6 focuses on: 'Apply advanced text pre-processing techniques (for example, tokenization, domain- speci\ufb01c augmentation).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.2.6 focuses on: 'Apply advanced text pre-processing techniques (for example, tokenization, domain- speci\ufb01c augmentation).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.2: Perform data transformation, feature engineering, and pre-processing (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on AWS Glue, Amazon EMR, SageMaker Data Wrangler, SageMaker Feature Store (Online & Offline), AWS Glue DataBrew.",
@@ -1327,18 +1402,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Prepare documents for Retrieval Aug",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.2.7 focuses on: 'Prepare documents for Retrieval Augmented Generation (RAG) applications (for example, chunking strategies, metadata extraction).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nVector databases form the retrieval backbone for Retrieval Augmented Generation (RAG) and semantic similarity search. Amazon OpenSearch Serverless Vector Engine provides a managed, serverless k-NN (k-nearest neighbors) vector store supporting Hierarchical Navigable Small World (HNSW) and Inverted File (IVF) graph indexing algorithms. Alternatively, Amazon Aurora and RDS PostgreSQL with the pgvector extension allow teams to co-locate vector embeddings alongside relational enterprise transactional data.\n\nIn a production RAG system, text documents are chunked (using fixed, hierarchical, or semantic chunking), processed through an embedding model (such as Amazon Titan Text Embeddings V2), and indexed with rich metadata (document ID, timestamp, department). During retrieval, the query vector is compared using distance metrics: Cosine Similarity (angle-based, normalized), Euclidean (L2) distance, or Dot Product, followed by optional reranking (e.g., Cohere Rerank on Amazon Bedrock) to maximize contextual relevance.",
@@ -1367,7 +1447,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.2.8 focuses on: 'Mask, redact, and anonymize data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.2.8 focuses on: 'Mask, redact, and anonymize data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An oil refinery: crude petroleum (unstructured raw logs, images, text) passes through cracking towers and chemical catalysts (AWS Glue PySpark, SageMaker Data Wrangler, Tokenizers) to yield high-octane rocket fuel (curated Parquet vectors and normalized feature stores).",
       "whyItMatters": "In enterprise production environments, failure to master mask, redact, and anonymize data. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -1408,21 +1488,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Mask, redact, and anonymize data.",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.2.8 focuses on: 'Mask, redact, and anonymize data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.2.8 focuses on: 'Mask, redact, and anonymize data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.2: Perform data transformation, feature engineering, and pre-processing (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on AWS Glue, Amazon EMR, SageMaker Data Wrangler, SageMaker Feature Store (Online & Offline), AWS Glue DataBrew.",
@@ -1489,18 +1574,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.2: Perform data transformation, feature engineering, and pre-processing",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Prepare data for FM \ufb01ne-tuning, con",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.2.9 focuses on: 'Prepare data for FM \ufb01ne-tuning, continuous pre-training, and model distillation.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.2: Perform data transformation, feature engineering, and pre-processing under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -1570,18 +1660,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.3: Validate data quality and manage bias",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Validate data quality (for example,",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.3.1 focuses on: 'Validate data quality (for example, by using DataBrew, AWS Glue Data Quality).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nData quality and fairness auditing are critical requirements for production-ready, responsible ML systems on AWS. Amazon SageMaker Clarify detects potential bias at all stages of the ML lifecycle. Pre-training bias metrics evaluate raw training datasets before model training occurs, measuring statistical imbalances across sensitive facet attributes (such as gender, age, or postal code). Key pre-training metrics include Class Imbalance (CI) and Difference in Positive Proportions in Labels (DPL).\n\nPost-training bias metrics evaluate model predictions against validation datasets, calculating Disparate Impact (DI), Difference in Conditional Acceptance (DCA), and Treatment Equality (TE). For general data quality, AWS Glue Data Quality uses Data Quality Definition Language (DQDL) declarative rules (e.g., Completeness, IsPrimaryKey, ColumnValues) to enforce strict schema and statistical constraints directly inside data pipelines, halting corrupted batches before model ingestion.",
@@ -1610,7 +1705,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.3.2 focuses on: 'Label and annotate data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.3.2 focuses on: 'Label and annotate data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A precision pharmaceuticals QA testing laboratory: before mass medication rollout, purity sensors and spectrometers (SageMaker Clarify, AWS Glue Data Quality) test every batch for microscopic contaminants, imbalances, and demographic bias.",
       "whyItMatters": "In enterprise production environments, failure to master label and annotate data. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -1651,21 +1746,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.3: Validate data quality and manage bias",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Label and annotate data.",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.3.2 focuses on: 'Label and annotate data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.3.2 focuses on: 'Label and annotate data.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.3: Validate data quality and manage bias (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify, AWS Glue Data Quality, AWS Deequ, Amazon CloudWatch.",
@@ -1732,18 +1832,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.3: Validate data quality and manage bias",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Identify and mitigate sources of bi",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.3.3 focuses on: 'Identify and mitigate sources of bias in data by using AWS tools and techniques (for example, dataset splitting, shu\ufb04ing, augmentation).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nData quality and fairness auditing are critical requirements for production-ready, responsible ML systems on AWS. Amazon SageMaker Clarify detects potential bias at all stages of the ML lifecycle. Pre-training bias metrics evaluate raw training datasets before model training occurs, measuring statistical imbalances across sensitive facet attributes (such as gender, age, or postal code). Key pre-training metrics include Class Imbalance (CI) and Difference in Positive Proportions in Labels (DPL).\n\nPost-training bias metrics evaluate model predictions against validation datasets, calculating Disparate Impact (DI), Difference in Conditional Acceptance (DCA), and Treatment Equality (TE). For general data quality, AWS Glue Data Quality uses Data Quality Definition Language (DQDL) declarative rules (e.g., Completeness, IsPrimaryKey, ColumnValues) to enforce strict schema and statistical constraints directly inside data pipelines, halting corrupted batches before model ingestion.",
@@ -1813,18 +1918,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.3: Validate data quality and manage bias",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Optimize multimodal data distributi",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.3.4 focuses on: 'Optimize multimodal data distributions by applying bias metrics across numeric, text, and image assets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nData quality and fairness auditing are critical requirements for production-ready, responsible ML systems on AWS. Amazon SageMaker Clarify detects potential bias at all stages of the ML lifecycle. Pre-training bias metrics evaluate raw training datasets before model training occurs, measuring statistical imbalances across sensitive facet attributes (such as gender, age, or postal code). Key pre-training metrics include Class Imbalance (CI) and Difference in Positive Proportions in Labels (DPL).\n\nPost-training bias metrics evaluate model predictions against validation datasets, calculating Disparate Impact (DI), Difference in Conditional Acceptance (DCA), and Treatment Equality (TE). For general data quality, AWS Glue Data Quality uses Data Quality Definition Language (DQDL) declarative rules (e.g., Completeness, IsPrimaryKey, ColumnValues) to enforce strict schema and statistical constraints directly inside data pipelines, halting corrupted batches before model ingestion.",
@@ -1853,7 +1963,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.3.5 focuses on: 'Resolve class imbalance in numeric, text, and image datasets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.3.5 focuses on: 'Resolve class imbalance in numeric, text, and image datasets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A precision pharmaceuticals QA testing laboratory: before mass medication rollout, purity sensors and spectrometers (SageMaker Clarify, AWS Glue Data Quality) test every batch for microscopic contaminants, imbalances, and demographic bias.",
       "whyItMatters": "In enterprise production environments, failure to master resolve class imbalance in numeric, text, and image datasets. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -1894,21 +2004,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.3: Validate data quality and manage bias",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Resolve class imbalance in numeric,",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.3.5 focuses on: 'Resolve class imbalance in numeric, text, and image datasets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.3.5 focuses on: 'Resolve class imbalance in numeric, text, and image datasets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.3: Validate data quality and manage bias (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify, AWS Glue Data Quality, AWS Deequ, Amazon CloudWatch.",
@@ -1975,18 +2090,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.3: Validate data quality and manage bias",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Validate AI training data integrity",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 1.3.6 focuses on: 'Validate AI training data integrity (for example, prompt-response pair validation, content safety screening).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -2015,7 +2135,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 1.3.7 focuses on: 'Clean data (for example, by detecting outliers, imputing missing data, deduplication).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 1.3.7 focuses on: 'Clean data (for example, by detecting outliers, imputing missing data, deduplication).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A precision pharmaceuticals QA testing laboratory: before mass medication rollout, purity sensors and spectrometers (SageMaker Clarify, AWS Glue Data Quality) test every batch for microscopic contaminants, imbalances, and demographic bias.",
       "whyItMatters": "In enterprise production environments, failure to master clean data (for example, by detecting outliers, imputing missing data, deduplication). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -2056,21 +2176,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 1.3: Validate data quality and manage bias",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 1: Data Preparation for ML & AI",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Clean data (for example, by detecti",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 1.3.7 focuses on: 'Clean data (for example, by detecting outliers, imputing missing data, deduplication).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 1.3.7 focuses on: 'Clean data (for example, by detecting outliers, imputing missing data, deduplication).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 1.3: Validate data quality and manage bias under Domain 1: Data Preparation for ML & AI. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 1.3: Validate data quality and manage bias (Domain 1: Data Preparation for ML & AI).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify, AWS Glue Data Quality, AWS Deequ, Amazon CloudWatch.",
@@ -2137,18 +2262,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Evaluate and select appropriate FMs",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.1.1 focuses on: 'Evaluate and select appropriate FMs from Amazon Bedrock based on task requirements and performance criteria.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -2218,18 +2348,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Identify \ufb01ne-tuning strategies for ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.1.2 focuses on: 'Identify \ufb01ne-tuning strategies for pre-trained FMs to meet business needs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -2258,7 +2393,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.1.3 focuses on: 'Compare and select appropriate ML models, generative AI (GenAI) models, algorithms, and solution templates to meet business needs (for example, interpretability, domain-speci\ufb01c performance, latency).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.1.3 focuses on: 'Compare and select appropriate ML models, generative AI (GenAI) models, algorithms, and solution templates to meet business needs (for example, interpretability, domain-speci\ufb01c performance, latency).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A master surgical instrument kit: you choose a precision scalpel (XGBoost) for structured tabular records, a motorized orthopaedic drill (DeepAR) for complex multi-variate time-series, and an entire robotic surgical suite (Amazon Bedrock Foundation Models) for open-ended generative language reasoning.",
       "whyItMatters": "In enterprise production environments, failure to master compare and select appropriate ml models, generative ai (genai) models, algorithms, and solution templates to meet business needs (for example, interpretability, domain-speci\ufb01c performance, latency). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -2299,21 +2434,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Compare and select appropriate ML m",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.1.3 focuses on: 'Compare and select appropriate ML models, generative AI (GenAI) models, algorithms, and solution templates to meet business needs (for example, interpretability, domain-speci\ufb01c performance, latency).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.1.3 focuses on: 'Compare and select appropriate ML models, generative AI (GenAI) models, algorithms, and solution templates to meet business needs (for example, interpretability, domain-speci\ufb01c performance, latency).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon Bedrock (Claude, Titan, Llama, Jurassic), SageMaker Built-in Algorithms (XGBoost, Linear Learner, DeepAR, BlazingText), SageMaker JumpStart.",
@@ -2380,18 +2520,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Evaluate tradeo\ufb00s between custom so",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.1.4 focuses on: 'Evaluate tradeo\ufb00s between custom solutions, managed services, pre-trained models, and FMs to meet business needs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -2461,18 +2606,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Select Retrieval Augmented Generati",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.1.5 focuses on: 'Select Retrieval Augmented Generation (RAG) architecture patterns based on use case requirements.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nVector databases form the retrieval backbone for Retrieval Augmented Generation (RAG) and semantic similarity search. Amazon OpenSearch Serverless Vector Engine provides a managed, serverless k-NN (k-nearest neighbors) vector store supporting Hierarchical Navigable Small World (HNSW) and Inverted File (IVF) graph indexing algorithms. Alternatively, Amazon Aurora and RDS PostgreSQL with the pgvector extension allow teams to co-locate vector embeddings alongside relational enterprise transactional data.\n\nIn a production RAG system, text documents are chunked (using fixed, hierarchical, or semantic chunking), processed through an embedding model (such as Amazon Titan Text Embeddings V2), and indexed with rich metadata (document ID, timestamp, department). During retrieval, the query vector is compared using distance metrics: Cosine Similarity (angle-based, normalized), Euclidean (L2) distance, or Dot Product, followed by optional reranking (e.g., Cohere Rerank on Amazon Bedrock) to maximize contextual relevance.",
@@ -2501,7 +2651,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.1.6 focuses on: 'Assess tradeo\ufb00s between ML model performance, training time, and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (`checkpoint_s3_uri` and `checkpoint_local_path`), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
+      "summary": "Skill 2.1.6 focuses on: 'Assess tradeo\ufb00s between ML model performance, training time, and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (checkpoint_s3_uri and checkpoint_local_path), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
       "analogy": "A master surgical instrument kit: you choose a precision scalpel (XGBoost) for structured tabular records, a motorized orthopaedic drill (DeepAR) for complex multi-variate time-series, and an entire robotic surgical suite (Amazon Bedrock Foundation Models) for open-ended generative language reasoning.",
       "whyItMatters": "In enterprise production environments, failure to master assess tradeo\ufb00s between ml model performance, training time, and cost. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -2542,21 +2692,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Assess tradeo\ufb00s between ML model pe",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.1.6 focuses on: 'Assess tradeo\ufb00s between ML model performance, training time, and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (`checkpoint_s3_uri` and `checkpoint_local_path`), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
+    "plainEnglish": "Skill 2.1.6 focuses on: 'Assess tradeo\ufb00s between ML model performance, training time, and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (checkpoint_s3_uri and checkpoint_local_path), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
     "bulletPoints": [
       "Core Task Domain: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon Bedrock (Claude, Titan, Llama, Jurassic), SageMaker Built-in Algorithms (XGBoost, Linear Learner, DeepAR, BlazingText), SageMaker JumpStart.",
@@ -2623,18 +2778,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Assess tradeo\ufb00s between AI model pe",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 2.1.7 focuses on: 'Assess tradeo\ufb00s between AI model performance, latency, and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -2663,7 +2823,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.1.8 focuses on: 'Apply AWS AI services to solve speci\ufb01c business problems (for example, Amazon Textract, Amazon Rekognition, Amazon Comprehend, Amazon Transcribe).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.1.8 focuses on: 'Apply AWS AI services to solve speci\ufb01c business problems (for example, Amazon Textract, Amazon Rekognition, Amazon Comprehend, Amazon Transcribe).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A master surgical instrument kit: you choose a precision scalpel (XGBoost) for structured tabular records, a motorized orthopaedic drill (DeepAR) for complex multi-variate time-series, and an entire robotic surgical suite (Amazon Bedrock Foundation Models) for open-ended generative language reasoning.",
       "whyItMatters": "In enterprise production environments, failure to master apply aws ai services to solve speci\ufb01c business problems (for example, amazon textract, amazon rekognition, amazon comprehend, amazon transcribe). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -2704,21 +2864,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/models-features.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Apply AWS AI services to solve spec",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.1.8 focuses on: 'Apply AWS AI services to solve speci\ufb01c business problems (for example, Amazon Textract, Amazon Rekognition, Amazon Comprehend, Amazon Transcribe).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.1.8 focuses on: 'Apply AWS AI services to solve speci\ufb01c business problems (for example, Amazon Textract, Amazon Rekognition, Amazon Comprehend, Amazon Transcribe).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.1: Choose appropriate modeling approaches for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.1: Choose appropriate modeling approaches for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon Bedrock (Claude, Titan, Llama, Jurassic), SageMaker Built-in Algorithms (XGBoost, Linear Learner, DeepAR, BlazingText), SageMaker JumpStart.",
@@ -2744,7 +2909,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.2.1 focuses on: 'Apply Amazon SageMaker AI built-in algorithms and common ML libraries.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.2.1 focuses on: 'Apply Amazon SageMaker AI built-in algorithms and common ML libraries.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An Olympic athlete training camp: athletes train in coordinated squads with synchronized signals (Distributed Data Parallelism ring-AllReduce), while specialized coaches refine their techniques with minimal intervention (Parameter-Efficient Fine-Tuning LoRA/PEFT).",
       "whyItMatters": "In enterprise production environments, failure to master apply amazon sagemaker ai built-in algorithms and common ml libraries. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -2785,21 +2950,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Apply Amazon SageMaker AI built-in ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.2.1 focuses on: 'Apply Amazon SageMaker AI built-in algorithms and common ML libraries.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.2.1 focuses on: 'Apply Amazon SageMaker AI built-in algorithms and common ML libraries.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Training, SageMaker Distributed Libraries (SMDDP, SMDP), Amazon Bedrock Fine-Tuning, PEFT/LoRA, SageMaker Hyperparameter Optimization (HPO).",
@@ -2825,7 +2995,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.2.2 focuses on: 'Con\ufb01gure SageMaker AI script mode with supported frameworks for simplicity and performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.2.2 focuses on: 'Con\ufb01gure SageMaker AI script mode with supported frameworks for simplicity and performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An Olympic athlete training camp: athletes train in coordinated squads with synchronized signals (Distributed Data Parallelism ring-AllReduce), while specialized coaches refine their techniques with minimal intervention (Parameter-Efficient Fine-Tuning LoRA/PEFT).",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure sagemaker ai script mode with supported frameworks for simplicity and performance. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -2866,21 +3036,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure SageMaker AI script mode w",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.2.2 focuses on: 'Con\ufb01gure SageMaker AI script mode with supported frameworks for simplicity and performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.2.2 focuses on: 'Con\ufb01gure SageMaker AI script mode with supported frameworks for simplicity and performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Training, SageMaker Distributed Libraries (SMDDP, SMDP), Amazon Bedrock Fine-Tuning, PEFT/LoRA, SageMaker Hyperparameter Optimization (HPO).",
@@ -2947,18 +3122,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement hyperparameter optimizati",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 2.2.3 focuses on: 'Implement hyperparameter optimization (for example, SageMaker AI automatic model tuning [AMT]).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -2987,7 +3167,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.2.4 focuses on: 'Implement training time reduction techniques (for example, early stopping, distributed training).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (`checkpoint_s3_uri` and `checkpoint_local_path`), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
+      "summary": "Skill 2.2.4 focuses on: 'Implement training time reduction techniques (for example, early stopping, distributed training).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (checkpoint_s3_uri and checkpoint_local_path), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
       "analogy": "An Olympic athlete training camp: athletes train in coordinated squads with synchronized signals (Distributed Data Parallelism ring-AllReduce), while specialized coaches refine their techniques with minimal intervention (Parameter-Efficient Fine-Tuning LoRA/PEFT).",
       "whyItMatters": "In enterprise production environments, failure to master implement training time reduction techniques (for example, early stopping, distributed training). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -3028,21 +3208,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement training time reduction t",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.2.4 focuses on: 'Implement training time reduction techniques (for example, early stopping, distributed training).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (`checkpoint_s3_uri` and `checkpoint_local_path`), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
+    "plainEnglish": "Skill 2.2.4 focuses on: 'Implement training time reduction techniques (for example, early stopping, distributed training).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (checkpoint_s3_uri and checkpoint_local_path), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
     "bulletPoints": [
       "Core Task Domain: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Training, SageMaker Distributed Libraries (SMDDP, SMDP), Amazon Bedrock Fine-Tuning, PEFT/LoRA, SageMaker Hyperparameter Optimization (HPO).",
@@ -3068,7 +3253,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.2.5 focuses on: 'Prevent model over\ufb01tting, under\ufb01tting, and catastrophic forgetting.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.2.5 focuses on: 'Prevent model over\ufb01tting, under\ufb01tting, and catastrophic forgetting.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An Olympic athlete training camp: athletes train in coordinated squads with synchronized signals (Distributed Data Parallelism ring-AllReduce), while specialized coaches refine their techniques with minimal intervention (Parameter-Efficient Fine-Tuning LoRA/PEFT).",
       "whyItMatters": "In enterprise production environments, failure to master prevent model over\ufb01tting, under\ufb01tting, and catastrophic forgetting. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -3109,21 +3294,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Prevent model over\ufb01tting, under\ufb01tti",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.2.5 focuses on: 'Prevent model over\ufb01tting, under\ufb01tting, and catastrophic forgetting.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.2.5 focuses on: 'Prevent model over\ufb01tting, under\ufb01tting, and catastrophic forgetting.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Training, SageMaker Distributed Libraries (SMDDP, SMDP), Amazon Bedrock Fine-Tuning, PEFT/LoRA, SageMaker Hyperparameter Optimization (HPO).",
@@ -3190,18 +3380,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Combine multiple ML models to impro",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 2.2.6 focuses on: 'Combine multiple ML models to improve performance or reduce cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -3230,7 +3425,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.2.7 focuses on: 'Adjust fundamental hyperparameters (for example, epoch, steps, batch size).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.2.7 focuses on: 'Adjust fundamental hyperparameters (for example, epoch, steps, batch size).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An Olympic athlete training camp: athletes train in coordinated squads with synchronized signals (Distributed Data Parallelism ring-AllReduce), while specialized coaches refine their techniques with minimal intervention (Parameter-Efficient Fine-Tuning LoRA/PEFT).",
       "whyItMatters": "In enterprise production environments, failure to master adjust fundamental hyperparameters (for example, epoch, steps, batch size). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -3271,21 +3466,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Adjust fundamental hyperparameters ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.2.7 focuses on: 'Adjust fundamental hyperparameters (for example, epoch, steps, batch size).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.2.7 focuses on: 'Adjust fundamental hyperparameters (for example, epoch, steps, batch size).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Training, SageMaker Distributed Libraries (SMDDP, SMDP), Amazon Bedrock Fine-Tuning, PEFT/LoRA, SageMaker Hyperparameter Optimization (HPO).",
@@ -3352,18 +3552,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Apply customization techniques for ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.2.8 focuses on: 'Apply customization techniques for AI solutions (for example, task-speci\ufb01c prompt engineering, \ufb01ne-tuning).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -3433,18 +3638,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.2: Train, fine-tune, and customize models for ML and AI solutions",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Optimize retrieval components and e",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 2.2.9 focuses on: 'Optimize retrieval components and embedding models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.2: Train, fine-tune, and customize models for ML and AI solutions under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -3514,18 +3724,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Perform reproducible experiments (f",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.3.1 focuses on: 'Perform reproducible experiments (for example, by using ML\ufb02ow on SageMaker AI, Amazon Bedrock evaluations, Amazon Bedrock Prompt Management).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -3595,18 +3810,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Create model performance baselines ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 2.3.2 focuses on: 'Create model performance baselines and implement drift detection.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nContinuous model monitoring in production is essential to combat concept drift, covariate shift, and silent model decay. Amazon SageMaker Model Monitor continuously tracks deployed models in production without writing custom analysis scripts. It operates by enabling SageMaker Endpoint Data Capture, which writes a configurable percentage of live request inputs and model prediction outputs directly to an Amazon S3 capture bucket in JSONL format.\n\nModel Monitor runs four distinct scheduled monitoring jobs: 1. Data Quality Monitor: Compares incoming feature distributions against baseline statistics (detects schema changes, nulls, out-of-range values). 2. Model Quality Monitor: Compares predictions against ground-truth labels collected downstream (detects drops in accuracy, F1, or ROC-AUC). 3. Bias Drift Monitor: Uses Clarify to detect if fairness metrics (such as DPL or Disparate Impact) are diverging over time. 4. Feature Attribution Drift Monitor: Uses KernelSHAP to detect shifts in feature importance rankings. Violations trigger Amazon CloudWatch alarms.",
@@ -3635,7 +3855,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.3.3 focuses on: 'Compare the performance of shadow variants to production variants.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.3.3 focuses on: 'Compare the performance of shadow variants to production variants.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An FAA aircraft certification checkride: flight examiners put the aircraft through stall recovery, extreme weather simulations, and engine-out drills, logging telemetry (Confusion Matrix, ROC-AUC, F1, Perplexity, SHAP values) to verify passenger safety.",
       "whyItMatters": "In enterprise production environments, failure to master compare the performance of shadow variants to production variants. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -3676,21 +3896,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Compare the performance of shadow v",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.3.3 focuses on: 'Compare the performance of shadow variants to production variants.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.3.3 focuses on: 'Compare the performance of shadow variants to production variants.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.3: Analyze and evaluate the performance of ML and AI systems (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify (SHAP values), Amazon Bedrock Model Evaluation (Automated & Human), Amazon CloudWatch, SageMaker Experiments.",
@@ -3716,7 +3941,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.3.4 focuses on: 'Explain model outputs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.3.4 focuses on: 'Explain model outputs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An FAA aircraft certification checkride: flight examiners put the aircraft through stall recovery, extreme weather simulations, and engine-out drills, logging telemetry (Confusion Matrix, ROC-AUC, F1, Perplexity, SHAP values) to verify passenger safety.",
       "whyItMatters": "In enterprise production environments, failure to master explain model outputs. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -3757,21 +3982,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Explain model outputs.",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.3.4 focuses on: 'Explain model outputs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.3.4 focuses on: 'Explain model outputs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.3: Analyze and evaluate the performance of ML and AI systems (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify (SHAP values), Amazon Bedrock Model Evaluation (Automated & Human), Amazon CloudWatch, SageMaker Experiments.",
@@ -3797,7 +4027,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.3.5 focuses on: 'Debug model convergence issues.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.3.5 focuses on: 'Debug model convergence issues.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An FAA aircraft certification checkride: flight examiners put the aircraft through stall recovery, extreme weather simulations, and engine-out drills, logging telemetry (Confusion Matrix, ROC-AUC, F1, Perplexity, SHAP values) to verify passenger safety.",
       "whyItMatters": "In enterprise production environments, failure to master debug model convergence issues. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -3838,21 +4068,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Debug model convergence issues.",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.3.5 focuses on: 'Debug model convergence issues.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.3.5 focuses on: 'Debug model convergence issues.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.3: Analyze and evaluate the performance of ML and AI systems (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify (SHAP values), Amazon Bedrock Model Evaluation (Automated & Human), Amazon CloudWatch, SageMaker Experiments.",
@@ -3878,7 +4113,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.3.6 focuses on: 'Apply comprehensive model evaluation techniques for traditional ML and GenAI models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.3.6 focuses on: 'Apply comprehensive model evaluation techniques for traditional ML and GenAI models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An FAA aircraft certification checkride: flight examiners put the aircraft through stall recovery, extreme weather simulations, and engine-out drills, logging telemetry (Confusion Matrix, ROC-AUC, F1, Perplexity, SHAP values) to verify passenger safety.",
       "whyItMatters": "In enterprise production environments, failure to master apply comprehensive model evaluation techniques for traditional ml and genai models. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -3919,21 +4154,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Apply comprehensive model evaluatio",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.3.6 focuses on: 'Apply comprehensive model evaluation techniques for traditional ML and GenAI models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.3.6 focuses on: 'Apply comprehensive model evaluation techniques for traditional ML and GenAI models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.3: Analyze and evaluate the performance of ML and AI systems (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify (SHAP values), Amazon Bedrock Model Evaluation (Automated & Human), Amazon CloudWatch, SageMaker Experiments.",
@@ -4000,18 +4240,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement integrated human evaluati",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 2.3.7 focuses on: 'Implement integrated human evaluation frameworks (for example, human-in-the- loop work\ufb02ows, text generation quality assessment).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nData quality and fairness auditing are critical requirements for production-ready, responsible ML systems on AWS. Amazon SageMaker Clarify detects potential bias at all stages of the ML lifecycle. Pre-training bias metrics evaluate raw training datasets before model training occurs, measuring statistical imbalances across sensitive facet attributes (such as gender, age, or postal code). Key pre-training metrics include Class Imbalance (CI) and Difference in Positive Proportions in Labels (DPL).\n\nPost-training bias metrics evaluate model predictions against validation datasets, calculating Disparate Impact (DI), Difference in Conditional Acceptance (DCA), and Treatment Equality (TE). For general data quality, AWS Glue Data Quality uses Data Quality Definition Language (DQDL) declarative rules (e.g., Completeness, IsPrimaryKey, ColumnValues) to enforce strict schema and statistical constraints directly inside data pipelines, halting corrupted batches before model ingestion.",
@@ -4040,7 +4285,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 2.3.8 focuses on: 'Apply natural language processing (NLP) evaluation metrics (for example, bilingual evaluation understudy [BLEU], Recall-Oriented Understudy for Gisting Evaluation [ROUGE], BERTScore, semantic similarity).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 2.3.8 focuses on: 'Apply natural language processing (NLP) evaluation metrics (for example, bilingual evaluation understudy [BLEU], Recall-Oriented Understudy for Gisting Evaluation [ROUGE], BERTScore, semantic similarity).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An FAA aircraft certification checkride: flight examiners put the aircraft through stall recovery, extreme weather simulations, and engine-out drills, logging telemetry (Confusion Matrix, ROC-AUC, F1, Perplexity, SHAP values) to verify passenger safety.",
       "whyItMatters": "In enterprise production environments, failure to master apply natural language processing (nlp) evaluation metrics (for example, bilingual evaluation understudy [bleu], recall-oriented understudy for gisting evaluation [rouge], bertscore, semantic similarity). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -4081,21 +4326,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Apply natural language processing (",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 2.3.8 focuses on: 'Apply natural language processing (NLP) evaluation metrics (for example, bilingual evaluation understudy [BLEU], Recall-Oriented Understudy for Gisting Evaluation [ROUGE], BERTScore, semantic similarity).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 2.3.8 focuses on: 'Apply natural language processing (NLP) evaluation metrics (for example, bilingual evaluation understudy [BLEU], Recall-Oriented Understudy for Gisting Evaluation [ROUGE], BERTScore, semantic similarity).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 2.3: Analyze and evaluate the performance of ML and AI systems (Domain 2: ML Model & Foundation Model (FM) Development).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Clarify (SHAP values), Amazon Bedrock Model Evaluation (Automated & Human), Amazon CloudWatch, SageMaker Experiments.",
@@ -4162,18 +4412,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Perform AI evaluation (for example,",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.3.9 focuses on: 'Perform AI evaluation (for example, model output assessment, content quality validation, bias detection, LLM-as-a-judge frameworks).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nData quality and fairness auditing are critical requirements for production-ready, responsible ML systems on AWS. Amazon SageMaker Clarify detects potential bias at all stages of the ML lifecycle. Pre-training bias metrics evaluate raw training datasets before model training occurs, measuring statistical imbalances across sensitive facet attributes (such as gender, age, or postal code). Key pre-training metrics include Class Imbalance (CI) and Difference in Positive Proportions in Labels (DPL).\n\nPost-training bias metrics evaluate model predictions against validation datasets, calculating Disparate Impact (DI), Difference in Conditional Acceptance (DCA), and Treatment Equality (TE). For general data quality, AWS Glue Data Quality uses Data Quality Definition Language (DQDL) declarative rules (e.g., Completeness, IsPrimaryKey, ColumnValues) to enforce strict schema and statistical constraints directly inside data pipelines, halting corrupted batches before model ingestion.",
@@ -4243,18 +4498,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 2.3: Analyze and evaluate the performance of ML and AI systems",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 2: ML Model & Foundation Model (FM) Development",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon Bedrock User & Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure RAG system monitoring, inc",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       }
     ],
     "plainEnglish": "Skill 2.3.10 focuses on: 'Con\ufb01gure RAG system monitoring, including retrieval accuracy assessment.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 2.3: Analyze and evaluate the performance of ML and AI systems under Domain 2: ML Model & Foundation Model (FM) Development. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nVector databases form the retrieval backbone for Retrieval Augmented Generation (RAG) and semantic similarity search. Amazon OpenSearch Serverless Vector Engine provides a managed, serverless k-NN (k-nearest neighbors) vector store supporting Hierarchical Navigable Small World (HNSW) and Inverted File (IVF) graph indexing algorithms. Alternatively, Amazon Aurora and RDS PostgreSQL with the pgvector extension allow teams to co-locate vector embeddings alongside relational enterprise transactional data.\n\nIn a production RAG system, text documents are chunked (using fixed, hierarchical, or semantic chunking), processed through an embedding model (such as Amazon Titan Text Embeddings V2), and indexed with rich metadata (document ID, timestamp, department). During retrieval, the query vector is compared using distance metrics: Cosine Similarity (angle-based, normalized), Euclidean (L2) distance, or Dot Product, followed by optional reranking (e.g., Cohere Rerank on Amazon Bedrock) to maximize contextual relevance.",
@@ -4283,7 +4543,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.1.1 focuses on: 'Select appropriate compute environments and deployment targets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.1.1 focuses on: 'Select appropriate compute environments and deployment targets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A transit fleet deployment: high-speed bullet trains running continuously (Real-time Endpoints, <10ms), on-demand shuttle vans called only when needed (Serverless Endpoints), long-distance cargo freighters with scheduled loading docks (Asynchronous Endpoints), and overnight container trains (Batch Transform).",
       "whyItMatters": "In enterprise production environments, failure to master select appropriate compute environments and deployment targets. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -4324,21 +4584,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Select appropriate compute environm",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.1.1 focuses on: 'Select appropriate compute environments and deployment targets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.1.1 focuses on: 'Select appropriate compute environments and deployment targets.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.1: Manage deployment infrastructure for ML and AI model types (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on SageMaker Real-time Endpoints, Serverless Endpoints, Asynchronous Endpoints, Batch Transform, Multi-Model Endpoints (MME), Multi-Container Endpoints.",
@@ -4364,7 +4629,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.1.2 focuses on: 'Select deployment orchestrators and multi-model or multi-container deployment strategies.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.1.2 focuses on: 'Select deployment orchestrators and multi-model or multi-container deployment strategies.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A transit fleet deployment: high-speed bullet trains running continuously (Real-time Endpoints, <10ms), on-demand shuttle vans called only when needed (Serverless Endpoints), long-distance cargo freighters with scheduled loading docks (Asynchronous Endpoints), and overnight container trains (Batch Transform).",
       "whyItMatters": "In enterprise production environments, failure to master select deployment orchestrators and multi-model or multi-container deployment strategies. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -4405,21 +4670,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Select deployment orchestrators and",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.1.2 focuses on: 'Select deployment orchestrators and multi-model or multi-container deployment strategies.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.1.2 focuses on: 'Select deployment orchestrators and multi-model or multi-container deployment strategies.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.1: Manage deployment infrastructure for ML and AI model types (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on SageMaker Real-time Endpoints, Serverless Endpoints, Asynchronous Endpoints, Batch Transform, Multi-Model Endpoints (MME), Multi-Container Endpoints.",
@@ -4445,7 +4715,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.1.3 focuses on: 'Select model inference strategies (for example, real-time and batch processing).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.1.3 focuses on: 'Select model inference strategies (for example, real-time and batch processing).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A transit fleet deployment: high-speed bullet trains running continuously (Real-time Endpoints, <10ms), on-demand shuttle vans called only when needed (Serverless Endpoints), long-distance cargo freighters with scheduled loading docks (Asynchronous Endpoints), and overnight container trains (Batch Transform).",
       "whyItMatters": "In enterprise production environments, failure to master select model inference strategies (for example, real-time and batch processing). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -4486,21 +4756,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Select model inference strategies (",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.1.3 focuses on: 'Select model inference strategies (for example, real-time and batch processing).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.1.3 focuses on: 'Select model inference strategies (for example, real-time and batch processing).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.1: Manage deployment infrastructure for ML and AI model types (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on SageMaker Real-time Endpoints, Serverless Endpoints, Asynchronous Endpoints, Batch Transform, Multi-Model Endpoints (MME), Multi-Container Endpoints.",
@@ -4567,18 +4842,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Evaluate and select appropriate fou",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.1.4 focuses on: 'Evaluate and select appropriate foundation model (FM) deployment options.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -4648,18 +4928,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Deploy models that were built outsi",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.1.5 focuses on: 'Deploy models that were built outside of AWS into AWS environments (for example, Amazon SageMaker AI, Amazon Bedrock Custom Model Import).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -4688,7 +4973,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.1.6 focuses on: 'Deploy and con\ufb01gure agents for speci\ufb01c tasks, integration with other services and tools, and agent communication protocols.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.1.6 focuses on: 'Deploy and con\ufb01gure agents for speci\ufb01c tasks, integration with other services and tools, and agent communication protocols.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A transit fleet deployment: high-speed bullet trains running continuously (Real-time Endpoints, <10ms), on-demand shuttle vans called only when needed (Serverless Endpoints), long-distance cargo freighters with scheduled loading docks (Asynchronous Endpoints), and overnight container trains (Batch Transform).",
       "whyItMatters": "In enterprise production environments, failure to master deploy and con\ufb01gure agents for speci\ufb01c tasks, integration with other services and tools, and agent communication protocols. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -4729,21 +5014,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Deploy and con\ufb01gure agents for spec",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.1.6 focuses on: 'Deploy and con\ufb01gure agents for speci\ufb01c tasks, integration with other services and tools, and agent communication protocols.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.1.6 focuses on: 'Deploy and con\ufb01gure agents for speci\ufb01c tasks, integration with other services and tools, and agent communication protocols.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.1: Manage deployment infrastructure for ML and AI model types (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on SageMaker Real-time Endpoints, Serverless Endpoints, Asynchronous Endpoints, Batch Transform, Multi-Model Endpoints (MME), Multi-Container Endpoints.",
@@ -4810,18 +5100,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure FM deployment, model hosti",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.1.7 focuses on: 'Con\ufb01gure FM deployment, model hosting, and resource allocation.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -4891,18 +5186,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.1: Manage deployment infrastructure for ML and AI model types",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Apply Retrieval Augmented Generatio",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.1.8 focuses on: 'Apply Retrieval Augmented Generation (RAG) system con\ufb01gurations (for example, retrieval strategies, reranking).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.1: Manage deployment infrastructure for ML and AI model types under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nVector databases form the retrieval backbone for Retrieval Augmented Generation (RAG) and semantic similarity search. Amazon OpenSearch Serverless Vector Engine provides a managed, serverless k-NN (k-nearest neighbors) vector store supporting Hierarchical Navigable Small World (HNSW) and Inverted File (IVF) graph indexing algorithms. Alternatively, Amazon Aurora and RDS PostgreSQL with the pgvector extension allow teams to co-locate vector embeddings alongside relational enterprise transactional data.\n\nIn a production RAG system, text documents are chunked (using fixed, hierarchical, or semantic chunking), processed through an embedding model (such as Amazon Titan Text Embeddings V2), and indexed with rich metadata (document ID, timestamp, department). During retrieval, the query vector is compared using distance metrics: Cosine Similarity (angle-based, normalized), Euclidean (L2) distance, or Dot Product, followed by optional reranking (e.g., Cohere Rerank on Amazon Bedrock) to maximize contextual relevance.",
@@ -4972,18 +5272,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Optimize resource provisioning betw",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.2.1 focuses on: 'Optimize resource provisioning between on-demand and provisioned resources for performance and cost e\ufb03ciency.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -5012,7 +5317,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.2 focuses on: 'Automate compute resource provisioning with integrated communication between stacks and orchestration services.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+      "summary": "Skill 3.2.2 focuses on: 'Automate compute resource provisioning with integrated communication between stacks and orchestration services.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master automate compute resource provisioning with integrated communication between stacks and orchestration services. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5053,21 +5358,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Automate compute resource provision",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.2 focuses on: 'Automate compute resource provisioning with integrated communication between stacks and orchestration services.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+    "plainEnglish": "Skill 3.2.2 focuses on: 'Automate compute resource provisioning with integrated communication between stacks and orchestration services.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5093,7 +5403,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.3 focuses on: 'Build and maintain containers for ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 3.2.3 focuses on: 'Build and maintain containers for ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master build and maintain containers for ml and ai workloads. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5134,21 +5444,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Build and maintain containers for M",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.3 focuses on: 'Build and maintain containers for ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 3.2.3 focuses on: 'Build and maintain containers for ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5174,7 +5489,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.4 focuses on: 'Con\ufb01gure SageMaker AI endpoints within VPC network environments.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.2.4 focuses on: 'Con\ufb01gure SageMaker AI endpoints within VPC network environments.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure sagemaker ai endpoints within vpc network environments. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5215,21 +5530,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure SageMaker AI endpoints wit",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.4 focuses on: 'Con\ufb01gure SageMaker AI endpoints within VPC network environments.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.2.4 focuses on: 'Con\ufb01gure SageMaker AI endpoints within VPC network environments.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5255,7 +5575,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.5 focuses on: 'Deploy and host models programmatically (for example, by using the SageMaker AI SDK for Python, AWS CLI, Boto3).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.2.5 focuses on: 'Deploy and host models programmatically (for example, by using the SageMaker AI SDK for Python, AWS CLI, Boto3).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master deploy and host models programmatically (for example, by using the sagemaker ai sdk for python, aws cli, boto3). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5296,21 +5616,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Deploy and host models programmatic",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.5 focuses on: 'Deploy and host models programmatically (for example, by using the SageMaker AI SDK for Python, AWS CLI, Boto3).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.2.5 focuses on: 'Deploy and host models programmatically (for example, by using the SageMaker AI SDK for Python, AWS CLI, Boto3).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5336,7 +5661,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.6 focuses on: 'Select speci\ufb01c metrics for auto scaling implementations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 3.2.6 focuses on: 'Select speci\ufb01c metrics for auto scaling implementations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master select speci\ufb01c metrics for auto scaling implementations. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5377,21 +5702,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Select speci\ufb01c metrics for auto sca",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.6 focuses on: 'Select speci\ufb01c metrics for auto scaling implementations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 3.2.6 focuses on: 'Select speci\ufb01c metrics for auto scaling implementations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5458,18 +5788,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Create and manage Amazon Bedrock kn",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.2.7 focuses on: 'Create and manage Amazon Bedrock knowledge bases with vector database con\ufb01gurations, document indexing, and retrieval optimization.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nVector databases form the retrieval backbone for Retrieval Augmented Generation (RAG) and semantic similarity search. Amazon OpenSearch Serverless Vector Engine provides a managed, serverless k-NN (k-nearest neighbors) vector store supporting Hierarchical Navigable Small World (HNSW) and Inverted File (IVF) graph indexing algorithms. Alternatively, Amazon Aurora and RDS PostgreSQL with the pgvector extension allow teams to co-locate vector embeddings alongside relational enterprise transactional data.\n\nIn a production RAG system, text documents are chunked (using fixed, hierarchical, or semantic chunking), processed through an embedding model (such as Amazon Titan Text Embeddings V2), and indexed with rich metadata (document ID, timestamp, department). During retrieval, the query vector is compared using distance metrics: Cosine Similarity (angle-based, normalized), Euclidean (L2) distance, or Dot Product, followed by optional reranking (e.g., Cohere Rerank on Amazon Bedrock) to maximize contextual relevance.",
@@ -5498,7 +5833,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.8 focuses on: 'Implement retrieval pipelines to meet business needs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+      "summary": "Skill 3.2.8 focuses on: 'Implement retrieval pipelines to meet business needs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master implement retrieval pipelines to meet business needs. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5539,21 +5874,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement retrieval pipelines to me",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.8 focuses on: 'Implement retrieval pipelines to meet business needs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+    "plainEnglish": "Skill 3.2.8 focuses on: 'Implement retrieval pipelines to meet business needs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5579,7 +5919,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.9 focuses on: 'Implement agent state management systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 3.2.9 focuses on: 'Implement agent state management systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master implement agent state management systems. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5620,21 +5960,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement agent state management sy",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.9 focuses on: 'Implement agent state management systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 3.2.9 focuses on: 'Implement agent state management systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5660,7 +6005,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.10 focuses on: 'Implement AI-speci\ufb01c resource scaling for GPU workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 3.2.10 focuses on: 'Implement AI-speci\ufb01c resource scaling for GPU workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master implement ai-speci\ufb01c resource scaling for gpu workloads. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5701,21 +6046,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement AI-speci\ufb01c resource scali",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.10 focuses on: 'Implement AI-speci\ufb01c resource scaling for GPU workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 3.2.10 focuses on: 'Implement AI-speci\ufb01c resource scaling for GPU workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5741,7 +6091,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.2.11 focuses on: 'Deploy agentic work\ufb02ow infrastructure.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.2.11 focuses on: 'Deploy agentic work\ufb02ow infrastructure.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "Specialized racecar engines and pit crews: choosing purpose-built AWS Trainium/Inferentia chips over generic combustion engines, paired with an instant onboard heads-up library (Bedrock Knowledge Bases + Vector DB) providing live track telemetry.",
       "whyItMatters": "In enterprise production environments, failure to master deploy agentic work\ufb02ow infrastructure. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5782,21 +6132,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.2: Provision and configure resources for ML and AI workloads",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Deploy agentic work\ufb02ow infrastructu",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.2.11 focuses on: 'Deploy agentic work\ufb02ow infrastructure.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.2.11 focuses on: 'Deploy agentic work\ufb02ow infrastructure.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.2: Provision and configure resources for ML and AI workloads under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.2: Provision and configure resources for ML and AI workloads (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Knowledge Bases, Amazon OpenSearch Serverless, AWS Trainium (Trn1), AWS Inferentia (Inf2), AWS Neuron SDK, Amazon EC2 G5/P4de/P5.",
@@ -5822,7 +6177,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.3.1 focuses on: 'Implement automated deployment strategies and rollback actions.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.3.1 focuses on: 'Implement automated deployment strategies and rollback actions.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A robotic automotive assembly line: chassis arrives, automated arms weld joints (ProcessingStep), engine is installed (TrainingStep), quality laser scans tolerances (ClarifyCheckStep), and only if certified (ConditionStep) is the car registered and driven out of the factory (Model Registry & Blue/Green Deploy).",
       "whyItMatters": "In enterprise production environments, failure to master implement automated deployment strategies and rollback actions. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5863,21 +6218,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement automated deployment stra",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.3.1 focuses on: 'Implement automated deployment strategies and rollback actions.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.3.1 focuses on: 'Implement automated deployment strategies and rollback actions.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Pipelines, SageMaker Model Registry, AWS Step Functions, Amazon EventBridge, AWS CodePipeline, AWS CodeBuild.",
@@ -5903,7 +6263,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.3.2 focuses on: 'Con\ufb01gure and troubleshoot AWS CodeBuild, AWS CodeCommit, AWS CodeDeploy, AWS CodePipeline, and AWS CodeConnections.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.3.2 focuses on: 'Con\ufb01gure and troubleshoot AWS CodeBuild, AWS CodeCommit, AWS CodeDeploy, AWS CodePipeline, and AWS CodeConnections.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A robotic automotive assembly line: chassis arrives, automated arms weld joints (ProcessingStep), engine is installed (TrainingStep), quality laser scans tolerances (ClarifyCheckStep), and only if certified (ConditionStep) is the car registered and driven out of the factory (Model Registry & Blue/Green Deploy).",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure and troubleshoot aws codebuild, aws codecommit, aws codedeploy, aws codepipeline, and aws codeconnections. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -5944,21 +6304,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure and troubleshoot AWS CodeB",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.3.2 focuses on: 'Con\ufb01gure and troubleshoot AWS CodeBuild, AWS CodeCommit, AWS CodeDeploy, AWS CodePipeline, and AWS CodeConnections.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.3.2 focuses on: 'Con\ufb01gure and troubleshoot AWS CodeBuild, AWS CodeCommit, AWS CodeDeploy, AWS CodePipeline, and AWS CodeConnections.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Pipelines, SageMaker Model Registry, AWS Step Functions, Amazon EventBridge, AWS CodePipeline, AWS CodeBuild.",
@@ -5984,7 +6349,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.3.3 focuses on: 'Con\ufb01gure training and inference jobs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (`checkpoint_s3_uri` and `checkpoint_local_path`), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
+      "summary": "Skill 3.3.3 focuses on: 'Con\ufb01gure training and inference jobs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (checkpoint_s3_uri and checkpoint_local_path), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
       "analogy": "A robotic automotive assembly line: chassis arrives, automated arms weld joints (ProcessingStep), engine is installed (TrainingStep), quality laser scans tolerances (ClarifyCheckStep), and only if certified (ConditionStep) is the car registered and driven out of the factory (Model Registry & Blue/Green Deploy).",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure training and inference jobs. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -6025,21 +6390,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure training and inference job",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.3.3 focuses on: 'Con\ufb01gure training and inference jobs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (`checkpoint_s3_uri` and `checkpoint_local_path`), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
+    "plainEnglish": "Skill 3.3.3 focuses on: 'Con\ufb01gure training and inference jobs.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nModel training on Amazon SageMaker AI is designed to scale from single-node instances to distributed multi-node GPU clusters. SageMaker Distributed Training provides two primary optimization paradigms: SageMaker Distributed Data Parallel (SMDDP) and SageMaker Distributed Model Parallel (SMDP). SMDDP replicates the model across all GPUs and splits the training dataset, using high-efficiency ring-AllReduce communication over AWS Nitro Elastic Fabric Adapter (EFA) 100Gbps networking.\n\nWhen individual foundation model parameters exceed the GPU memory (VRAM) of a single node, SMDP applies tensor parallelism and pipeline parallelism, splitting model layers across multiple GPUs. To slash compute costs by up to 90%, engineers utilize SageMaker Managed Spot Training with Amazon EC2 Spot instances. A mandatory best practice is configuring checkpointing (checkpoint_s3_uri and checkpoint_local_path), enabling training jobs to automatically resume from the latest checkpoint without progress loss when Spot capacity is reclaimed.",
     "bulletPoints": [
       "Core Task Domain: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Pipelines, SageMaker Model Registry, AWS Step Functions, Amazon EventBridge, AWS CodePipeline, AWS CodeBuild.",
@@ -6065,7 +6435,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.3.4 focuses on: 'Con\ufb01gure automated testing strategies within CI/CD pipelines for traditional ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+      "summary": "Skill 3.3.4 focuses on: 'Con\ufb01gure automated testing strategies within CI/CD pipelines for traditional ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
       "analogy": "A robotic automotive assembly line: chassis arrives, automated arms weld joints (ProcessingStep), engine is installed (TrainingStep), quality laser scans tolerances (ClarifyCheckStep), and only if certified (ConditionStep) is the car registered and driven out of the factory (Model Registry & Blue/Green Deploy).",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure automated testing strategies within ci/cd pipelines for traditional ml and ai workloads. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -6106,21 +6476,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure automated testing strategi",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.3.4 focuses on: 'Con\ufb01gure automated testing strategies within CI/CD pipelines for traditional ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+    "plainEnglish": "Skill 3.3.4 focuses on: 'Con\ufb01gure automated testing strategies within CI/CD pipelines for traditional ML and AI workloads.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
     "bulletPoints": [
       "Core Task Domain: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Pipelines, SageMaker Model Registry, AWS Step Functions, Amazon EventBridge, AWS CodePipeline, AWS CodeBuild.",
@@ -6146,7 +6521,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.3.5 focuses on: 'Build and integrate mechanisms to re-train models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 3.3.5 focuses on: 'Build and integrate mechanisms to re-train models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A robotic automotive assembly line: chassis arrives, automated arms weld joints (ProcessingStep), engine is installed (TrainingStep), quality laser scans tolerances (ClarifyCheckStep), and only if certified (ConditionStep) is the car registered and driven out of the factory (Model Registry & Blue/Green Deploy).",
       "whyItMatters": "In enterprise production environments, failure to master build and integrate mechanisms to re-train models. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -6187,21 +6562,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Build and integrate mechanisms to r",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.3.5 focuses on: 'Build and integrate mechanisms to re-train models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 3.3.5 focuses on: 'Build and integrate mechanisms to re-train models.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Pipelines, SageMaker Model Registry, AWS Step Functions, Amazon EventBridge, AWS CodePipeline, AWS CodeBuild.",
@@ -6227,7 +6607,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.3.6 focuses on: 'Manage model versions for repeatability and audits (for example, SageMaker Model Registry, ML\ufb02ow on SageMaker AI).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+      "summary": "Skill 3.3.6 focuses on: 'Manage model versions for repeatability and audits (for example, SageMaker Model Registry, ML\ufb02ow on SageMaker AI).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
       "analogy": "A robotic automotive assembly line: chassis arrives, automated arms weld joints (ProcessingStep), engine is installed (TrainingStep), quality laser scans tolerances (ClarifyCheckStep), and only if certified (ConditionStep) is the car registered and driven out of the factory (Model Registry & Blue/Green Deploy).",
       "whyItMatters": "In enterprise production environments, failure to master manage model versions for repeatability and audits (for example, sagemaker model registry, ml\ufb02ow on sagemaker ai). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -6268,21 +6648,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Manage model versions for repeatabi",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.3.6 focuses on: 'Manage model versions for repeatability and audits (for example, SageMaker Model Registry, ML\ufb02ow on SageMaker AI).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+    "plainEnglish": "Skill 3.3.6 focuses on: 'Manage model versions for repeatability and audits (for example, SageMaker Model Registry, ML\ufb02ow on SageMaker AI).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
     "bulletPoints": [
       "Core Task Domain: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Pipelines, SageMaker Model Registry, AWS Step Functions, Amazon EventBridge, AWS CodePipeline, AWS CodeBuild.",
@@ -6349,18 +6734,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Manage prompts (for example, Amazon",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.3.7 focuses on: 'Manage prompts (for example, Amazon Bedrock Prompt Management).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -6389,7 +6779,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 3.3.8 focuses on: 'Implement automated agent deployment pipelines and agent version management.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 3.3.8 focuses on: 'Implement automated agent deployment pipelines and agent version management.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A robotic automotive assembly line: chassis arrives, automated arms weld joints (ProcessingStep), engine is installed (TrainingStep), quality laser scans tolerances (ClarifyCheckStep), and only if certified (ConditionStep) is the car registered and driven out of the factory (Model Registry & Blue/Green Deploy).",
       "whyItMatters": "In enterprise production environments, failure to master implement automated agent deployment pipelines and agent version management. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -6430,21 +6820,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement automated agent deploymen",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 3.3.8 focuses on: 'Implement automated agent deployment pipelines and agent version management.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 3.3.8 focuses on: 'Implement automated agent deployment pipelines and agent version management.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines (Domain 3: Deployment & Orchestration of ML & AI Workflows).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Pipelines, SageMaker Model Registry, AWS Step Functions, Amazon EventBridge, AWS CodePipeline, AWS CodeBuild.",
@@ -6511,18 +6906,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement AI model testing framewor",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.3.9 focuses on: 'Implement AI model testing frameworks, including prompt testing.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -6592,18 +6992,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure FM deployment automation w",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.3.10 focuses on: 'Con\ufb01gure FM deployment automation with \ufb01ne-tuned model versioning.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -6673,18 +7078,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 3.3: Implement automated orchestration and continuous CI/CD pipelines",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 3: Deployment & Orchestration of ML & AI Workflows",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure AI-speci\ufb01c pipeline orches",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 3.3.11 focuses on: 'Con\ufb01gure AI-speci\ufb01c pipeline orchestration for RAG system updates and knowledge base refresh cycles.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 3.3: Implement automated orchestration and continuous CI/CD pipelines under Domain 3: Deployment & Orchestration of ML & AI Workflows. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nVector databases form the retrieval backbone for Retrieval Augmented Generation (RAG) and semantic similarity search. Amazon OpenSearch Serverless Vector Engine provides a managed, serverless k-NN (k-nearest neighbors) vector store supporting Hierarchical Navigable Small World (HNSW) and Inverted File (IVF) graph indexing algorithms. Alternatively, Amazon Aurora and RDS PostgreSQL with the pgvector extension allow teams to co-locate vector embeddings alongside relational enterprise transactional data.\n\nIn a production RAG system, text documents are chunked (using fixed, hierarchical, or semantic chunking), processed through an embedding model (such as Amazon Titan Text Embeddings V2), and indexed with rich metadata (document ID, timestamp, department). During retrieval, the query vector is compared using distance metrics: Cosine Similarity (angle-based, normalized), Euclidean (L2) distance, or Dot Product, followed by optional reranking (e.g., Cohere Rerank on Amazon Bedrock) to maximize contextual relevance.",
@@ -6754,18 +7164,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.1: Monitor ML and AI model inference and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Monitor model performance in produc",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.1.1 focuses on: 'Monitor model performance in production by using Amazon CloudWatch generative AI observability, Amazon Bedrock Model Evaluation, and drift detection pipelines.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -6794,7 +7209,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.1.2 focuses on: 'Monitor work\ufb02ows to detect anomalies or errors in data processing or model inference.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 4.1.2 focuses on: 'Monitor work\ufb02ows to detect anomalies or errors in data processing or model inference.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "An intensive care cardiac monitoring station: sensors track vitals against the healthy patient baseline; if heart rate or blood oxygen deviates beyond thresholds (Data Quality Drift, Model Quality Drift), automated alarms ring and emergency protocols trigger.",
       "whyItMatters": "In enterprise production environments, failure to master monitor work\ufb02ows to detect anomalies or errors in data processing or model inference. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -6835,21 +7250,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.1: Monitor ML and AI model inference and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Monitor work\ufb02ows to detect anomalie",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.1.2 focuses on: 'Monitor work\ufb02ows to detect anomalies or errors in data processing or model inference.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 4.1.2 focuses on: 'Monitor work\ufb02ows to detect anomalies or errors in data processing or model inference.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 4.1: Monitor ML and AI model inference and performance (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Model Monitor, Amazon CloudWatch Alarms, Amazon EventBridge, AWS CloudTrail.",
@@ -6875,7 +7295,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.1.3 focuses on: 'Detect changes in data distribution that can a\ufb00ect model performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 4.1.3 focuses on: 'Detect changes in data distribution that can a\ufb00ect model performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "An intensive care cardiac monitoring station: sensors track vitals against the healthy patient baseline; if heart rate or blood oxygen deviates beyond thresholds (Data Quality Drift, Model Quality Drift), automated alarms ring and emergency protocols trigger.",
       "whyItMatters": "In enterprise production environments, failure to master detect changes in data distribution that can a\ufb00ect model performance. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -6916,21 +7336,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.1: Monitor ML and AI model inference and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Detect changes in data distribution",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.1.3 focuses on: 'Detect changes in data distribution that can a\ufb00ect model performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 4.1.3 focuses on: 'Detect changes in data distribution that can a\ufb00ect model performance.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 4.1: Monitor ML and AI model inference and performance (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon SageMaker Model Monitor, Amazon CloudWatch Alarms, Amazon EventBridge, AWS CloudTrail.",
@@ -6997,18 +7422,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.1: Monitor ML and AI model inference and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Monitor model performance in produc",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.1.4 focuses on: 'Monitor model performance in production by using A/B testing.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nContinuous model monitoring in production is essential to combat concept drift, covariate shift, and silent model decay. Amazon SageMaker Model Monitor continuously tracks deployed models in production without writing custom analysis scripts. It operates by enabling SageMaker Endpoint Data Capture, which writes a configurable percentage of live request inputs and model prediction outputs directly to an Amazon S3 capture bucket in JSONL format.\n\nModel Monitor runs four distinct scheduled monitoring jobs: 1. Data Quality Monitor: Compares incoming feature distributions against baseline statistics (detects schema changes, nulls, out-of-range values). 2. Model Quality Monitor: Compares predictions against ground-truth labels collected downstream (detects drops in accuracy, F1, or ROC-AUC). 3. Bias Drift Monitor: Uses Clarify to detect if fairness metrics (such as DPL or Disparate Impact) are diverging over time. 4. Feature Attribution Drift Monitor: Uses KernelSHAP to detect shifts in feature importance rankings. Violations trigger Amazon CloudWatch alarms.",
@@ -7078,18 +7508,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.1: Monitor ML and AI model inference and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Monitor and automate the management",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.1.5 focuses on: 'Monitor and automate the management of agent performance and coordination (for example, coordination failure detection, truncated streaming, tool failures).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nStreaming ingestion architectures on AWS are designed to process continuous, high-velocity event data with zero data loss. Amazon Kinesis Data Streams provides ordered, partitioned sharded streams capable of ingesting 1MB/sec (or 1,000 records/sec) write and 2MB/sec read per shard in Provisioned mode, or automatic scaling in On-Demand mode. Amazon Data Firehose (formerly Kinesis Data Firehose) is the fully managed serverless delivery engine that automatically batches, compresses (GZIP, Snappy), and transforms streaming data before landing it into Amazon S3, Amazon Redshift, or Amazon OpenSearch.\n\nFor complex real-time analytics, Amazon Managed Service for Apache Flink runs stateful stream processing with sliding, tumbling, and session windows over streaming records. For organizations committed to open-source ecosystems, Amazon MSK (Managed Streaming for Apache Kafka) delivers fully managed Kafka clusters. Real-time inference pipelines frequently connect Kinesis streams to AWS Lambda or SageMaker endpoints for sub-second anomaly detection and feature extraction.",
@@ -7159,18 +7594,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.1: Monitor ML and AI model inference and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure AI-speci\ufb01c performance mon",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.1.6 focuses on: 'Con\ufb01gure AI-speci\ufb01c performance monitoring for foundation models (FMs), such as Amazon Bedrock evaluations.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.1: Monitor ML and AI model inference and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -7199,7 +7639,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.2.1 focuses on: 'Select inference instance families to optimize performance and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+      "summary": "Skill 4.2.1 focuses on: 'Select inference instance families to optimize performance and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
       "analogy": "A smart commercial power grid: running heavy smelting operations during off-peak hours with dynamic spot electricity rates (Managed Spot Training with S3 checkpointing), and automatically throttling idling transformers (Endpoint Auto-Scaling and Compute Optimizer).",
       "whyItMatters": "In enterprise production environments, failure to master select inference instance families to optimize performance and cost. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -7240,21 +7680,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Select inference instance families ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.2.1 focuses on: 'Select inference instance families to optimize performance and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the `SageMakerVariantInvocationsPerInstance` metric to automatically adjust instance counts.",
+    "plainEnglish": "Skill 4.2.1 focuses on: 'Select inference instance families to optimize performance and cost.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon SageMaker AI provides four distinct model deployment options tailored to application latency, payload size, and traffic patterns: 1. Real-Time Endpoints: Persistent, dedicated compute instances delivering steady, sub-10 millisecond latency (payload limit: 6MB, timeout: 60s). 2. Serverless Endpoints: Automatically scales compute from zero based on traffic, ideal for intermittent or spiky workloads with zero idle cost. 3. Asynchronous Endpoints: Ingestion queue backed by Amazon S3, processing large payloads up to 1GB with processing times up to 1 hour, sending completion notifications via Amazon SNS. 4. Batch Transform: High-throughput offline batch scoring on large datasets stored in S3 without persistent endpoints.\n\nFor cost-efficient hosting of hundreds of models, Multi-Model Endpoints (MME) dynamically load models into shared memory from S3 on demand. In production, zero-downtime deployments are executed via Blue/Green traffic shifting and Canary deployments. Auto-scaling policies use Target Tracking based on the SageMakerVariantInvocationsPerInstance metric to automatically adjust instance counts.",
     "bulletPoints": [
       "Core Task Domain: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on SageMaker Managed Spot Training, AWS Compute Optimizer, AWS Cost Explorer, AWS Budgets, Amazon EC2 Spot Instances, SageMaker Savings Plans.",
@@ -7321,18 +7766,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure and use tools to troublesh",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.2 focuses on: 'Con\ufb01gure and use tools to troubleshoot and analyze resources (for example, Amazon CloudWatch, Amazon Bedrock AgentCore Observability, AWS X-Ray).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -7402,18 +7852,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Set up dashboards to monitor perfor",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.3 focuses on: 'Set up dashboards to monitor performance metrics.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nContinuous model monitoring in production is essential to combat concept drift, covariate shift, and silent model decay. Amazon SageMaker Model Monitor continuously tracks deployed models in production without writing custom analysis scripts. It operates by enabling SageMaker Endpoint Data Capture, which writes a configurable percentage of live request inputs and model prediction outputs directly to an Amazon S3 capture bucket in JSONL format.\n\nModel Monitor runs four distinct scheduled monitoring jobs: 1. Data Quality Monitor: Compares incoming feature distributions against baseline statistics (detects schema changes, nulls, out-of-range values). 2. Model Quality Monitor: Compares predictions against ground-truth labels collected downstream (detects drops in accuracy, F1, or ROC-AUC). 3. Bias Drift Monitor: Uses Clarify to detect if fairness metrics (such as DPL or Disparate Impact) are diverging over time. 4. Feature Attribution Drift Monitor: Uses KernelSHAP to detect shifts in feature importance rankings. Violations trigger Amazon CloudWatch alarms.",
@@ -7483,18 +7938,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Optimize capacity for cost, perform",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.4 focuses on: 'Optimize capacity for cost, performance, and reliability.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -7564,18 +8024,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Optimize costs and set cost quotas ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.5 focuses on: 'Optimize costs and set cost quotas by using appropriate cost management tools.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -7645,18 +8110,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Optimize infrastructure costs by se",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.6 focuses on: 'Optimize infrastructure costs by selecting purchasing options.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nCloud financial management and infrastructure optimization for ML/AI workloads on AWS requires strategic alignment between compute instance types, purchasing options, and resource utilization. AWS Compute Optimizer analyzes CloudWatch historical utilization metrics to recommend right-sizing opportunities for EC2, SageMaker endpoints, and Lambda functions, preventing over-provisioned GPU/CPU waste.\n\nFor inference workloads, AWS Inferentia (Inf2) chips deliver up to 50% better price-performance compared to comparable GPU instances, compiled using the AWS Neuron SDK. For training, AWS Trainium (Trn1) delivers up to 50% savings over standard GPU nodes. Combining SageMaker Savings Plans (committing to consistent hourly compute spend for 1 or 3 years) with Managed Spot Training and Target Tracking Auto-Scaling yields maximum cost efficiency.",
@@ -7726,18 +8196,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Evaluate cost implications of using",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.7 focuses on: 'Evaluate cost implications of using FMs for inference in production.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -7807,18 +8282,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Monitor agent resource consumption ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.8 focuses on: 'Monitor agent resource consumption patterns.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nContinuous model monitoring in production is essential to combat concept drift, covariate shift, and silent model decay. Amazon SageMaker Model Monitor continuously tracks deployed models in production without writing custom analysis scripts. It operates by enabling SageMaker Endpoint Data Capture, which writes a configurable percentage of live request inputs and model prediction outputs directly to an Amazon S3 capture bucket in JSONL format.\n\nModel Monitor runs four distinct scheduled monitoring jobs: 1. Data Quality Monitor: Compares incoming feature distributions against baseline statistics (detects schema changes, nulls, out-of-range values). 2. Model Quality Monitor: Compares predictions against ground-truth labels collected downstream (detects drops in accuracy, F1, or ROC-AUC). 3. Bias Drift Monitor: Uses Clarify to detect if fairness metrics (such as DPL or Disparate Impact) are diverging over time. 4. Feature Attribution Drift Monitor: Uses KernelSHAP to detect shifts in feature importance rankings. Violations trigger Amazon CloudWatch alarms.",
@@ -7888,18 +8368,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Manage FM inference costs with usag",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.9 focuses on: 'Manage FM inference costs with usage optimization.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -7969,18 +8454,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.2: Optimize and manage ML and AI infrastructure costs and performance",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/train-spot-instances.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Monitor AI-speci\ufb01c cost patterns (f",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.2.10 focuses on: 'Monitor AI-speci\ufb01c cost patterns (for example, token usage optimization, embedding computation costs, vector database storage optimization).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.2: Optimize and manage ML and AI infrastructure costs and performance under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nFrom an architectural standpoint, AWS provides distinct storage tiers optimized for specific ML access patterns. Amazon S3 serves as the durable, virtually limitless object storage lake, offering storage tiers from S3 Standard (for active pipelines) to S3 Intelligent-Tiering and S3 Glacier (for long-term retention and compliance). For compute workloads, Amazon EBS provides ultra-low latency block volumes attached to single EC2/training nodes, Amazon EFS provides a scalable multi-AZ shared POSIX file system, and Amazon FSx for Lustre delivers parallel high-throughput scratch storage with hundreds of GB/s and sub-millisecond latencies, linking directly to S3 buckets to hydrate multi-GPU training clusters.\n\nWhen designing ingestion pipelines, ML engineers must account for throughput limits and pricing structures. For example, S3 supports 3,500 PUT/POST/DELETE and 5,500 GET/HEAD requests per second per prefix. Partitioning prefixes (e.g., date-based or hash-based paths) prevents throttling. For training large deep learning or foundation models, streaming data directly from S3 using Pipe Mode or caching through FSx for Lustre eliminates local disk saturation and accelerates time-to-first-epoch.",
@@ -8009,7 +8499,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.3.1 focuses on: 'Secure continuous integration and continuous delivery (CI/CD) pipelines by checking for code and image vulnerabilities (for example, by using Amazon CodeGuru, Amazon Inspector).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+      "summary": "Skill 4.3.1 focuses on: 'Secure continuous integration and continuous delivery (CI/CD) pipelines by checking for code and image vulnerabilities (for example, by using Amazon CodeGuru, Amazon Inspector).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
       "analogy": "A maximum-security biometric treasury vault: all transfers travel through armored underground tunnels without touching public roads (VPC Interface Endpoints / PrivateLink), double-locked with cryptographic keys (KMS CMK), while biometric security guards (Bedrock Guardrails) inspect and redact all communications.",
       "whyItMatters": "In enterprise production environments, failure to master secure continuous integration and continuous delivery (ci/cd) pipelines by checking for code and image vulnerabilities (for example, by using amazon codeguru, amazon inspector). results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -8050,21 +8540,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Secure continuous integration and c",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.3.1 focuses on: 'Secure continuous integration and continuous delivery (CI/CD) pipelines by checking for code and image vulnerabilities (for example, by using Amazon CodeGuru, Amazon Inspector).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: `ProcessingStep` (data pre-processing via Glue/Data Wrangler), `TrainingStep` (model fitting), `ClarifyCheckStep` (bias and quality validation), `ModelStep` (model creation), `RegisterModel` (registering packages into Model Registry), and `ConditionStep` (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
+    "plainEnglish": "Skill 4.3.1 focuses on: 'Secure continuous integration and continuous delivery (CI/CD) pipelines by checking for code and image vulnerabilities (for example, by using Amazon CodeGuru, Amazon Inspector).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAutomated MLOps and orchestration on AWS is driven by Amazon SageMaker Pipelines\u2014a purpose-built CI/CD service for machine learning. SageMaker Pipelines represents workflows as Directed Acyclic Graphs (DAGs) composed of specialized steps: ProcessingStep (data pre-processing via Glue/Data Wrangler), TrainingStep (model fitting), ClarifyCheckStep (bias and quality validation), ModelStep (model creation), RegisterModel (registering packages into Model Registry), and ConditionStep (conditional branching based on evaluation metrics).\n\nThe SageMaker Model Registry serves as the central audit catalog for versioned models. Models transition through approval states ('PendingManualApproval', 'Approved', 'Rejected'). Approving a model emits an Amazon EventBridge event that triggers downstream AWS CodePipeline or Step Functions workflows to deploy the model artifact to Staging and Production endpoints with automated rollback.",
     "bulletPoints": [
       "Core Task Domain: Task 4.3: Secure ML and AI workloads and model endpoints (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Guardrails, AWS KMS (Customer Managed Keys), Amazon VPC PrivateLink, AWS IAM Least Privilege, SageMaker Network Isolation, Amazon Macie.",
@@ -8090,7 +8585,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.3.2 focuses on: 'Con\ufb01gure least privilege access to ML and AI artifacts.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 4.3.2 focuses on: 'Con\ufb01gure least privilege access to ML and AI artifacts.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A maximum-security biometric treasury vault: all transfers travel through armored underground tunnels without touching public roads (VPC Interface Endpoints / PrivateLink), double-locked with cryptographic keys (KMS CMK), while biometric security guards (Bedrock Guardrails) inspect and redact all communications.",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure least privilege access to ml and ai artifacts. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -8131,21 +8626,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure least privilege access to ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.3.2 focuses on: 'Con\ufb01gure least privilege access to ML and AI artifacts.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 4.3.2 focuses on: 'Con\ufb01gure least privilege access to ML and AI artifacts.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 4.3: Secure ML and AI workloads and model endpoints (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Guardrails, AWS KMS (Customer Managed Keys), Amazon VPC PrivateLink, AWS IAM Least Privilege, SageMaker Network Isolation, Amazon Macie.",
@@ -8171,7 +8671,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.3.3 focuses on: 'Con\ufb01gure IAM policies and roles for users and applications in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 4.3.3 focuses on: 'Con\ufb01gure IAM policies and roles for users and applications in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A maximum-security biometric treasury vault: all transfers travel through armored underground tunnels without touching public roads (VPC Interface Endpoints / PrivateLink), double-locked with cryptographic keys (KMS CMK), while biometric security guards (Bedrock Guardrails) inspect and redact all communications.",
       "whyItMatters": "In enterprise production environments, failure to master con\ufb01gure iam policies and roles for users and applications in ml and ai systems. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -8212,21 +8712,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure IAM policies and roles for",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.3.3 focuses on: 'Con\ufb01gure IAM policies and roles for users and applications in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 4.3.3 focuses on: 'Con\ufb01gure IAM policies and roles for users and applications in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 4.3: Secure ML and AI workloads and model endpoints (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Guardrails, AWS KMS (Customer Managed Keys), Amazon VPC PrivateLink, AWS IAM Least Privilege, SageMaker Network Isolation, Amazon Macie.",
@@ -8293,18 +8798,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Con\ufb01gure comprehensive monitoring, ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.3.4 focuses on: 'Con\ufb01gure comprehensive monitoring, auditing, compliance, and logging for ML and AI systems (for example, AWS CloudTrail, AWS Con\ufb01g).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nContinuous model monitoring in production is essential to combat concept drift, covariate shift, and silent model decay. Amazon SageMaker Model Monitor continuously tracks deployed models in production without writing custom analysis scripts. It operates by enabling SageMaker Endpoint Data Capture, which writes a configurable percentage of live request inputs and model prediction outputs directly to an Amazon S3 capture bucket in JSONL format.\n\nModel Monitor runs four distinct scheduled monitoring jobs: 1. Data Quality Monitor: Compares incoming feature distributions against baseline statistics (detects schema changes, nulls, out-of-range values). 2. Model Quality Monitor: Compares predictions against ground-truth labels collected downstream (detects drops in accuracy, F1, or ROC-AUC). 3. Bias Drift Monitor: Uses Clarify to detect if fairness metrics (such as DPL or Disparate Impact) are diverging over time. 4. Feature Attribution Drift Monitor: Uses KernelSHAP to detect shifts in feature importance rankings. Violations trigger Amazon CloudWatch alarms.",
@@ -8333,7 +8843,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.3.5 focuses on: 'Troubleshoot and debug security issues in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 4.3.5 focuses on: 'Troubleshoot and debug security issues in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A maximum-security biometric treasury vault: all transfers travel through armored underground tunnels without touching public roads (VPC Interface Endpoints / PrivateLink), double-locked with cryptographic keys (KMS CMK), while biometric security guards (Bedrock Guardrails) inspect and redact all communications.",
       "whyItMatters": "In enterprise production environments, failure to master troubleshoot and debug security issues in ml and ai systems. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -8374,21 +8884,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Troubleshoot and debug security iss",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.3.5 focuses on: 'Troubleshoot and debug security issues in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 4.3.5 focuses on: 'Troubleshoot and debug security issues in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 4.3: Secure ML and AI workloads and model endpoints (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Guardrails, AWS KMS (Customer Managed Keys), Amazon VPC PrivateLink, AWS IAM Least Privilege, SageMaker Network Isolation, Amazon Macie.",
@@ -8414,7 +8929,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.3.6 focuses on: 'Create VPCs, subnets, and security groups to securely isolate ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 4.3.6 focuses on: 'Create VPCs, subnets, and security groups to securely isolate ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A maximum-security biometric treasury vault: all transfers travel through armored underground tunnels without touching public roads (VPC Interface Endpoints / PrivateLink), double-locked with cryptographic keys (KMS CMK), while biometric security guards (Bedrock Guardrails) inspect and redact all communications.",
       "whyItMatters": "In enterprise production environments, failure to master create vpcs, subnets, and security groups to securely isolate ml and ai systems. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -8455,21 +8970,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Create VPCs, subnets, and security ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.3.6 focuses on: 'Create VPCs, subnets, and security groups to securely isolate ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 4.3.6 focuses on: 'Create VPCs, subnets, and security groups to securely isolate ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 4.3: Secure ML and AI workloads and model endpoints (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Guardrails, AWS KMS (Customer Managed Keys), Amazon VPC PrivateLink, AWS IAM Least Privilege, SageMaker Network Isolation, Amazon Macie.",
@@ -8495,7 +9015,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
       "Master the high-yield exam decision matrix, Gotchas, and traps needed to achieve 1000/1000 marks on the MLA-C02 exam."
     ],
     "whatIsThis": {
-      "summary": "Skill 4.3.7 focuses on: 'Identify and mitigate security risks and vulnerabilities in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+      "summary": "Skill 4.3.7 focuses on: 'Identify and mitigate security risks and vulnerabilities in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
       "analogy": "A maximum-security biometric treasury vault: all transfers travel through armored underground tunnels without touching public roads (VPC Interface Endpoints / PrivateLink), double-locked with cryptographic keys (KMS CMK), while biometric security guards (Bedrock Guardrails) inspect and redact all communications.",
       "whyItMatters": "In enterprise production environments, failure to master identify and mitigate security risks and vulnerabilities in ml and ai systems. results in critical vulnerabilities: train-serve skew, silent accuracy decay, runaway GPU bills, or severe data compliance violations. Mastering this topic ensures high-throughput, fault-tolerant, and audit-compliant machine learning systems.",
       "revisionKeyPoints": [
@@ -8536,21 +9056,26 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Identify and mitigate security risk",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
-    "plainEnglish": "Skill 4.3.7 focuses on: 'Identify and mitigate security risks and vulnerabilities in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., `sagemaker.api`, `sagemaker.runtime`, `bedrock-runtime`) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting `EnableNetworkIsolation=True` completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
+    "plainEnglish": "Skill 4.3.7 focuses on: 'Identify and mitigate security risks and vulnerabilities in ML and AI systems.'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nSecurity and compliance for ML workloads on AWS demands a multi-layered defense-in-depth architecture. At the network layer, Amazon Virtual Private Cloud (VPC) subnets isolate compute resources from the public internet. Traffic between SageMaker, Bedrock, and AWS services travels strictly over AWS PrivateLink using VPC Interface Endpoints (e.g., sagemaker.api, sagemaker.runtime, bedrock-runtime) and Gateway Endpoints for Amazon S3.\n\nAt the data layer, encryption is enforced at rest using AWS KMS Customer Managed Keys (CMKs) with envelope encryption, and in transit using TLS 1.3. For training containers, setting EnableNetworkIsolation=True completely blocks external network communication from training algorithms, preventing data exfiltration. AWS IAM execution roles follow the principle of least privilege, restricting access to exact S3 bucket ARNs and KMS key IDs.",
     "bulletPoints": [
       "Core Task Domain: Task 4.3: Secure ML and AI workloads and model endpoints (Domain 4: Operating, Monitoring & Securing ML & AI Solutions).",
       "Managed AWS Services: Primary focus on Amazon Bedrock Guardrails, AWS KMS (Customer Managed Keys), Amazon VPC PrivateLink, AWS IAM Least Privilege, SageMaker Network Isolation, Amazon Macie.",
@@ -8617,18 +9142,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Select the appropriate credential t",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.3.8 focuses on: 'Select the appropriate credential type to access FMs (for example, Amazon Bedrock API keys, IAM credentials).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -8698,18 +9228,23 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "recommendedResources": [
       {
         "title": "Official AWS Guide: Task 4.3: Secure ML and AI workloads and model endpoints",
-        "type": "Documentation",
+        "type": "Official Documentation",
         "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html"
       },
       {
-        "title": "AWS Architecture Best Practices for Domain 4: Operating, Monitoring & Securing ML & AI Solutions",
-        "type": "Whitepaper",
-        "url": "https://aws.amazon.com/architecture/well-architected/"
+        "title": "Amazon SageMaker Developer Guide",
+        "type": "Developer Guide",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "AWS Machine Learning Blog: Implementing Implement safeguards and sensitive ",
-        "type": "Deep Dive",
-        "url": "https://aws.amazon.com/blogs/machine-learning/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker Boto3 SDK Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       }
     ],
     "plainEnglish": "Skill 4.3.9 focuses on: 'Implement safeguards and sensitive data protection to meet application requirements and responsible AI policies (for example, by using Amazon Bedrock Guardrails).'. In modern enterprise machine learning and generative AI architectures, this topic forms the backbone of Task 4.3: Secure ML and AI workloads and model endpoints under Domain 4: Operating, Monitoring & Securing ML & AI Solutions. Rather than treating this as an isolated task, AWS assesses your end-to-end understanding of how data flows, how distributed compute is orchestrated, and how high availability, fault tolerance, and security compliance are enforced.\n\nAmazon Bedrock is the premier serverless AWS service for building generative AI applications using leading Foundation Models (FMs). It provides managed access to high-performance models from Anthropic (Claude 3.5 Sonnet, Claude 3 Haiku), Amazon (Titan Text, Titan Image, Titan Embeddings), Meta (Llama 3), Mistral AI, and AI21 Labs through a unified, secure API. Because Bedrock is completely serverless, you do not manage GPU infrastructure, clusters, or operating system patches.\n\nEnterprise customization on Bedrock spans three primary tiers: Prompt Engineering / Few-Shot prompting (zero compute cost, runtime context), Retrieval Augmented Generation (RAG) via Bedrock Knowledge Bases (connecting models to dynamic enterprise data in S3 and vector stores), and Fine-Tuning / Continuous Pre-training (customizing model weights using prompt-response pairs in JSONL format). For governance, Amazon Bedrock Guardrails applies configurable filters for PII redaction, toxic speech, denied topics, and hallucination grounding checks.",
@@ -8730,7 +9265,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/athena/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Athena on the AWS MLA-C02 exam.",
       "Learn how Amazon Athena integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -8778,19 +9313,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Athena Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/athena/latest/userguide/what-is.html"
+        "title": "Amazon Athena - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/athena/latest/ug/what-is.html"
       },
       {
-        "title": "Amazon Athena Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Athena - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/athena.html"
       },
       {
-        "title": "Amazon Athena Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Athena - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Athena is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Athena provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Athena plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Athena allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Athena test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Athena is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -8811,7 +9351,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/data-firehose/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Data Firehose on the AWS MLA-C02 exam.",
       "Learn how Amazon Data Firehose integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -8855,23 +9395,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Data Firehose",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Data Firehose\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('data')\nprint('Successfully connected to Amazon Data Firehose via Boto3')\nprint('Official Category:', 'Analytics')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Data Firehose\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('firehose')\nprint('Successfully connected to Amazon Data Firehose via Boto3')\nprint('Official Category:', 'Analytics')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Data Firehose Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/data-firehose/latest/userguide/what-is.html"
+        "title": "Amazon Data Firehose - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/firehose/latest/dev/what-is-this-service.html"
       },
       {
-        "title": "Amazon Data Firehose Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Data Firehose - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/firehose.html"
       },
       {
-        "title": "Amazon Data Firehose Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Data Firehose - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Data Firehose is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Data Firehose provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Data Firehose plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Data Firehose allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Data Firehose test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Data Firehose is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -8892,7 +9437,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/emr/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon EMR on the AWS MLA-C02 exam.",
       "Learn how Amazon EMR integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -8940,19 +9485,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon EMR Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/emr/latest/userguide/what-is.html"
+        "title": "Amazon EMR - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html"
       },
       {
-        "title": "Amazon EMR Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon EMR - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/emr.html"
       },
       {
-        "title": "Amazon EMR Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon EMR - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon EMR is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon EMR provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon EMR plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon EMR allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon EMR test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon EMR is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -8973,7 +9523,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/glue/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Glue on the AWS MLA-C02 exam.",
       "Learn how AWS Glue integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9021,19 +9571,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS Glue Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/glue/latest/userguide/what-is.html"
+        "title": "AWS Glue - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html"
       },
       {
-        "title": "AWS Glue Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Glue - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html"
       },
       {
-        "title": "AWS Glue Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Glue - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Glue is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Glue provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Glue plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Glue allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Glue test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Glue is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9054,7 +9609,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/glue-databrew/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/databrew/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Glue DataBrew on the AWS MLA-C02 exam.",
       "Learn how AWS Glue DataBrew integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9098,23 +9653,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Glue DataBrew",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Glue DataBrew\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('glue')\nprint('Successfully connected to AWS Glue DataBrew via Boto3')\nprint('Official Category:', 'Analytics')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Glue DataBrew\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('databrew')\nprint('Successfully connected to AWS Glue DataBrew via Boto3')\nprint('Official Category:', 'Analytics')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Glue DataBrew Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/glue-databrew/latest/userguide/what-is.html"
+        "title": "AWS Glue DataBrew - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/databrew/latest/dg/what-is.html"
       },
       {
-        "title": "AWS Glue DataBrew Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Glue DataBrew - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/databrew.html"
       },
       {
-        "title": "AWS Glue DataBrew Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Glue DataBrew - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Glue DataBrew is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Glue DataBrew provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Glue DataBrew plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Glue DataBrew allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Glue DataBrew test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Glue DataBrew is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9135,7 +9695,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/glue-data-quality/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Glue Data Quality on the AWS MLA-C02 exam.",
       "Learn how AWS Glue Data Quality integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9183,19 +9743,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS Glue Data Quality Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/glue-data-quality/latest/userguide/what-is.html"
+        "title": "AWS Glue Data Quality - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html"
       },
       {
-        "title": "AWS Glue Data Quality Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Glue Data Quality - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glue.html"
       },
       {
-        "title": "AWS Glue Data Quality Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Glue Data Quality - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Glue Data Quality is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Glue Data Quality provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Glue Data Quality plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Glue Data Quality allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Glue Data Quality test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Glue Data Quality is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9216,7 +9781,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/kinesis/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Kinesis on the AWS MLA-C02 exam.",
       "Learn how Amazon Kinesis integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9264,19 +9829,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Kinesis Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/kinesis/latest/userguide/what-is.html"
+        "title": "Amazon Kinesis - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/streams/latest/dev/introduction.html"
       },
       {
-        "title": "Amazon Kinesis Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Kinesis - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesis.html"
       },
       {
-        "title": "Amazon Kinesis Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Kinesis - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Kinesis is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Kinesis provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Kinesis plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Kinesis allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Kinesis test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Kinesis is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9297,7 +9867,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/lake-formation/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Lake Formation on the AWS MLA-C02 exam.",
       "Learn how AWS Lake Formation integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9341,23 +9911,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Lake Formation",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Lake Formation\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('lake')\nprint('Successfully connected to AWS Lake Formation via Boto3')\nprint('Official Category:', 'Analytics')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Lake Formation\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('lakeformation')\nprint('Successfully connected to AWS Lake Formation via Boto3')\nprint('Official Category:', 'Analytics')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Lake Formation Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/lake-formation/latest/userguide/what-is.html"
+        "title": "AWS Lake Formation - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/lake-formation/latest/dg/what-is-lake-formation.html"
       },
       {
-        "title": "AWS Lake Formation Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Lake Formation - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lakeformation.html"
       },
       {
-        "title": "AWS Lake Formation Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Lake Formation - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Lake Formation is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Lake Formation provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Lake Formation plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Lake Formation allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Lake Formation test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Lake Formation is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9378,7 +9953,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/flink/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/java/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Managed Service for Apache Flink on the AWS MLA-C02 exam.",
       "Learn how Amazon Managed Service for Apache Flink integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9422,23 +9997,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Managed Service for Apache Flink",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Managed Service for Apache Flink\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('flink')\nprint('Successfully connected to Amazon Managed Service for Apache Flink via Boto3')\nprint('Official Category:', 'Analytics')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Managed Service for Apache Flink\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('kinesisanalyticsv2')\nprint('Successfully connected to Amazon Managed Service for Apache Flink via Boto3')\nprint('Official Category:', 'Analytics')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Managed Service for Apache Flink Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/flink/latest/userguide/what-is.html"
+        "title": "Amazon Managed Service for Apache Flink - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/kinesisanalytics/latest/java/what-is.html"
       },
       {
-        "title": "Amazon Managed Service for Apache Flink Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Managed Service for Apache Flink - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisanalyticsv2.html"
       },
       {
-        "title": "Amazon Managed Service for Apache Flink Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Managed Service for Apache Flink - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Managed Service for Apache Flink is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Managed Service for Apache Flink provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Managed Service for Apache Flink plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Managed Service for Apache Flink allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Managed Service for Apache Flink test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Managed Service for Apache Flink is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9459,7 +10039,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/opensearch/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon OpenSearch Service on the AWS MLA-C02 exam.",
       "Learn how Amazon OpenSearch Service integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9507,19 +10087,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon OpenSearch Service Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/opensearch/latest/userguide/what-is.html"
+        "title": "Amazon OpenSearch Service - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/what-is.html"
       },
       {
-        "title": "Amazon OpenSearch Service Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon OpenSearch Service - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/opensearch.html"
       },
       {
-        "title": "Amazon OpenSearch Service Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon OpenSearch Service - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon OpenSearch Service is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon OpenSearch Service provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon OpenSearch Service plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon OpenSearch Service allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon OpenSearch Service test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon OpenSearch Service is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9540,7 +10125,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/quicksight/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon QuickSight on the AWS MLA-C02 exam.",
       "Learn how Amazon QuickSight integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9588,19 +10173,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon QuickSight Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/quicksight/latest/userguide/what-is.html"
+        "title": "Amazon QuickSight - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/quicksight/latest/user/welcome.html"
       },
       {
-        "title": "Amazon QuickSight Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon QuickSight - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/quicksight.html"
       },
       {
-        "title": "Amazon QuickSight Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon QuickSight - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon QuickSight is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon QuickSight provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon QuickSight plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon QuickSight allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon QuickSight test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon QuickSight is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9621,7 +10211,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Analytics",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/redshift/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Redshift on the AWS MLA-C02 exam.",
       "Learn how Amazon Redshift integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9669,19 +10259,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Redshift Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/redshift/latest/userguide/what-is.html"
+        "title": "Amazon Redshift - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/redshift/latest/mgmt/welcome.html"
       },
       {
-        "title": "Amazon Redshift Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Redshift - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/redshift.html"
       },
       {
-        "title": "Amazon Redshift Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Redshift - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Redshift is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Redshift provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Redshift plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Redshift allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Redshift test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Redshift is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9702,7 +10297,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Application Integration",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon EventBridge on the AWS MLA-C02 exam.",
       "Learn how Amazon EventBridge integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9746,23 +10341,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon EventBridge",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon EventBridge\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('eventbridge')\nprint('Successfully connected to Amazon EventBridge via Boto3')\nprint('Official Category:', 'Application Integration')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon EventBridge\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('events')\nprint('Successfully connected to Amazon EventBridge via Boto3')\nprint('Official Category:', 'Application Integration')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon EventBridge Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is.html"
+        "title": "Amazon EventBridge - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-what-is.html"
       },
       {
-        "title": "Amazon EventBridge Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon EventBridge - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/events.html"
       },
       {
-        "title": "Amazon EventBridge Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon EventBridge - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon EventBridge is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon EventBridge provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon EventBridge plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon EventBridge allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon EventBridge test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon EventBridge is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9783,7 +10383,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Application Integration",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Managed Workflows for Apache Airflow (Amazon MWAA) on the AWS MLA-C02 exam.",
       "Learn how Amazon Managed Workflows for Apache Airflow (Amazon MWAA) integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9831,19 +10431,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is.html"
+        "title": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is-mwaa.html"
       },
       {
-        "title": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/mwaa.html"
       },
       {
-        "title": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Managed Workflows for Apache Airflow (Amazon MWAA) provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Managed Workflows for Apache Airflow (Amazon MWAA) plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Managed Workflows for Apache Airflow (Amazon MWAA) allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Managed Workflows for Apache Airflow (Amazon MWAA) test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9864,7 +10469,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Application Integration",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/sns/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon SNS on the AWS MLA-C02 exam.",
       "Learn how Amazon SNS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9912,19 +10517,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon SNS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/sns/latest/userguide/what-is.html"
+        "title": "Amazon SNS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/sns/latest/dg/welcome.html"
       },
       {
-        "title": "Amazon SNS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon SNS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sns.html"
       },
       {
-        "title": "Amazon SNS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SNS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon SNS is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon SNS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon SNS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon SNS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon SNS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon SNS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -9945,7 +10555,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Application Integration",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/sqs/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon SQS on the AWS MLA-C02 exam.",
       "Learn how Amazon SQS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -9993,19 +10603,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon SQS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/sqs/latest/userguide/what-is.html"
+        "title": "Amazon SQS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html"
       },
       {
-        "title": "Amazon SQS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon SQS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sqs.html"
       },
       {
-        "title": "Amazon SQS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SQS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon SQS is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon SQS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon SQS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon SQS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon SQS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon SQS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10026,7 +10641,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Application Integration",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/step-functions/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Step Functions on the AWS MLA-C02 exam.",
       "Learn how AWS Step Functions integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10070,23 +10685,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Step Functions",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Step Functions\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('step')\nprint('Successfully connected to AWS Step Functions via Boto3')\nprint('Official Category:', 'Application Integration')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Step Functions\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('stepfunctions')\nprint('Successfully connected to AWS Step Functions via Boto3')\nprint('Official Category:', 'Application Integration')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Step Functions Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/step-functions/latest/userguide/what-is.html"
+        "title": "AWS Step Functions - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/step-functions/latest/dg/welcome.html"
       },
       {
-        "title": "AWS Step Functions Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Step Functions - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/stepfunctions.html"
       },
       {
-        "title": "AWS Step Functions Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Step Functions - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Step Functions is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Step Functions provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Step Functions plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Step Functions allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Step Functions test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Step Functions is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10107,7 +10727,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Cloud Financial Management",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/billing-cost-management/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Billing and Cost Management on the AWS MLA-C02 exam.",
       "Learn how AWS Billing and Cost Management integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10151,23 +10771,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Billing and Cost Management",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Billing and Cost Management\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('billing')\nprint('Successfully connected to AWS Billing and Cost Management via Boto3')\nprint('Official Category:', 'Cloud Financial Management')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Billing and Cost Management\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('ce')\nprint('Successfully connected to AWS Billing and Cost Management via Boto3')\nprint('Official Category:', 'Cloud Financial Management')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Billing and Cost Management Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/billing-cost-management/latest/userguide/what-is.html"
+        "title": "AWS Billing and Cost Management - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/cur/latest/userguide/what-is-cur.html"
       },
       {
-        "title": "AWS Billing and Cost Management Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Billing and Cost Management - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html"
       },
       {
-        "title": "AWS Billing and Cost Management Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Billing and Cost Management - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Billing and Cost Management is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Billing and Cost Management provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Billing and Cost Management plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Billing and Cost Management allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Billing and Cost Management test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Billing and Cost Management is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10188,7 +10813,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Cloud Financial Management",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/budgets/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Budgets on the AWS MLA-C02 exam.",
       "Learn how AWS Budgets integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10236,19 +10861,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS Budgets Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/budgets/latest/userguide/what-is.html"
+        "title": "AWS Budgets - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html"
       },
       {
-        "title": "AWS Budgets Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Budgets - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/budgets.html"
       },
       {
-        "title": "AWS Budgets Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Budgets - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Budgets is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Budgets provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Budgets plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Budgets allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Budgets test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Budgets is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10269,7 +10899,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Cloud Financial Management",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/cost-explorer/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Cost Explorer on the AWS MLA-C02 exam.",
       "Learn how AWS Cost Explorer integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10313,23 +10943,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Cost Explorer",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Cost Explorer\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('cost')\nprint('Successfully connected to AWS Cost Explorer via Boto3')\nprint('Official Category:', 'Cloud Financial Management')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Cost Explorer\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('ce')\nprint('Successfully connected to AWS Cost Explorer via Boto3')\nprint('Official Category:', 'Cloud Financial Management')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Cost Explorer Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/cost-explorer/latest/userguide/what-is.html"
+        "title": "AWS Cost Explorer - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/cost-management/latest/userguide/ce-what-is.html"
       },
       {
-        "title": "AWS Cost Explorer Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Cost Explorer - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ce.html"
       },
       {
-        "title": "AWS Cost Explorer Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Cost Explorer - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Cost Explorer is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Cost Explorer provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Cost Explorer plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Cost Explorer allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Cost Explorer test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Cost Explorer is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10350,7 +10985,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Compute",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/batch/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Batch on the AWS MLA-C02 exam.",
       "Learn how AWS Batch integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10398,19 +11033,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS Batch Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/batch/latest/userguide/what-is.html"
+        "title": "AWS Batch - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/batch/latest/userguide/what-is-batch.html"
       },
       {
-        "title": "AWS Batch Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Batch - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/batch.html"
       },
       {
-        "title": "AWS Batch Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Batch - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Batch is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Batch provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Batch plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Batch allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Batch test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Batch is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10431,7 +11071,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Compute",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/ec2/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon EC2 on the AWS MLA-C02 exam.",
       "Learn how Amazon EC2 integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10479,19 +11119,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon EC2 Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/ec2/latest/userguide/what-is.html"
+        "title": "Amazon EC2 - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts.html"
       },
       {
-        "title": "Amazon EC2 Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon EC2 - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html"
       },
       {
-        "title": "Amazon EC2 Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon EC2 - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon EC2 is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon EC2 provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon EC2 plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon EC2 allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon EC2 test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon EC2 is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10512,7 +11157,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Compute",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/lambda/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Lambda on the AWS MLA-C02 exam.",
       "Learn how AWS Lambda integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10560,19 +11205,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS Lambda Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/lambda/latest/userguide/what-is.html"
+        "title": "AWS Lambda - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/lambda/latest/dg/welcome.html"
       },
       {
-        "title": "AWS Lambda Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Lambda - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lambda.html"
       },
       {
-        "title": "AWS Lambda Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Lambda - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Lambda is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Lambda provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Lambda plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Lambda allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Lambda test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Lambda is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10593,7 +11243,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Containers",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/ecr/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon ECR on the AWS MLA-C02 exam.",
       "Learn how Amazon ECR integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10641,19 +11291,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon ECR Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/ecr/latest/userguide/what-is.html"
+        "title": "Amazon ECR - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AmazonECR/latest/userguide/what-is-ecr.html"
       },
       {
-        "title": "Amazon ECR Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon ECR - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecr.html"
       },
       {
-        "title": "Amazon ECR Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon ECR - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon ECR is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon ECR provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon ECR plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon ECR allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon ECR test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon ECR is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10674,7 +11329,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Containers",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/ecs/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon ECS on the AWS MLA-C02 exam.",
       "Learn how Amazon ECS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10722,19 +11377,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon ECS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/ecs/latest/userguide/what-is.html"
+        "title": "Amazon ECS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AmazonECS/latest/developerguide/Welcome.html"
       },
       {
-        "title": "Amazon ECS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon ECS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ecs.html"
       },
       {
-        "title": "Amazon ECS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon ECS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon ECS is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon ECS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon ECS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon ECS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon ECS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon ECS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10755,7 +11415,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Containers",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon EKS on the AWS MLA-C02 exam.",
       "Learn how Amazon EKS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10803,19 +11463,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon EKS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is.html"
+        "title": "Amazon EKS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is-eks.html"
       },
       {
-        "title": "Amazon EKS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon EKS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/eks.html"
       },
       {
-        "title": "Amazon EKS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon EKS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon EKS is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon EKS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon EKS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon EKS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon EKS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon EKS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10836,7 +11501,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Database",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/documentdb/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon DocumentDB on the AWS MLA-C02 exam.",
       "Learn how Amazon DocumentDB integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10880,23 +11545,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon DocumentDB",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon DocumentDB\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('documentdb')\nprint('Successfully connected to Amazon DocumentDB via Boto3')\nprint('Official Category:', 'Database')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon DocumentDB\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('docdb')\nprint('Successfully connected to Amazon DocumentDB via Boto3')\nprint('Official Category:', 'Database')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon DocumentDB Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/documentdb/latest/userguide/what-is.html"
+        "title": "Amazon DocumentDB - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/documentdb/latest/developerguide/what-is.html"
       },
       {
-        "title": "Amazon DocumentDB Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon DocumentDB - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/docdb.html"
       },
       {
-        "title": "Amazon DocumentDB Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon DocumentDB - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon DocumentDB is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon DocumentDB provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon DocumentDB plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon DocumentDB allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon DocumentDB test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon DocumentDB is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10917,7 +11587,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Database",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/dynamodb/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon DynamoDB on the AWS MLA-C02 exam.",
       "Learn how Amazon DynamoDB integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -10965,19 +11635,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon DynamoDB Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/dynamodb/latest/userguide/what-is.html"
+        "title": "Amazon DynamoDB - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html"
       },
       {
-        "title": "Amazon DynamoDB Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon DynamoDB - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/dynamodb.html"
       },
       {
-        "title": "Amazon DynamoDB Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon DynamoDB - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon DynamoDB is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon DynamoDB provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon DynamoDB plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon DynamoDB allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon DynamoDB test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon DynamoDB is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -10998,7 +11673,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Database",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/elasticache/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon ElastiCache on the AWS MLA-C02 exam.",
       "Learn how Amazon ElastiCache integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11046,19 +11721,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon ElastiCache Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/elasticache/latest/userguide/what-is.html"
+        "title": "Amazon ElastiCache - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/WhatIs.html"
       },
       {
-        "title": "Amazon ElastiCache Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon ElastiCache - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/elasticache.html"
       },
       {
-        "title": "Amazon ElastiCache Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon ElastiCache - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon ElastiCache is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon ElastiCache provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon ElastiCache plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon ElastiCache allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon ElastiCache test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon ElastiCache is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11079,7 +11759,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Database",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/neptune/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Neptune on the AWS MLA-C02 exam.",
       "Learn how Amazon Neptune integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11127,19 +11807,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Neptune Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/neptune/latest/userguide/what-is.html"
+        "title": "Amazon Neptune - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/neptune/latest/userguide/intro.html"
       },
       {
-        "title": "Amazon Neptune Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Neptune - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/neptune.html"
       },
       {
-        "title": "Amazon Neptune Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Neptune - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Neptune is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Neptune provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Neptune plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Neptune allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Neptune test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Neptune is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11160,7 +11845,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Database",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/rds/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon RDS on the AWS MLA-C02 exam.",
       "Learn how Amazon RDS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11208,19 +11893,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon RDS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/rds/latest/userguide/what-is.html"
+        "title": "Amazon RDS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Welcome.html"
       },
       {
-        "title": "Amazon RDS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon RDS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rds.html"
       },
       {
-        "title": "Amazon RDS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon RDS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon RDS is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon RDS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon RDS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon RDS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon RDS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon RDS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11241,7 +11931,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/cdk/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/cdk/v2/guide/home.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CDK on the AWS MLA-C02 exam.",
       "Learn how AWS CDK integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11285,23 +11975,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS CDK",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS CDK\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('cdk')\nprint('Successfully connected to AWS CDK via Boto3')\nprint('Official Category:', 'Developer Tools')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS CDK\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('cloudformation')\nprint('Successfully connected to AWS CDK via Boto3')\nprint('Official Category:', 'Developer Tools')"
     },
     "recommendedResources": [
       {
-        "title": "AWS CDK Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/cdk/latest/userguide/what-is.html"
+        "title": "AWS CDK - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/cdk/v2/guide/home.html"
       },
       {
-        "title": "AWS CDK Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CDK - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html"
       },
       {
-        "title": "AWS CDK Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CDK - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CDK is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CDK provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CDK plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CDK allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CDK test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CDK is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11322,7 +12017,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CodeArtifact on the AWS MLA-C02 exam.",
       "Learn how AWS CodeArtifact integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11370,19 +12065,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CodeArtifact Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/what-is.html"
+        "title": "AWS CodeArtifact - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html"
       },
       {
-        "title": "AWS CodeArtifact Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CodeArtifact - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeartifact.html"
       },
       {
-        "title": "AWS CodeArtifact Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CodeArtifact - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CodeArtifact is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CodeArtifact provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CodeArtifact plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CodeArtifact allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CodeArtifact test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CodeArtifact is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11403,7 +12103,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CodeBuild on the AWS MLA-C02 exam.",
       "Learn how AWS CodeBuild integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11451,19 +12151,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CodeBuild Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/what-is.html"
+        "title": "AWS CodeBuild - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html"
       },
       {
-        "title": "AWS CodeBuild Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CodeBuild - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codebuild.html"
       },
       {
-        "title": "AWS CodeBuild Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CodeBuild - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CodeBuild is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CodeBuild provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CodeBuild plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CodeBuild allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CodeBuild test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CodeBuild is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11484,7 +12189,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CodeCommit on the AWS MLA-C02 exam.",
       "Learn how AWS CodeCommit integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11532,19 +12237,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CodeCommit Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/what-is.html"
+        "title": "AWS CodeCommit - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html"
       },
       {
-        "title": "AWS CodeCommit Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CodeCommit - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codecommit.html"
       },
       {
-        "title": "AWS CodeCommit Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CodeCommit - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CodeCommit is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CodeCommit provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CodeCommit plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CodeCommit allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CodeCommit test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CodeCommit is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11565,7 +12275,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/codeconnections/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CodeConnections on the AWS MLA-C02 exam.",
       "Learn how AWS CodeConnections integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11613,19 +12323,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CodeConnections Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/codeconnections/latest/userguide/what-is.html"
+        "title": "AWS CodeConnections - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html"
       },
       {
-        "title": "AWS CodeConnections Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CodeConnections - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeconnections.html"
       },
       {
-        "title": "AWS CodeConnections Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CodeConnections - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CodeConnections is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CodeConnections provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CodeConnections plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CodeConnections allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CodeConnections test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CodeConnections is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11646,7 +12361,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CodeDeploy on the AWS MLA-C02 exam.",
       "Learn how AWS CodeDeploy integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11694,19 +12409,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CodeDeploy Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/what-is.html"
+        "title": "AWS CodeDeploy - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/welcome.html"
       },
       {
-        "title": "AWS CodeDeploy Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CodeDeploy - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codedeploy.html"
       },
       {
-        "title": "AWS CodeDeploy Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CodeDeploy - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CodeDeploy is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CodeDeploy provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CodeDeploy plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CodeDeploy allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CodeDeploy test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CodeDeploy is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11727,7 +12447,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CodePipeline on the AWS MLA-C02 exam.",
       "Learn how AWS CodePipeline integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11775,19 +12495,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CodePipeline Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/what-is.html"
+        "title": "AWS CodePipeline - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html"
       },
       {
-        "title": "AWS CodePipeline Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CodePipeline - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codepipeline.html"
       },
       {
-        "title": "AWS CodePipeline Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CodePipeline - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CodePipeline is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CodePipeline provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CodePipeline plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CodePipeline allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CodePipeline test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CodePipeline is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11808,7 +12533,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Developer Tools",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/xray/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS X-Ray on the AWS MLA-C02 exam.",
       "Learn how AWS X-Ray integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11856,19 +12581,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS X-Ray Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/xray/latest/userguide/what-is.html"
+        "title": "AWS X-Ray - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html"
       },
       {
-        "title": "AWS X-Ray Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS X-Ray - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/xray.html"
       },
       {
-        "title": "AWS X-Ray Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS X-Ray - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS X-Ray is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS X-Ray provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS X-Ray plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS X-Ray allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS X-Ray test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS X-Ray is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11889,7 +12619,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Bedrock on the AWS MLA-C02 exam.",
       "Learn how Amazon Bedrock integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -11937,19 +12667,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Bedrock Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is.html"
+        "title": "Amazon Bedrock - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
       },
       {
-        "title": "Amazon Bedrock Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Bedrock - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock.html"
       },
       {
-        "title": "Amazon Bedrock Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Bedrock is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Bedrock provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Bedrock plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Bedrock allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Bedrock test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Bedrock is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -11970,7 +12705,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Bedrock AgentCore on the AWS MLA-C02 exam.",
       "Learn how Amazon Bedrock AgentCore integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12014,23 +12749,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Bedrock AgentCore",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Bedrock AgentCore\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('bedrock')\nprint('Successfully connected to Amazon Bedrock AgentCore via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Bedrock AgentCore\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('bedrock-agent')\nprint('Successfully connected to Amazon Bedrock AgentCore via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Bedrock AgentCore Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/userguide/what-is.html"
+        "title": "Amazon Bedrock AgentCore - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html"
       },
       {
-        "title": "Amazon Bedrock AgentCore Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Bedrock AgentCore - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/bedrock-agent.html"
       },
       {
-        "title": "Amazon Bedrock AgentCore Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Bedrock AgentCore - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Bedrock AgentCore is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Bedrock AgentCore provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Bedrock AgentCore plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Bedrock AgentCore allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Bedrock AgentCore test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Bedrock AgentCore is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12051,7 +12791,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/codeguru/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon CodeGuru on the AWS MLA-C02 exam.",
       "Learn how Amazon CodeGuru integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12095,23 +12835,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon CodeGuru",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon CodeGuru\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('codeguru')\nprint('Successfully connected to Amazon CodeGuru via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon CodeGuru\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('codeguru-reviewer')\nprint('Successfully connected to Amazon CodeGuru via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon CodeGuru Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/codeguru/latest/userguide/what-is.html"
+        "title": "Amazon CodeGuru - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html"
       },
       {
-        "title": "Amazon CodeGuru Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon CodeGuru - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/codeguru-reviewer.html"
       },
       {
-        "title": "Amazon CodeGuru Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon CodeGuru - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon CodeGuru is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon CodeGuru provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon CodeGuru plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon CodeGuru allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon CodeGuru test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon CodeGuru is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12132,7 +12877,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/comprehend/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Comprehend on the AWS MLA-C02 exam.",
       "Learn how Amazon Comprehend integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12180,19 +12925,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Comprehend Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/comprehend/latest/userguide/what-is.html"
+        "title": "Amazon Comprehend - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/comprehend/latest/dg/what-is.html"
       },
       {
-        "title": "Amazon Comprehend Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Comprehend - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehend.html"
       },
       {
-        "title": "Amazon Comprehend Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Comprehend - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Comprehend is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Comprehend provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Comprehend plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Comprehend allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Comprehend test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Comprehend is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12213,7 +12963,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/comprehend-medical/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Comprehend Medical on the AWS MLA-C02 exam.",
       "Learn how Amazon Comprehend Medical integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12257,23 +13007,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Comprehend Medical",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Comprehend Medical\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('comprehend')\nprint('Successfully connected to Amazon Comprehend Medical via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Comprehend Medical\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('comprehendmedical')\nprint('Successfully connected to Amazon Comprehend Medical via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Comprehend Medical Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/comprehend-medical/latest/userguide/what-is.html"
+        "title": "Amazon Comprehend Medical - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/comprehend-medical/latest/dev/comprehendmedical-welcome.html"
       },
       {
-        "title": "Amazon Comprehend Medical Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Comprehend Medical - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/comprehendmedical.html"
       },
       {
-        "title": "Amazon Comprehend Medical Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Comprehend Medical - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Comprehend Medical is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Comprehend Medical provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Comprehend Medical plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Comprehend Medical allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Comprehend Medical test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Comprehend Medical is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12294,7 +13049,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon DevOps Guru on the AWS MLA-C02 exam.",
       "Learn how Amazon DevOps Guru integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12338,23 +13093,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon DevOps Guru",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon DevOps Guru\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('devops')\nprint('Successfully connected to Amazon DevOps Guru via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon DevOps Guru\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('devops-guru')\nprint('Successfully connected to Amazon DevOps Guru via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon DevOps Guru Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/what-is.html"
+        "title": "Amazon DevOps Guru - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/welcome.html"
       },
       {
-        "title": "Amazon DevOps Guru Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon DevOps Guru - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/devops-guru.html"
       },
       {
-        "title": "Amazon DevOps Guru Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon DevOps Guru - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon DevOps Guru is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon DevOps Guru provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon DevOps Guru plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon DevOps Guru allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon DevOps Guru test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon DevOps Guru is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12375,7 +13135,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/healthlake/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-healthlake.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS HealthLake on the AWS MLA-C02 exam.",
       "Learn how AWS HealthLake integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12423,19 +13183,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS HealthLake Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/healthlake/latest/userguide/what-is.html"
+        "title": "AWS HealthLake - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/healthlake/latest/devguide/what-is-healthlake.html"
       },
       {
-        "title": "AWS HealthLake Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS HealthLake - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/healthlake.html"
       },
       {
-        "title": "AWS HealthLake Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS HealthLake - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS HealthLake is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS HealthLake provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS HealthLake plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS HealthLake allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS HealthLake test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS HealthLake is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12456,7 +13221,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/lex/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Lex on the AWS MLA-C02 exam.",
       "Learn how Amazon Lex integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12500,23 +13265,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Lex",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Lex\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('lex')\nprint('Successfully connected to Amazon Lex via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Lex\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('lexv2-models')\nprint('Successfully connected to Amazon Lex via Boto3')\nprint('Official Category:', 'Machine Learning and Artificial Intelligence')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Lex Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/lex/latest/userguide/what-is.html"
+        "title": "Amazon Lex - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/lexv2/latest/dg/what-is.html"
       },
       {
-        "title": "Amazon Lex Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Lex - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/lexv2-models.html"
       },
       {
-        "title": "Amazon Lex Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Lex - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Lex is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Lex provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Lex plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Lex allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Lex test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Lex is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12537,7 +13307,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/personalize/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/personalize/latest/dg/what-is-personalize.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Personalize on the AWS MLA-C02 exam.",
       "Learn how Amazon Personalize integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12585,19 +13355,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Personalize Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/personalize/latest/userguide/what-is.html"
+        "title": "Amazon Personalize - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/personalize/latest/dg/what-is-personalize.html"
       },
       {
-        "title": "Amazon Personalize Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Personalize - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/personalize.html"
       },
       {
-        "title": "Amazon Personalize Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Personalize - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Personalize is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Personalize provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Personalize plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Personalize allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Personalize test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Personalize is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12618,7 +13393,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/polly/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/polly/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Polly on the AWS MLA-C02 exam.",
       "Learn how Amazon Polly integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12666,19 +13441,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Polly Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/polly/latest/userguide/what-is.html"
+        "title": "Amazon Polly - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/polly/latest/dg/what-is.html"
       },
       {
-        "title": "Amazon Polly Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Polly - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/polly.html"
       },
       {
-        "title": "Amazon Polly Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Polly - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Polly is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Polly provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Polly plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Polly allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Polly test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Polly is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12699,7 +13479,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/rekognition/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Rekognition on the AWS MLA-C02 exam.",
       "Learn how Amazon Rekognition integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12747,19 +13527,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Rekognition Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/rekognition/latest/userguide/what-is.html"
+        "title": "Amazon Rekognition - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html"
       },
       {
-        "title": "Amazon Rekognition Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Rekognition - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/rekognition.html"
       },
       {
-        "title": "Amazon Rekognition Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Rekognition - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Rekognition is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Rekognition provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Rekognition plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Rekognition allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Rekognition test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Rekognition is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12780,7 +13565,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/sagemaker/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon SageMaker AI on the AWS MLA-C02 exam.",
       "Learn how Amazon SageMaker AI integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12828,19 +13613,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon SageMaker AI Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/sagemaker/latest/userguide/what-is.html"
+        "title": "Amazon SageMaker AI - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
       },
       {
-        "title": "Amazon SageMaker AI Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon SageMaker AI - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/sagemaker.html"
       },
       {
-        "title": "Amazon SageMaker AI Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon SageMaker AI - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon SageMaker AI is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon SageMaker AI provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon SageMaker AI plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon SageMaker AI allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon SageMaker AI test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon SageMaker AI is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12861,7 +13651,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/textract/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/textract/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Textract on the AWS MLA-C02 exam.",
       "Learn how Amazon Textract integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12909,19 +13699,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Textract Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/textract/latest/userguide/what-is.html"
+        "title": "Amazon Textract - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/textract/latest/dg/what-is.html"
       },
       {
-        "title": "Amazon Textract Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Textract - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/textract.html"
       },
       {
-        "title": "Amazon Textract Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Textract - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Textract is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Textract provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Textract plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Textract allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Textract test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Textract is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -12942,7 +13737,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/transcribe/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Transcribe on the AWS MLA-C02 exam.",
       "Learn how Amazon Transcribe integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -12990,19 +13785,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Transcribe Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/transcribe/latest/userguide/what-is.html"
+        "title": "Amazon Transcribe - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/transcribe/latest/dg/what-is.html"
       },
       {
-        "title": "Amazon Transcribe Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Transcribe - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/transcribe.html"
       },
       {
-        "title": "Amazon Transcribe Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Transcribe - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Transcribe is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Transcribe provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Transcribe plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Transcribe allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Transcribe test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Transcribe is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13023,7 +13823,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Machine Learning and Artificial Intelligence",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/translate/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/translate/latest/dg/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Translate on the AWS MLA-C02 exam.",
       "Learn how Amazon Translate integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13071,19 +13871,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon Translate Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/translate/latest/userguide/what-is.html"
+        "title": "Amazon Translate - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/translate/latest/dg/what-is.html"
       },
       {
-        "title": "Amazon Translate Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Translate - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/translate.html"
       },
       {
-        "title": "Amazon Translate Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Translate - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Translate is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Translate provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Translate plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Translate allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Translate test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Translate is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13104,7 +13909,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/auto-scaling/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Auto Scaling on the AWS MLA-C02 exam.",
       "Learn how AWS Auto Scaling integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13148,23 +13953,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Auto Scaling",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Auto Scaling\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('auto')\nprint('Successfully connected to AWS Auto Scaling via Boto3')\nprint('Official Category:', 'Management and Governance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Auto Scaling\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('autoscaling')\nprint('Successfully connected to AWS Auto Scaling via Boto3')\nprint('Official Category:', 'Management and Governance')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Auto Scaling Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/auto-scaling/latest/userguide/what-is.html"
+        "title": "AWS Auto Scaling - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html"
       },
       {
-        "title": "AWS Auto Scaling Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Auto Scaling - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/autoscaling.html"
       },
       {
-        "title": "AWS Auto Scaling Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Auto Scaling - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Auto Scaling is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Auto Scaling provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Auto Scaling plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Auto Scaling allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Auto Scaling test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Auto Scaling is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13185,7 +13995,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/cloudformation/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CloudFormation on the AWS MLA-C02 exam.",
       "Learn how AWS CloudFormation integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13233,19 +14043,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CloudFormation Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/cloudformation/latest/userguide/what-is.html"
+        "title": "AWS CloudFormation - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/Welcome.html"
       },
       {
-        "title": "AWS CloudFormation Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CloudFormation - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html"
       },
       {
-        "title": "AWS CloudFormation Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CloudFormation - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CloudFormation is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CloudFormation provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CloudFormation plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CloudFormation allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CloudFormation test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CloudFormation is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13266,7 +14081,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/cloudtrail/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS CloudTrail on the AWS MLA-C02 exam.",
       "Learn how AWS CloudTrail integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13314,19 +14129,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS CloudTrail Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/cloudtrail/latest/userguide/what-is.html"
+        "title": "AWS CloudTrail - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-user-guide.html"
       },
       {
-        "title": "AWS CloudTrail Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS CloudTrail - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudtrail.html"
       },
       {
-        "title": "AWS CloudTrail Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS CloudTrail - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS CloudTrail is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS CloudTrail provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS CloudTrail plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS CloudTrail allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS CloudTrail test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS CloudTrail is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13347,7 +14167,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/cloudwatch/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon CloudWatch on the AWS MLA-C02 exam.",
       "Learn how Amazon CloudWatch integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13395,19 +14215,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon CloudWatch Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/cloudwatch/latest/userguide/what-is.html"
+        "title": "Amazon CloudWatch - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html"
       },
       {
-        "title": "Amazon CloudWatch Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon CloudWatch - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudwatch.html"
       },
       {
-        "title": "Amazon CloudWatch Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon CloudWatch - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon CloudWatch is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon CloudWatch provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon CloudWatch plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon CloudWatch allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon CloudWatch test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon CloudWatch is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13428,7 +14253,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/compute-optimizer/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Compute Optimizer on the AWS MLA-C02 exam.",
       "Learn how AWS Compute Optimizer integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13472,23 +14297,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Compute Optimizer",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Compute Optimizer\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('compute')\nprint('Successfully connected to AWS Compute Optimizer via Boto3')\nprint('Official Category:', 'Management and Governance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Compute Optimizer\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('compute-optimizer')\nprint('Successfully connected to AWS Compute Optimizer via Boto3')\nprint('Official Category:', 'Management and Governance')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Compute Optimizer Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/compute-optimizer/latest/userguide/what-is.html"
+        "title": "AWS Compute Optimizer - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/compute-optimizer/latest/ug/what-is-compute-optimizer.html"
       },
       {
-        "title": "AWS Compute Optimizer Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Compute Optimizer - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/compute-optimizer.html"
       },
       {
-        "title": "AWS Compute Optimizer Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Compute Optimizer - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Compute Optimizer is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Compute Optimizer provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Compute Optimizer plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Compute Optimizer allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Compute Optimizer test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Compute Optimizer is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13509,7 +14339,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/config/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Config on the AWS MLA-C02 exam.",
       "Learn how AWS Config integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13557,19 +14387,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS Config Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/config/latest/userguide/what-is.html"
+        "title": "AWS Config - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html"
       },
       {
-        "title": "AWS Config Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Config - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/config.html"
       },
       {
-        "title": "AWS Config Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Config - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Config is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Config provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Config plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Config allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Config test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Config is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13590,7 +14425,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/organizations/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Organizations on the AWS MLA-C02 exam.",
       "Learn how AWS Organizations integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13638,19 +14473,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS Organizations Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/organizations/latest/userguide/what-is.html"
+        "title": "AWS Organizations - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html"
       },
       {
-        "title": "AWS Organizations Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Organizations - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/organizations.html"
       },
       {
-        "title": "AWS Organizations Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Organizations - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Organizations is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Organizations provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Organizations plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Organizations allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Organizations test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Organizations is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13671,7 +14511,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/service-catalog/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Service Catalog on the AWS MLA-C02 exam.",
       "Learn how AWS Service Catalog integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13715,23 +14555,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Service Catalog",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Service Catalog\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('service')\nprint('Successfully connected to AWS Service Catalog via Boto3')\nprint('Official Category:', 'Management and Governance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Service Catalog\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('servicecatalog')\nprint('Successfully connected to AWS Service Catalog via Boto3')\nprint('Official Category:', 'Management and Governance')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Service Catalog Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/service-catalog/latest/userguide/what-is.html"
+        "title": "AWS Service Catalog - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html"
       },
       {
-        "title": "AWS Service Catalog Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Service Catalog - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/servicecatalog.html"
       },
       {
-        "title": "AWS Service Catalog Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Service Catalog - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Service Catalog is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Service Catalog provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Service Catalog plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Service Catalog allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Service Catalog test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Service Catalog is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13752,7 +14597,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Systems Manager on the AWS MLA-C02 exam.",
       "Learn how AWS Systems Manager integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13796,23 +14641,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Systems Manager",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Systems Manager\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('systems')\nprint('Successfully connected to AWS Systems Manager via Boto3')\nprint('Official Category:', 'Management and Governance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Systems Manager\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('ssm')\nprint('Successfully connected to AWS Systems Manager via Boto3')\nprint('Official Category:', 'Management and Governance')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Systems Manager Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is.html"
+        "title": "AWS Systems Manager - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is-systems-manager.html"
       },
       {
-        "title": "AWS Systems Manager Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Systems Manager - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ssm.html"
       },
       {
-        "title": "AWS Systems Manager Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Systems Manager - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Systems Manager is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Systems Manager provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Systems Manager plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Systems Manager allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Systems Manager test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Systems Manager is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13833,7 +14683,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Management and Governance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/trusted-advisor/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Trusted Advisor on the AWS MLA-C02 exam.",
       "Learn how AWS Trusted Advisor integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13877,23 +14727,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Trusted Advisor",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Trusted Advisor\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('trusted')\nprint('Successfully connected to AWS Trusted Advisor via Boto3')\nprint('Official Category:', 'Management and Governance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Trusted Advisor\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('support')\nprint('Successfully connected to AWS Trusted Advisor via Boto3')\nprint('Official Category:', 'Management and Governance')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Trusted Advisor Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/trusted-advisor/latest/userguide/what-is.html"
+        "title": "AWS Trusted Advisor - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/awssupport/latest/user/trusted-advisor.html"
       },
       {
-        "title": "AWS Trusted Advisor Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Trusted Advisor - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/support.html"
       },
       {
-        "title": "AWS Trusted Advisor Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Trusted Advisor - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Trusted Advisor is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Trusted Advisor provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Trusted Advisor plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Trusted Advisor allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Trusted Advisor test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Trusted Advisor is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13914,7 +14769,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Media",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/kinesis-video-streams/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Kinesis Video Streams on the AWS MLA-C02 exam.",
       "Learn how Amazon Kinesis Video Streams integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -13958,23 +14813,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Kinesis Video Streams",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Kinesis Video Streams\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('kinesis')\nprint('Successfully connected to Amazon Kinesis Video Streams via Boto3')\nprint('Official Category:', 'Media')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Kinesis Video Streams\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('kinesisvideo')\nprint('Successfully connected to Amazon Kinesis Video Streams via Boto3')\nprint('Official Category:', 'Media')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Kinesis Video Streams Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/kinesis-video-streams/latest/userguide/what-is.html"
+        "title": "Amazon Kinesis Video Streams - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html"
       },
       {
-        "title": "Amazon Kinesis Video Streams Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Kinesis Video Streams - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kinesisvideo.html"
       },
       {
-        "title": "Amazon Kinesis Video Streams Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Kinesis Video Streams - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Kinesis Video Streams is an official in-scope AWS service in the Media category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Kinesis Video Streams provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Kinesis Video Streams plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Kinesis Video Streams allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Kinesis Video Streams test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Kinesis Video Streams is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -13995,7 +14855,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Migration and Transfer",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS DataSync on the AWS MLA-C02 exam.",
       "Learn how AWS DataSync integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14043,19 +14903,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS DataSync Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is.html"
+        "title": "AWS DataSync - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is-datasync.html"
       },
       {
-        "title": "AWS DataSync Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS DataSync - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/datasync.html"
       },
       {
-        "title": "AWS DataSync Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS DataSync - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS DataSync is an official in-scope AWS service in the Migration and Transfer category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS DataSync provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS DataSync plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS DataSync allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS DataSync test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS DataSync is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14076,7 +14941,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Networking and Content Delivery",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/api-gateway/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon API Gateway on the AWS MLA-C02 exam.",
       "Learn how Amazon API Gateway integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14120,23 +14985,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon API Gateway",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon API Gateway\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('api')\nprint('Successfully connected to Amazon API Gateway via Boto3')\nprint('Official Category:', 'Networking and Content Delivery')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon API Gateway\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('apigateway')\nprint('Successfully connected to Amazon API Gateway via Boto3')\nprint('Official Category:', 'Networking and Content Delivery')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon API Gateway Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/api-gateway/latest/userguide/what-is.html"
+        "title": "Amazon API Gateway - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/apigateway/latest/developerguide/welcome.html"
       },
       {
-        "title": "Amazon API Gateway Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon API Gateway - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/apigateway.html"
       },
       {
-        "title": "Amazon API Gateway Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon API Gateway - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon API Gateway is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon API Gateway provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon API Gateway plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon API Gateway allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon API Gateway test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon API Gateway is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14157,7 +15027,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Networking and Content Delivery",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/cloudfront/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon CloudFront on the AWS MLA-C02 exam.",
       "Learn how Amazon CloudFront integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14205,19 +15075,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon CloudFront Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/cloudfront/latest/userguide/what-is.html"
+        "title": "Amazon CloudFront - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html"
       },
       {
-        "title": "Amazon CloudFront Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon CloudFront - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudfront.html"
       },
       {
-        "title": "Amazon CloudFront Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon CloudFront - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon CloudFront is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon CloudFront provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon CloudFront plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon CloudFront allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon CloudFront test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon CloudFront is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14238,7 +15113,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Networking and Content Delivery",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/direct-connect/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Direct Connect on the AWS MLA-C02 exam.",
       "Learn how AWS Direct Connect integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14282,23 +15157,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Direct Connect",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Direct Connect\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('direct')\nprint('Successfully connected to AWS Direct Connect via Boto3')\nprint('Official Category:', 'Networking and Content Delivery')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Direct Connect\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('directconnect')\nprint('Successfully connected to AWS Direct Connect via Boto3')\nprint('Official Category:', 'Networking and Content Delivery')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Direct Connect Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/direct-connect/latest/userguide/what-is.html"
+        "title": "AWS Direct Connect - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/directconnect/latest/UserGuide/Welcome.html"
       },
       {
-        "title": "AWS Direct Connect Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Direct Connect - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/directconnect.html"
       },
       {
-        "title": "AWS Direct Connect Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Direct Connect - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Direct Connect is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Direct Connect provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Direct Connect plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Direct Connect allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Direct Connect test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Direct Connect is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14319,7 +15199,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Networking and Content Delivery",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon VPC on the AWS MLA-C02 exam.",
       "Learn how Amazon VPC integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14363,23 +15243,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon VPC",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon VPC\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('vpc')\nprint('Successfully connected to Amazon VPC via Boto3')\nprint('Official Category:', 'Networking and Content Delivery')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon VPC\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('ec2')\nprint('Successfully connected to Amazon VPC via Boto3')\nprint('Official Category:', 'Networking and Content Delivery')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon VPC Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is.html"
+        "title": "Amazon VPC - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is-amazon-vpc.html"
       },
       {
-        "title": "Amazon VPC Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon VPC - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html"
       },
       {
-        "title": "Amazon VPC Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon VPC - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon VPC is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon VPC provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon VPC plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon VPC allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon VPC test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon VPC is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14400,7 +15285,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Security, Identity, and Compliance",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/iam/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of IAM on the AWS MLA-C02 exam.",
       "Learn how IAM integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14448,19 +15333,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "IAM Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/iam/latest/userguide/what-is.html"
+        "title": "IAM - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction.html"
       },
       {
-        "title": "IAM Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "IAM - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/iam.html"
       },
       {
-        "title": "IAM Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "IAM - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "IAM is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, IAM provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, IAM plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying IAM allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding IAM test your ability to make optimal architectural decisions under tight constraints. You must know precisely when IAM is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14481,7 +15371,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Security, Identity, and Compliance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/inspector/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Inspector on the AWS MLA-C02 exam.",
       "Learn how Amazon Inspector integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14525,23 +15415,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Inspector",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Inspector\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('inspector')\nprint('Successfully connected to Amazon Inspector via Boto3')\nprint('Official Category:', 'Security, Identity, and Compliance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Inspector\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('inspector2')\nprint('Successfully connected to Amazon Inspector via Boto3')\nprint('Official Category:', 'Security, Identity, and Compliance')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Inspector Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/inspector/latest/userguide/what-is.html"
+        "title": "Amazon Inspector - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/inspector/latest/user/what-is-inspector.html"
       },
       {
-        "title": "Amazon Inspector Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Inspector - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/inspector2.html"
       },
       {
-        "title": "Amazon Inspector Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Inspector - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Inspector is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Inspector provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Inspector plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Inspector allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Inspector test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Inspector is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14562,7 +15457,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Security, Identity, and Compliance",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/kms/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS KMS on the AWS MLA-C02 exam.",
       "Learn how AWS KMS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14610,19 +15505,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "AWS KMS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/kms/latest/userguide/what-is.html"
+        "title": "AWS KMS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/kms/latest/developerguide/overview.html"
       },
       {
-        "title": "AWS KMS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS KMS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/kms.html"
       },
       {
-        "title": "AWS KMS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS KMS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS KMS is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS KMS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS KMS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS KMS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS KMS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS KMS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14643,7 +15543,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Security, Identity, and Compliance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/macie/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon Macie on the AWS MLA-C02 exam.",
       "Learn how Amazon Macie integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14687,23 +15587,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon Macie",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Macie\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('macie')\nprint('Successfully connected to Amazon Macie via Boto3')\nprint('Official Category:', 'Security, Identity, and Compliance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon Macie\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('macie2')\nprint('Successfully connected to Amazon Macie via Boto3')\nprint('Official Category:', 'Security, Identity, and Compliance')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon Macie Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/macie/latest/userguide/what-is.html"
+        "title": "Amazon Macie - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/macie/latest/user/what-is-macie.html"
       },
       {
-        "title": "Amazon Macie Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon Macie - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/macie2.html"
       },
       {
-        "title": "Amazon Macie Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon Macie - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon Macie is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon Macie provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon Macie plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon Macie allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon Macie test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon Macie is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14724,7 +15629,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Security, Identity, and Compliance",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/secrets-manager/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Secrets Manager on the AWS MLA-C02 exam.",
       "Learn how AWS Secrets Manager integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14768,23 +15673,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Secrets Manager",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Secrets Manager\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('secrets')\nprint('Successfully connected to AWS Secrets Manager via Boto3')\nprint('Official Category:', 'Security, Identity, and Compliance')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Secrets Manager\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('secretsmanager')\nprint('Successfully connected to AWS Secrets Manager via Boto3')\nprint('Official Category:', 'Security, Identity, and Compliance')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Secrets Manager Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/secrets-manager/latest/userguide/what-is.html"
+        "title": "AWS Secrets Manager - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/intro.html"
       },
       {
-        "title": "AWS Secrets Manager Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Secrets Manager - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/secretsmanager.html"
       },
       {
-        "title": "AWS Secrets Manager Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Secrets Manager - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Secrets Manager is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Secrets Manager provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Secrets Manager plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Secrets Manager allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Secrets Manager test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Secrets Manager is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14805,7 +15715,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Storage",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon EBS on the AWS MLA-C02 exam.",
       "Learn how Amazon EBS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14849,23 +15759,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon EBS",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon EBS\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('ebs')\nprint('Successfully connected to Amazon EBS via Boto3')\nprint('Official Category:', 'Storage')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon EBS\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('ec2')\nprint('Successfully connected to Amazon EBS via Boto3')\nprint('Official Category:', 'Storage')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon EBS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is.html"
+        "title": "Amazon EBS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html"
       },
       {
-        "title": "Amazon EBS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon EBS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html"
       },
       {
-        "title": "Amazon EBS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon EBS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon EBS is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon EBS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon EBS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon EBS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon EBS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon EBS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14886,7 +15801,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Storage",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/efs/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon EFS on the AWS MLA-C02 exam.",
       "Learn how Amazon EFS integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -14934,19 +15849,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon EFS Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/efs/latest/userguide/what-is.html"
+        "title": "Amazon EFS - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/efs/latest/ug/whatisefs.html"
       },
       {
-        "title": "Amazon EFS Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon EFS - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/efs.html"
       },
       {
-        "title": "Amazon EFS Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon EFS - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon EFS is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon EFS provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon EFS plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon EFS allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon EFS test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon EFS is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -14967,7 +15887,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Storage",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/fsx/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon FSx on the AWS MLA-C02 exam.",
       "Learn how Amazon FSx integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -15015,19 +15935,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon FSx Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/fsx/latest/userguide/what-is.html"
+        "title": "Amazon FSx - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/fsx/latest/LustreGuide/what-is.html"
       },
       {
-        "title": "Amazon FSx Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon FSx - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/fsx.html"
       },
       {
-        "title": "Amazon FSx Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon FSx - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon FSx is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon FSx provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon FSx plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon FSx allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon FSx test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon FSx is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -15048,7 +15973,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Storage",
     "difficulty": "Hard",
     "isImportant": true,
-    "url": "https://docs.aws.amazon.com/s3/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon S3 on the AWS MLA-C02 exam.",
       "Learn how Amazon S3 integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -15096,19 +16021,24 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     },
     "recommendedResources": [
       {
-        "title": "Amazon S3 Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/s3/latest/userguide/what-is.html"
+        "title": "Amazon S3 - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
       },
       {
-        "title": "Amazon S3 Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon S3 - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/s3.html"
       },
       {
-        "title": "Amazon S3 Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon S3 - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon S3 is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon S3 provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon S3 plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon S3 allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon S3 test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon S3 is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -15129,7 +16059,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Storage",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/s3-glacier/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of Amazon S3 Glacier on the AWS MLA-C02 exam.",
       "Learn how Amazon S3 Glacier integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -15173,23 +16103,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for Amazon S3 Glacier",
-      "code": "# Example AWS Python SDK (Boto3) integration for Amazon S3 Glacier\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('s3')\nprint('Successfully connected to Amazon S3 Glacier via Boto3')\nprint('Official Category:', 'Storage')"
+      "code": "# Example AWS Python SDK (Boto3) integration for Amazon S3 Glacier\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('glacier')\nprint('Successfully connected to Amazon S3 Glacier via Boto3')\nprint('Official Category:', 'Storage')"
     },
     "recommendedResources": [
       {
-        "title": "Amazon S3 Glacier Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/s3-glacier/latest/userguide/what-is.html"
+        "title": "Amazon S3 Glacier - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html"
       },
       {
-        "title": "Amazon S3 Glacier Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "Amazon S3 Glacier - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/glacier.html"
       },
       {
-        "title": "Amazon S3 Glacier Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "Amazon S3 Glacier - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "Amazon S3 Glacier is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, Amazon S3 Glacier provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, Amazon S3 Glacier plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying Amazon S3 Glacier allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding Amazon S3 Glacier test your ability to make optimal architectural decisions under tight constraints. You must know precisely when Amazon S3 Glacier is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
@@ -15210,7 +16145,7 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "subtopic": "Storage",
     "difficulty": "Medium",
     "isImportant": false,
-    "url": "https://docs.aws.amazon.com/storage-gateway/latest/userguide/what-is.html",
+    "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html",
     "whatYouWillLearn": [
       "Master the core architectural role and capabilities of AWS Storage Gateway on the AWS MLA-C02 exam.",
       "Learn how AWS Storage Gateway integrates into end-to-end Machine Learning and Generative AI pipelines.",
@@ -15254,23 +16189,28 @@ export const AWS_STUDY_GUIDE: Record<string, AWSStudyTopic> = {
     "codeSnippet": {
       "language": "python",
       "title": "Boto3 Integration for AWS Storage Gateway",
-      "code": "# Example AWS Python SDK (Boto3) integration for AWS Storage Gateway\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('storage')\nprint('Successfully connected to AWS Storage Gateway via Boto3')\nprint('Official Category:', 'Storage')"
+      "code": "# Example AWS Python SDK (Boto3) integration for AWS Storage Gateway\nimport boto3\n\n# Initialize Boto3 client\nclient = boto3.client('storagegateway')\nprint('Successfully connected to AWS Storage Gateway via Boto3')\nprint('Official Category:', 'Storage')"
     },
     "recommendedResources": [
       {
-        "title": "AWS Storage Gateway Official Developer Guide",
-        "type": "Documentation",
-        "url": "https://docs.aws.amazon.com/storage-gateway/latest/userguide/what-is.html"
+        "title": "AWS Storage Gateway - Official AWS User & Developer Guide",
+        "type": "Official Documentation",
+        "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/WhatIsStorageGateway.html"
       },
       {
-        "title": "AWS Storage Gateway Architecture Best Practices",
-        "type": "Guide",
-        "url": "https://aws.amazon.com/architecture/"
+        "title": "AWS Storage Gateway - AWS Boto3 SDK API Reference",
+        "type": "Python SDK Reference",
+        "url": "https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/storagegateway.html"
       },
       {
-        "title": "AWS Storage Gateway Pricing & Cost Calculator",
-        "type": "Pricing",
-        "url": "https://calculator.aws/"
+        "title": "AWS Well-Architected Framework: Machine Learning Lens",
+        "type": "Architecture Whitepaper",
+        "url": "https://docs.aws.amazon.com/wellarchitected/latest/machine-learning-lens/welcome.html"
+      },
+      {
+        "title": "AWS Storage Gateway - Pricing Overview & Free Tier Specs",
+        "type": "AWS Pricing",
+        "url": "https://aws.amazon.com/pricing/"
       }
     ],
     "plainEnglish": "AWS Storage Gateway is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. In enterprise cloud environments, AWS Storage Gateway provides robust, scalable, and highly available infrastructure specifically designed to address data engineering, deep learning model training, foundation model deployment, workflow orchestration, or cloud governance.\n\nWithin modern AWS ML/AI architectures, AWS Storage Gateway plays an essential role. It integrates seamlessly with Amazon SageMaker AI, Amazon Bedrock, Amazon S3, and AWS IAM. Deploying AWS Storage Gateway allows machine learning engineers to eliminate the operational toil of server provisioning, manual patching, and scaling bottlenecks while guaranteeing enterprise-grade SLAs, multi-AZ high availability, and rigorous compliance standards (such as HIPAA, GDPR, and SOC2).\n\nOn the MLA-C02 exam, questions surrounding AWS Storage Gateway test your ability to make optimal architectural decisions under tight constraints. You must know precisely when AWS Storage Gateway is the superior choice over competing AWS services, how to secure it using VPC Interface Endpoints (PrivateLink) and AWS KMS Customer Managed Keys (CMKs), how to configure least-privilege IAM policies, and how to optimize runtime costs.",
