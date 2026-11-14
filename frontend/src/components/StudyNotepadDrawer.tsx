@@ -82,7 +82,19 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
   if (!isOpen || !task) return null;
 
   const studyGuide: AWSStudyTopic | null = getStudyGuideForTask(task.id);
-  const isAws = task.goalId === 'goal-aws';
+  const isAwsTask = 
+    Boolean(studyGuide) ||
+    task.id.startsWith('mla-') || 
+    task.id.startsWith('svc-') || 
+    Boolean(task.goalId?.toLowerCase().includes('aws')) || 
+    Boolean(task.topic?.toLowerCase().includes('aws')) || 
+    Boolean(task.topic?.toLowerCase().includes('domain')) || 
+    Boolean(task.url?.includes('amazon.com')) || 
+    Boolean(task.url?.includes('aws.amazon.com'));
+
+  const docButtonLabel = isAwsTask
+    ? 'Official AWS Documentation'
+    : (task.url?.includes('leetcode.com') ? 'LeetCode Problem' : 'Official Reference');
 
   const handleSaveNote = () => {
     localStorage.setItem(`career_pulse_user_note_${task.id}`, personalNote);
@@ -196,7 +208,7 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 border border-slate-200 transition-colors"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
-                  <span>{isAws ? 'Official AWS Docs' : 'LeetCode Problem'}</span>
+                  <span>{docButtonLabel}</span>
                 </a>
               )}
             </div>
@@ -341,7 +353,7 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
               </section>
             )}
 
-            {/* SECTION 2: What Is This? (Mental Model, Analogy & Business Impact) */}
+            {/* SECTION 2: What Is This? (Comprehensive Technical & Revision Guide) */}
             {(activeSection === 'all' || activeSection === 'what-is-this') && (
               <section className="bg-white rounded-2xl border border-indigo-100 p-5 shadow-xs bg-gradient-to-br from-indigo-50/40 via-white to-white space-y-4">
                 <div className="flex items-center gap-2 mb-1">
@@ -350,18 +362,40 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                   </div>
                   <div>
                     <h3 className="font-extrabold text-sm text-slate-900 tracking-tight">
-                      What Is This? (Concept & Mental Model)
+                      What Is This? (Comprehensive Technical & Revision Guide)
                     </h3>
-                    <p className="text-xs text-slate-500">Intuitive breakdown without dry corporate jargon</p>
+                    <p className="text-xs text-slate-500">Core architecture, foundational concepts, and exam revision context</p>
                   </div>
                 </div>
 
-                {/* Plain-English Definition */}
-                <div className="text-slate-800 text-xs sm:text-sm leading-relaxed">
-                  <p className="font-medium">
-                    {studyGuide?.whatIsThis?.summary || studyGuide?.plainEnglish || task.description || 'Core study topic for career improvement and examination success.'}
-                  </p>
+                {/* Plain-English Definition & In-Depth Technical Breakdown */}
+                <div className="text-slate-800 text-xs sm:text-sm leading-relaxed space-y-3 font-normal">
+                  {(studyGuide?.whatIsThis?.summary || studyGuide?.plainEnglish || task.description || 'Core study topic for career improvement and examination success.')
+                    .split('\n\n')
+                    .map((paragraph, idx) => (
+                      <p key={idx} className="leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
                 </div>
+
+                {/* Master Revision Key Points / Takeaways */}
+                {studyGuide?.whatIsThis?.revisionKeyPoints && studyGuide.whatIsThis.revisionKeyPoints.length > 0 && (
+                  <div className="bg-indigo-50/80 border border-indigo-200/90 rounded-xl p-4 text-xs sm:text-sm text-indigo-950 space-y-2 shadow-2xs">
+                    <div className="flex items-center gap-1.5 font-bold text-indigo-900">
+                      <Sparkles className="w-4 h-4 text-indigo-600" />
+                      <span>Exam Revision Takeaways & Core Facts:</span>
+                    </div>
+                    <ul className="space-y-1.5 pl-1">
+                      {studyGuide.whatIsThis.revisionKeyPoints.map((pt, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-indigo-600 font-bold leading-relaxed">•</span>
+                          <span className="leading-relaxed font-medium">{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* Real-World Analogy */}
                 {studyGuide?.whatIsThis?.analogy && (
