@@ -82,7 +82,19 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
   if (!isOpen || !task) return null;
 
   const studyGuide: AWSStudyTopic | null = getStudyGuideForTask(task.id);
-  const isAws = task.goalId === 'goal-aws';
+  const isAwsTask = 
+    Boolean(studyGuide) ||
+    task.id.startsWith('mla-') || 
+    task.id.startsWith('svc-') || 
+    Boolean(task.goalId?.toLowerCase().includes('aws')) || 
+    Boolean(task.topic?.toLowerCase().includes('aws')) || 
+    Boolean(task.topic?.toLowerCase().includes('domain')) || 
+    Boolean(task.url?.includes('amazon.com')) || 
+    Boolean(task.url?.includes('aws.amazon.com'));
+
+  const docButtonLabel = isAwsTask
+    ? 'Official AWS Documentation'
+    : (task.url?.includes('leetcode.com') ? 'LeetCode Problem' : 'Official Reference');
 
   const handleSaveNote = () => {
     localStorage.setItem(`career_pulse_user_note_${task.id}`, personalNote);
@@ -196,7 +208,7 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-slate-600 hover:text-indigo-600 hover:bg-indigo-50 border border-slate-200 transition-colors"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
-                  <span>{isAws ? 'Official AWS Docs' : 'LeetCode Problem'}</span>
+                  <span>{docButtonLabel}</span>
                 </a>
               )}
             </div>
@@ -341,7 +353,7 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
               </section>
             )}
 
-            {/* SECTION 2: What Is This? (Mental Model, Analogy & Business Impact) */}
+            {/* SECTION 2: What Is This? (Comprehensive Technical & Revision Guide) */}
             {(activeSection === 'all' || activeSection === 'what-is-this') && (
               <section className="bg-white rounded-2xl border border-indigo-100 p-5 shadow-xs bg-gradient-to-br from-indigo-50/40 via-white to-white space-y-4">
                 <div className="flex items-center gap-2 mb-1">
@@ -350,18 +362,40 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                   </div>
                   <div>
                     <h3 className="font-extrabold text-sm text-slate-900 tracking-tight">
-                      What Is This? (Concept & Mental Model)
+                      What Is This? (Comprehensive Technical & Revision Guide)
                     </h3>
-                    <p className="text-xs text-slate-500">Intuitive breakdown without dry corporate jargon</p>
+                    <p className="text-xs text-slate-500">Core architecture, foundational concepts, and exam revision context</p>
                   </div>
                 </div>
 
-                {/* Plain-English Definition */}
-                <div className="text-slate-800 text-xs sm:text-sm leading-relaxed">
-                  <p className="font-medium">
-                    {studyGuide?.whatIsThis?.summary || studyGuide?.plainEnglish || task.description || 'Core study topic for career improvement and examination success.'}
-                  </p>
+                {/* Plain-English Definition & In-Depth Technical Breakdown */}
+                <div className="text-slate-800 text-xs sm:text-sm leading-relaxed space-y-3 font-normal">
+                  {(studyGuide?.whatIsThis?.summary || studyGuide?.plainEnglish || task.description || 'Core study topic for career improvement and examination success.')
+                    .split('\n\n')
+                    .map((paragraph, idx) => (
+                      <p key={idx} className="leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
                 </div>
+
+                {/* Master Revision Key Points / Takeaways */}
+                {studyGuide?.whatIsThis?.revisionKeyPoints && studyGuide.whatIsThis.revisionKeyPoints.length > 0 && (
+                  <div className="bg-indigo-50/80 border border-indigo-200/90 rounded-xl p-4 text-xs sm:text-sm text-indigo-950 space-y-2 shadow-2xs">
+                    <div className="flex items-center gap-1.5 font-bold text-indigo-900">
+                      <Sparkles className="w-4 h-4 text-indigo-600" />
+                      <span>Exam Revision Takeaways & Core Facts:</span>
+                    </div>
+                    <ul className="space-y-1.5 pl-1">
+                      {studyGuide.whatIsThis.revisionKeyPoints.map((pt, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-indigo-600 font-bold leading-relaxed">•</span>
+                          <span className="leading-relaxed font-medium">{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
 
                 {/* Real-World Analogy */}
                 {studyGuide?.whatIsThis?.analogy && (
@@ -599,30 +633,62 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                     <h3 className="font-extrabold text-sm text-slate-900 tracking-tight">
                       Recommended Learning Resources & Official Guides
                     </h3>
-                    <p className="text-xs text-slate-500">Pick the exact AWS documentation chapters to deepen your mastery</p>
+                    <p className="text-xs text-slate-500">Verified official documentation, SDK guides, and architectural whitepapers</p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-1 gap-2.5 mt-2">
-                  {studyGuide.recommendedResources.map((res, idx) => (
-                    <a
-                      key={idx}
-                      href={res.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-between p-3 rounded-xl bg-slate-50 hover:bg-teal-50/60 border border-slate-200 hover:border-teal-300 transition-all group"
-                    >
-                      <div className="space-y-0.5">
-                        <span className="text-xs font-bold text-slate-800 group-hover:text-teal-800 transition-colors flex items-center gap-1.5">
-                          <span>{res.title}</span>
-                        </span>
-                        <span className="inline-block text-[10px] uppercase font-bold text-teal-700 bg-teal-100/60 px-2 py-0.5 rounded-md">
-                          {res.type}
-                        </span>
-                      </div>
-                      <ExternalLink className="w-4 h-4 text-slate-400 group-hover:text-teal-600 transition-colors shrink-0 ml-3" />
-                    </a>
-                  ))}
+                  {studyGuide.recommendedResources.map((res, idx) => {
+                    const isDoc = res.type.includes('Documentation') || res.type.includes('Guide');
+                    const isSdk = res.type.includes('SDK');
+                    const isWhitepaper = res.type.includes('Whitepaper');
+                    const isPricing = res.type.includes('Pricing');
+
+                    const badgeStyle = isSdk
+                      ? 'bg-blue-100 text-blue-800 border-blue-200'
+                      : isWhitepaper
+                      ? 'bg-purple-100 text-purple-800 border-purple-200'
+                      : isPricing
+                      ? 'bg-amber-100 text-amber-800 border-amber-200'
+                      : 'bg-emerald-100 text-emerald-800 border-emerald-200';
+
+                    let domain = 'docs.aws.amazon.com';
+                    try {
+                      domain = new URL(res.url).hostname;
+                    } catch {
+                      // fallback
+                    }
+
+                    return (
+                      <a
+                        key={idx}
+                        href={res.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center justify-between p-3.5 rounded-xl bg-slate-50 hover:bg-teal-50/70 border border-slate-200 hover:border-teal-400 transition-all group shadow-2xs"
+                      >
+                        <div className="space-y-1">
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className="text-xs font-bold text-slate-900 group-hover:text-teal-900 transition-colors">
+                              {res.title}
+                            </span>
+                          </div>
+                          <div className="flex items-center gap-2 flex-wrap">
+                            <span className={`inline-block text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-md border ${badgeStyle}`}>
+                              {res.type}
+                            </span>
+                            <span className="text-[11px] text-slate-400 font-mono">
+                              {domain}
+                            </span>
+                          </div>
+                        </div>
+                        <div className="flex items-center gap-1 text-slate-400 group-hover:text-teal-700 transition-colors shrink-0 ml-3">
+                          <span className="text-xs font-semibold hidden sm:inline">Open</span>
+                          <ExternalLink className="w-4 h-4" />
+                        </div>
+                      </a>
+                    );
+                  })}
                 </div>
               </section>
             )}
