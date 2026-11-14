@@ -4,9 +4,9 @@
       "id": "user-default",
       "name": "Yuvanesh",
       "email": "yuvanesh@example.com",
-      "passwordHash": "174e17b701e4424c0b4b060a62063907539931cd25a2b627124220a1da73be5be22e1e2dfb8fbf484f072abb7965cdb81d0eb3629a1e2541600ab8181cacb977",
-      "salt": "a8d87524a4589bec4c641ef7b07e622f",
-      "createdAt": "2026-11-14T14:47:00.124Z"
+      "passwordHash": "198e5b599630def09c8a9f8c8920fbbad0248e280c89d083b412d9d2722f8b4094eac3e9190231436491cc3476cc872fb4430cbe179d7300623f2da7f65a8714",
+      "salt": "5b2322899903fece073628cd8a67d7fb",
+      "createdAt": "2026-11-14T15:50:48.854Z"
     }
   ],
   "goals": [
@@ -17,7 +17,7 @@
       "description": "Complete all 169 top interview questions grouped by topic from Tech Interview Handbook",
       "category": "Algorithms & Data Structures",
       "icon": "Code2",
-      "createdAt": "2026-11-14T14:47:00.125Z"
+      "createdAt": "2026-11-14T15:50:48.855Z"
     },
     {
       "id": "goal-aws",
@@ -26,7 +26,7 @@
       "description": "Comprehensive 1000/1000 study roadmap covering Data Prep (28%), Model & FM Development (24%), Deployment & MLOps (24%), and Operations & Security (24%).",
       "category": "Cloud & Machine Learning",
       "icon": "BrainCircuit",
-      "createdAt": "2026-11-14T14:47:00.125Z"
+      "createdAt": "2026-11-14T15:50:48.855Z"
     }
   ],
   "tasks": [
@@ -42,7 +42,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -57,7 +57,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -72,7 +72,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -87,7 +87,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -102,7 +102,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -117,7 +117,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -132,7 +132,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -147,7 +147,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -162,7 +162,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -177,7 +177,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -192,7 +192,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -207,7 +207,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -222,7 +222,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -237,7 +237,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -252,7 +252,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -267,7 +267,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -282,7 +282,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -297,7 +297,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -312,7 +312,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -327,7 +327,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -342,7 +342,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -357,7 +357,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -372,7 +372,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -387,7 +387,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -402,7 +402,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -417,7 +417,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -432,7 +432,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -447,7 +447,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -462,7 +462,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -477,7 +477,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -492,7 +492,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -507,7 +507,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -522,7 +522,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -537,7 +537,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -552,7 +552,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -567,7 +567,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -582,7 +582,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -597,7 +597,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -612,7 +612,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -627,7 +627,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -642,7 +642,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -657,7 +657,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -672,7 +672,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -687,7 +687,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -702,7 +702,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -717,7 +717,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -732,7 +732,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -747,7 +747,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -762,7 +762,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -777,7 +777,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -792,7 +792,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -807,7 +807,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -822,7 +822,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -837,7 +837,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -852,7 +852,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -867,7 +867,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -882,7 +882,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -897,7 +897,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -912,7 +912,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -927,7 +927,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -942,7 +942,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -957,7 +957,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -972,7 +972,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -987,7 +987,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1002,7 +1002,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1017,7 +1017,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1032,7 +1032,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1047,7 +1047,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1062,7 +1062,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1077,7 +1077,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1092,7 +1092,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1107,7 +1107,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1122,7 +1122,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1137,7 +1137,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1152,7 +1152,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1167,7 +1167,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1182,7 +1182,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1197,7 +1197,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1212,7 +1212,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1227,7 +1227,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1242,7 +1242,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1257,7 +1257,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1272,7 +1272,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1287,7 +1287,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1302,7 +1302,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1317,7 +1317,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1332,7 +1332,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1347,7 +1347,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1362,7 +1362,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1377,7 +1377,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1392,7 +1392,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1407,7 +1407,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1422,7 +1422,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1437,7 +1437,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1452,7 +1452,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1467,7 +1467,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1482,7 +1482,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1497,7 +1497,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1512,7 +1512,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1527,7 +1527,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1542,7 +1542,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1557,7 +1557,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1572,7 +1572,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1587,7 +1587,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1602,7 +1602,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1617,7 +1617,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1632,7 +1632,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1647,7 +1647,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1662,7 +1662,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1677,7 +1677,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1692,7 +1692,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1707,7 +1707,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1722,7 +1722,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1737,7 +1737,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1752,7 +1752,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1767,7 +1767,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1782,7 +1782,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1797,7 +1797,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1812,7 +1812,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1827,7 +1827,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1842,7 +1842,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1857,7 +1857,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1872,7 +1872,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1887,7 +1887,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1902,7 +1902,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1917,7 +1917,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1932,7 +1932,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1947,7 +1947,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1962,7 +1962,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1977,7 +1977,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -1992,7 +1992,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2007,7 +2007,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2022,7 +2022,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2037,7 +2037,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2052,7 +2052,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2067,7 +2067,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2082,7 +2082,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2097,7 +2097,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2112,7 +2112,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2127,7 +2127,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2142,7 +2142,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2157,7 +2157,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2172,7 +2172,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2187,7 +2187,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2202,7 +2202,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2217,7 +2217,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2232,7 +2232,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2247,7 +2247,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2262,7 +2262,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2277,7 +2277,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2292,7 +2292,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2307,7 +2307,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2322,7 +2322,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2337,7 +2337,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2352,7 +2352,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2367,7 +2367,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2382,7 +2382,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2397,7 +2397,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2412,7 +2412,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2427,7 +2427,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2442,7 +2442,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2457,7 +2457,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2472,7 +2472,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2487,7 +2487,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2502,7 +2502,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2517,7 +2517,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2532,7 +2532,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2547,7 +2547,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2562,7 +2562,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false
     },
     {
@@ -2578,7 +2578,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Understand S3 storage tiers, partitioning, S3 event notifications, and EBS volume attachment for SageMaker notebook and training environments.",
       "notes": "Exam Tip: Amazon S3 is the primary data lake store. For unpredictable access, choose S3 Intelligent-Tiering. Amazon EBS provides the fastest single-instance IOPS for local notebook development, but does NOT support multi-node shared access across distributed clusters."
@@ -2596,7 +2596,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Compare EFS and FSx for Lustre for feeding large-scale training datasets directly into multi-node SageMaker training clusters without S3 download latency.",
       "notes": "Exam Rule: When training on massive computer vision or multimodal datasets across distributed GPU clusters, ALWAYS select Amazon FSx for Lustre linked directly to S3. It streams hundreds of GB/s and avoids multi-hour data download bottlenecks before training starts."
@@ -2614,7 +2614,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Extracting tabular, document, and transactional records from operational databases into S3 using AWS Database Migration Service (AWS DMS) CDC replication.",
       "notes": "Key Concept: Use AWS DMS with Change Data Capture (CDC) to continuously stream database row updates from Amazon RDS/DynamoDB into Amazon S3 for near real-time model retraining."
@@ -2632,7 +2632,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Architecting real-time event streaming for ML feature engineering using Kinesis Data Streams and automated S3 delivery via Data Firehose.",
       "notes": "Exam Trap: If you need sub-second custom processing and strict order guarantee, choose Kinesis Data Streams. If you need simple, managed, zero-code batch ingestion into Amazon S3 or Amazon OpenSearch, choose Amazon Data Firehose (buffer 60s - 900s)."
@@ -2650,7 +2650,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Stateful stream processing using Amazon Managed Service for Apache Flink and Amazon Managed Streaming for Apache Kafka (MSK) for real-time feature extraction.",
       "notes": "Key Concept: Apache Flink excels at tumbling and sliding time-window aggregations (e.g. average purchases over the last 15 minutes) before writing to SageMaker Feature Store."
@@ -2668,7 +2668,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Understand columnar vs row-based formats, compression algorithms (Snappy, GZIP), and their impact on query cost, I/O speed, and ML training throughput.",
       "notes": "Exam Rule: Always convert CSV/JSON to columnar Apache Parquet with Snappy compression for analytical queries and SageMaker training inputs. Parquet reduces S3 query scan costs in Amazon Athena by up to 90%."
@@ -2686,7 +2686,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Use Athena standard SQL to inspect S3 datasets, enforce partition projections (year/month/day), and catalog metadata using AWS Glue Crawlers.",
       "notes": "Quick Tip: Proper S3 partition pruning (e.g., `s3://bucket/data/year=2026/month=11/`) prevents full table scans and drastically reduces Athena scan bytes and cost."
@@ -2704,7 +2704,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configure vector indices using k-NN algorithms (HNSW and Inverted File - IVF) with cosine similarity and euclidean distance for enterprise RAG applications.",
       "notes": "Exam Essential: Amazon OpenSearch Serverless Vector Engine is the standard fully-managed vector store for Amazon Bedrock Knowledge Bases. It supports high-scale similarity search with zero cluster management."
@@ -2722,7 +2722,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configuring the pgvector extension on Amazon Aurora / RDS PostgreSQL to store and index embeddings alongside traditional transactional relational data.",
       "notes": "Decision Rule: Choose Aurora/RDS with `pgvector` when the organization already runs PostgreSQL and needs vector search without introducing or maintaining a separate search cluster."
@@ -2740,7 +2740,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Handling binary raw assets in Amazon S3, video streaming through Amazon Kinesis Video Streams, and extracting frame-level annotations for model training.",
       "notes": "Quick Note: For video ingestion pipelines targeting computer vision models, ingest streams via Kinesis Video Streams and process frames asynchronously with AWS Lambda and Amazon Rekognition."
@@ -2758,7 +2758,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Design centralized feature repositories with low-latency Online Store (DynamoDB) and historical append-only Offline Store (S3) with Athena time-travel queries.",
       "notes": "High-Yield Rule: The Online Store provides single-digit millisecond latency for real-time inference feature lookups. The Offline Store stores historical snapshots in S3 to prevent data leakage during model training."
@@ -2776,7 +2776,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Execute large-scale batch feature transformations, joins, and schema normalization across terabytes of data using serverless AWS Glue ETL jobs.",
       "notes": "Exam Tip: Use AWS Glue DynamicFrames when source datasets have inconsistent schemas or nested structures. For standard dataframes, convert to Spark DataFrames for native ML transformations."
@@ -2794,7 +2794,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Interactive data exploration, cleaning, and transformation recipes. Export Data Wrangler flow directly into SageMaker Pipelines or Feature Store.",
       "notes": "Quick Revision: SageMaker Data Wrangler allows ML engineers to visually prepare tabular and image data with 300+ transformations and export the processing flow directly as a SageMaker Pipeline step."
@@ -2812,7 +2812,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Transform streaming event payloads on-the-fly using AWS Lambda event source mappings with Kinesis streams before persisting to feature stores.",
       "notes": "Exam Trap: Ensure Lambda batch size and bisect-batch-on-function-error are configured to isolate poisonous records without stalling the entire Kinesis shard stream."
@@ -2830,7 +2830,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Mathematical feature transformations: Min-Max scaling, Z-score standardization, quantile binning, and polynomial features.",
       "notes": "Exam Rule: Always compute feature scaling parameters (mean, standard deviation, min, max) on the TRAINING split only, then apply them to validation/test splits to prevent data leakage."
@@ -2848,7 +2848,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Handling high-cardinality categorical variables and correcting heavily right-skewed distributions with log or Box-Cox transformations.",
       "notes": "Key Concept: Use log transform `log(x + 1)` on right-skewed positive data (e.g. monetary transactions, counts) to stabilize variance for linear models and neural networks."
@@ -2866,7 +2866,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Subword tokenization algorithms (Byte-Pair Encoding, WordPiece), vocabulary limits, special tokens ([CLS], [SEP], <eos>), and text cleaning.",
       "notes": "Exam Note: Foundation models do not process raw words; text is tokenized into subwords. 1,000 tokens roughly equates to 750 English words."
@@ -2884,7 +2884,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Fixed-size, sliding window with overlap, semantic, and hierarchical parent-document chunking strategies for Amazon Bedrock Knowledge Bases.",
       "notes": "Crucial Rule: Small chunks (200-300 tokens) yield high precision vector similarity search, while large chunks preserve context. Hierarchical chunking indexes small child chunks for search but retrieves the larger parent chunk for LLM prompt synthesis."
@@ -2902,7 +2902,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Convert unstructured documents and search queries into dense vector representations using Amazon Titan Embeddings v2 and Cohere multilingual models.",
       "notes": "Exam Trap: Always use the EXACT same embedding model for both document indexing and query inference; mismatched models produce incompatible vector spaces and zero retrieval accuracy."
@@ -2920,7 +2920,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Detecting and redacting PII (personally identifiable information) using Amazon Comprehend before data enters embedding pipelines or model training sets.",
       "notes": "Security Rule: Comply with GDPR/HIPAA by applying Amazon Comprehend PII redaction (masking credit cards, SSNs, phone numbers) before data is stored in S3 training buckets or vector databases."
@@ -2938,7 +2938,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Structuring prompt-response pairs into JSON Lines (JSONL) datasets for Amazon Bedrock instruction fine-tuning and continuous pre-training.",
       "notes": "Exam Format: Bedrock fine-tuning requires `.jsonl` format where each line contains: `{\"prompt\": \"...\", \"completion\": \"...\"}` with strict validation checks."
@@ -2956,7 +2956,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Automate data profiling and author Data Quality Definition Language (DQDL) rules to halt corrupted ETL pipelines before model training.",
       "notes": "Rule Syntax: `Rules = [ Completeness \"transaction_id\" = 1.0, ColumnValues \"age\" between 18 and 100 ]`. Fails the Glue job if data violates business constraints."
@@ -2974,7 +2974,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configure data labeling jobs with automated data labeling (active learning), private workforce, Amazon Mechanical Turk, and Ground Truth Plus.",
       "notes": "Decision Rule: For sensitive or regulated data (medical, financial), ALWAYS choose a Private Workforce with Amazon Cognito or AWS IAM Identity Center. Never use Mechanical Turk for confidential PII."
@@ -2992,7 +2992,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Techniques for extreme class imbalance in fraud detection and rare event prediction: SMOTE interpolation, random undersampling, and weighted loss functions.",
       "notes": "Exam Trap: In highly imbalanced datasets (e.g. 99% non-fraud, 1% fraud), Accuracy is a useless metric! Optimize for Precision, Recall, PR-AUC, or F1-Score instead."
@@ -3010,7 +3010,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Quantify bias before training begins: Class Imbalance (CI), Difference in Positive Proportions in Labels (DPL), and Disparate Impact.",
       "notes": "Must-Know Metric: Disparate Impact evaluates the ratio of positive outcomes between unprivileged and privileged groups. A value < 0.8 is considered discriminatory adverse impact."
@@ -3028,7 +3028,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Evaluate dataset representation and skew across multimodal assets (e.g., demographic distribution across image catalogues and text transcripts).",
       "notes": "Key Concept: Ensure balanced representation across demographic subgroups in training imagery to prevent algorithmic performance degradation across minority facets."
@@ -3046,7 +3046,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Screening instruction-tuning and pre-training corpora for toxic prompts, data poisoning, copyrighted material, and hallucinations.",
       "notes": "Best Practice: Apply MinHash and Locality Sensitive Hashing (LSH) for near-deduplication of web crawls, and run automated safety filters on prompt-response pairs."
@@ -3064,7 +3064,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Detecting anomalous data points using Interquartile Range (IQR) and Z-score thresholds; handling missing values with median, mode, or KNN imputation.",
       "notes": "Rule of Thumb: For skewed features with heavy outliers, impute missing values using the Median instead of the Mean, as the mean is distorted by extreme values."
@@ -3082,7 +3082,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Compare capabilities, context window lengths, latency, and costs of Claude 3.5 Sonnet, Claude 3.5 Haiku, Amazon Titan, Meta Llama 3, and Mistral.",
       "notes": "Exam Decision Matrix: For complex multi-step reasoning and coding, choose Claude 3.5 Sonnet. For fast, high-volume, low-cost classification, choose Claude 3.5 Haiku. For native AWS cost-efficiency, choose Amazon Titan."
@@ -3100,7 +3100,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Select between Prompt Engineering, RAG, PEFT / LoRA (Low-Rank Adaptation), and Full Fine-Tuning based on data volume, budget, and task specificity.",
       "notes": "Exam Golden Rule: When knowledge is dynamic/frequently changing, ALWAYS choose RAG. When the model needs to learn domain-specific terminology or strict output format, choose Fine-Tuning via PEFT/LoRA."
@@ -3118,7 +3118,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Deep dive into Amazon SageMaker built-in XGBoost and Linear Learner algorithms for structured tabular regression and classification tasks.",
       "notes": "Top Pick: XGBoost is the highest-performing built-in algorithm for structured tabular data. It handles non-linear relationships, missing values, and feature interactions out-of-the-box."
@@ -3136,7 +3136,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Choose Random Cut Forest (RCF) for unsupervised tabular/streaming anomaly detection and DeepAR for probabilistic multi-series time-series forecasting.",
       "notes": "Exam Trigger Words: 'Probabilistic forecast across thousands of related products' -> DeepAR. 'Real-time anomaly detection in streaming IoT logs without labeled data' -> Random Cut Forest (RCF)."
@@ -3154,7 +3154,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "SageMaker BlazingText for high-speed Word2Vec / text classification on GPUs and Object2Vec for paired entity embeddings (user-product recommendations).",
       "notes": "Key Difference: BlazingText provides fast GPU-accelerated text classification and word embedding generation. Object2Vec maps pairs of objects into embedding vectors for recommendation systems."
@@ -3172,7 +3172,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Evaluate tradeoffs between managed AWS AI services (zero ML expertise needed), serverless Amazon Bedrock FMs, and custom SageMaker model development.",
       "notes": "Exam Principle: If a pre-trained managed AI service (Textract, Rekognition, Comprehend) satisfies the business requirement, ALWAYS choose it over building a custom model on SageMaker to minimize development cost."
@@ -3190,7 +3190,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Advanced RAG retrieval patterns: Hypothetical Document Embeddings (HyDE), query rewriting, multi-query expansion, and parent-document retrieval.",
       "notes": "HyDE Technique: Generates a hypothetical answer with an LLM first, embeds that answer, and searches the vector store using the answer embedding rather than the brief user question."
@@ -3208,7 +3208,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configuring OpenSearch hybrid search queries to combine traditional BM25 keyword matching with dense neural vector search using Reciprocal Rank Fusion (RRF).",
       "notes": "Exam Scenario: When search queries contain exact product codes, SKUs, or specialized acronyms alongside semantic questions, hybrid search (keyword + vector) delivers higher recall than vector search alone."
@@ -3226,7 +3226,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Targeted business use cases for Amazon Textract (document OCR), Rekognition (computer vision), Comprehend (NLP/sentiment), and Transcribe (audio to text).",
       "notes": "Matching Cheat Sheet: Scanned invoices/receipts with tables -> Textract. Sentiment/Key phrases in customer calls -> Transcribe + Comprehend. Video facial analysis -> Rekognition."
@@ -3244,7 +3244,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Model compression and post-training quantization techniques to reduce memory footprint and latency while maintaining accuracy.",
       "notes": "Quantization Note: Quantizing 16-bit floating-point weights (FP16) down to 8-bit integers (INT8) cuts GPU memory usage in half and accelerates inference throughput with negligible drop in perplexity."
@@ -3262,7 +3262,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configuring SageMaker PyTorch and HuggingFace Estimators using `entry_point='train.py'` and `source_dir`, passing S3 channels via environment variables.",
       "notes": "Script Mode Pattern: SageMaker injects training data paths into environment variable `SM_CHANNEL_TRAIN` and expects model artifacts to be saved in directory `SM_MODEL_DIR` for automatic S3 packaging."
@@ -3280,7 +3280,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configure SageMaker HyperparameterTuner with Bayesian search, define objective metrics via regex log parsing, and enable early stopping with Hyperband.",
       "notes": "Tuning Strategy: Bayesian Optimization treats hyperparameter selection as a regression problem to explore the search space efficiently. Warm Start enables incremental tuning runs based on prior completed trials."
@@ -3298,7 +3298,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Scale model training across multi-node GPU clusters (p4d/g5) by sharding dataset batches across nodes with synchronized gradient averaging.",
       "notes": "Decision Rule: Use Data Parallelism when the entire model easily fits inside a single GPU's memory, but the dataset is massive and training time needs linear speedup."
@@ -3316,7 +3316,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Pipeline parallelism and tensor parallelism techniques to partition multi-billion parameter foundation models across multiple GPU VRAM cards.",
       "notes": "Decision Rule: Use Model Parallelism (SMP) when the model weights and activations exceed the VRAM of a single GPU (e.g. 70B+ parameter LLMs)."
@@ -3334,7 +3334,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Regularization (L1 Lasso, L2 Ridge, Dropout), Early Stopping callbacks, and replay buffer rehearsal datasets to prevent catastrophic forgetting in fine-tuned LLMs.",
       "notes": "Catastrophic Forgetting: When an FM is fine-tuned on a narrow new task, it may lose its general conversational abilities. Mitigate using Parameter-Efficient Fine-Tuning (LoRA) or mixing 10-20% general dataset replay."
@@ -3352,7 +3352,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Combine predictions from multiple independent ML models to reduce bias (boosting) or variance (bagging) and improve out-of-sample generalization.",
       "notes": "Comparison: Bagging (Random Forest) trains models in parallel to reduce variance. Boosting (XGBoost) trains models sequentially to reduce bias by focusing on prior mistakes."
@@ -3370,7 +3370,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Impact of learning rate schedules (cosine annealing, linear warmup), mini-batch size, weight decay, and gradient clipping on model convergence.",
       "notes": "Exam Trap: If training loss explodes or oscillates wildly, the Learning Rate is too high. If loss decreases imperceptibly slowly, the Learning Rate is too small."
@@ -3388,7 +3388,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Design structured system prompts, Few-Shot exemplars, Chain-of-Thought (CoT) step-by-step reasoning, and ReAct loop orchestrations for Bedrock models.",
       "notes": "Prompt Tip: Chain-of-Thought prompting ('Think step-by-step before answering') dramatically improves multi-step math and logical deduction accuracy in foundation models."
@@ -3406,7 +3406,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Fine-tune text embeddings on proprietary technical jargon and benchmark retrieval recall across varying chunk sizes and overlap percentages.",
       "notes": "Tuning Rule: When domain queries use specialized abbreviations and acronyms not present in public web datasets, fine-tune the embedding model to cluster domain synonyms together."
@@ -3424,7 +3424,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Track parameters, code versions, metrics, and dataset hashes using fully-managed MLflow on SageMaker AI for auditability and experiment reproducibility.",
       "notes": "Best Practice: Managed MLflow on SageMaker AI enables teams to visualize metric curves across training runs and maintain end-to-end data/model artifact lineage."
@@ -3442,7 +3442,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Select appropriate evaluation metrics based on business objectives: False Positives (Precision) vs False Negatives (Recall) trade-off.",
       "notes": "Exam Trap: Medical cancer detection or fraud alerting -> High Recall (minimize false negatives). Spam filter -> High Precision (minimize false positives). Imbalanced binary classification -> PR-AUC over ROC-AUC."
@@ -3460,7 +3460,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Evaluating natural language generation: n-gram precision (BLEU), n-gram recall (ROUGE), and contextual semantic embedding similarity (BERTScore).",
       "notes": "Cheat Sheet: Machine Translation -> BLEU. Text Summarization -> ROUGE-1, ROUGE-2, and ROUGE-L. Semantic Paraphrase Quality -> BERTScore."
@@ -3478,7 +3478,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configure Bedrock Model Evaluation jobs using automated benchmarks or LLM-as-a-judge to evaluate accuracy, toxicity, and hallucinations across prompt datasets.",
       "notes": "High-Yield Feature: Amazon Bedrock Model Evaluation enables automated side-by-side comparison of candidate models on custom prompt datasets scored by an authoritative judge LLM."
@@ -3496,7 +3496,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Route low-confidence model predictions or sensitive GenAI outputs to human reviewers using Amazon Augmented AI (Amazon A2I) review loops.",
       "notes": "Architecture Rule: When a model's prediction confidence score falls below a safety threshold (e.g., < 0.85), Amazon A2I triggers a human review task automatically."
@@ -3514,7 +3514,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Compute Shapley Additive Explanations (SHAP) post-training to generate global feature importance summaries and individual local prediction explanations.",
       "notes": "Compliance Requirement: Regulated decisions (credit card denials, insurance underwriting) require local SHAP explanations to produce legally compliant Adverse Action notices explaining why an individual was rejected."
@@ -3532,7 +3532,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Monitor real-time training tensors, detect vanishing/exploding gradients, identify non-improving loss curves, and profile GPU utilization bottlenecks.",
       "notes": "Troubleshooting: SageMaker Debugger built-in rules (e.g. `VanishingGradient`, `Overfitting`, `LossNotDecreasing`) can automatically terminate failing training jobs to save compute costs."
@@ -3550,7 +3550,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Assessing RAG performance using the RAG Triad: Context Relevance (retrieval quality), Groundedness (hallucination check), and Answer Relevance (query satisfaction).",
       "notes": "Core RAG Metrics: If Context Relevance is low -> tune chunk size or vector index. If Groundedness is low -> prompt engineering to strictly constrain response to context."
@@ -3568,7 +3568,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Exhaustive comparison of SageMaker inference hosting options based on latency, payload limits, invocation patterns, and cost behavior.",
       "notes": "CRITICAL EXAM DECISION MATRIX: Real-Time (sub-100ms, persistent instances, 6MB payload). Serverless (infrequent/spiky, scales to 0, 4MB payload). Asynchronous (up to 1GB payload, up to 1hr execution, S3+SQS queue). Batch Transform (offline dataset scoring, TBs of data)."
@@ -3586,7 +3586,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Deploy hundreds of homogeneous models on a shared instance pool behind a single endpoint, dynamically loading models into memory from S3 upon invocation.",
       "notes": "Cost Saver Rule: When you have 50-1000 similar models with infrequent individual traffic (e.g. per-customer models), ALWAYS choose SageMaker Multi-Model Endpoints (MME) to avoid paying for dedicated instances per model."
@@ -3604,7 +3604,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Chain pre-processing, inference, and post-processing containers together in a sequential pipeline behind a single HTTPS endpoint.",
       "notes": "Inference Pipeline Pattern: Container 1 (Scikit-Learn feature transformer) -> Container 2 (XGBoost / PyTorch model) -> Container 3 (Post-processing response formatter). Avoids extra S3 round-trips."
@@ -3622,7 +3622,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Tradeoffs between serverless token billing (On-Demand), dedicated Model Units with commitment (Provisioned Throughput), and dedicated SageMaker hosting.",
       "notes": "Exam Decision: For variable or development traffic, use Bedrock On-Demand. For large production workloads requiring guaranteed throughput without rate-limiting (throttling), purchase Bedrock Provisioned Throughput."
@@ -3640,7 +3640,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Import externally trained weights (from Hugging Face or on-premises) into Amazon Bedrock via Custom Model Import or host custom containers in SageMaker.",
       "notes": "New Feature in MLA-C02: Amazon Bedrock Custom Model Import allows you to import custom fine-tuned model architectures (Llama, Mistral) into Bedrock and invoke them through standard serverless Bedrock APIs."
@@ -3658,7 +3658,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Build autonomous multi-step agents in Bedrock: define action groups with OpenAPI 3.0 schemas, connect Lambda functions, and orchestrate with user instructions.",
       "notes": "Agent Core Architecture: The LLM breaks down complex queries into steps, inspects the OpenAPI schema of connected Action Groups, decides which tool/API to invoke, executes via AWS Lambda, and synthesizes the response."
@@ -3676,7 +3676,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Deploy managed RAG with Bedrock Knowledge Bases, connect to OpenSearch Serverless, and configure advanced rerank models (Cohere Rerank) to filter retrieved chunks.",
       "notes": "Reranking Advantage: Vector search retrieves top 20 candidate chunks based on vector distance; Cohere Rerank cross-encodes the query and candidates to score true semantic relevance, passing only top 5 to the generator LLM."
@@ -3694,7 +3694,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Select optimal EC2 instance families for ML training and inference: Graviton ARM, NVIDIA Tensor Core GPUs, AWS Inferentia (Inf2), and AWS Trainium (Trn1).",
       "notes": "Silicon Rules: Choose AWS Trainium (trn1) for lowest cost-to-train deep learning and LLMs. Choose AWS Inferentia (inf2) for lowest latency and cost-per-inference on deep learning models."
@@ -3712,7 +3712,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Architect secure private network topology: private subnets with no internet gateway, VPC Interface Endpoints for SageMaker API & Runtime, and S3 Gateway Endpoint.",
       "notes": "CRITICAL SECURITY SCENARIO: For maximum security, launch training and endpoint clusters inside private subnets without NAT gateways. Access S3 via Gateway VPC Endpoint and SageMaker via Interface VPC Endpoints (PrivateLink)."
@@ -3730,7 +3730,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Programmatic resource provisioning lifecycle: `CreateModel` -> `CreateEndpointConfig` (production variants and instance types) -> `CreateEndpoint`.",
       "notes": "SDK Sequence: In Boto3, you must create a Model resource and an EndpointConfig resource before you can create the live Endpoint."
@@ -3748,7 +3748,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configure Application Auto Scaling on SageMaker production variants using Target Tracking on `SageMakerVariantInvocationsPerInstance` metric.",
       "notes": "Exam Favorite: The recommended metric for auto-scaling SageMaker real-time endpoints is `SageMakerVariantInvocationsPerInstance`. Configure cooldown periods to prevent rapid flapping."
@@ -3766,7 +3766,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Using pre-built AWS Deep Learning Containers (DLCs) for PyTorch and TensorFlow, custom Dockerfiles, and scanning container images in Amazon ECR.",
       "notes": "Best Practice: Always start with official AWS Deep Learning Containers (DLCs) rather than building from scratch. DLCs are pre-optimized with CUDA and network acceleration."
@@ -3784,7 +3784,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Implement persistent conversational state and execution memory across agent sessions using Amazon DynamoDB and Bedrock Agent session attributes.",
       "notes": "Architecture Pattern: Store user session IDs and serialized message histories in Amazon DynamoDB. Pass the session ID to Bedrock `InvokeAgent` to maintain context across multi-turn interactions."
@@ -3802,7 +3802,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Install and configure CloudWatch agent on GPU compute instances to publish custom metrics: GPU memory used, GPU utilization, and PCIe throughput.",
       "notes": "CloudWatch Detail: Standard CloudWatch EC2 metrics do NOT include GPU memory or GPU temperature. You must install the CloudWatch agent with NVIDIA Management Library (NVML) metrics enabled."
@@ -3820,7 +3820,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Build serverless ML workflows using SageMaker Pipelines Python SDK: define Directed Acyclic Graphs (DAGs) with dependencies, parameters, and conditional branching.",
       "notes": "Pipeline Architecture: `ProcessingStep` (Data cleaning) -> `TrainingStep` (Model training) -> `ConditionStep` (Evaluate metric threshold, e.g. accuracy > 0.85) -> `RegisterModelStep` (Push to Model Registry)."
@@ -3838,7 +3838,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Event-driven MLOps: trigger SageMaker Pipelines automatically via Amazon EventBridge rules when new training data arrives in S3 or Model Monitor triggers a drift alarm.",
       "notes": "Event-Driven MLOps: When S3 receives a new data drop or Model Monitor fires an alarm, CloudWatch raises an alert -> Amazon EventBridge rule matches the pattern -> Triggers `StartPipelineExecution`."
@@ -3856,7 +3856,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Deploy models with SageMaker Deployment Guardrails: Canary traffic shifting (e.g. 10% for 15 min), linear shifting, and automatic CloudWatch alarm rollback.",
       "notes": "Deployment Guardrails: Configure `AutoRollbackConfiguration` tied to CloudWatch 5xx error alarms. If the new Canary variant throws errors during the bake period, SageMaker rolls back automatically with zero downtime."
@@ -3874,7 +3874,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Deploy a shadow variant alongside a production variant; 100% of live traffic is duplicated to the shadow model, but only production responses are returned to users.",
       "notes": "TOP EXAM FAVORITE: When asked 'How to evaluate a new model's latency and error rate under true production load without risking user experience?', ALWAYS choose SageMaker Shadow Testing."
@@ -3892,7 +3892,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Catalog model package groups, track model metrics, audit approvals (`PendingManualApproval`, `Approved`, `Rejected`), and automate downstream deployment.",
       "notes": "Governance Pattern: New models register with `PendingManualApproval`. When a lead engineer approves the model in Model Registry, EventBridge triggers the AWS CodePipeline deployment to production."
@@ -3910,7 +3910,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Integrate Git repositories (GitHub/CodeCommit) with AWS CodePipeline, run automated unit/integration tests in CodeBuild, and deploy infrastructure via CloudFormation.",
       "notes": "CI/CD Pipeline: Source (CodeConnections/GitHub) -> Build (CodeBuild runs PyTest and linting) -> Deploy (CodePipeline invokes SageMaker Pipeline / CloudFormation template)."
@@ -3928,7 +3928,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Manage, version, test, and save prompt templates with dynamic variables and inference parameter configurations in Amazon Bedrock Prompt Management.",
       "notes": "New in MLA-C02: Bedrock Prompt Management lets teams create production aliases (e.g. `PROD` pointing to Version 3) so application code does not need redeployment when prompts are updated."
@@ -3946,7 +3946,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Automate synchronization between S3 document updates and OpenSearch vector indices using the Amazon Bedrock `StartIngestionJob` API.",
       "notes": "Automation Tip: Trigger a Lambda function on S3 object creation (`s3:ObjectCreated:*`) that calls Bedrock's `StartIngestionJob` to sync new documents into the vector index automatically."
@@ -3964,7 +3964,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Establish baseline constraints and statistics during training, capture production payload requests, and detect statistical schema violations and data drift.",
       "notes": "Data Quality Baseline: SageMaker Model Monitor outputs `constraints.json` and `statistics.json` on training data. During inference, it flags `constraint_violations.json` if input data distributions deviate."
@@ -3982,7 +3982,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Monitor real-time degradation in model accuracy, precision, and recall by joining endpoint inference logs with delayed ground truth labels uploaded to S3.",
       "notes": "Model Quality Flow: Ground truth labels (e.g. loan defaults observed 6 months later) are uploaded to S3. Model Monitor joins predictions with actual labels to detect accuracy and F1 degradation."
@@ -4000,7 +4000,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Continuous monitoring for algorithmic bias drift (Disparate Impact, DPL) and shifts in SHAP feature attribution rankings on live production endpoints.",
       "notes": "Attribution Drift: When the relative importance of features shifts over time (e.g. interest rate becomes more predictive than credit score), Clarify flags Feature Attribution Drift."
@@ -4018,7 +4018,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Track Bedrock model metrics: `Invocations`, `InvocationClientErrors`, `InvocationServerErrors`, `ModelLatency`, `InputTokenCount`, and `OutputTokenCount`.",
       "notes": "Key CloudWatch Metrics: Monitor `ModelLatency` (time spent in foundation model inference) vs `OverheadLatency` (network/SDK serialization time) to isolate performance bottlenecks."
@@ -4036,7 +4036,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Detecting and alerting on agent failure modes: tool execution timeouts, circular reasoning loops, truncated streaming responses, and AWS X-Ray trace analysis.",
       "notes": "New in MLA-C02: Use AWS X-Ray integrated with Bedrock Agents to trace execution across each tool call and identify which Lambda action group timed out or caused an exception."
@@ -4054,7 +4054,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Distribute live inference traffic between two model variants (e.g., 50% Variant A, 50% Variant B) on a single SageMaker endpoint to evaluate performance.",
       "notes": "Configuration: In EndpointConfig, specify multiple `ProductionVariant` blocks with `InitialVariantWeight` (e.g. 0.5 and 0.5) to run live A/B testing across models."
@@ -4072,7 +4072,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configuring `use_spot_instances=True` and `checkpoint_s3_uri` on SageMaker Estimators to leverage spare EC2 capacity at steep discounts.",
       "notes": "MUST-KNOW EXAM RULE: When using Managed Spot Training, you MUST configure checkpointing in your training code and set `checkpoint_s3_uri`. Without checkpointing, interruptions force training to restart from scratch!"
@@ -4090,7 +4090,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Optimize hosting spend: Serverless Inference for intermittent bursts, Multi-Model Endpoints for hundreds of models, and Graviton instances for CPU workloads.",
       "notes": "Quick Rule: If inference traffic drops to zero overnight, choose SageMaker Serverless Inference ($0 when idle) rather than paying 24/7 for dedicated instances."
@@ -4108,7 +4108,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Control Bedrock spending: optimize prompt token length, utilize Anthropic prompt caching for repeated document headers, and set token usage quotas.",
       "notes": "Cost Optimization: Prompt Caching reduces input token processing costs by up to 80% on long repeated contexts (e.g., a 20-page legal contract queried multiple times)."
@@ -4126,7 +4126,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Implement a tiered model routing architecture to send easy queries to smaller models (Claude 3.5 Haiku) and escalate difficult reasoning to Claude 3.5 Sonnet.",
       "notes": "Architectural Pattern: Use a fast, inexpensive classifier or Haiku to classify intent. 80% of queries get answered at 1/10th the cost; only the complex 20% route to Sonnet."
@@ -4144,7 +4144,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Tag SageMaker resources (`Project`, `Environment`, `CostCenter`), configure AWS Budgets alarms, and analyze historical spend trends in Cost Explorer.",
       "notes": "Exam Note: Use Cost Allocation Tags on SageMaker Training jobs and Endpoints to track which business team or experiment incurred the GPU spend."
@@ -4162,7 +4162,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Author precise IAM trust relationships and permissions policies granting SageMaker and Bedrock access strictly to specific S3 buckets and KMS keys.",
       "notes": "Security Principle: Avoid `AdministratorAccess` or broad wildcards (`s3:*`). Grant `s3:GetObject` only to the training data bucket, `s3:PutObject` only to the model artifact bucket, and `kms:Decrypt` only on the specific CMK."
@@ -4180,7 +4180,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configure AWS KMS Customer Managed Keys (CMKs) for S3 buckets, EBS storage volumes, and enable inter-container TLS encryption for distributed training nodes.",
       "notes": "Security Rule: For distributed training across multiple instances, enable `EnableInterContainerTrafficEncryption=True` on the Estimator to encrypt peer-to-peer data transfers in transit."
@@ -4198,7 +4198,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Lock down ML training and inference containers by setting `EnableNetworkIsolation=True`, preventing training algorithms from making any external network calls.",
       "notes": "Air-Gapped Training: When `EnableNetworkIsolation=True` is enabled, the training container has NO network interface and cannot make any HTTP/HTTPS calls outside the instance, preventing data exfiltration."
@@ -4216,7 +4216,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Configure Bedrock Guardrails to block toxic content (hate, sexual, violence), enforce customized denied topics, and prevent prompt injection / jailbreak attacks.",
       "notes": "TOP EXAM PRIORITY: Bedrock Guardrails can be applied to ANY foundation model on Bedrock and custom fine-tuned models. It evaluates both user input prompts and model generated completions."
@@ -4234,7 +4234,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": true,
       "description": "Detect, block, or automatically mask PII entities (SSN, credit card, phone, email) in LLM input queries and generated responses using Bedrock Guardrails.",
       "notes": "Action Types in Guardrails: You can choose to either BLOCK the request with a standard message ('I cannot process requests containing sensitive PII') or automatically ANONYMIZE/MASK the entity (e.g. `[EMAIL]`)."
@@ -4252,7 +4252,7 @@
       "completed": false,
       "completedAt": null,
       "completedDate": null,
-      "createdAt": "2026-11-14T14:47:00.125Z",
+      "createdAt": "2026-11-14T15:50:48.855Z",
       "isImportant": false,
       "description": "Audit all SageMaker and Bedrock API calls via AWS CloudTrail, evaluate KMS encryption rules via AWS Config, and scan custom ECR container images with Amazon Inspector.",
       "notes": "Compliance Trio: CloudTrail audits WHO called WHAT API at WHEN. AWS Config tracks WHETHER resources comply with security policies. Amazon Inspector scans container images for CVE vulnerabilities."
