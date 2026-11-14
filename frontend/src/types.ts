@@ -27,6 +27,7 @@ export interface Task {
   goalId: string;
   title: string;
   topic: string;
+  subtopic?: string;
   difficulty?: Difficulty;
   url?: string;
   duration?: number;
@@ -34,6 +35,9 @@ export interface Task {
   completedAt: string | null;
   completedDate: string | null;
   createdAt: string;
+  isImportant?: boolean;
+  description?: string;
+  notes?: string;
 }
 
 export interface DailyActivityItem {

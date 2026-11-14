@@ -66,13 +66,17 @@ export function createUserDataForUser(userId: string): { goals: Goal[]; tasks: T
     goalId: isDefault ? t.goalId : `${t.goalId}-${userId}`,
     title: t.title,
     topic: t.topic,
+    subtopic: t.subtopic || undefined,
     difficulty: t.difficulty,
     url: t.url,
     duration: t.duration,
     completed: Boolean(t.completed),
     completedAt: t.completed ? new Date().toISOString() : null,
     completedDate: t.completed ? getLocalDateString(new Date()) : null,
-    createdAt: new Date().toISOString()
+    createdAt: new Date().toISOString(),
+    isImportant: Boolean(t.isImportant),
+    description: t.description || undefined,
+    notes: t.notes || undefined
   }));
 
   return { goals: userGoals, tasks: userTasks };
@@ -171,18 +175,27 @@ class Database {
           completed BOOLEAN DEFAULT FALSE,
           completed_at TIMESTAMPTZ,
           completed_date VARCHAR(20),
-          created_at TIMESTAMPTZ DEFAULT NOW()
+          created_at TIMESTAMPTZ DEFAULT NOW(),
+          subtopic VARCHAR(255),
+          is_important BOOLEAN DEFAULT FALSE,
+          description TEXT,
+          notes TEXT
         );
 
         CREATE INDEX IF NOT EXISTS idx_tasks_user_goal ON tasks(user_id, goal_id);
         CREATE INDEX IF NOT EXISTS idx_tasks_completed ON tasks(user_id, completed, completed_date);
+
+        ALTER TABLE tasks ADD COLUMN IF NOT EXISTS subtopic VARCHAR(255);
+        ALTER TABLE tasks ADD COLUMN IF NOT EXISTS is_important BOOLEAN DEFAULT FALSE;
+        ALTER TABLE tasks ADD COLUMN IF NOT EXISTS description TEXT;
+        ALTER TABLE tasks ADD COLUMN IF NOT EXISTS notes TEXT;
       `);
 
       // Seed default user in Postgres if empty
       const userCheck = await this.pool.query('SELECT COUNT(*) FROM users');
       const count = parseInt(userCheck.rows[0].count, 10);
       if (count === 0) {
-        console.log('Postgres users table is empty. Initializing default user and Grind 169 roadmap...');
+        console.log('Postgres users table is empty. Initializing default user and roadmap...');
         const { hash, salt } = hashPassword('password123');
         const defaultUser: User = {
           id: DEFAULT_USER_ID,
@@ -207,13 +220,36 @@ class Database {
           await this.pool.query(
             `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
              VALUES ($1, $2, $3, $4, $5, $6, $7)
-             ON CONFLICT (id) DO NOTHING`,
+             ON CONFLICT (id) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, category = EXCLUDED.category, icon = EXCLUDED.icon`,
             [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
           );
         }
 
         await this.batchInsertTasks(tasks);
-        console.log('✅ Postgres successfully seeded with default user and 169 Grind DSA questions.');
+        console.log('✅ Postgres successfully seeded with default user and roadmaps.');
+      } else {
+        // Update goals in Postgres if they already exist
+        const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
+        for (const g of goals) {
+          await this.pool.query(
+            `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
+             VALUES ($1, $2, $3, $4, $5, $6, $7)
+             ON CONFLICT (id) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, category = EXCLUDED.category, icon = EXCLUDED.icon`,
+            [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
+          );
+        }
+
+        // Check if goal-aws tasks exist
+        const awsTaskCheck = await this.pool.query(
+          "SELECT COUNT(*) FROM tasks WHERE goal_id = 'goal-aws' AND user_id = $1",
+          [DEFAULT_USER_ID]
+        );
+        if (parseInt(awsTaskCheck.rows[0].count, 10) === 0) {
+          console.log('Seeding AWS Certified Machine Learning Engineer - Associate (MLA-C02) roadmap into Postgres...');
+          const awsTasks = tasks.filter(t => t.goalId === 'goal-aws');
+          await this.batchInsertTasks(awsTasks);
+          console.log(`✅ Successfully seeded ${awsTasks.length} MLA-C02 tasks.`);
+        }
       }
     } catch (err: any) {
       console.error('❌ Error initializing PostgreSQL tables:', err.message);
@@ -227,12 +263,12 @@ class Database {
 
   public async batchInsertTasks(tasks: Task[]): Promise<void> {
     if (!this.pool || tasks.length === 0) return;
-    const chunkSize = 40;
+    const chunkSize = 25;
     for (let i = 0; i < tasks.length; i += chunkSize) {
       const chunk = tasks.slice(i, i + chunkSize);
       const values: any[] = [];
       const rowsSql = chunk.map((t, idx) => {
-        const offset = idx * 12;
+        const offset = idx * 16;
         values.push(
           t.id,
           t.userId,
@@ -245,15 +281,28 @@ class Database {
           t.completed,
           t.completedAt,
           t.completedDate,
-          t.createdAt
+          t.createdAt,
+          t.subtopic || null,
+          Boolean(t.isImportant),
+          t.description || null,
+          t.notes || null
         );
-        return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4}, $${offset + 5}, $${offset + 6}, $${offset + 7}, $${offset + 8}, $${offset + 9}, $${offset + 10}, $${offset + 11}, $${offset + 12})`;
+        return `($${offset + 1}, $${offset + 2}, $${offset + 3}, $${offset + 4}, $${offset + 5}, $${offset + 6}, $${offset + 7}, $${offset + 8}, $${offset + 9}, $${offset + 10}, $${offset + 11}, $${offset + 12}, $${offset + 13}, $${offset + 14}, $${offset + 15}, $${offset + 16})`;
       }).join(', ');
 
       const query = `
-        INSERT INTO tasks (id, user_id, goal_id, title, topic, difficulty, url, duration, completed, completed_at, completed_date, created_at)
+        INSERT INTO tasks (id, user_id, goal_id, title, topic, difficulty, url, duration, completed, completed_at, completed_date, created_at, subtopic, is_important, description, notes)
         VALUES ${rowsSql}
-        ON CONFLICT (id) DO NOTHING;
+        ON CONFLICT (id) DO UPDATE SET
+          title = EXCLUDED.title,
+          topic = EXCLUDED.topic,
+          difficulty = EXCLUDED.difficulty,
+          url = EXCLUDED.url,
+          duration = EXCLUDED.duration,
+          subtopic = EXCLUDED.subtopic,
+          is_important = EXCLUDED.is_important,
+          description = EXCLUDED.description,
+          notes = EXCLUDED.notes;
       `;
       await this.pool.query(query, values);
     }
@@ -386,19 +435,48 @@ class Database {
         );
         return refetch.rows;
       }
+
+      // Check if user has MLA-C02 tasks seeded (e.g. for existing users)
+      const targetAwsGoalId = userId === DEFAULT_USER_ID ? 'goal-aws' : `goal-aws-${userId}`;
+      const awsTaskCount = await this.pool.query(
+        "SELECT COUNT(*) FROM tasks WHERE goal_id = $1 AND user_id = $2",
+        [targetAwsGoalId, userId]
+      );
+      if (parseInt(awsTaskCount.rows[0].count, 10) === 0) {
+        const { tasks: freshTasks } = createUserDataForUser(userId);
+        const awsTasks = freshTasks.filter(t => t.goalId === targetAwsGoalId);
+        if (awsTasks.length > 0) {
+          await this.batchInsertTasks(awsTasks);
+        }
+      }
+
       return res.rows;
     }
+
     let goals = this.state.goals.filter(g => g.userId === userId);
     if (goals.length === 0 && userId === DEFAULT_USER_ID) {
       goals = this.state.goals.filter(g => !g.userId || g.userId === DEFAULT_USER_ID);
     }
-    if (goals.length === 0 && userId !== DEFAULT_USER_ID) {
-      const { goals: newGoals, tasks: newTasks } = createUserDataForUser(userId);
-      this.state.goals.push(...newGoals);
-      this.state.tasks.push(...newTasks);
+    // Check if goal-aws tasks exist in JSON state
+    const targetAwsGoalId = userId === DEFAULT_USER_ID ? 'goal-aws' : `goal-aws-${userId}`;
+    const userAwsTasks = this.state.tasks.filter(t => t.goalId === targetAwsGoalId && (t.userId === userId || (!t.userId && userId === DEFAULT_USER_ID)));
+    if (userAwsTasks.length === 0) {
+      const { goals: seedGoals, tasks: seedTasks } = createUserDataForUser(userId);
+      const awsTasks = seedTasks.filter(t => t.goalId === targetAwsGoalId);
+      const awsGoal = seedGoals.find(g => g.id === targetAwsGoalId);
+      if (awsGoal) {
+        const gIdx = this.state.goals.findIndex(g => g.id === targetAwsGoalId);
+        if (gIdx >= 0) {
+          this.state.goals[gIdx] = awsGoal;
+        } else {
+          this.state.goals.push(awsGoal);
+        }
+      }
+      this.state.tasks.push(...awsTasks);
       this.persistJson();
-      return newGoals;
+      goals = this.state.goals.filter(g => g.userId === userId || (!g.userId && userId === DEFAULT_USER_ID));
     }
+
     return goals;
   }
 
@@ -464,7 +542,7 @@ class Database {
     await this.init();
     if (this.pool) {
       let query = `
-        SELECT id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt"
+        SELECT id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt", subtopic, is_important as "isImportant", description, notes
         FROM tasks
         WHERE user_id = $1
       `;
@@ -484,7 +562,7 @@ class Database {
       }
       if (filters.search) {
         values.push(`%${filters.search.toLowerCase()}%`);
-        query += ` AND (LOWER(title) LIKE $${values.length} OR LOWER(topic) LIKE $${values.length})`;
+        query += ` AND (LOWER(title) LIKE $${values.length} OR LOWER(topic) LIKE $${values.length} OR LOWER(COALESCE(subtopic, '')) LIKE $${values.length})`;
       }
 
       query += ' ORDER BY created_at ASC';
@@ -498,7 +576,7 @@ class Database {
     if (filters.completed !== undefined) tasks = tasks.filter(t => t.completed === filters.completed);
     if (filters.search) {
       const q = filters.search.toLowerCase();
-      tasks = tasks.filter(t => t.title.toLowerCase().includes(q) || t.topic.toLowerCase().includes(q));
+      tasks = tasks.filter(t => t.title.toLowerCase().includes(q) || t.topic.toLowerCase().includes(q) || (t.subtopic && t.subtopic.toLowerCase().includes(q)));
     }
     return tasks;
   }
@@ -507,8 +585,8 @@ class Database {
     await this.init();
     if (this.pool) {
       await this.pool.query(
-        `INSERT INTO tasks (id, user_id, goal_id, title, topic, difficulty, url, duration, completed, completed_at, completed_date, created_at)
-         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12)
+        `INSERT INTO tasks (id, user_id, goal_id, title, topic, difficulty, url, duration, completed, completed_at, completed_date, created_at, subtopic, is_important, description, notes)
+         VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16)
          ON CONFLICT (id) DO NOTHING`,
         [
           task.id,
@@ -522,7 +600,11 @@ class Database {
           task.completed,
           task.completedAt,
           task.completedDate,
-          task.createdAt
+          task.createdAt,
+          task.subtopic || null,
+          Boolean(task.isImportant),
+          task.description || null,
+          task.notes || null
         ]
       );
       return task;
@@ -554,7 +636,7 @@ class Database {
         `UPDATE tasks 
          SET completed = $1, completed_at = $2, completed_date = $3
          WHERE id = $4 AND user_id = $5
-         RETURNING id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt"`,
+         RETURNING id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt", subtopic, is_important as "isImportant", description, notes`,
         [newCompleted, newCompletedAt, newCompletedDate, id, userId]
       );
       return updateRes.rows[0] || null;
@@ -614,7 +696,7 @@ class Database {
              completed_at = $7,
              completed_date = $8
          WHERE id = $9 AND user_id = $10
-         RETURNING id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt"`,
+         RETURNING id, user_id as "userId", goal_id as "goalId", title, topic, difficulty, url, duration, completed, completed_at as "completedAt", completed_date as "completedDate", created_at as "createdAt", subtopic, is_important as "isImportant", description, notes`,
         [
           updates.title || null,
           updates.topic || null,

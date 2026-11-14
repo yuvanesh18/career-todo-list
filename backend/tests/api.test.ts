@@ -113,6 +113,17 @@ describe('Goal-Based Tasks & Daily Tracking API with Auth', () => {
       expect(res.body.data[0].topic).toBeDefined();
     });
 
+    it('GET /api/tasks?goalId=goal-aws returns the 94 AWS MLA-C02 study tasks with notes & important flags', async () => {
+      const res = await request(app)
+        .get('/api/tasks')
+        .query({ goalId: 'goal-aws' });
+
+      expect(res.status).toBe(200);
+      expect(res.body.count).toBe(94);
+      expect(res.body.data[0].notes).toBeDefined();
+      expect(res.body.data[0].subtopic).toBeDefined();
+    });
+
     it('POST /api/tasks/:id/toggle toggles task completion and records completedDate', async () => {
       // Find an incomplete task
       const incompleteTask = (await taskService.getTasks('user-default', { completed: false }))[0];
