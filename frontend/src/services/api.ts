@@ -3,10 +3,14 @@ import { AuthResponse, DailyGroupedActivity, Goal, OverallSummary, Task, UserPro
 const AUTH_TOKEN_KEY = 'career_pulse_auth_token';
 const AUTH_USER_KEY = 'career_pulse_auth_user';
 
-// Production Render Backend URL (defaults to user's live Render backend)
+// Backend URL: Uses VITE_API_BASE_URL if configured, otherwise defaults to localhost:5000 when running locally,
+// and falls back to the live Render backend when deployed.
 export const BACKEND_URL = (
   (import.meta.env.VITE_API_BASE_URL as string) ||
-  'https://career-todo-backend.onrender.com'
+  (typeof window !== 'undefined' &&
+   (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:5000'
+    : 'https://career-todo-backend.onrender.com')
 ).replace(/\/$/, '');
 
 export const getCurrentUser = (): UserProfile | null => {

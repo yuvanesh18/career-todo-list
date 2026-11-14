@@ -1,0 +1,1321 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const BACKEND_SEED_FILE = path.join(__dirname, '..', 'data', 'seed_data.json');
+const FRONTEND_SEED_FILE = path.join(__dirname, '..', '..', 'frontend', 'src', 'data', 'seed_data.json');
+
+const GOAL_AWS = {
+  id: "goal-aws",
+  title: "AWS Certified Machine Learning Engineer - Associate (MLA-C02)",
+  description: "Comprehensive 1000/1000 study roadmap covering Data Prep (28%), Model & FM Development (24%), Deployment & MLOps (24%), and Operations & Security (24%).",
+  category: "Cloud & Machine Learning",
+  icon: "BrainCircuit",
+  createdAt: "2026-11-14T00:00:00.000Z"
+};
+
+const MLA_TASKS = [
+  // --- DOMAIN 1: Data Preparation for ML and AI (28%) ---
+  // Subtopic 1.1: Data Ingestion & Storage Architecture
+  {
+    id: "mla-1-1-1",
+    goalId: "goal-aws",
+    title: "Data Ingestion from Object & Block Storage (Amazon S3 & Amazon EBS)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Easy",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html",
+    description: "Understand S3 storage tiers, partitioning, S3 event notifications, and EBS volume attachment for SageMaker notebook and training environments.",
+    notes: "Exam Tip: Amazon S3 is the primary data lake store. For unpredictable access, choose S3 Intelligent-Tiering. Amazon EBS provides the fastest single-instance IOPS for local notebook development, but does NOT support multi-node shared access across distributed clusters."
+  },
+  {
+    id: "mla-1-1-2",
+    goalId: "goal-aws",
+    title: "Shared File Systems for Distributed Training (Amazon EFS & FSx for Lustre)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-access-training-data.html#model-access-training-data-fsx",
+    description: "Compare EFS and FSx for Lustre for feeding large-scale training datasets directly into multi-node SageMaker training clusters without S3 download latency.",
+    notes: "Exam Rule: When training on massive computer vision or multimodal datasets across distributed GPU clusters, ALWAYS select Amazon FSx for Lustre linked directly to S3. It streams hundreds of GB/s and avoids multi-hour data download bottlenecks before training starts."
+  },
+  {
+    id: "mla-1-1-3",
+    goalId: "goal-aws",
+    title: "Database Ingestion (Amazon RDS, Amazon DynamoDB, Amazon DocumentDB, AWS DMS)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html",
+    description: "Extracting tabular, document, and transactional records from operational databases into S3 using AWS Database Migration Service (AWS DMS) CDC replication.",
+    notes: "Key Concept: Use AWS DMS with Change Data Capture (CDC) to continuously stream database row updates from Amazon RDS/DynamoDB into Amazon S3 for near real-time model retraining."
+  },
+  {
+    id: "mla-1-1-4",
+    goalId: "goal-aws",
+    title: "Streaming Data Ingestion (Amazon Kinesis Data Streams vs Amazon Data Firehose)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/streams/latest/dev/introduction.html",
+    description: "Architecting real-time event streaming for ML feature engineering using Kinesis Data Streams and automated S3 delivery via Data Firehose.",
+    notes: "Exam Trap: If you need sub-second custom processing and strict order guarantee, choose Kinesis Data Streams. If you need simple, managed, zero-code batch ingestion into Amazon S3 or Amazon OpenSearch, choose Amazon Data Firehose (buffer 60s - 900s)."
+  },
+  {
+    id: "mla-1-1-5",
+    goalId: "goal-aws",
+    title: "Streaming Analytics & Stream Processing (Apache Flink & Amazon MSK)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/kinesisanalytics/latest/java/what-is.html",
+    description: "Stateful stream processing using Amazon Managed Service for Apache Flink and Amazon Managed Streaming for Apache Kafka (MSK) for real-time feature extraction.",
+    notes: "Key Concept: Apache Flink excels at tumbling and sliding time-window aggregations (e.g. average purchases over the last 15 minutes) before writing to SageMaker Feature Store."
+  },
+  {
+    id: "mla-1-1-6",
+    goalId: "goal-aws",
+    title: "Data Storage Formats (Apache Parquet, ORC, JSON, CSV) & Access Patterns",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Easy",
+    duration: 20,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/athena/latest/ug/columnar-storage.html",
+    description: "Understand columnar vs row-based formats, compression algorithms (Snappy, GZIP), and their impact on query cost, I/O speed, and ML training throughput.",
+    notes: "Exam Rule: Always convert CSV/JSON to columnar Apache Parquet with Snappy compression for analytical queries and SageMaker training inputs. Parquet reduces S3 query scan costs in Amazon Athena by up to 90%."
+  },
+  {
+    id: "mla-1-1-7",
+    goalId: "goal-aws",
+    title: "Querying & Partitioning with Amazon Athena & AWS Glue Data Catalog",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/athena/latest/ug/partitioning-data.html",
+    description: "Use Athena standard SQL to inspect S3 datasets, enforce partition projections (year/month/day), and catalog metadata using AWS Glue Crawlers.",
+    notes: "Quick Tip: Proper S3 partition pruning (e.g., `s3://bucket/data/year=2026/month=11/`) prevents full table scans and drastically reduces Athena scan bytes and cost."
+  },
+  {
+    id: "mla-1-1-8",
+    goalId: "goal-aws",
+    title: "Scalable Vector Databases for AI (Amazon OpenSearch Service & OpenSearch Serverless)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Hard",
+    duration: 40,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/knn.html",
+    description: "Configure vector indices using k-NN algorithms (HNSW and Inverted File - IVF) with cosine similarity and euclidean distance for enterprise RAG applications.",
+    notes: "Exam Essential: Amazon OpenSearch Serverless Vector Engine is the standard fully-managed vector store for Amazon Bedrock Knowledge Bases. It supports high-scale similarity search with zero cluster management."
+  },
+  {
+    id: "mla-1-1-9",
+    goalId: "goal-aws",
+    title: "Relational Vector Stores (Amazon RDS & Aurora PostgreSQL with pgvector)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/PostgreSQL.Concepts.General.FeatureSupport.Extensions.pgvector.html",
+    description: "Configuring the pgvector extension on Amazon Aurora / RDS PostgreSQL to store and index embeddings alongside traditional transactional relational data.",
+    notes: "Decision Rule: Choose Aurora/RDS with `pgvector` when the organization already runs PostgreSQL and needs vector search without introducing or maintaining a separate search cluster."
+  },
+  {
+    id: "mla-1-1-10",
+    goalId: "goal-aws",
+    title: "Ingesting & Storing Diverse Multimodal Data (Audio, Video, Images, Text)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/what-is-kinesis-video.html",
+    description: "Handling binary raw assets in Amazon S3, video streaming through Amazon Kinesis Video Streams, and extracting frame-level annotations for model training.",
+    notes: "Quick Note: For video ingestion pipelines targeting computer vision models, ingest streams via Kinesis Video Streams and process frames asynchronously with AWS Lambda and Amazon Rekognition."
+  },
+  {
+    id: "mla-1-1-11",
+    goalId: "goal-aws",
+    title: "SageMaker Feature Store: Online vs Offline Store Architecture",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.1 Collect & Store Data",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store.html",
+    description: "Design centralized feature repositories with low-latency Online Store (DynamoDB) and historical append-only Offline Store (S3) with Athena time-travel queries.",
+    notes: "High-Yield Rule: The Online Store provides single-digit millisecond latency for real-time inference feature lookups. The Offline Store stores historical snapshots in S3 to prevent data leakage during model training."
+  },
+
+  // Subtopic 1.2: Data Transformation & Feature Engineering
+  {
+    id: "mla-1-2-1",
+    goalId: "goal-aws",
+    title: "Distributed Data Transformation (AWS Glue ETL & Apache Spark on Amazon EMR)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/glue/latest/dg/what-is-glue.html",
+    description: "Execute large-scale batch feature transformations, joins, and schema normalization across terabytes of data using serverless AWS Glue ETL jobs.",
+    notes: "Exam Tip: Use AWS Glue DynamicFrames when source datasets have inconsistent schemas or nested structures. For standard dataframes, convert to Spark DataFrames for native ML transformations."
+  },
+  {
+    id: "mla-1-2-2",
+    goalId: "goal-aws",
+    title: "Visual Data Preparation (AWS Glue DataBrew & SageMaker Data Wrangler)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/data-wrangler.html",
+    description: "Interactive data exploration, cleaning, and transformation recipes. Export Data Wrangler flow directly into SageMaker Pipelines or Feature Store.",
+    notes: "Quick Revision: SageMaker Data Wrangler allows ML engineers to visually prepare tabular and image data with 300+ transformations and export the processing flow directly as a SageMaker Pipeline step."
+  },
+  {
+    id: "mla-1-2-3",
+    goalId: "goal-aws",
+    title: "Real-Time Streaming Feature Transformations (AWS Lambda & Spark Streaming)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/lambda/latest/dg/with-kinesis.html",
+    description: "Transform streaming event payloads on-the-fly using AWS Lambda event source mappings with Kinesis streams before persisting to feature stores.",
+    notes: "Exam Trap: Ensure Lambda batch size and bisect-batch-on-function-error are configured to isolate poisonous records without stalling the entire Kinesis shard stream."
+  },
+  {
+    id: "mla-1-2-4",
+    goalId: "goal-aws",
+    title: "Classical Feature Engineering (Scaling, Standardization, Binning, Normalization)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Easy",
+    duration: 20,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-feature-engineering.html",
+    description: "Mathematical feature transformations: Min-Max scaling, Z-score standardization, quantile binning, and polynomial features.",
+    notes: "Exam Rule: Always compute feature scaling parameters (mean, standard deviation, min, max) on the TRAINING split only, then apply them to validation/test splits to prevent data leakage."
+  },
+  {
+    id: "mla-1-2-5",
+    goalId: "goal-aws",
+    title: "Categorical Encoding & Skewness Handling (One-Hot, Target Encoding, Log Transforms)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Easy",
+    duration: 20,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-categorical.html",
+    description: "Handling high-cardinality categorical variables and correcting heavily right-skewed distributions with log or Box-Cox transformations.",
+    notes: "Key Concept: Use log transform `log(x + 1)` on right-skewed positive data (e.g. monetary transactions, counts) to stabilize variance for linear models and neural networks."
+  },
+  {
+    id: "mla-1-2-6",
+    goalId: "goal-aws",
+    title: "Advanced Text Pre-Processing (Tokenization, BPE, WordPiece, Stemming)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html",
+    description: "Subword tokenization algorithms (Byte-Pair Encoding, WordPiece), vocabulary limits, special tokens ([CLS], [SEP], <eos>), and text cleaning.",
+    notes: "Exam Note: Foundation models do not process raw words; text is tokenized into subwords. 1,000 tokens roughly equates to 750 English words."
+  },
+  {
+    id: "mla-1-2-7",
+    goalId: "goal-aws",
+    title: "Document Preparation & Chunking Strategies for RAG Applications",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-chunking.html",
+    description: "Fixed-size, sliding window with overlap, semantic, and hierarchical parent-document chunking strategies for Amazon Bedrock Knowledge Bases.",
+    notes: "Crucial Rule: Small chunks (200-300 tokens) yield high precision vector similarity search, while large chunks preserve context. Hierarchical chunking indexes small child chunks for search but retrieves the larger parent chunk for LLM prompt synthesis."
+  },
+  {
+    id: "mla-1-2-8",
+    goalId: "goal-aws",
+    title: "Vector Embeddings Generation (Amazon Titan Text Embeddings & Cohere Embed)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html",
+    description: "Convert unstructured documents and search queries into dense vector representations using Amazon Titan Embeddings v2 and Cohere multilingual models.",
+    notes: "Exam Trap: Always use the EXACT same embedding model for both document indexing and query inference; mismatched models produce incompatible vector spaces and zero retrieval accuracy."
+  },
+  {
+    id: "mla-1-2-9",
+    goalId: "goal-aws",
+    title: "Sensitive Data Masking, Anonymization & PII Redaction",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/comprehend/latest/dg/pii.html",
+    description: "Detecting and redacting PII (personally identifiable information) using Amazon Comprehend before data enters embedding pipelines or model training sets.",
+    notes: "Security Rule: Comply with GDPR/HIPAA by applying Amazon Comprehend PII redaction (masking credit cards, SSNs, phone numbers) before data is stored in S3 training buckets or vector databases."
+  },
+  {
+    id: "mla-1-2-10",
+    goalId: "goal-aws",
+    title: "Data Formatting for FM Fine-Tuning & Model Distillation",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.2 Transform & Feature Engineering",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-prepare.html",
+    description: "Structuring prompt-response pairs into JSON Lines (JSONL) datasets for Amazon Bedrock instruction fine-tuning and continuous pre-training.",
+    notes: "Exam Format: Bedrock fine-tuning requires `.jsonl` format where each line contains: `{\"prompt\": \"...\", \"completion\": \"...\"}` with strict validation checks."
+  },
+
+  // Subtopic 1.3: Data Quality, Imbalance & Bias Mitigation
+  {
+    id: "mla-1-3-1",
+    goalId: "goal-aws",
+    title: "Automated Data Quality Validation (AWS Glue Data Quality & DQDL Rules)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.3 Data Quality & Bias",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/glue/latest/dg/glue-data-quality.html",
+    description: "Automate data profiling and author Data Quality Definition Language (DQDL) rules to halt corrupted ETL pipelines before model training.",
+    notes: "Rule Syntax: `Rules = [ Completeness \"transaction_id\" = 1.0, ColumnValues \"age\" between 18 and 100 ]`. Fails the Glue job if data violates business constraints."
+  },
+  {
+    id: "mla-1-3-2",
+    goalId: "goal-aws",
+    title: "Data Labeling & Annotation Workflows (SageMaker Ground Truth & Plus)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.3 Data Quality & Bias",
+    difficulty: "Easy",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/sms.html",
+    description: "Configure data labeling jobs with automated data labeling (active learning), private workforce, Amazon Mechanical Turk, and Ground Truth Plus.",
+    notes: "Decision Rule: For sensitive or regulated data (medical, financial), ALWAYS choose a Private Workforce with Amazon Cognito or AWS IAM Identity Center. Never use Mechanical Turk for confidential PII."
+  },
+  {
+    id: "mla-1-3-3",
+    goalId: "goal-aws",
+    title: "Resolving Class Imbalance (SMOTE, Over/Under-Sampling, Class Weights)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.3 Data Quality & Bias",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-detect-data-bias.html",
+    description: "Techniques for extreme class imbalance in fraud detection and rare event prediction: SMOTE interpolation, random undersampling, and weighted loss functions.",
+    notes: "Exam Trap: In highly imbalanced datasets (e.g. 99% non-fraud, 1% fraud), Accuracy is a useless metric! Optimize for Precision, Recall, PR-AUC, or F1-Score instead."
+  },
+  {
+    id: "mla-1-3-4",
+    goalId: "goal-aws",
+    title: "Pre-Training Bias Detection with SageMaker Clarify (CI, DPL, Disparate Impact)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.3 Data Quality & Bias",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-bias-metrics.html",
+    description: "Quantify bias before training begins: Class Imbalance (CI), Difference in Positive Proportions in Labels (DPL), and Disparate Impact.",
+    notes: "Must-Know Metric: Disparate Impact evaluates the ratio of positive outcomes between unprivileged and privileged groups. A value < 0.8 is considered discriminatory adverse impact."
+  },
+  {
+    id: "mla-1-3-5",
+    goalId: "goal-aws",
+    title: "Multimodal Data Distribution & Bias across Numeric, Text, and Images",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.3 Data Quality & Bias",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-bias-metrics.html",
+    description: "Evaluate dataset representation and skew across multimodal assets (e.g., demographic distribution across image catalogues and text transcripts).",
+    notes: "Key Concept: Ensure balanced representation across demographic subgroups in training imagery to prevent algorithmic performance degradation across minority facets."
+  },
+  {
+    id: "mla-1-3-6",
+    goalId: "goal-aws",
+    title: "AI Training Data Integrity & Content Safety Screening",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.3 Data Quality & Bias",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+    description: "Screening instruction-tuning and pre-training corpora for toxic prompts, data poisoning, copyrighted material, and hallucinations.",
+    notes: "Best Practice: Apply MinHash and Locality Sensitive Hashing (LSH) for near-deduplication of web crawls, and run automated safety filters on prompt-response pairs."
+  },
+  {
+    id: "mla-1-3-7",
+    goalId: "goal-aws",
+    title: "Data Cleaning (Outlier Detection with Z-Score/IQR, Imputation, Deduplication)",
+    topic: "Domain 1: Data Preparation",
+    subtopic: "1.3 Data Quality & Bias",
+    difficulty: "Easy",
+    duration: 20,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-data-cleaning.html",
+    description: "Detecting anomalous data points using Interquartile Range (IQR) and Z-score thresholds; handling missing values with median, mode, or KNN imputation.",
+    notes: "Rule of Thumb: For skewed features with heavy outliers, impute missing values using the Median instead of the Mean, as the mean is distorted by extreme values."
+  },
+
+  // --- DOMAIN 2: ML Model and Foundation Model (FM) Development (24%) ---
+  // Subtopic 2.1: Model Selection & Foundation Model Architecture
+  {
+    id: "mla-2-1-1",
+    goalId: "goal-aws",
+    title: "Amazon Bedrock Foundation Model Selection Matrix (Claude, Titan, Llama, Mistral)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html",
+    description: "Compare capabilities, context window lengths, latency, and costs of Claude 3.5 Sonnet, Claude 3.5 Haiku, Amazon Titan, Meta Llama 3, and Mistral.",
+    notes: "Exam Decision Matrix: For complex multi-step reasoning and coding, choose Claude 3.5 Sonnet. For fast, high-volume, low-cost classification, choose Claude 3.5 Haiku. For native AWS cost-efficiency, choose Amazon Titan."
+  },
+  {
+    id: "mla-2-1-2",
+    goalId: "goal-aws",
+    title: "Fine-Tuning Strategies for Pre-Trained FMs (PEFT / LoRA vs Full Fine-Tuning)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html",
+    description: "Select between Prompt Engineering, RAG, PEFT / LoRA (Low-Rank Adaptation), and Full Fine-Tuning based on data volume, budget, and task specificity.",
+    notes: "Exam Golden Rule: When knowledge is dynamic/frequently changing, ALWAYS choose RAG. When the model needs to learn domain-specific terminology or strict output format, choose Fine-Tuning via PEFT/LoRA."
+  },
+  {
+    id: "mla-2-1-3",
+    goalId: "goal-aws",
+    title: "Classical ML Algorithm Selection: Tabular & Regression (XGBoost, Linear Learner)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html",
+    description: "Deep dive into Amazon SageMaker built-in XGBoost and Linear Learner algorithms for structured tabular regression and classification tasks.",
+    notes: "Top Pick: XGBoost is the highest-performing built-in algorithm for structured tabular data. It handles non-linear relationships, missing values, and feature interactions out-of-the-box."
+  },
+  {
+    id: "mla-2-1-4",
+    goalId: "goal-aws",
+    title: "Classical ML Algorithm Selection: Time-Series & Anomaly Detection (DeepAR, RCF)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/deepar.html",
+    description: "Choose Random Cut Forest (RCF) for unsupervised tabular/streaming anomaly detection and DeepAR for probabilistic multi-series time-series forecasting.",
+    notes: "Exam Trigger Words: 'Probabilistic forecast across thousands of related products' -> DeepAR. 'Real-time anomaly detection in streaming IoT logs without labeled data' -> Random Cut Forest (RCF)."
+  },
+  {
+    id: "mla-2-1-5",
+    goalId: "goal-aws",
+    title: "Classical ML Algorithm Selection: NLP & Embeddings (BlazingText, Object2Vec)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Easy",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/blazingtext.html",
+    description: "SageMaker BlazingText for high-speed Word2Vec / text classification on GPUs and Object2Vec for paired entity embeddings (user-product recommendations).",
+    notes: "Key Difference: BlazingText provides fast GPU-accelerated text classification and word embedding generation. Object2Vec maps pairs of objects into embedding vectors for recommendation systems."
+  },
+  {
+    id: "mla-2-1-6",
+    goalId: "goal-aws",
+    title: "Build vs Buy Tradeoffs (Custom SageMaker vs Managed AI vs Bedrock FMs)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Easy",
+    duration: 20,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/whitepapers/latest/aws-overview/machine-learning.html",
+    description: "Evaluate tradeoffs between managed AWS AI services (zero ML expertise needed), serverless Amazon Bedrock FMs, and custom SageMaker model development.",
+    notes: "Exam Principle: If a pre-trained managed AI service (Textract, Rekognition, Comprehend) satisfies the business requirement, ALWAYS choose it over building a custom model on SageMaker to minimize development cost."
+  },
+  {
+    id: "mla-2-1-7",
+    goalId: "goal-aws",
+    title: "Advanced RAG Architecture Patterns (Query Rewriting, HyDE, Multi-Query)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html",
+    description: "Advanced RAG retrieval patterns: Hypothetical Document Embeddings (HyDE), query rewriting, multi-query expansion, and parent-document retrieval.",
+    notes: "HyDE Technique: Generates a hypothetical answer with an LLM first, embeds that answer, and searches the vector store using the answer embedding rather than the brief user question."
+  },
+  {
+    id: "mla-2-1-8",
+    goalId: "goal-aws",
+    title: "Hybrid Search Architectures (Combining BM25 Lexical + Vector Semantic Search)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Hard",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/opensearch-service/latest/developerguide/hybrid-search.html",
+    description: "Configuring OpenSearch hybrid search queries to combine traditional BM25 keyword matching with dense neural vector search using Reciprocal Rank Fusion (RRF).",
+    notes: "Exam Scenario: When search queries contain exact product codes, SKUs, or specialized acronyms alongside semantic questions, hybrid search (keyword + vector) delivers higher recall than vector search alone."
+  },
+  {
+    id: "mla-2-1-9",
+    goalId: "goal-aws",
+    title: "Pre-Trained AWS AI Services (Textract, Rekognition, Comprehend, Transcribe)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Easy",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/textract/latest/dg/what-is.html",
+    description: "Targeted business use cases for Amazon Textract (document OCR), Rekognition (computer vision), Comprehend (NLP/sentiment), and Transcribe (audio to text).",
+    notes: "Matching Cheat Sheet: Scanned invoices/receipts with tables -> Textract. Sentiment/Key phrases in customer calls -> Transcribe + Comprehend. Video facial analysis -> Rekognition."
+  },
+  {
+    id: "mla-2-1-10",
+    goalId: "goal-aws",
+    title: "Tradeoff Analysis: Accuracy vs Latency vs Cost vs Quantization (INT8, FP16)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.1 Model & FM Selection",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/neo.html",
+    description: "Model compression and post-training quantization techniques to reduce memory footprint and latency while maintaining accuracy.",
+    notes: "Quantization Note: Quantizing 16-bit floating-point weights (FP16) down to 8-bit integers (INT8) cuts GPU memory usage in half and accelerates inference throughput with negligible drop in perplexity."
+  },
+
+  // Subtopic 2.2: Model Training, Customization & Fine-Tuning
+  {
+    id: "mla-2-2-1",
+    goalId: "goal-aws",
+    title: "SageMaker Script Mode with PyTorch, TensorFlow & Hugging Face",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/adapt-training-container.html",
+    description: "Configuring SageMaker PyTorch and HuggingFace Estimators using `entry_point='train.py'` and `source_dir`, passing S3 channels via environment variables.",
+    notes: "Script Mode Pattern: SageMaker injects training data paths into environment variable `SM_CHANNEL_TRAIN` and expects model artifacts to be saved in directory `SM_MODEL_DIR` for automatic S3 packaging."
+  },
+  {
+    id: "mla-2-2-2",
+    goalId: "goal-aws",
+    title: "Automatic Model Tuning (AMT) & Hyperparameter Optimization",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning.html",
+    description: "Configure SageMaker HyperparameterTuner with Bayesian search, define objective metrics via regex log parsing, and enable early stopping with Hyperband.",
+    notes: "Tuning Strategy: Bayesian Optimization treats hyperparameter selection as a regression problem to explore the search space efficiently. Warm Start enables incremental tuning runs based on prior completed trials."
+  },
+  {
+    id: "mla-2-2-3",
+    goalId: "goal-aws",
+    title: "Distributed Data Parallel Training (SageMaker Data Parallelism - SMDDP)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/data-parallel.html",
+    description: "Scale model training across multi-node GPU clusters (p4d/g5) by sharding dataset batches across nodes with synchronized gradient averaging.",
+    notes: "Decision Rule: Use Data Parallelism when the entire model easily fits inside a single GPU's memory, but the dataset is massive and training time needs linear speedup."
+  },
+  {
+    id: "mla-2-2-4",
+    goalId: "goal-aws",
+    title: "Distributed Model Parallel Training for Large LLMs (SageMaker Model Parallelism - SMP)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-parallel.html",
+    description: "Pipeline parallelism and tensor parallelism techniques to partition multi-billion parameter foundation models across multiple GPU VRAM cards.",
+    notes: "Decision Rule: Use Model Parallelism (SMP) when the model weights and activations exceed the VRAM of a single GPU (e.g. 70B+ parameter LLMs)."
+  },
+  {
+    id: "mla-2-2-5",
+    goalId: "goal-aws",
+    title: "Preventing Overfitting, Underfitting & Catastrophic Forgetting",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-model-tuning.html",
+    description: "Regularization (L1 Lasso, L2 Ridge, Dropout), Early Stopping callbacks, and replay buffer rehearsal datasets to prevent catastrophic forgetting in fine-tuned LLMs.",
+    notes: "Catastrophic Forgetting: When an FM is fine-tuned on a narrow new task, it may lose its general conversational abilities. Mitigate using Parameter-Efficient Fine-Tuning (LoRA) or mixing 10-20% general dataset replay."
+  },
+  {
+    id: "mla-2-2-6",
+    goalId: "goal-aws",
+    title: "Ensembling Methods (Bagging, Boosting, Stacking, Voting Classifiers)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Easy",
+    duration: 20,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/xgboost.html",
+    description: "Combine predictions from multiple independent ML models to reduce bias (boosting) or variance (bagging) and improve out-of-sample generalization.",
+    notes: "Comparison: Bagging (Random Forest) trains models in parallel to reduce variance. Boosting (XGBoost) trains models sequentially to reduce bias by focusing on prior mistakes."
+  },
+  {
+    id: "mla-2-2-7",
+    goalId: "goal-aws",
+    title: "Fundamental Hyperparameter Tuning (Learning Rate Schedules, Warmup, Batch Size)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-considerations.html",
+    description: "Impact of learning rate schedules (cosine annealing, linear warmup), mini-batch size, weight decay, and gradient clipping on model convergence.",
+    notes: "Exam Trap: If training loss explodes or oscillates wildly, the Learning Rate is too high. If loss decreases imperceptibly slowly, the Learning Rate is too small."
+  },
+  {
+    id: "mla-2-2-8",
+    goalId: "goal-aws",
+    title: "Advanced Prompt Engineering (Few-Shot, Chain-of-Thought, ReAct Framework)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-engineering-guidelines.html",
+    description: "Design structured system prompts, Few-Shot exemplars, Chain-of-Thought (CoT) step-by-step reasoning, and ReAct loop orchestrations for Bedrock models.",
+    notes: "Prompt Tip: Chain-of-Thought prompting ('Think step-by-step before answering') dramatically improves multi-step math and logical deduction accuracy in foundation models."
+  },
+  {
+    id: "mla-2-2-9",
+    goalId: "goal-aws",
+    title: "Embedding Model Fine-Tuning & Chunk Sizing Optimization",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.2 Training & Customization",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/titan-embedding-models.html",
+    description: "Fine-tune text embeddings on proprietary technical jargon and benchmark retrieval recall across varying chunk sizes and overlap percentages.",
+    notes: "Tuning Rule: When domain queries use specialized abbreviations and acronyms not present in public web datasets, fine-tune the embedding model to cluster domain synonyms together."
+  },
+
+  // Subtopic 2.3: Model Evaluation, Validation & AI Metrics
+  {
+    id: "mla-2-3-1",
+    goalId: "goal-aws",
+    title: "Experiment Tracking & Lineage with MLflow on SageMaker AI & SageMaker Experiments",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/experiments.html",
+    description: "Track parameters, code versions, metrics, and dataset hashes using fully-managed MLflow on SageMaker AI for auditability and experiment reproducibility.",
+    notes: "Best Practice: Managed MLflow on SageMaker AI enables teams to visualize metric curves across training runs and maintain end-to-end data/model artifact lineage."
+  },
+  {
+    id: "mla-2-3-2",
+    goalId: "goal-aws",
+    title: "Classical ML Evaluation Metrics (Precision, Recall, F1, ROC-AUC, PR-AUC, RMSE)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Easy",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/cdf-model-evaluation.html",
+    description: "Select appropriate evaluation metrics based on business objectives: False Positives (Precision) vs False Negatives (Recall) trade-off.",
+    notes: "Exam Trap: Medical cancer detection or fraud alerting -> High Recall (minimize false negatives). Spam filter -> High Precision (minimize false positives). Imbalanced binary classification -> PR-AUC over ROC-AUC."
+  },
+  {
+    id: "mla-2-3-3",
+    goalId: "goal-aws",
+    title: "NLP & Generation Evaluation Metrics (BLEU, ROUGE-1/2/L, BERTScore, Perplexity)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html",
+    description: "Evaluating natural language generation: n-gram precision (BLEU), n-gram recall (ROUGE), and contextual semantic embedding similarity (BERTScore).",
+    notes: "Cheat Sheet: Machine Translation -> BLEU. Text Summarization -> ROUGE-1, ROUGE-2, and ROUGE-L. Semantic Paraphrase Quality -> BERTScore."
+  },
+  {
+    id: "mla-2-3-4",
+    goalId: "goal-aws",
+    title: "Amazon Bedrock Automated Model Evaluation & LLM-as-a-Judge Frameworks",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation.html",
+    description: "Configure Bedrock Model Evaluation jobs using automated benchmarks or LLM-as-a-judge to evaluate accuracy, toxicity, and hallucinations across prompt datasets.",
+    notes: "High-Yield Feature: Amazon Bedrock Model Evaluation enables automated side-by-side comparison of candidate models on custom prompt datasets scored by an authoritative judge LLM."
+  },
+  {
+    id: "mla-2-3-5",
+    goalId: "goal-aws",
+    title: "Human-in-the-Loop Evaluation (Amazon Augmented AI - A2I & Ground Truth)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/augmented-ai/latest/devguide/what-is-a2i.html",
+    description: "Route low-confidence model predictions or sensitive GenAI outputs to human reviewers using Amazon Augmented AI (Amazon A2I) review loops.",
+    notes: "Architecture Rule: When a model's prediction confidence score falls below a safety threshold (e.g., < 0.85), Amazon A2I triggers a human review task automatically."
+  },
+  {
+    id: "mla-2-3-6",
+    goalId: "goal-aws",
+    title: "Explainability with SageMaker Clarify (SHAP Values & Feature Attribution)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-feature-attribute-shap-values.html",
+    description: "Compute Shapley Additive Explanations (SHAP) post-training to generate global feature importance summaries and individual local prediction explanations.",
+    notes: "Compliance Requirement: Regulated decisions (credit card denials, insurance underwriting) require local SHAP explanations to produce legally compliant Adverse Action notices explaining why an individual was rejected."
+  },
+  {
+    id: "mla-2-3-7",
+    goalId: "goal-aws",
+    title: "Debugging Model Convergence Issues with SageMaker Debugger",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/train-debugger.html",
+    description: "Monitor real-time training tensors, detect vanishing/exploding gradients, identify non-improving loss curves, and profile GPU utilization bottlenecks.",
+    notes: "Troubleshooting: SageMaker Debugger built-in rules (e.g. `VanishingGradient`, `Overfitting`, `LossNotDecreasing`) can automatically terminate failing training jobs to save compute costs."
+  },
+  {
+    id: "mla-2-3-8",
+    goalId: "goal-aws",
+    title: "RAG Evaluation Metrics (Context Relevance, Groundedness/Faithfulness, Answer Relevance)",
+    topic: "Domain 2: FM & ML Modeling",
+    subtopic: "2.3 Evaluation & Validation",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html",
+    description: "Assessing RAG performance using the RAG Triad: Context Relevance (retrieval quality), Groundedness (hallucination check), and Answer Relevance (query satisfaction).",
+    notes: "Core RAG Metrics: If Context Relevance is low -> tune chunk size or vector index. If Groundedness is low -> prompt engineering to strictly constrain response to context."
+  },
+
+  // --- DOMAIN 3: Deployment and Orchestration of ML and AI Workflows (24%) ---
+  // Subtopic 3.1: Deployment Infrastructure & Endpoint Design
+  {
+    id: "mla-3-1-1",
+    goalId: "goal-aws",
+    title: "SageMaker Inference Options: Real-Time vs Serverless vs Asynchronous vs Batch Transform",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.1 Deployment Infrastructure",
+    difficulty: "Hard",
+    duration: 40,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/deploy-model.html",
+    description: "Exhaustive comparison of SageMaker inference hosting options based on latency, payload limits, invocation patterns, and cost behavior.",
+    notes: "CRITICAL EXAM DECISION MATRIX: Real-Time (sub-100ms, persistent instances, 6MB payload). Serverless (infrequent/spiky, scales to 0, 4MB payload). Asynchronous (up to 1GB payload, up to 1hr execution, S3+SQS queue). Batch Transform (offline dataset scoring, TBs of data)."
+  },
+  {
+    id: "mla-3-1-2",
+    goalId: "goal-aws",
+    title: "Multi-Model Endpoints (MME) for Cost-Effective Hosting of 100s of Models",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.1 Deployment Infrastructure",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/multi-model-endpoints.html",
+    description: "Deploy hundreds of homogeneous models on a shared instance pool behind a single endpoint, dynamically loading models into memory from S3 upon invocation.",
+    notes: "Cost Saver Rule: When you have 50-1000 similar models with infrequent individual traffic (e.g. per-customer models), ALWAYS choose SageMaker Multi-Model Endpoints (MME) to avoid paying for dedicated instances per model."
+  },
+  {
+    id: "mla-3-1-3",
+    goalId: "goal-aws",
+    title: "Multi-Container Endpoints (MCE) & Serial Inference Pipelines",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.1 Deployment Infrastructure",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/multi-container-endpoints.html",
+    description: "Chain pre-processing, inference, and post-processing containers together in a sequential pipeline behind a single HTTPS endpoint.",
+    notes: "Inference Pipeline Pattern: Container 1 (Scikit-Learn feature transformer) -> Container 2 (XGBoost / PyTorch model) -> Container 3 (Post-processing response formatter). Avoids extra S3 round-trips."
+  },
+  {
+    id: "mla-3-1-4",
+    goalId: "goal-aws",
+    title: "Foundation Model Deployment Options: Bedrock On-Demand vs Provisioned Throughput vs JumpStart",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.1 Deployment Infrastructure",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html",
+    description: "Tradeoffs between serverless token billing (On-Demand), dedicated Model Units with commitment (Provisioned Throughput), and dedicated SageMaker hosting.",
+    notes: "Exam Decision: For variable or development traffic, use Bedrock On-Demand. For large production workloads requiring guaranteed throughput without rate-limiting (throttling), purchase Bedrock Provisioned Throughput."
+  },
+  {
+    id: "mla-3-1-5",
+    goalId: "goal-aws",
+    title: "Deploying External Models (SageMaker BYOM & Amazon Bedrock Custom Model Import)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.1 Deployment Infrastructure",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/model-customization-import-model.html",
+    description: "Import externally trained weights (from Hugging Face or on-premises) into Amazon Bedrock via Custom Model Import or host custom containers in SageMaker.",
+    notes: "New Feature in MLA-C02: Amazon Bedrock Custom Model Import allows you to import custom fine-tuned model architectures (Llama, Mistral) into Bedrock and invoke them through standard serverless Bedrock APIs."
+  },
+  {
+    id: "mla-3-1-6",
+    goalId: "goal-aws",
+    title: "Amazon Bedrock Agents: Action Groups, OpenAPI Schemas & Lambda Integrations",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.1 Deployment Infrastructure",
+    difficulty: "Hard",
+    duration: 40,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+    description: "Build autonomous multi-step agents in Bedrock: define action groups with OpenAPI 3.0 schemas, connect Lambda functions, and orchestrate with user instructions.",
+    notes: "Agent Core Architecture: The LLM breaks down complex queries into steps, inspects the OpenAPI schema of connected Action Groups, decides which tool/API to invoke, executes via AWS Lambda, and synthesizes the response."
+  },
+  {
+    id: "mla-3-1-7",
+    goalId: "goal-aws",
+    title: "Bedrock Knowledge Bases Deployment & Reranking (Cohere Rerank)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.1 Deployment Infrastructure",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base.html",
+    description: "Deploy managed RAG with Bedrock Knowledge Bases, connect to OpenSearch Serverless, and configure advanced rerank models (Cohere Rerank) to filter retrieved chunks.",
+    notes: "Reranking Advantage: Vector search retrieves top 20 candidate chunks based on vector distance; Cohere Rerank cross-encodes the query and candidates to score true semantic relevance, passing only top 5 to the generator LLM."
+  },
+
+  // Subtopic 3.2: Resource Provisioning & Network Configuration
+  {
+    id: "mla-3-2-1",
+    goalId: "goal-aws",
+    title: "Compute Instance Selection: CPU (c6i/c7g) vs GPU (g5/p4de) vs Silicon (Inf2/Trn1)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.2 Resource Provisioning",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/instance-types.html",
+    description: "Select optimal EC2 instance families for ML training and inference: Graviton ARM, NVIDIA Tensor Core GPUs, AWS Inferentia (Inf2), and AWS Trainium (Trn1).",
+    notes: "Silicon Rules: Choose AWS Trainium (trn1) for lowest cost-to-train deep learning and LLMs. Choose AWS Inferentia (inf2) for lowest latency and cost-per-inference on deep learning models."
+  },
+  {
+    id: "mla-3-2-2",
+    goalId: "goal-aws",
+    title: "VPC Network Environments & SageMaker PrivateLink (VPC Endpoints & S3 Gateway)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.2 Resource Provisioning",
+    difficulty: "Hard",
+    duration: 40,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/interface-vpc-endpoint.html",
+    description: "Architect secure private network topology: private subnets with no internet gateway, VPC Interface Endpoints for SageMaker API & Runtime, and S3 Gateway Endpoint.",
+    notes: "CRITICAL SECURITY SCENARIO: For maximum security, launch training and endpoint clusters inside private subnets without NAT gateways. Access S3 via Gateway VPC Endpoint and SageMaker via Interface VPC Endpoints (PrivateLink)."
+  },
+  {
+    id: "mla-3-2-3",
+    goalId: "goal-aws",
+    title: "Deploying & Hosting Models Programmatically (SageMaker Python SDK & Boto3)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.2 Resource Provisioning",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html",
+    description: "Programmatic resource provisioning lifecycle: `CreateModel` -> `CreateEndpointConfig` (production variants and instance types) -> `CreateEndpoint`.",
+    notes: "SDK Sequence: In Boto3, you must create a Model resource and an EndpointConfig resource before you can create the live Endpoint."
+  },
+  {
+    id: "mla-3-2-4",
+    goalId: "goal-aws",
+    title: "Auto-Scaling Policies for SageMaker Endpoints (Target Tracking & Scaling Metrics)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.2 Resource Provisioning",
+    difficulty: "Hard",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html",
+    description: "Configure Application Auto Scaling on SageMaker production variants using Target Tracking on `SageMakerVariantInvocationsPerInstance` metric.",
+    notes: "Exam Favorite: The recommended metric for auto-scaling SageMaker real-time endpoints is `SageMakerVariantInvocationsPerInstance`. Configure cooldown periods to prevent rapid flapping."
+  },
+  {
+    id: "mla-3-2-5",
+    goalId: "goal-aws",
+    title: "Building & Maintaining Deep Learning Containers (AWS DLCs & Amazon ECR)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.2 Resource Provisioning",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/pre-built-containers-frameworks-deep-learning.html",
+    description: "Using pre-built AWS Deep Learning Containers (DLCs) for PyTorch and TensorFlow, custom Dockerfiles, and scanning container images in Amazon ECR.",
+    notes: "Best Practice: Always start with official AWS Deep Learning Containers (DLCs) rather than building from scratch. DLCs are pre-optimized with CUDA and network acceleration."
+  },
+  {
+    id: "mla-3-2-6",
+    goalId: "goal-aws",
+    title: "Agent State Management Systems & Multi-Turn Conversation Memory (Amazon DynamoDB)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.2 Resource Provisioning",
+    difficulty: "Hard",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/agents-session-state.html",
+    description: "Implement persistent conversational state and execution memory across agent sessions using Amazon DynamoDB and Bedrock Agent session attributes.",
+    notes: "Architecture Pattern: Store user session IDs and serialized message histories in Amazon DynamoDB. Pass the session ID to Bedrock `InvokeAgent` to maintain context across multi-turn interactions."
+  },
+  {
+    id: "mla-3-2-7",
+    goalId: "goal-aws",
+    title: "AI-Specific Scaling for GPU Workloads (GPU Memory Utilization Tracking)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.2 Resource Provisioning",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/monitoring-cloudwatch.html",
+    description: "Install and configure CloudWatch agent on GPU compute instances to publish custom metrics: GPU memory used, GPU utilization, and PCIe throughput.",
+    notes: "CloudWatch Detail: Standard CloudWatch EC2 metrics do NOT include GPU memory or GPU temperature. You must install the CloudWatch agent with NVIDIA Management Library (NVML) metrics enabled."
+  },
+
+  // Subtopic 3.3: MLOps Pipelines, CI/CD & Governance
+  {
+    id: "mla-3-3-1",
+    goalId: "goal-aws",
+    title: "SageMaker Pipelines DAG Orchestration (Processing, Training, Tuning, Condition Steps)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Hard",
+    duration: 40,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/pipelines-sdk.html",
+    description: "Build serverless ML workflows using SageMaker Pipelines Python SDK: define Directed Acyclic Graphs (DAGs) with dependencies, parameters, and conditional branching.",
+    notes: "Pipeline Architecture: `ProcessingStep` (Data cleaning) -> `TrainingStep` (Model training) -> `ConditionStep` (Evaluate metric threshold, e.g. accuracy > 0.85) -> `RegisterModelStep` (Push to Model Registry)."
+  },
+  {
+    id: "mla-3-3-2",
+    goalId: "goal-aws",
+    title: "Automated Model Retraining Triggers (Amazon EventBridge, S3 Events & CloudWatch)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/automating-sagemaker-with-eventbridge.html",
+    description: "Event-driven MLOps: trigger SageMaker Pipelines automatically via Amazon EventBridge rules when new training data arrives in S3 or Model Monitor triggers a drift alarm.",
+    notes: "Event-Driven MLOps: When S3 receives a new data drop or Model Monitor fires an alarm, CloudWatch raises an alert -> Amazon EventBridge rule matches the pattern -> Triggers `StartPipelineExecution`."
+  },
+  {
+    id: "mla-3-3-3",
+    goalId: "goal-aws",
+    title: "Safe Deployment Strategies: Blue/Green, Canary & Linear Traffic Shifting",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails.html",
+    description: "Deploy models with SageMaker Deployment Guardrails: Canary traffic shifting (e.g. 10% for 15 min), linear shifting, and automatic CloudWatch alarm rollback.",
+    notes: "Deployment Guardrails: Configure `AutoRollbackConfiguration` tied to CloudWatch 5xx error alarms. If the new Canary variant throws errors during the bake period, SageMaker rolls back automatically with zero downtime."
+  },
+  {
+    id: "mla-3-3-4",
+    goalId: "goal-aws",
+    title: "SageMaker Shadow Testing: Comparing Candidate vs Production Models Safely",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html",
+    description: "Deploy a shadow variant alongside a production variant; 100% of live traffic is duplicated to the shadow model, but only production responses are returned to users.",
+    notes: "TOP EXAM FAVORITE: When asked 'How to evaluate a new model's latency and error rate under true production load without risking user experience?', ALWAYS choose SageMaker Shadow Testing."
+  },
+  {
+    id: "mla-3-3-5",
+    goalId: "goal-aws",
+    title: "SageMaker Model Registry: Versioning, Approval Workflows & Governance",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry.html",
+    description: "Catalog model package groups, track model metrics, audit approvals (`PendingManualApproval`, `Approved`, `Rejected`), and automate downstream deployment.",
+    notes: "Governance Pattern: New models register with `PendingManualApproval`. When a lead engineer approves the model in Model Registry, EventBridge triggers the AWS CodePipeline deployment to production."
+  },
+  {
+    id: "mla-3-3-6",
+    goalId: "goal-aws",
+    title: "AWS CI/CD Services for MLOps (CodeBuild, CodeDeploy, CodePipeline, CodeConnections)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html",
+    description: "Integrate Git repositories (GitHub/CodeCommit) with AWS CodePipeline, run automated unit/integration tests in CodeBuild, and deploy infrastructure via CloudFormation.",
+    notes: "CI/CD Pipeline: Source (CodeConnections/GitHub) -> Build (CodeBuild runs PyTest and linting) -> Deploy (CodePipeline invokes SageMaker Pipeline / CloudFormation template)."
+  },
+  {
+    id: "mla-3-3-7",
+    goalId: "goal-aws",
+    title: "Amazon Bedrock Prompt Management & Versioning (Prompt Templates & Variables)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-management.html",
+    description: "Manage, version, test, and save prompt templates with dynamic variables and inference parameter configurations in Amazon Bedrock Prompt Management.",
+    notes: "New in MLA-C02: Bedrock Prompt Management lets teams create production aliases (e.g. `PROD` pointing to Version 3) so application code does not need redeployment when prompts are updated."
+  },
+  {
+    id: "mla-3-3-8",
+    goalId: "goal-aws",
+    title: "Automated Knowledge Base Ingestion & Refresh Pipelines (Bedrock StartIngestionJob)",
+    topic: "Domain 3: MLOps & Deployment",
+    subtopic: "3.3 MLOps & CI/CD",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ingest.html",
+    description: "Automate synchronization between S3 document updates and OpenSearch vector indices using the Amazon Bedrock `StartIngestionJob` API.",
+    notes: "Automation Tip: Trigger a Lambda function on S3 object creation (`s3:ObjectCreated:*`) that calls Bedrock's `StartIngestionJob` to sync new documents into the vector index automatically."
+  },
+
+  // --- DOMAIN 4: Operating, Monitoring, and Securing ML and AI Solutions (24%) ---
+  // Subtopic 4.1: Model & Inference Monitoring in Production
+  {
+    id: "mla-4-1-1",
+    goalId: "goal-aws",
+    title: "SageMaker Model Monitor: Data Quality Monitoring (Baselines & Constraints)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.1 Monitoring & Observability",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-quality.html",
+    description: "Establish baseline constraints and statistics during training, capture production payload requests, and detect statistical schema violations and data drift.",
+    notes: "Data Quality Baseline: SageMaker Model Monitor outputs `constraints.json` and `statistics.json` on training data. During inference, it flags `constraint_violations.json` if input data distributions deviate."
+  },
+  {
+    id: "mla-4-1-2",
+    goalId: "goal-aws",
+    title: "SageMaker Model Monitor: Model Quality Monitoring (Ground Truth Label Matching)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.1 Monitoring & Observability",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality.html",
+    description: "Monitor real-time degradation in model accuracy, precision, and recall by joining endpoint inference logs with delayed ground truth labels uploaded to S3.",
+    notes: "Model Quality Flow: Ground truth labels (e.g. loan defaults observed 6 months later) are uploaded to S3. Model Monitor joins predictions with actual labels to detect accuracy and F1 degradation."
+  },
+  {
+    id: "mla-4-1-3",
+    goalId: "goal-aws",
+    title: "SageMaker Clarify Model Monitor: Bias Drift & Feature Attribution Drift",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.1 Monitoring & Observability",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-model-monitor-bias-drift.html",
+    description: "Continuous monitoring for algorithmic bias drift (Disparate Impact, DPL) and shifts in SHAP feature attribution rankings on live production endpoints.",
+    notes: "Attribution Drift: When the relative importance of features shifts over time (e.g. interest rate becomes more predictive than credit score), Clarify flags Feature Attribution Drift."
+  },
+  {
+    id: "mla-4-1-4",
+    goalId: "goal-aws",
+    title: "Amazon CloudWatch Generative AI Observability (Invocations, Latency, Token Metrics)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.1 Monitoring & Observability",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/monitoring-cloudwatch.html",
+    description: "Track Bedrock model metrics: `Invocations`, `InvocationClientErrors`, `InvocationServerErrors`, `ModelLatency`, `InputTokenCount`, and `OutputTokenCount`.",
+    notes: "Key CloudWatch Metrics: Monitor `ModelLatency` (time spent in foundation model inference) vs `OverheadLatency` (network/SDK serialization time) to isolate performance bottlenecks."
+  },
+  {
+    id: "mla-4-1-5",
+    goalId: "goal-aws",
+    title: "Agentic Workflow Observability: Coordination Failures, Truncated Streaming & Tool Retries",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.1 Monitoring & Observability",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/agents.html",
+    description: "Detecting and alerting on agent failure modes: tool execution timeouts, circular reasoning loops, truncated streaming responses, and AWS X-Ray trace analysis.",
+    notes: "New in MLA-C02: Use AWS X-Ray integrated with Bedrock Agents to trace execution across each tool call and identify which Lambda action group timed out or caused an exception."
+  },
+  {
+    id: "mla-4-1-6",
+    goalId: "goal-aws",
+    title: "Production A/B Testing & Production Variants Configuration",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.1 Monitoring & Observability",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-ab-testing.html",
+    description: "Distribute live inference traffic between two model variants (e.g., 50% Variant A, 50% Variant B) on a single SageMaker endpoint to evaluate performance.",
+    notes: "Configuration: In EndpointConfig, specify multiple `ProductionVariant` blocks with `InitialVariantWeight` (e.g. 0.5 and 0.5) to run live A/B testing across models."
+  },
+
+  // Subtopic 4.2: Cost Optimization & Resource Management
+  {
+    id: "mla-4-2-1",
+    goalId: "goal-aws",
+    title: "SageMaker Managed Spot Training with Checkpointing (Up to 90% Savings)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.2 Cost Optimization",
+    difficulty: "Medium",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html",
+    description: "Configuring `use_spot_instances=True` and `checkpoint_s3_uri` on SageMaker Estimators to leverage spare EC2 capacity at steep discounts.",
+    notes: "MUST-KNOW EXAM RULE: When using Managed Spot Training, you MUST configure checkpointing in your training code and set `checkpoint_s3_uri`. Without checkpointing, interruptions force training to restart from scratch!"
+  },
+  {
+    id: "mla-4-2-2",
+    goalId: "goal-aws",
+    title: "Cost-Effective Inference Strategies (Serverless, Multi-Model, Graviton Instances)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.2 Cost Optimization",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/best-practices-inference-cost.html",
+    description: "Optimize hosting spend: Serverless Inference for intermittent bursts, Multi-Model Endpoints for hundreds of models, and Graviton instances for CPU workloads.",
+    notes: "Quick Rule: If inference traffic drops to zero overnight, choose SageMaker Serverless Inference ($0 when idle) rather than paying 24/7 for dedicated instances."
+  },
+  {
+    id: "mla-4-2-3",
+    goalId: "goal-aws",
+    title: "Foundation Model Inference Cost Management (Token Optimization & Prompt Caching)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.2 Cost Optimization",
+    difficulty: "Hard",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-caching.html",
+    description: "Control Bedrock spending: optimize prompt token length, utilize Anthropic prompt caching for repeated document headers, and set token usage quotas.",
+    notes: "Cost Optimization: Prompt Caching reduces input token processing costs by up to 80% on long repeated contexts (e.g., a 20-page legal contract queried multiple times)."
+  },
+  {
+    id: "mla-4-2-4",
+    goalId: "goal-aws",
+    title: "Model Routing & Cascading (Haiku for Simple Tasks, Sonnet for Complex Queries)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.2 Cost Optimization",
+    difficulty: "Hard",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html",
+    description: "Implement a tiered model routing architecture to send easy queries to smaller models (Claude 3.5 Haiku) and escalate difficult reasoning to Claude 3.5 Sonnet.",
+    notes: "Architectural Pattern: Use a fast, inexpensive classifier or Haiku to classify intent. 80% of queries get answered at 1/10th the cost; only the complex 20% route to Sonnet."
+  },
+  {
+    id: "mla-4-2-5",
+    goalId: "goal-aws",
+    title: "AWS Cost Governance Tools (AWS Budgets, Cost Allocation Tags & Cost Explorer)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.2 Cost Optimization",
+    difficulty: "Easy",
+    duration: 20,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/cost-management/latest/userguide/budgets-managing-costs.html",
+    description: "Tag SageMaker resources (`Project`, `Environment`, `CostCenter`), configure AWS Budgets alarms, and analyze historical spend trends in Cost Explorer.",
+    notes: "Exam Note: Use Cost Allocation Tags on SageMaker Training jobs and Endpoints to track which business team or experiment incurred the GPU spend."
+  },
+
+  // Subtopic 4.3: Security, IAM, Compliance & Governance
+  {
+    id: "mla-4-3-1",
+    goalId: "goal-aws",
+    title: "IAM Execution Roles & Least-Privilege Policies for SageMaker & Bedrock",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.3 Security & Compliance",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html",
+    description: "Author precise IAM trust relationships and permissions policies granting SageMaker and Bedrock access strictly to specific S3 buckets and KMS keys.",
+    notes: "Security Principle: Avoid `AdministratorAccess` or broad wildcards (`s3:*`). Grant `s3:GetObject` only to the training data bucket, `s3:PutObject` only to the model artifact bucket, and `kms:Decrypt` only on the specific CMK."
+  },
+  {
+    id: "mla-4-3-2",
+    goalId: "goal-aws",
+    title: "Data Encryption at Rest & In Transit (AWS KMS Customer Managed Keys & Inter-Container TLS)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.3 Security & Compliance",
+    difficulty: "Hard",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/encryption-at-rest.html",
+    description: "Configure AWS KMS Customer Managed Keys (CMKs) for S3 buckets, EBS storage volumes, and enable inter-container TLS encryption for distributed training nodes.",
+    notes: "Security Rule: For distributed training across multiple instances, enable `EnableInterContainerTrafficEncryption=True` on the Estimator to encrypt peer-to-peer data transfers in transit."
+  },
+  {
+    id: "mla-4-3-3",
+    goalId: "goal-aws",
+    title: "Complete Network Isolation (Private Subnets, S3 Gateway Endpoints, EnableNetworkIsolation)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.3 Security & Compliance",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/mkt-algo-network-isolation.html",
+    description: "Lock down ML training and inference containers by setting `EnableNetworkIsolation=True`, preventing training algorithms from making any external network calls.",
+    notes: "Air-Gapped Training: When `EnableNetworkIsolation=True` is enabled, the training container has NO network interface and cannot make any HTTP/HTTPS calls outside the instance, preventing data exfiltration."
+  },
+  {
+    id: "mla-4-3-4",
+    goalId: "goal-aws",
+    title: "Amazon Bedrock Guardrails: Content Filtering, Denied Topics & Prompt Injection Defense",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.3 Security & Compliance",
+    difficulty: "Hard",
+    duration: 35,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails.html",
+    description: "Configure Bedrock Guardrails to block toxic content (hate, sexual, violence), enforce customized denied topics, and prevent prompt injection / jailbreak attacks.",
+    notes: "TOP EXAM PRIORITY: Bedrock Guardrails can be applied to ANY foundation model on Bedrock and custom fine-tuned models. It evaluates both user input prompts and model generated completions."
+  },
+  {
+    id: "mla-4-3-5",
+    goalId: "goal-aws",
+    title: "Bedrock Guardrails: Sensitive Information PII Masking & Regex Filtering",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.3 Security & Compliance",
+    difficulty: "Hard",
+    duration: 30,
+    isImportant: true,
+    url: "https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-sensitive-filters.html",
+    description: "Detect, block, or automatically mask PII entities (SSN, credit card, phone, email) in LLM input queries and generated responses using Bedrock Guardrails.",
+    notes: "Action Types in Guardrails: You can choose to either BLOCK the request with a standard message ('I cannot process requests containing sensitive PII') or automatically ANONYMIZE/MASK the entity (e.g. `[EMAIL]`)."
+  },
+  {
+    id: "mla-4-3-6",
+    goalId: "goal-aws",
+    title: "Auditing & Vulnerability Management (AWS CloudTrail, AWS Config, Amazon Inspector)",
+    topic: "Domain 4: Operations & Security",
+    subtopic: "4.3 Security & Compliance",
+    difficulty: "Medium",
+    duration: 25,
+    isImportant: false,
+    url: "https://docs.aws.amazon.com/sagemaker/latest/dg/logging-using-cloudtrail.html",
+    description: "Audit all SageMaker and Bedrock API calls via AWS CloudTrail, evaluate KMS encryption rules via AWS Config, and scan custom ECR container images with Amazon Inspector.",
+    notes: "Compliance Trio: CloudTrail audits WHO called WHAT API at WHEN. AWS Config tracks WHETHER resources comply with security policies. Amazon Inspector scans container images for CVE vulnerabilities."
+  }
+];
+
+// Read existing seed data
+const raw = JSON.parse(fs.readFileSync(BACKEND_SEED_FILE, 'utf-8'));
+
+// Filter out old AWS tasks (if any) and update goals
+const dsaTasks = raw.tasks.filter(t => t.goalId === 'goal-dsa');
+// Ensure DSA question 1 is completed: false as requested
+dsaTasks.forEach(t => {
+  if (t.id === 'dsa-1') {
+    t.completed = false;
+    t.completedAt = null;
+    t.completedDate = null;
+  }
+});
+
+const goals = [
+  raw.goals.find(g => g.id === 'goal-dsa') || {
+    id: "goal-dsa",
+    title: "Master DSA (Grind 169)",
+    description: "Complete all 169 top interview questions grouped by topic from Tech Interview Handbook",
+    category: "Algorithms & Data Structures",
+    icon: "Code2",
+    createdAt: "2026-11-13T08:21:21.439Z"
+  },
+  GOAL_AWS
+];
+
+// Construct new tasks list
+const allTasks = [
+  ...dsaTasks,
+  ...MLA_TASKS.map(t => ({
+    ...t,
+    completed: false,
+    completedAt: null,
+    completedDate: null,
+    createdAt: new Date().toISOString()
+  }))
+];
+
+const newSeedData = {
+  goals,
+  tasks: allTasks
+};
+
+// Write to backend seed data
+fs.writeFileSync(BACKEND_SEED_FILE, JSON.stringify(newSeedData, null, 2), 'utf-8');
+console.log(`✅ Updated ${BACKEND_SEED_FILE} with ${goals.length} goals and ${allTasks.length} tasks (${MLA_TASKS.length} MLA-C02 tasks)!`);
+
+// Write to frontend seed data
+fs.writeFileSync(FRONTEND_SEED_FILE, JSON.stringify(newSeedData, null, 2), 'utf-8');
+console.log(`✅ Updated ${FRONTEND_SEED_FILE} successfully!`);

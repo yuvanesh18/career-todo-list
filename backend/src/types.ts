@@ -35,14 +35,18 @@ export interface Task {
   userId: string;
   goalId: string;
   title: string;
-  topic: string; // e.g. "Array", "Stack", "Linked List", "Networking"
+  topic: string; // e.g. "Array", "Stack", "Domain 1: Data Preparation"
+  subtopic?: string; // e.g. "1.1 Collect & Store Data"
   difficulty?: Difficulty;
-  url?: string; // e.g. LeetCode link
+  url?: string; // e.g. LeetCode link or AWS documentation link
   duration?: number; // estimated minutes
   completed: boolean;
   completedAt: string | null; // ISO timestamp
   completedDate: string | null; // YYYY-MM-DD
   createdAt: string;
+  isImportant?: boolean; // Marks critical/high-yield exam topics
+  description?: string; // Concept explanation
+  notes?: string; // Quick revision notes and exam traps
 }
 
 export interface DailyActivityItem {

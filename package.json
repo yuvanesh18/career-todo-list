@@ -4,6 +4,7 @@
   "description": "CareerPulse - Daily Engineering Progress & Goal Tracker with Docker and CI/CD",
   "private": true,
   "scripts": {
+    "dev": "node scripts/dev.mjs",
     "dev:backend": "cd backend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
     "build": "npm run build:backend && npm run build:frontend",
