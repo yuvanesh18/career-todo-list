@@ -49,6 +49,7 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
   const [expandedNotes, setExpandedNotes] = useState<Record<string, boolean>>({});
   const [notepadTask, setNotepadTask] = useState<Task | null>(null);
   const [isNotepadOpen, setIsNotepadOpen] = useState(false);
+  const [awsViewMode, setAwsViewMode] = useState<'skills' | 'services'>('skills');
 
   const openNotepad = (task: Task) => {
     setNotepadTask(task);
@@ -58,20 +59,41 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
   const currentGoal = goals.find(g => g.id === selectedGoalId) || goals[0];
   const goalTasks = tasks.filter(t => t.goalId === currentGoal?.id);
 
+  const isDsa = currentGoal?.title.toLowerCase().includes('dsa');
+  const isAws = currentGoal?.title.toLowerCase().includes('aws') || currentGoal?.title.toLowerCase().includes('machine learning');
+
+  // Segregate AWS skills (mla-) vs AWS services (svc-)
+  const skillsTasks = isAws ? goalTasks.filter(t => t.id.startsWith('mla-')) : goalTasks;
+  const serviceTasks = isAws ? goalTasks.filter(t => t.id.startsWith('svc-')) : [];
+
+  const skillsCompleted = skillsTasks.filter(t => t.completed).length;
+  const skillsTotal = skillsTasks.length;
+  const skillsPercent = skillsTotal > 0 ? Math.round((skillsCompleted / skillsTotal) * 100) : 0;
+
+  const servicesCompleted = serviceTasks.filter(t => t.completed).length;
+  const servicesTotal = serviceTasks.length;
+  const servicesPercent = servicesTotal > 0 ? Math.round((servicesCompleted / servicesTotal) * 100) : 0;
+
+  // Active tasks for current view
+  const activeTasks = isAws
+    ? (awsViewMode === 'skills' ? skillsTasks : serviceTasks)
+    : goalTasks;
+
+  const activeCompleted = activeTasks.filter(t => t.completed).length;
+  const activePercent = activeTasks.length > 0 ? Math.round((activeCompleted / activeTasks.length) * 100) : 0;
+
   const completedCount = goalTasks.filter(t => t.completed).length;
   const progressPercent = goalTasks.length > 0
     ? Math.round((completedCount / goalTasks.length) * 100)
     : 0;
 
-  const importantCount = goalTasks.filter(t => t.isImportant).length;
-  const isDsa = currentGoal?.title.toLowerCase().includes('dsa');
-  const isAws = currentGoal?.title.toLowerCase().includes('aws') || currentGoal?.title.toLowerCase().includes('machine learning');
+  const importantCount = activeTasks.filter(t => t.isImportant).length;
 
   // Extract unique topics for this goal
-  const topicsList = Array.from(new Set(goalTasks.map(t => t.topic))).sort();
+  const topicsList = Array.from(new Set(activeTasks.map(t => t.topic))).sort();
 
   // Filter tasks
-  const filteredTasks = goalTasks.filter(t => {
+  const filteredTasks = activeTasks.filter(t => {
     if (search.trim()) {
       const q = search.toLowerCase();
       const matchTitle = t.title.toLowerCase().includes(q);
@@ -256,6 +278,61 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
         </div>
       )}
 
+      {/* AWS Mode Switcher: 107 Exam Skills vs 81 In-Scope Services */}
+      {isAws && (
+        <div className="flex flex-col sm:flex-row items-center gap-3 bg-white p-2 rounded-2xl border border-slate-200 shadow-xs">
+          <button
+            type="button"
+            onClick={() => {
+              setAwsViewMode('skills');
+              setSelectedTopic('All');
+            }}
+            className={`w-full sm:flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 ${
+              awsViewMode === 'skills'
+                ? 'bg-indigo-600 text-white shadow-md'
+                : 'bg-slate-50 hover:bg-slate-100 text-slate-700'
+            }`}
+          >
+            <BrainCircuit className="w-4 h-4" />
+            <span>107 Exam Skills Roadmap</span>
+            <span
+              className={`text-xs px-2 py-0.5 rounded-full font-bold ${
+                awsViewMode === 'skills'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-slate-200 text-slate-700'
+              }`}
+            >
+              {skillsCompleted} / {skillsTotal} ({skillsPercent}%)
+            </span>
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setAwsViewMode('services');
+              setSelectedTopic('All');
+            }}
+            className={`w-full sm:flex-1 py-3 px-4 rounded-xl text-xs sm:text-sm font-extrabold transition-all flex items-center justify-center gap-2 ${
+              awsViewMode === 'services'
+                ? 'bg-indigo-600 text-white shadow-md'
+                : 'bg-slate-50 hover:bg-slate-100 text-slate-700'
+            }`}
+          >
+            <Cloud className="w-4 h-4" />
+            <span>In-Scope AWS Services (81)</span>
+            <span
+              className={`text-xs px-2 py-0.5 rounded-full font-bold ${
+                awsViewMode === 'services'
+                  ? 'bg-white/20 text-white'
+                  : 'bg-slate-200 text-slate-700'
+              }`}
+            >
+              {servicesCompleted} / {servicesTotal} ({servicesPercent}%)
+            </span>
+          </button>
+        </div>
+      )}
+
       {/* 3. Search and Topic Filters */}
       {goalTasks.length > 0 && (
         <div className="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs space-y-4">
@@ -265,7 +342,13 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
               <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
               <input
                 type="text"
-                placeholder={isDsa ? "Search questions by name, topic (e.g. Two Sum, Array, Dynamic Programming)..." : "Search topics, services, exam notes (e.g. Bedrock, SageMaker, RAG, Spot Training)..."}
+                placeholder={
+                  isDsa
+                    ? "Search questions by name, topic (e.g. Two Sum, Array, Dynamic Programming)..."
+                    : awsViewMode === 'services'
+                    ? "Search AWS services by name or category (e.g. SageMaker, Bedrock, S3, Glue, Kinesis, KMS)..."
+                    : "Search exam skills, topics, services (e.g. Bedrock, SageMaker, RAG, Spot Training)..."
+                }
                 value={search}
                 onChange={e => setSearch(e.target.value)}
                 className="w-full pl-10 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-sm text-slate-900 placeholder-slate-400 focus:bg-white focus:outline-none focus:border-indigo-600 focus:ring-2 focus:ring-indigo-100 transition"

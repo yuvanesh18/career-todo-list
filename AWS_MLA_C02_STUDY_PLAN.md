@@ -342,3 +342,40 @@ Clicking any task row or the **"Study Notepad 📝"** button opens a right-side 
 4. **📌 Core Technical Bullet Points:** Service limits, CLI/SDK parameters, and real exam scenario question patterns.
 5. **✏️ Personal Study Notepad:** Auto-saving interactive notepad to take custom notes for each skill.
 
+---
+
+## 7. Official In-Scope AWS Services Checklist (81 Services Across 14 Categories)
+
+Inside the application's AWS Plan, you can toggle between the **107 Exam Skills Roadmap** and the dedicated **In-Scope AWS Services Checklist (81)**. Every service has its own completion checkbox, official docs link, and right-side Study Notepad.
+
+### Complete Categorized Services Breakdown:
+1. **Machine Learning and Artificial Intelligence (15 Services):**
+   - `Amazon SageMaker AI` (HIGH YIELD), `Amazon Bedrock` (HIGH YIELD), `Amazon Bedrock AgentCore` (HIGH YIELD), `Amazon Textract` (HIGH YIELD), `Amazon Rekognition` (HIGH YIELD), `Amazon Comprehend` (HIGH YIELD), `Amazon Transcribe`, `Amazon Translate`, `Amazon Polly`, `Amazon Lex`, `Amazon Personalize`, `Amazon CodeGuru`, `Amazon DevOps Guru`, `AWS HealthLake`, `Amazon Comprehend Medical`
+2. **Analytics (12 Services):**
+   - `Amazon Athena` (HIGH YIELD), `AWS Glue` (HIGH YIELD), `AWS Glue DataBrew` (HIGH YIELD), `AWS Glue Data Quality` (HIGH YIELD), `Amazon Kinesis` (HIGH YIELD), `Amazon Data Firehose` (HIGH YIELD), `Amazon OpenSearch Service` (HIGH YIELD), `Amazon Managed Service for Apache Flink`, `Amazon EMR`, `Amazon Redshift`, `Amazon QuickSight`, `AWS Lake Formation`
+3. **Storage (6 Services):**
+   - `Amazon S3` (HIGH YIELD), `Amazon EBS` (HIGH YIELD), `Amazon EFS` (HIGH YIELD), `Amazon FSx` (HIGH YIELD), `Amazon S3 Glacier`, `AWS Storage Gateway`
+4. **Compute (3 Services):**
+   - `Amazon EC2` (HIGH YIELD - G5, P4, Trn1, Inf2), `AWS Lambda` (HIGH YIELD), `AWS Batch`
+5. **Containers (3 Services):**
+   - `Amazon ECR` (HIGH YIELD), `Amazon ECS`, `Amazon EKS`
+6. **Database (5 Services):**
+   - `Amazon RDS` (HIGH YIELD - pgvector), `Amazon DynamoDB` (HIGH YIELD), `Amazon DocumentDB`, `Amazon ElastiCache`, `Amazon Neptune`
+7. **Security, Identity, and Compliance (5 Services):**
+   - `IAM` (HIGH YIELD), `AWS KMS` (HIGH YIELD), `AWS Secrets Manager`, `Amazon Inspector`, `Amazon Macie`
+8. **Networking and Content Delivery (4 Services):**
+   - `Amazon VPC` (HIGH YIELD - PrivateLink, Private Subnets), `Amazon API Gateway`, `Amazon CloudFront`, `AWS Direct Connect`
+9. **Application Integration (5 Services):**
+   - `AWS Step Functions` (HIGH YIELD), `Amazon EventBridge` (HIGH YIELD), `Amazon SQS` (HIGH YIELD), `Amazon SNS` (HIGH YIELD), `Amazon Managed Workflows for Apache Airflow (Amazon MWAA)`
+10. **Developer Tools (8 Services):**
+    - `AWS CodePipeline` (HIGH YIELD), `AWS CodeBuild` (HIGH YIELD), `AWS CDK` (HIGH YIELD), `AWS CodeDeploy`, `AWS CodeCommit`, `AWS CodeConnections`, `AWS CodeArtifact`, `AWS X-Ray`
+11. **Management and Governance (10 Services):**
+    - `Amazon CloudWatch` (HIGH YIELD), `AWS CloudTrail` (HIGH YIELD), `AWS Config` (HIGH YIELD), `AWS Auto Scaling`, `AWS Systems Manager`, `AWS CloudFormation`, `AWS Compute Optimizer`, `AWS Organizations`, `AWS Service Catalog`, `AWS Trusted Advisor`
+12. **Cloud Financial Management (3 Services):**
+    - `AWS Cost Explorer` (HIGH YIELD), `AWS Budgets` (HIGH YIELD), `AWS Billing and Cost Management`
+13. **Migration and Transfer (1 Service):**
+    - `AWS DataSync`
+14. **Media (1 Service):**
+    - `Amazon Kinesis Video Streams`
+
+
