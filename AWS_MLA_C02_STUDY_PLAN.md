@@ -309,3 +309,36 @@ When confronted with ambiguous multiple-choice questions on the exam, use these 
 | **Week 4** | **Domain 3: Endpoint Hosting & Inference Architectures** | Real-Time vs Serverless vs Async vs Batch, Multi-Model Endpoints, Bedrock Agents & Knowledge Bases | Deployment Architecture Matrix Lab |
 | **Week 5** | **Domain 3 & 4: MLOps Pipelines & CI/CD** | SageMaker Pipelines DAG, Model Registry approval flow, EventBridge triggers, Canary & Shadow testing | End-to-End MLOps Pipeline Walkthrough |
 | **Week 6** | **Domain 4: Monitoring, Security & Full Mock Exams** | Model Monitor (4 types), Bedrock Guardrails, KMS, PrivateLink, 3 Full-length 65-question timed mock exams | **Final Mock Score: 950 - 1000 / 1000** |
+
+---
+
+## 6. Official 107-Skill Complete Curriculum & Interactive Study Notepad
+
+The CareerPulse application now incorporates all **107 official examination skills** from the official AWS MLA-C02 exam guide (Pages 5–12).
+
+### Complete Breakdown of the 107 Skills:
+- **Domain 1 (28%): 25 Skills**
+  - *Task 1.1: Collect and store data* (Skills 1.1.1 to 1.1.9) — 9 skills
+  - *Task 1.2: Perform data transformation, feature engineering, and pre-processing* (Skills 1.2.1 to 1.2.9) — 9 skills
+  - *Task 1.3: Validate data quality and manage bias* (Skills 1.3.1 to 1.3.7) — 7 skills
+- **Domain 2 (24%): 27 Skills**
+  - *Task 2.1: Choose appropriate modeling approaches* (Skills 2.1.1 to 2.1.8) — 8 skills
+  - *Task 2.2: Train, fine-tune, and customize models* (Skills 2.2.1 to 2.2.9) — 9 skills
+  - *Task 2.3: Analyze and evaluate performance* (Skills 2.3.1 to 2.3.10) — 10 skills
+- **Domain 3 (24%): 30 Skills**
+  - *Task 3.1: Manage deployment infrastructure* (Skills 3.1.1 to 3.1.8) — 8 skills
+  - *Task 3.2: Provision and configure resources* (Skills 3.2.1 to 3.2.11) — 11 skills
+  - *Task 3.3: Automated orchestration & CI/CD* (Skills 3.3.1 to 3.3.11) — 11 skills
+- **Domain 4 (24%): 25 Skills**
+  - *Task 4.1: Monitor model inference and performance* (Skills 4.1.1 to 4.1.6) — 6 skills
+  - *Task 4.2: Optimize infrastructure costs & performance* (Skills 4.2.1 to 4.2.10) — 10 skills
+  - *Task 4.3: Secure ML/AI workloads & endpoints* (Skills 4.3.1 to 4.3.9) — 9 skills
+
+### Interactive Study Notepad (Right-Side Drawer):
+Clicking any task row or the **"Study Notepad 📝"** button opens a right-side study panel featuring:
+1. **💡 Simplified Plain-English Explanation:** Concept breakdown with real-world analogies.
+2. **📊 Architecture Flow Diagram:** ASCII visual mapping of data flows, services, and boundaries.
+3. **📝 Exam Hacker Sticky Notes:** Warm yellow handwritten-styled card with Mnemonic, Exam Traps (Gotchas), and 1000/1000 Golden Rule.
+4. **📌 Core Technical Bullet Points:** Service limits, CLI/SDK parameters, and real exam scenario question patterns.
+5. **✏️ Personal Study Notepad:** Auto-saving interactive notepad to take custom notes for each skill.
+

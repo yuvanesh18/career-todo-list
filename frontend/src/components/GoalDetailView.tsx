@@ -17,10 +17,12 @@ import {
   BookOpen,
   Lightbulb,
   Award,
-  Info
+  Info,
+  StickyNote
 } from 'lucide-react';
 import { Goal, Task } from '../types';
 import { getLocalDateString } from '../utils/dateUtils';
+import { StudyNotepadDrawer } from './StudyNotepadDrawer';
 
 interface GoalDetailViewProps {
   goals: Goal[];
@@ -45,6 +47,13 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
   const [onlyImportant, setOnlyImportant] = useState(false);
   const [collapsedTopics, setCollapsedTopics] = useState<Record<string, boolean>>({});
   const [expandedNotes, setExpandedNotes] = useState<Record<string, boolean>>({});
+  const [notepadTask, setNotepadTask] = useState<Task | null>(null);
+  const [isNotepadOpen, setIsNotepadOpen] = useState(false);
+
+  const openNotepad = (task: Task) => {
+    setNotepadTask(task);
+    setIsNotepadOpen(true);
+  };
 
   const currentGoal = goals.find(g => g.id === selectedGoalId) || goals[0];
   const goalTasks = tasks.filter(t => t.goalId === currentGoal?.id);
@@ -455,11 +464,13 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
                               <div className="min-w-0">
                                 <div className="flex items-center gap-2 flex-wrap">
                                   <span
-                                    className={`text-sm font-semibold block ${
+                                    onClick={() => openNotepad(task)}
+                                    className={`text-sm font-semibold block cursor-pointer hover:text-indigo-600 transition-colors ${
                                       task.completed
                                         ? 'text-slate-400 line-through'
                                         : 'text-slate-900'
                                     }`}
+                                    title="Click to open full Study Notepad"
                                   >
                                     {task.title}
                                   </span>
@@ -500,6 +511,16 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
 
                             {/* Actions & Badges */}
                             <div className="flex items-center gap-2 shrink-0">
+                              <button
+                                type="button"
+                                onClick={() => openNotepad(task)}
+                                className="px-2.5 py-1 text-xs font-bold rounded-lg border transition flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100/90 text-amber-900 border-amber-200/90 shadow-2xs"
+                                title="Open Study Notepad on right side screen"
+                              >
+                                <StickyNote className="w-3.5 h-3.5 text-amber-600" />
+                                <span className="hidden sm:inline">Study Notepad</span>
+                              </button>
+
                               {(task.notes || task.description) && (
                                 <button
                                   type="button"
@@ -579,6 +600,14 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
           })}
         </div>
       )}
+
+      {/* Right Side Study Notepad Drawer */}
+      <StudyNotepadDrawer
+        task={notepadTask}
+        isOpen={isNotepadOpen}
+        onClose={() => setIsNotepadOpen(false)}
+        onToggleTask={onToggleTask}
+      />
     </div>
   );
 };
