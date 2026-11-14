@@ -23,21 +23,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Athena",
     "category": "Analytics",
     "isImportant": true,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Athena is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how Amazon Athena integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Athena (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Athena is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Asso...",
+    "plainEnglish": "Amazon Athena is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Athena over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Athena (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Athena: Master its role in the Analytics domain.",
-      "examTrap": "Confusing Amazon Athena with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Athena is preferred over alternative services for Analytics workloads."
+      "mnemonic": "Amazon Athena: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Athena offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Athena whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Athena: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Athena whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/athena/latest/userguide/what-is.html"
   },
   "svc-data-firehose": {
@@ -45,43 +46,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Data Firehose",
     "category": "Analytics",
     "isImportant": true,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Data Firehose is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how Amazon Data Firehose integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Data Firehose (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Data Firehose is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer...",
+    "plainEnglish": "Amazon Data Firehose is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Data Firehose over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Data Firehose (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Data Firehose: Master its role in the Analytics domain.",
-      "examTrap": "Confusing Amazon Data Firehose with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Data Firehose is preferred over alternative services for Analytics workloads."
+      "mnemonic": "Amazon Data Firehose: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Data Firehose offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Data Firehose whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Data Firehose: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/datafirehose/latest/userguide/what-is.html"
+    "scenarioTip": "Choose Amazon Data Firehose whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/data-firehose/latest/userguide/what-is.html"
   },
   "svc-emr": {
     "id": "svc-emr",
     "serviceName": "Amazon EMR",
     "category": "Analytics",
     "isImportant": false,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon EMR is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how Amazon EMR integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon EMR (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon EMR is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associa...",
+    "plainEnglish": "Amazon EMR is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon EMR over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon EMR (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon EMR: Master its role in the Analytics domain.",
-      "examTrap": "Confusing Amazon EMR with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon EMR is preferred over alternative services for Analytics workloads."
+      "mnemonic": "Amazon EMR: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon EMR offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon EMR whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon EMR: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon EMR whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/emr/latest/userguide/what-is.html"
   },
   "svc-glue": {
@@ -89,20 +92,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Glue",
     "category": "Analytics",
     "isImportant": true,
-    "role": "Serverless data integration and ETL service: Data Catalog, schema inference crawlers, and Spark jobs.",
-    "plainEnglish": "AWS Glue runs Apache Spark jobs without you needing to manage Hadoop or EC2 clusters. Its crawlers scan S3, discover schemas, and populate the Glue Data Catalog so Athena and SageMaker can query files like database tables.",
-    "diagram": "  [ S3 Raw Data ] \u2500\u2500> [ AWS Glue Crawler ] \u2500\u2500> [ Glue Data Catalog ] <\u2500\u2500 [ Amazon Athena ]\n                             \u2502\n                             \u25bc\n                     [ Glue Spark ETL ] \u2500\u2500(Convert to Parquet)\u2500\u2500> [ Clean S3 Lake ]",
+    "role": "AWS Glue is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate...",
+    "plainEnglish": "AWS Glue is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Glue over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Glue (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Glue = Serverless Spark ETL + Data Catalog glue that connects everything.",
-      "examTrap": "Spinning up an Amazon EMR cluster for scheduled hourly ETL. Glue is serverless and costs nothing when idle.",
-      "goldenRule": "Choose AWS Glue for serverless ETL and schema discovery over S3 data lakes."
+      "mnemonic": "AWS Glue: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Glue offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Glue whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
-      "Glue DynamicFrames provide schema flexibility, handling mixed types in JSON automatically.",
-      "Glue DataBrew provides 250+ pre-built transformations for visual data preparation.",
-      "Glue Data Quality defines rules to validate row counts, nullness, and data ranges automatically."
+      "Category: Analytics.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Scheduled batch pipeline must convert raw JSON logs in S3 into partitioned Parquet files with zero cluster management: Choose AWS Glue ETL job.",
+    "scenarioTip": "Choose AWS Glue whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/glue/latest/userguide/what-is.html"
   },
   "svc-glue-databrew": {
@@ -110,64 +115,68 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Glue DataBrew",
     "category": "Analytics",
     "isImportant": true,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Glue DataBrew is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how AWS Glue DataBrew integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Glue DataBrew (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Glue DataBrew is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - ...",
+    "plainEnglish": "AWS Glue DataBrew is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Glue DataBrew over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Glue DataBrew (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Glue DataBrew: Master its role in the Analytics domain.",
-      "examTrap": "Confusing AWS Glue DataBrew with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Glue DataBrew is preferred over alternative services for Analytics workloads."
+      "mnemonic": "AWS Glue DataBrew: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Glue DataBrew offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Glue DataBrew whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Glue DataBrew: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/gluedatabrew/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Glue DataBrew whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/glue-databrew/latest/userguide/what-is.html"
   },
   "svc-glue-data-quality": {
     "id": "svc-glue-data-quality",
     "serviceName": "AWS Glue Data Quality",
     "category": "Analytics",
     "isImportant": false,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Glue Data Quality is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how AWS Glue Data Quality integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Glue Data Quality (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Glue Data Quality is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Enginee...",
+    "plainEnglish": "AWS Glue Data Quality is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Glue Data Quality over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Glue Data Quality (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Glue Data Quality: Master its role in the Analytics domain.",
-      "examTrap": "Confusing AWS Glue Data Quality with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Glue Data Quality is preferred over alternative services for Analytics workloads."
+      "mnemonic": "AWS Glue Data Quality: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Glue Data Quality offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Glue Data Quality whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Glue Data Quality: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/gluedataquality/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Glue Data Quality whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/glue-data-quality/latest/userguide/what-is.html"
   },
   "svc-kinesis": {
     "id": "svc-kinesis",
     "serviceName": "Amazon Kinesis",
     "category": "Analytics",
     "isImportant": true,
-    "role": "Real-time streaming ingestion: Kinesis Data Streams (sub-second records), Firehose (buffer and load to S3), and Flink (streaming SQL).",
-    "plainEnglish": "Amazon Kinesis captures continuous live data feeds\u2014like user clickstreams, IoT telemetry, or financial transactions\u2014and delivers them immediately to downstream ML inference models or storage lakes.",
-    "diagram": "  [ Real-Time Events ] \u2500\u2500> [ Kinesis Data Streams ] \u2500\u2500> [ Lambda / Real-Time Model ]\n                                    \u2502\n                                    \u25bc\n                           [ Kinesis Firehose ] \u2500\u2500(Parquet)\u2500\u2500> [ Amazon S3 ]",
+    "role": "Amazon Kinesis is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Ass...",
+    "plainEnglish": "Amazon Kinesis is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Kinesis over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Kinesis (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Streams = Sub-second real-time; Firehose = Auto-loader to S3/OpenSearch; Flink = Live SQL.",
-      "examTrap": "Choosing Firehose when sub-second real-time latency is required. Firehose buffers for at least 60 seconds or 1 MB!",
-      "goldenRule": "If latency must be < 200 ms, use Kinesis Data Streams; if loading to S3/OpenSearch without code, use Firehose."
+      "mnemonic": "Amazon Kinesis: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Kinesis offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Kinesis whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
-      "Kinesis Streams scales by shards: 1 shard = 1,000 records/sec or 1 MB/sec write, 2 MB/sec read.",
-      "Firehose can automatically convert JSON to Parquet or ORC on the fly before storing in S3.",
-      "Kinesis Video Streams ingests and encrypts live video feeds for Rekognition Video."
+      "Category: Analytics.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Need to stream live user behavior data to S3 formatted as Parquet with minimum operational effort: Choose Amazon Data Firehose.",
+    "scenarioTip": "Choose Amazon Kinesis whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/kinesis/latest/userguide/what-is.html"
   },
   "svc-lake-formation": {
@@ -175,43 +184,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Lake Formation",
     "category": "Analytics",
     "isImportant": false,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Lake Formation is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how AWS Lake Formation integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Lake Formation (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Lake Formation is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer -...",
+    "plainEnglish": "AWS Lake Formation is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Lake Formation over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Lake Formation (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Lake Formation: Master its role in the Analytics domain.",
-      "examTrap": "Confusing AWS Lake Formation with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Lake Formation is preferred over alternative services for Analytics workloads."
+      "mnemonic": "AWS Lake Formation: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Lake Formation offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Lake Formation whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Lake Formation: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/lakeformation/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Lake Formation whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/lake-formation/latest/userguide/what-is.html"
   },
   "svc-flink": {
     "id": "svc-flink",
     "serviceName": "Amazon Managed Service for Apache Flink",
     "category": "Analytics",
     "isImportant": false,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Managed Service for Apache Flink is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how Amazon Managed Service for Apache Flink integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Managed Service for Apache Flink (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Managed Service for Apache Flink is an official in-scope AWS service in the Analytics category for the AWS Machin...",
+    "plainEnglish": "Amazon Managed Service for Apache Flink is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Managed Service for Apache Flink over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Managed Service for Apache Flink (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Managed Service for Apache Flink: Master its role in the Analytics domain.",
-      "examTrap": "Confusing Amazon Managed Service for Apache Flink with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Managed Service for Apache Flink is preferred over alternative services for Analytics workloads."
+      "mnemonic": "Amazon Managed Service for Apache Flink: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Managed Service for Apache Flink offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Managed Service for Apache Flink whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Managed Service for Apache Flink: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Managed Service for Apache Flink whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/flink/latest/userguide/what-is.html"
   },
   "svc-opensearch": {
@@ -219,20 +230,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon OpenSearch Service",
     "category": "Analytics",
     "isImportant": true,
-    "role": "Search and analytics suite providing scalable vector database capabilities for Bedrock Knowledge Bases and RAG.",
-    "plainEnglish": "OpenSearch Service (especially OpenSearch Serverless) indexes millions of high-dimensional vector embeddings and performs sub-second approximate nearest neighbor (ANN) similarity search using HNSW algorithms.",
-    "diagram": "  [ Document Chunks ] \u2500\u2500> [ Titan Embeddings ] \u2500\u2500> [ OpenSearch Serverless Vector Index ]\n                                                                \u25b2\n                                                                \u2502 Cosine Similarity Search\n                                                    [ User Query Vector ]",
+    "role": "Amazon OpenSearch Service is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Eng...",
+    "plainEnglish": "Amazon OpenSearch Service is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon OpenSearch Service over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon OpenSearch Service (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "OpenSearch = High-speed vector database for RAG + full-text keyword search.",
-      "examTrap": "Storing vectors in raw S3 and expecting fast similarity search. S3 cannot perform k-NN search; OpenSearch or pgvector is required.",
-      "goldenRule": "Amazon Bedrock Knowledge Bases natively provisions and manages OpenSearch Serverless vector collections."
+      "mnemonic": "Amazon OpenSearch Service: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon OpenSearch Service offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon OpenSearch Service whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
-      "Supports k-NN plugin with HNSW and IVF indexing algorithms.",
-      "OpenSearch Serverless automatically scales compute capacity (OCUs) up and down based on search volume.",
-      "Hybrid search combines traditional BM25 keyword matching with vector semantic search for superior retrieval accuracy."
+      "Category: Analytics.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Enterprise needs a managed vector database for a Bedrock Knowledge Base that scales automatically without managing clusters: Choose Amazon OpenSearch Serverless vector collection.",
+    "scenarioTip": "Choose Amazon OpenSearch Service whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/opensearch/latest/userguide/what-is.html"
   },
   "svc-quicksight": {
@@ -240,21 +253,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon QuickSight",
     "category": "Analytics",
     "isImportant": false,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon QuickSight is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how Amazon QuickSight integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon QuickSight (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon QuickSight is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - ...",
+    "plainEnglish": "Amazon QuickSight is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon QuickSight over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon QuickSight (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon QuickSight: Master its role in the Analytics domain.",
-      "examTrap": "Confusing Amazon QuickSight with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon QuickSight is preferred over alternative services for Analytics workloads."
+      "mnemonic": "Amazon QuickSight: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon QuickSight offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon QuickSight whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon QuickSight: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon QuickSight whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/quicksight/latest/userguide/what-is.html"
   },
   "svc-redshift": {
@@ -262,21 +276,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Redshift",
     "category": "Analytics",
     "isImportant": false,
-    "role": "In-scope Analytics service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Redshift is a key AWS service in the Analytics category. In the MLA-C02 exam, understanding how Amazon Redshift integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Redshift (Analytics) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Redshift is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - As...",
+    "plainEnglish": "Amazon Redshift is an official in-scope AWS service in the Analytics category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Redshift over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Redshift (Analytics)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Redshift: Master its role in the Analytics domain.",
-      "examTrap": "Confusing Amazon Redshift with other Analytics services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Redshift is preferred over alternative services for Analytics workloads."
+      "mnemonic": "Amazon Redshift: The standard AWS solution for Analytics in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Redshift offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Redshift whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Analytics.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Redshift: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Redshift whenever you need native, fully managed AWS capability for Analytics workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/redshift/latest/userguide/what-is.html"
   },
   "svc-eventbridge": {
@@ -284,21 +299,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon EventBridge",
     "category": "Application Integration",
     "isImportant": true,
-    "role": "In-scope Application Integration service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon EventBridge is a key AWS service in the Application Integration category. In the MLA-C02 exam, understanding how Amazon EventBridge integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon EventBridge (Application Integration) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon EventBridge is an official in-scope AWS service in the Application Integration category for the AWS Machine Learn...",
+    "plainEnglish": "Amazon EventBridge is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon EventBridge over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon EventBridge (Application Integration)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon EventBridge: Master its role in the Application Integration domain.",
-      "examTrap": "Confusing Amazon EventBridge with other Application Integration services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon EventBridge is preferred over alternative services for Application Integration workloads."
+      "mnemonic": "Amazon EventBridge: The standard AWS solution for Application Integration in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon EventBridge offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon EventBridge whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Application Integration.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon EventBridge: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon EventBridge whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/eventbridge/latest/userguide/what-is.html"
   },
   "svc-mwaa": {
@@ -306,21 +322,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA)",
     "category": "Application Integration",
     "isImportant": false,
-    "role": "In-scope Application Integration service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is a key AWS service in the Application Integration category. In the MLA-C02 exam, understanding how Amazon Managed Workflows for Apache Airflow (Amazon MWAA) integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Managed Workflows for Apache Airflow (Amazon MWAA) (Application Integration) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is an official in-scope AWS service in the Application Integra...",
+    "plainEnglish": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Managed Workflows for Apache Airflow (Amazon MWAA) over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Managed Workflows for Apache Airflow (Amazon MWAA) (Application Integration)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA): Master its role in the Application Integration domain.",
-      "examTrap": "Confusing Amazon Managed Workflows for Apache Airflow (Amazon MWAA) with other Application Integration services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Managed Workflows for Apache Airflow (Amazon MWAA) is preferred over alternative services for Application Integration workloads."
+      "mnemonic": "Amazon Managed Workflows for Apache Airflow (Amazon MWAA): The standard AWS solution for Application Integration in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Managed Workflows for Apache Airflow (Amazon MWAA) offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Managed Workflows for Apache Airflow (Amazon MWAA) whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Application Integration.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Managed Workflows for Apache Airflow (Amazon MWAA): Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Managed Workflows for Apache Airflow (Amazon MWAA) whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/mwaa/latest/userguide/what-is.html"
   },
   "svc-sns": {
@@ -328,21 +345,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon SNS",
     "category": "Application Integration",
     "isImportant": true,
-    "role": "In-scope Application Integration service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon SNS is a key AWS service in the Application Integration category. In the MLA-C02 exam, understanding how Amazon SNS integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon SNS (Application Integration) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon SNS is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engi...",
+    "plainEnglish": "Amazon SNS is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon SNS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon SNS (Application Integration)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon SNS: Master its role in the Application Integration domain.",
-      "examTrap": "Confusing Amazon SNS with other Application Integration services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon SNS is preferred over alternative services for Application Integration workloads."
+      "mnemonic": "Amazon SNS: The standard AWS solution for Application Integration in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon SNS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon SNS whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Application Integration.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon SNS: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon SNS whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/sns/latest/userguide/what-is.html"
   },
   "svc-sqs": {
@@ -350,21 +368,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon SQS",
     "category": "Application Integration",
     "isImportant": true,
-    "role": "In-scope Application Integration service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon SQS is a key AWS service in the Application Integration category. In the MLA-C02 exam, understanding how Amazon SQS integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon SQS (Application Integration) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon SQS is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engi...",
+    "plainEnglish": "Amazon SQS is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon SQS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon SQS (Application Integration)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon SQS: Master its role in the Application Integration domain.",
-      "examTrap": "Confusing Amazon SQS with other Application Integration services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon SQS is preferred over alternative services for Application Integration workloads."
+      "mnemonic": "Amazon SQS: The standard AWS solution for Application Integration in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon SQS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon SQS whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Application Integration.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon SQS: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon SQS whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/sqs/latest/userguide/what-is.html"
   },
   "svc-step-functions": {
@@ -372,65 +391,68 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Step Functions",
     "category": "Application Integration",
     "isImportant": true,
-    "role": "In-scope Application Integration service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Step Functions is a key AWS service in the Application Integration category. In the MLA-C02 exam, understanding how AWS Step Functions integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Step Functions (Application Integration) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Step Functions is an official in-scope AWS service in the Application Integration category for the AWS Machine Learn...",
+    "plainEnglish": "AWS Step Functions is an official in-scope AWS service in the Application Integration category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Step Functions over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Step Functions (Application Integration)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Step Functions: Master its role in the Application Integration domain.",
-      "examTrap": "Confusing AWS Step Functions with other Application Integration services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Step Functions is preferred over alternative services for Application Integration workloads."
+      "mnemonic": "AWS Step Functions: The standard AWS solution for Application Integration in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Step Functions offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Step Functions whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Application Integration.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Step Functions: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/stepfunctions/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Step Functions whenever you need native, fully managed AWS capability for Application Integration workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/step-functions/latest/userguide/what-is.html"
   },
   "svc-billing-cost-management": {
     "id": "svc-billing-cost-management",
     "serviceName": "AWS Billing and Cost Management",
     "category": "Cloud Financial Management",
     "isImportant": false,
-    "role": "In-scope Cloud Financial Management service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Billing and Cost Management is a key AWS service in the Cloud Financial Management category. In the MLA-C02 exam, understanding how AWS Billing and Cost Management integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Billing and Cost Management (Cloud Financial Management) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Billing and Cost Management is an official in-scope AWS service in the Cloud Financial Management category for the A...",
+    "plainEnglish": "AWS Billing and Cost Management is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Billing and Cost Management over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Billing and Cost Management (Cloud Financial Management)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Billing and Cost Management: Master its role in the Cloud Financial Management domain.",
-      "examTrap": "Confusing AWS Billing and Cost Management with other Cloud Financial Management services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Billing and Cost Management is preferred over alternative services for Cloud Financial Management workloads."
+      "mnemonic": "AWS Billing and Cost Management: The standard AWS solution for Cloud Financial Management in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Billing and Cost Management offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Billing and Cost Management whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Cloud Financial Management.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Billing and Cost Management: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/billingcostmanagement/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Billing and Cost Management whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/billing-cost-management/latest/userguide/what-is.html"
   },
   "svc-budgets": {
     "id": "svc-budgets",
     "serviceName": "AWS Budgets",
     "category": "Cloud Financial Management",
     "isImportant": false,
-    "role": "In-scope Cloud Financial Management service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Budgets is a key AWS service in the Cloud Financial Management category. In the MLA-C02 exam, understanding how AWS Budgets integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Budgets (Cloud Financial Management) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Budgets is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Learning ...",
+    "plainEnglish": "AWS Budgets is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Budgets over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Budgets (Cloud Financial Management)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Budgets: Master its role in the Cloud Financial Management domain.",
-      "examTrap": "Confusing AWS Budgets with other Cloud Financial Management services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Budgets is preferred over alternative services for Cloud Financial Management workloads."
+      "mnemonic": "AWS Budgets: The standard AWS solution for Cloud Financial Management in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Budgets offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Budgets whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Cloud Financial Management.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Budgets: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS Budgets whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/budgets/latest/userguide/what-is.html"
   },
   "svc-cost-explorer": {
@@ -438,43 +460,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Cost Explorer",
     "category": "Cloud Financial Management",
     "isImportant": true,
-    "role": "In-scope Cloud Financial Management service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Cost Explorer is a key AWS service in the Cloud Financial Management category. In the MLA-C02 exam, understanding how AWS Cost Explorer integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Cost Explorer (Cloud Financial Management) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Cost Explorer is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Lea...",
+    "plainEnglish": "AWS Cost Explorer is an official in-scope AWS service in the Cloud Financial Management category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Cost Explorer over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Cost Explorer (Cloud Financial Management)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Cost Explorer: Master its role in the Cloud Financial Management domain.",
-      "examTrap": "Confusing AWS Cost Explorer with other Cloud Financial Management services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Cost Explorer is preferred over alternative services for Cloud Financial Management workloads."
+      "mnemonic": "AWS Cost Explorer: The standard AWS solution for Cloud Financial Management in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Cost Explorer offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Cost Explorer whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Cloud Financial Management.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Cost Explorer: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/costexplorer/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Cost Explorer whenever you need native, fully managed AWS capability for Cloud Financial Management workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/cost-explorer/latest/userguide/what-is.html"
   },
   "svc-batch": {
     "id": "svc-batch",
     "serviceName": "AWS Batch",
     "category": "Compute",
     "isImportant": false,
-    "role": "In-scope Compute service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Batch is a key AWS service in the Compute category. In the MLA-C02 exam, understanding how AWS Batch integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Batch (Compute) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Batch is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate ...",
+    "plainEnglish": "AWS Batch is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Batch over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Batch (Compute)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Batch: Master its role in the Compute domain.",
-      "examTrap": "Confusing AWS Batch with other Compute services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Batch is preferred over alternative services for Compute workloads."
+      "mnemonic": "AWS Batch: The standard AWS solution for Compute in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Batch offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Batch whenever you need native, fully managed AWS capability for Compute workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Compute.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Batch: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS Batch whenever you need native, fully managed AWS capability for Compute workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/batch/latest/userguide/what-is.html"
   },
   "svc-ec2": {
@@ -482,20 +506,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon EC2",
     "category": "Compute",
     "isImportant": true,
-    "role": "Elastic compute instances providing accelerated GPU (G5, P4de) and custom AWS silicon (Trainium Trn1, Inferentia Inf2) for deep learning.",
-    "plainEnglish": "Amazon EC2 gives you raw virtual machines in the cloud. For ML engineers, EC2 provides specialized GPU instances (NVIDIA A100/H100) and AWS Trainium/Inferentia chips when custom low-level cluster control is required.",
-    "diagram": "  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon EC2 Instance Families for Machine Learning     \u2502\n  \u2502 \u2022 G5 / G6  : NVIDIA A10G/L4 GPUs (General Training/Inf)\u2502\n  \u2502 \u2022 P4d / P5 : NVIDIA A100/H100 GPUs (Massive LLM Train) \u2502\n  \u2502 \u2022 Trn1     : AWS Trainium (50% cheaper LLM Training)   \u2502\n  \u2502 \u2022 Inf2     : AWS Inferentia2 (Lowest cost LLM Inference)\u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+    "role": "Amazon EC2 is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate...",
+    "plainEnglish": "Amazon EC2 is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon EC2 over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon EC2 (Compute)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Trn1 = Train on AWS silicon; Inf2 = Inference on AWS silicon; P4/P5 = Extreme NVIDIA power.",
-      "examTrap": "Using P-series instances for simple inference. P-series are expensive training workhorses; use Inf2 or G-series for inference.",
-      "goldenRule": "Use Inf2 for lowest-cost LLM inference and Trn1 for high-efficiency distributed model training."
+      "mnemonic": "Amazon EC2: The standard AWS solution for Compute in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon EC2 offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon EC2 whenever you need native, fully managed AWS capability for Compute workloads with zero server administration."
     },
     "bulletPoints": [
-      "Spot Instances offer up to 90% discount for fault-tolerant training jobs with checkpointing.",
-      "Elastic Fabric Adapter (EFA) provides OS-bypass networking for low-latency multi-node GPU communication.",
-      "AWS Graviton instances provide high-efficiency CPU inference for lightweight classical models."
+      "Category: Compute.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Cost-sensitive team needs to run real-time inference for a 13B LLM: Choose Amazon EC2 Inf2 instances or SageMaker endpoints backed by Inf2.",
+    "scenarioTip": "Choose Amazon EC2 whenever you need native, fully managed AWS capability for Compute workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/ec2/latest/userguide/what-is.html"
   },
   "svc-lambda": {
@@ -503,21 +529,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Lambda",
     "category": "Compute",
     "isImportant": true,
-    "role": "In-scope Compute service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Lambda is a key AWS service in the Compute category. In the MLA-C02 exam, understanding how AWS Lambda integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Lambda (Compute) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Lambda is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate...",
+    "plainEnglish": "AWS Lambda is an official in-scope AWS service in the Compute category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Lambda over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Lambda (Compute)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Lambda: Master its role in the Compute domain.",
-      "examTrap": "Confusing AWS Lambda with other Compute services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Lambda is preferred over alternative services for Compute workloads."
+      "mnemonic": "AWS Lambda: The standard AWS solution for Compute in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Lambda offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Lambda whenever you need native, fully managed AWS capability for Compute workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Compute.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Lambda: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS Lambda whenever you need native, fully managed AWS capability for Compute workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/lambda/latest/userguide/what-is.html"
   },
   "svc-ecr": {
@@ -525,21 +552,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon ECR",
     "category": "Containers",
     "isImportant": true,
-    "role": "In-scope Containers service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon ECR is a key AWS service in the Containers category. In the MLA-C02 exam, understanding how Amazon ECR integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon ECR (Containers) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon ECR is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associ...",
+    "plainEnglish": "Amazon ECR is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon ECR over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon ECR (Containers)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon ECR: Master its role in the Containers domain.",
-      "examTrap": "Confusing Amazon ECR with other Containers services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon ECR is preferred over alternative services for Containers workloads."
+      "mnemonic": "Amazon ECR: The standard AWS solution for Containers in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon ECR offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon ECR whenever you need native, fully managed AWS capability for Containers workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Containers.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon ECR: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon ECR whenever you need native, fully managed AWS capability for Containers workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/ecr/latest/userguide/what-is.html"
   },
   "svc-ecs": {
@@ -547,21 +575,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon ECS",
     "category": "Containers",
     "isImportant": false,
-    "role": "In-scope Containers service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon ECS is a key AWS service in the Containers category. In the MLA-C02 exam, understanding how Amazon ECS integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon ECS (Containers) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon ECS is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associ...",
+    "plainEnglish": "Amazon ECS is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon ECS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon ECS (Containers)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon ECS: Master its role in the Containers domain.",
-      "examTrap": "Confusing Amazon ECS with other Containers services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon ECS is preferred over alternative services for Containers workloads."
+      "mnemonic": "Amazon ECS: The standard AWS solution for Containers in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon ECS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon ECS whenever you need native, fully managed AWS capability for Containers workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Containers.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon ECS: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon ECS whenever you need native, fully managed AWS capability for Containers workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/ecs/latest/userguide/what-is.html"
   },
   "svc-eks": {
@@ -569,21 +598,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon EKS",
     "category": "Containers",
     "isImportant": false,
-    "role": "In-scope Containers service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon EKS is a key AWS service in the Containers category. In the MLA-C02 exam, understanding how Amazon EKS integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon EKS (Containers) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon EKS is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associ...",
+    "plainEnglish": "Amazon EKS is an official in-scope AWS service in the Containers category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon EKS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon EKS (Containers)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon EKS: Master its role in the Containers domain.",
-      "examTrap": "Confusing Amazon EKS with other Containers services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon EKS is preferred over alternative services for Containers workloads."
+      "mnemonic": "Amazon EKS: The standard AWS solution for Containers in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon EKS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon EKS whenever you need native, fully managed AWS capability for Containers workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Containers.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon EKS: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon EKS whenever you need native, fully managed AWS capability for Containers workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/eks/latest/userguide/what-is.html"
   },
   "svc-documentdb": {
@@ -591,21 +621,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon DocumentDB",
     "category": "Database",
     "isImportant": false,
-    "role": "In-scope Database service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon DocumentDB is a key AWS service in the Database category. In the MLA-C02 exam, understanding how Amazon DocumentDB integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon DocumentDB (Database) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon DocumentDB is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - A...",
+    "plainEnglish": "Amazon DocumentDB is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon DocumentDB over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon DocumentDB (Database)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon DocumentDB: Master its role in the Database domain.",
-      "examTrap": "Confusing Amazon DocumentDB with other Database services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon DocumentDB is preferred over alternative services for Database workloads."
+      "mnemonic": "Amazon DocumentDB: The standard AWS solution for Database in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon DocumentDB offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon DocumentDB whenever you need native, fully managed AWS capability for Database workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Database.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon DocumentDB: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon DocumentDB whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/documentdb/latest/userguide/what-is.html"
   },
   "svc-dynamodb": {
@@ -613,21 +644,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon DynamoDB",
     "category": "Database",
     "isImportant": true,
-    "role": "In-scope Database service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon DynamoDB is a key AWS service in the Database category. In the MLA-C02 exam, understanding how Amazon DynamoDB integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon DynamoDB (Database) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon DynamoDB is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Ass...",
+    "plainEnglish": "Amazon DynamoDB is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon DynamoDB over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon DynamoDB (Database)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon DynamoDB: Master its role in the Database domain.",
-      "examTrap": "Confusing Amazon DynamoDB with other Database services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon DynamoDB is preferred over alternative services for Database workloads."
+      "mnemonic": "Amazon DynamoDB: The standard AWS solution for Database in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon DynamoDB offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon DynamoDB whenever you need native, fully managed AWS capability for Database workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Database.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon DynamoDB: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon DynamoDB whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/dynamodb/latest/userguide/what-is.html"
   },
   "svc-elasticache": {
@@ -635,21 +667,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon ElastiCache",
     "category": "Database",
     "isImportant": false,
-    "role": "In-scope Database service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon ElastiCache is a key AWS service in the Database category. In the MLA-C02 exam, understanding how Amazon ElastiCache integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon ElastiCache (Database) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon ElastiCache is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - ...",
+    "plainEnglish": "Amazon ElastiCache is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon ElastiCache over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon ElastiCache (Database)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon ElastiCache: Master its role in the Database domain.",
-      "examTrap": "Confusing Amazon ElastiCache with other Database services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon ElastiCache is preferred over alternative services for Database workloads."
+      "mnemonic": "Amazon ElastiCache: The standard AWS solution for Database in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon ElastiCache offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon ElastiCache whenever you need native, fully managed AWS capability for Database workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Database.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon ElastiCache: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon ElastiCache whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/elasticache/latest/userguide/what-is.html"
   },
   "svc-neptune": {
@@ -657,21 +690,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Neptune",
     "category": "Database",
     "isImportant": false,
-    "role": "In-scope Database service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Neptune is a key AWS service in the Database category. In the MLA-C02 exam, understanding how Amazon Neptune integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Neptune (Database) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Neptune is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Asso...",
+    "plainEnglish": "Amazon Neptune is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Neptune over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Neptune (Database)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Neptune: Master its role in the Database domain.",
-      "examTrap": "Confusing Amazon Neptune with other Database services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Neptune is preferred over alternative services for Database workloads."
+      "mnemonic": "Amazon Neptune: The standard AWS solution for Database in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Neptune offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Neptune whenever you need native, fully managed AWS capability for Database workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Database.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Neptune: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Neptune whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/neptune/latest/userguide/what-is.html"
   },
   "svc-rds": {
@@ -679,21 +713,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon RDS",
     "category": "Database",
     "isImportant": true,
-    "role": "In-scope Database service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon RDS is a key AWS service in the Database category. In the MLA-C02 exam, understanding how Amazon RDS integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon RDS (Database) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon RDS is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associat...",
+    "plainEnglish": "Amazon RDS is an official in-scope AWS service in the Database category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon RDS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon RDS (Database)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon RDS: Master its role in the Database domain.",
-      "examTrap": "Confusing Amazon RDS with other Database services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon RDS is preferred over alternative services for Database workloads."
+      "mnemonic": "Amazon RDS: The standard AWS solution for Database in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon RDS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon RDS whenever you need native, fully managed AWS capability for Database workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Database.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon RDS: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon RDS whenever you need native, fully managed AWS capability for Database workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/rds/latest/userguide/what-is.html"
   },
   "svc-cdk": {
@@ -701,21 +736,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CDK",
     "category": "Developer Tools",
     "isImportant": false,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CDK is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS CDK integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CDK (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CDK is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Asso...",
+    "plainEnglish": "AWS CDK is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CDK over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CDK (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CDK: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS CDK with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CDK is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS CDK: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CDK offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CDK whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CDK: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CDK whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/cdk/latest/userguide/what-is.html"
   },
   "svc-codeartifact": {
@@ -723,21 +759,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CodeArtifact",
     "category": "Developer Tools",
     "isImportant": false,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CodeArtifact is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS CodeArtifact integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CodeArtifact (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CodeArtifact is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engine...",
+    "plainEnglish": "AWS CodeArtifact is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CodeArtifact over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CodeArtifact (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CodeArtifact: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS CodeArtifact with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CodeArtifact is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS CodeArtifact: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CodeArtifact offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CodeArtifact whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CodeArtifact: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CodeArtifact whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/codeartifact/latest/userguide/what-is.html"
   },
   "svc-codebuild": {
@@ -745,21 +782,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CodeBuild",
     "category": "Developer Tools",
     "isImportant": true,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CodeBuild is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS CodeBuild integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CodeBuild (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CodeBuild is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer ...",
+    "plainEnglish": "AWS CodeBuild is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CodeBuild over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CodeBuild (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CodeBuild: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS CodeBuild with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CodeBuild is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS CodeBuild: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CodeBuild offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CodeBuild whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CodeBuild: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CodeBuild whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/codebuild/latest/userguide/what-is.html"
   },
   "svc-codecommit": {
@@ -767,21 +805,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CodeCommit",
     "category": "Developer Tools",
     "isImportant": false,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CodeCommit is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS CodeCommit integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CodeCommit (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CodeCommit is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer...",
+    "plainEnglish": "AWS CodeCommit is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CodeCommit over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CodeCommit (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CodeCommit: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS CodeCommit with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CodeCommit is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS CodeCommit: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CodeCommit offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CodeCommit whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CodeCommit: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CodeCommit whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/codecommit/latest/userguide/what-is.html"
   },
   "svc-codeconnections": {
@@ -789,21 +828,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CodeConnections",
     "category": "Developer Tools",
     "isImportant": false,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CodeConnections is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS CodeConnections integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CodeConnections (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CodeConnections is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Eng...",
+    "plainEnglish": "AWS CodeConnections is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CodeConnections over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CodeConnections (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CodeConnections: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS CodeConnections with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CodeConnections is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS CodeConnections: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CodeConnections offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CodeConnections whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CodeConnections: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CodeConnections whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/codeconnections/latest/userguide/what-is.html"
   },
   "svc-codedeploy": {
@@ -811,21 +851,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CodeDeploy",
     "category": "Developer Tools",
     "isImportant": false,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CodeDeploy is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS CodeDeploy integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CodeDeploy (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CodeDeploy is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer...",
+    "plainEnglish": "AWS CodeDeploy is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CodeDeploy over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CodeDeploy (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CodeDeploy: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS CodeDeploy with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CodeDeploy is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS CodeDeploy: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CodeDeploy offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CodeDeploy whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CodeDeploy: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CodeDeploy whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/codedeploy/latest/userguide/what-is.html"
   },
   "svc-codepipeline": {
@@ -833,21 +874,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CodePipeline",
     "category": "Developer Tools",
     "isImportant": true,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CodePipeline is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS CodePipeline integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CodePipeline (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CodePipeline is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engine...",
+    "plainEnglish": "AWS CodePipeline is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CodePipeline over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CodePipeline (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CodePipeline: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS CodePipeline with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CodePipeline is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS CodePipeline: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CodePipeline offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CodePipeline whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CodePipeline: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CodePipeline whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/codepipeline/latest/userguide/what-is.html"
   },
   "svc-xray": {
@@ -855,21 +897,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS X-Ray",
     "category": "Developer Tools",
     "isImportant": false,
-    "role": "In-scope Developer Tools service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS X-Ray is a key AWS service in the Developer Tools category. In the MLA-C02 exam, understanding how AWS X-Ray integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS X-Ray (Developer Tools) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS X-Ray is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - As...",
+    "plainEnglish": "AWS X-Ray is an official in-scope AWS service in the Developer Tools category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS X-Ray over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS X-Ray (Developer Tools)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS X-Ray: Master its role in the Developer Tools domain.",
-      "examTrap": "Confusing AWS X-Ray with other Developer Tools services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS X-Ray is preferred over alternative services for Developer Tools workloads."
+      "mnemonic": "AWS X-Ray: The standard AWS solution for Developer Tools in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS X-Ray offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS X-Ray whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Developer Tools.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS X-Ray: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS X-Ray whenever you need native, fully managed AWS capability for Developer Tools workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/xray/latest/userguide/what-is.html"
   },
   "svc-bedrock": {
@@ -877,65 +920,68 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Bedrock",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": true,
-    "role": "Fully managed serverless Generative AI service offering high-performance Foundation Models (Claude, Titan, Llama, Mistral) via a single unified API.",
-    "plainEnglish": "Amazon Bedrock is the easiest way to build Generative AI applications without managing a single GPU. It gives you a single API to access top foundation models from Anthropic (Claude), Meta (Llama), Amazon (Titan), and Cohere, plus built-in Knowledge Bases for RAG and Agents for taking autonomous actions.",
-    "diagram": "  [ Client App ] \u2500\u2500(InvokeModel API)\u2500\u2500> \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n                                        \u2502 Amazon Bedrock                       \u2502\n                                        \u2502 \u2022 Anthropic Claude 3.5 (Reasoning)   \u2502\n                                        \u2502 \u2022 Amazon Titan (Embeddings/Text)     \u2502\n                                        \u2502 \u2022 Knowledge Bases (Managed RAG)      \u2502\n                                        \u2502 \u2022 Guardrails (PII & Prompt Defense)  \u2502\n                                        \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+    "role": "Amazon Bedrock is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the ...",
+    "plainEnglish": "Amazon Bedrock is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Bedrock over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Bedrock (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Bedrock = Serverless Generative AI API gateway with zero GPU headaches.",
-      "examTrap": "Launching EC2 GPU instances to run open-source Llama or Mistral when Bedrock offers them fully serverless with built-in autoscaling and security.",
-      "goldenRule": "For Generative AI and Foundation Models, Amazon Bedrock is the first-choice AWS service."
+      "mnemonic": "Amazon Bedrock: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Bedrock offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Bedrock whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
-      "Serverless on-demand pricing charges per 1,000 input and output tokens.",
-      "Provisioned Throughput guarantees consistent transaction-per-second (TPS) capacity via 1-month or 6-month commitments.",
-      "Knowledge Bases automatically chunk, embed, and store documents in vector databases for RAG.",
-      "Guardrails enforce PII masking, toxic content filtration, and prompt injection defense."
+      "Category: Machine Learning and Artificial Intelligence.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "A company wants to add enterprise chat over internal PDF policies with zero server management: Choose Amazon Bedrock Knowledge Bases with Anthropic Claude.",
-    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+    "scenarioTip": "Choose Amazon Bedrock whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is.html"
   },
   "svc-bedrock-agentcore": {
     "id": "svc-bedrock-agentcore",
     "serviceName": "Amazon Bedrock AgentCore",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": true,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Bedrock AgentCore is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Bedrock AgentCore integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Bedrock AgentCore (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Bedrock AgentCore is an official in-scope AWS service in the Machine Learning and Artificial Intelligence categor...",
+    "plainEnglish": "Amazon Bedrock AgentCore is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Bedrock AgentCore over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Bedrock AgentCore (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Bedrock AgentCore: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Bedrock AgentCore with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Bedrock AgentCore is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Bedrock AgentCore: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Bedrock AgentCore offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Bedrock AgentCore whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Bedrock AgentCore: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-bedrock.html"
+    "scenarioTip": "Choose Amazon Bedrock AgentCore whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/userguide/what-is.html"
   },
   "svc-codeguru": {
     "id": "svc-codeguru",
     "serviceName": "Amazon CodeGuru",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon CodeGuru is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon CodeGuru integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon CodeGuru (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon CodeGuru is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the...",
+    "plainEnglish": "Amazon CodeGuru is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon CodeGuru over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon CodeGuru (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon CodeGuru: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon CodeGuru with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon CodeGuru is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon CodeGuru: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon CodeGuru offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon CodeGuru whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon CodeGuru: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon CodeGuru whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/codeguru/latest/userguide/what-is.html"
   },
   "svc-comprehend": {
@@ -943,21 +989,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Comprehend",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": true,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Comprehend is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Comprehend integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Comprehend (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Comprehend is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for t...",
+    "plainEnglish": "Amazon Comprehend is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Comprehend over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Comprehend (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Comprehend: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Comprehend with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Comprehend is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Comprehend: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Comprehend offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Comprehend whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Comprehend: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Comprehend whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/comprehend/latest/userguide/what-is.html"
   },
   "svc-comprehend-medical": {
@@ -965,65 +1012,68 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Comprehend Medical",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Comprehend Medical is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Comprehend Medical integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Comprehend Medical (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Comprehend Medical is an official in-scope AWS service in the Machine Learning and Artificial Intelligence catego...",
+    "plainEnglish": "Amazon Comprehend Medical is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Comprehend Medical over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Comprehend Medical (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Comprehend Medical: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Comprehend Medical with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Comprehend Medical is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Comprehend Medical: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Comprehend Medical offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Comprehend Medical whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Comprehend Medical: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/comprehendmedical/latest/userguide/what-is.html"
+    "scenarioTip": "Choose Amazon Comprehend Medical whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/comprehend-medical/latest/userguide/what-is.html"
   },
   "svc-devops-guru": {
     "id": "svc-devops-guru",
     "serviceName": "Amazon DevOps Guru",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon DevOps Guru is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon DevOps Guru integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon DevOps Guru (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon DevOps Guru is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for ...",
+    "plainEnglish": "Amazon DevOps Guru is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon DevOps Guru over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon DevOps Guru (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon DevOps Guru: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon DevOps Guru with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon DevOps Guru is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon DevOps Guru: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon DevOps Guru offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon DevOps Guru whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon DevOps Guru: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/devopsguru/latest/userguide/what-is.html"
+    "scenarioTip": "Choose Amazon DevOps Guru whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/devops-guru/latest/userguide/what-is.html"
   },
   "svc-healthlake": {
     "id": "svc-healthlake",
     "serviceName": "AWS HealthLake",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS HealthLake is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how AWS HealthLake integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS HealthLake (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS HealthLake is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the ...",
+    "plainEnglish": "AWS HealthLake is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS HealthLake over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS HealthLake (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS HealthLake: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing AWS HealthLake with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS HealthLake is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "AWS HealthLake: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS HealthLake offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS HealthLake whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS HealthLake: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS HealthLake whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/healthlake/latest/userguide/what-is.html"
   },
   "svc-lex": {
@@ -1031,21 +1081,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Lex",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Lex is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Lex integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Lex (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Lex is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS ...",
+    "plainEnglish": "Amazon Lex is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Lex over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Lex (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Lex: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Lex with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Lex is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Lex: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Lex offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Lex whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Lex: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Lex whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/lex/latest/userguide/what-is.html"
   },
   "svc-personalize": {
@@ -1053,21 +1104,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Personalize",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Personalize is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Personalize integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Personalize (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Personalize is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for ...",
+    "plainEnglish": "Amazon Personalize is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Personalize over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Personalize (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Personalize: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Personalize with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Personalize is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Personalize: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Personalize offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Personalize whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Personalize: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Personalize whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/personalize/latest/userguide/what-is.html"
   },
   "svc-polly": {
@@ -1075,21 +1127,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Polly",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Polly is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Polly integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Polly (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Polly is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AW...",
+    "plainEnglish": "Amazon Polly is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Polly over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Polly (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Polly: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Polly with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Polly is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Polly: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Polly offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Polly whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Polly: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Polly whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/polly/latest/userguide/what-is.html"
   },
   "svc-rekognition": {
@@ -1097,21 +1150,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Rekognition",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": true,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Rekognition is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Rekognition integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Rekognition (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Rekognition is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for ...",
+    "plainEnglish": "Amazon Rekognition is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Rekognition over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Rekognition (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Rekognition: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Rekognition with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Rekognition is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Rekognition: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Rekognition offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Rekognition whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Rekognition: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Rekognition whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/rekognition/latest/userguide/what-is.html"
   },
   "svc-sagemaker": {
@@ -1119,43 +1173,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon SageMaker AI",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": true,
-    "role": "Primary end-to-end ML platform: studio, script mode training, real-time/serverless/async endpoints, pipelines, and model monitor.",
-    "plainEnglish": "SageMaker is AWS's complete powerhouse for building, training, tuning, deploying, and monitoring machine learning models. Instead of managing your own GPU drivers and servers, SageMaker handles everything from interactive JupyterLab notebooks to distributed cluster training and auto-scaling production endpoints.",
-    "diagram": "  [ S3 Training Data ] \u2500\u2500> [ SageMaker Training Cluster ] \u2500\u2500> [ S3 Model Artifacts ]\n                                      \u2502                                      \u2502\n                                      \u25bc                                      \u25bc\n                              [ Model Registry ] \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500> [ SageMaker Endpoint ]",
+    "role": "Amazon SageMaker AI is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for...",
+    "plainEnglish": "Amazon SageMaker AI is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon SageMaker AI over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon SageMaker AI (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "SageMaker = The all-in-one AWS factory for Machine Learning.",
-      "examTrap": "Thinking SageMaker requires you to rewrite all code in proprietary libraries. Script Mode lets you run raw PyTorch, TensorFlow, or Scikit-learn with zero changes.",
-      "goldenRule": "Use SageMaker for custom classical ML, distributed training, and managed multi-model endpoints."
+      "mnemonic": "Amazon SageMaker AI: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon SageMaker AI offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon SageMaker AI whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
-      "Script Mode runs user Python scripts inside pre-built AWS Deep Learning Containers.",
-      "Model Monitor detects data drift, concept drift, bias drift, and feature attribution drift in production.",
-      "Supports 4 inference types: Real-Time (<6MB/60s), Serverless, Asynchronous (1GB/1hr), and Batch Transform.",
-      "Feature Store provides sub-10ms online reads and historical offline S3 time-travel queries."
+      "Category: Machine Learning and Artificial Intelligence.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Scenario asks for managed model training on PyTorch with automated hyperparameter optimization: Choose SageMaker Automatic Model Tuning (AMT) with PyTorch Estimator.",
-    "url": "https://docs.aws.amazon.com/sagemaker/latest/dg/whatis.html"
+    "scenarioTip": "Choose Amazon SageMaker AI whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/sagemaker/latest/userguide/what-is.html"
   },
   "svc-textract": {
     "id": "svc-textract",
     "serviceName": "Amazon Textract",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": true,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Textract is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Textract integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Textract (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Textract is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the...",
+    "plainEnglish": "Amazon Textract is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Textract over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Textract (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Textract: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Textract with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Textract is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Textract: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Textract offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Textract whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Textract: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Textract whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/textract/latest/userguide/what-is.html"
   },
   "svc-transcribe": {
@@ -1163,21 +1219,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Transcribe",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Transcribe is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Transcribe integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Transcribe (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Transcribe is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for t...",
+    "plainEnglish": "Amazon Transcribe is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Transcribe over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Transcribe (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Transcribe: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Transcribe with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Transcribe is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Transcribe: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Transcribe offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Transcribe whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Transcribe: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Transcribe whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/transcribe/latest/userguide/what-is.html"
   },
   "svc-translate": {
@@ -1185,21 +1242,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Translate",
     "category": "Machine Learning and Artificial Intelligence",
     "isImportant": false,
-    "role": "In-scope Machine Learning and Artificial Intelligence service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Translate is a key AWS service in the Machine Learning and Artificial Intelligence category. In the MLA-C02 exam, understanding how Amazon Translate integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Translate (Machine Learning and Artificial Intelligence) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Translate is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for th...",
+    "plainEnglish": "Amazon Translate is an official in-scope AWS service in the Machine Learning and Artificial Intelligence category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Translate over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Translate (Machine Learning and Artificial Intelligence)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Translate: Master its role in the Machine Learning and Artificial Intelligence domain.",
-      "examTrap": "Confusing Amazon Translate with other Machine Learning and Artificial Intelligence services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Translate is preferred over alternative services for Machine Learning and Artificial Intelligence workloads."
+      "mnemonic": "Amazon Translate: The standard AWS solution for Machine Learning and Artificial Intelligence in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Translate offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Translate whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Machine Learning and Artificial Intelligence.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Translate: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Translate whenever you need native, fully managed AWS capability for Machine Learning and Artificial Intelligence workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/translate/latest/userguide/what-is.html"
   },
   "svc-auto-scaling": {
@@ -1207,43 +1265,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Auto Scaling",
     "category": "Management and Governance",
     "isImportant": false,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Auto Scaling is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS Auto Scaling integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Auto Scaling (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Auto Scaling is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learn...",
+    "plainEnglish": "AWS Auto Scaling is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Auto Scaling over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Auto Scaling (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Auto Scaling: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS Auto Scaling with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Auto Scaling is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS Auto Scaling: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Auto Scaling offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Auto Scaling whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Auto Scaling: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/autoscaling/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Auto Scaling whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/auto-scaling/latest/userguide/what-is.html"
   },
   "svc-cloudformation": {
     "id": "svc-cloudformation",
     "serviceName": "AWS CloudFormation",
     "category": "Management and Governance",
     "isImportant": false,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CloudFormation is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS CloudFormation integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CloudFormation (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CloudFormation is an official in-scope AWS service in the Management and Governance category for the AWS Machine Lea...",
+    "plainEnglish": "AWS CloudFormation is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CloudFormation over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CloudFormation (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CloudFormation: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS CloudFormation with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CloudFormation is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS CloudFormation: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CloudFormation offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CloudFormation whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CloudFormation: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CloudFormation whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/cloudformation/latest/userguide/what-is.html"
   },
   "svc-cloudtrail": {
@@ -1251,21 +1311,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS CloudTrail",
     "category": "Management and Governance",
     "isImportant": true,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS CloudTrail is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS CloudTrail integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS CloudTrail (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS CloudTrail is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learnin...",
+    "plainEnglish": "AWS CloudTrail is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS CloudTrail over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS CloudTrail (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS CloudTrail: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS CloudTrail with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS CloudTrail is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS CloudTrail: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS CloudTrail offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS CloudTrail whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS CloudTrail: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS CloudTrail whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/cloudtrail/latest/userguide/what-is.html"
   },
   "svc-cloudwatch": {
@@ -1273,21 +1334,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon CloudWatch",
     "category": "Management and Governance",
     "isImportant": true,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon CloudWatch is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how Amazon CloudWatch integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon CloudWatch (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon CloudWatch is an official in-scope AWS service in the Management and Governance category for the AWS Machine Lear...",
+    "plainEnglish": "Amazon CloudWatch is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon CloudWatch over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon CloudWatch (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon CloudWatch: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing Amazon CloudWatch with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon CloudWatch is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "Amazon CloudWatch: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon CloudWatch offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon CloudWatch whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon CloudWatch: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon CloudWatch whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/cloudwatch/latest/userguide/what-is.html"
   },
   "svc-compute-optimizer": {
@@ -1295,43 +1357,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Compute Optimizer",
     "category": "Management and Governance",
     "isImportant": false,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Compute Optimizer is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS Compute Optimizer integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Compute Optimizer (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Compute Optimizer is an official in-scope AWS service in the Management and Governance category for the AWS Machine ...",
+    "plainEnglish": "AWS Compute Optimizer is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Compute Optimizer over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Compute Optimizer (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Compute Optimizer: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS Compute Optimizer with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Compute Optimizer is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS Compute Optimizer: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Compute Optimizer offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Compute Optimizer whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Compute Optimizer: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/computeoptimizer/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Compute Optimizer whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/compute-optimizer/latest/userguide/what-is.html"
   },
   "svc-config": {
     "id": "svc-config",
     "serviceName": "AWS Config",
     "category": "Management and Governance",
     "isImportant": true,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Config is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS Config integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Config (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Config is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning En...",
+    "plainEnglish": "AWS Config is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Config over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Config (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Config: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS Config with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Config is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS Config: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Config offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Config whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Config: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS Config whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/config/latest/userguide/what-is.html"
   },
   "svc-organizations": {
@@ -1339,21 +1403,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Organizations",
     "category": "Management and Governance",
     "isImportant": false,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Organizations is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS Organizations integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Organizations (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Organizations is an official in-scope AWS service in the Management and Governance category for the AWS Machine Lear...",
+    "plainEnglish": "AWS Organizations is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Organizations over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Organizations (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Organizations: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS Organizations with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Organizations is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS Organizations: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Organizations offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Organizations whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Organizations: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS Organizations whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/organizations/latest/userguide/what-is.html"
   },
   "svc-service-catalog": {
@@ -1361,109 +1426,114 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Service Catalog",
     "category": "Management and Governance",
     "isImportant": false,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Service Catalog is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS Service Catalog integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Service Catalog (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Service Catalog is an official in-scope AWS service in the Management and Governance category for the AWS Machine Le...",
+    "plainEnglish": "AWS Service Catalog is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Service Catalog over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Service Catalog (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Service Catalog: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS Service Catalog with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Service Catalog is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS Service Catalog: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Service Catalog offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Service Catalog whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Service Catalog: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/servicecatalog/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Service Catalog whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/service-catalog/latest/userguide/what-is.html"
   },
   "svc-systems-manager": {
     "id": "svc-systems-manager",
     "serviceName": "AWS Systems Manager",
     "category": "Management and Governance",
     "isImportant": false,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Systems Manager is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS Systems Manager integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Systems Manager (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Systems Manager is an official in-scope AWS service in the Management and Governance category for the AWS Machine Le...",
+    "plainEnglish": "AWS Systems Manager is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Systems Manager over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Systems Manager (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Systems Manager: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS Systems Manager with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Systems Manager is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS Systems Manager: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Systems Manager offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Systems Manager whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Systems Manager: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/systemsmanager/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Systems Manager whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/systems-manager/latest/userguide/what-is.html"
   },
   "svc-trusted-advisor": {
     "id": "svc-trusted-advisor",
     "serviceName": "AWS Trusted Advisor",
     "category": "Management and Governance",
     "isImportant": false,
-    "role": "In-scope Management and Governance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Trusted Advisor is a key AWS service in the Management and Governance category. In the MLA-C02 exam, understanding how AWS Trusted Advisor integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Trusted Advisor (Management and Governance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Trusted Advisor is an official in-scope AWS service in the Management and Governance category for the AWS Machine Le...",
+    "plainEnglish": "AWS Trusted Advisor is an official in-scope AWS service in the Management and Governance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Trusted Advisor over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Trusted Advisor (Management and Governance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Trusted Advisor: Master its role in the Management and Governance domain.",
-      "examTrap": "Confusing AWS Trusted Advisor with other Management and Governance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Trusted Advisor is preferred over alternative services for Management and Governance workloads."
+      "mnemonic": "AWS Trusted Advisor: The standard AWS solution for Management and Governance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Trusted Advisor offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Trusted Advisor whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Management and Governance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Trusted Advisor: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/trustedadvisor/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Trusted Advisor whenever you need native, fully managed AWS capability for Management and Governance workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/trusted-advisor/latest/userguide/what-is.html"
   },
   "svc-kinesis-video-streams": {
     "id": "svc-kinesis-video-streams",
     "serviceName": "Amazon Kinesis Video Streams",
     "category": "Media",
     "isImportant": false,
-    "role": "In-scope Media service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Kinesis Video Streams is a key AWS service in the Media category. In the MLA-C02 exam, understanding how Amazon Kinesis Video Streams integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Kinesis Video Streams (Media) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Kinesis Video Streams is an official in-scope AWS service in the Media category for the AWS Machine Learning Engi...",
+    "plainEnglish": "Amazon Kinesis Video Streams is an official in-scope AWS service in the Media category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Kinesis Video Streams over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Kinesis Video Streams (Media)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Kinesis Video Streams: Master its role in the Media domain.",
-      "examTrap": "Confusing Amazon Kinesis Video Streams with other Media services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Kinesis Video Streams is preferred over alternative services for Media workloads."
+      "mnemonic": "Amazon Kinesis Video Streams: The standard AWS solution for Media in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Kinesis Video Streams offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Kinesis Video Streams whenever you need native, fully managed AWS capability for Media workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Media.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Kinesis Video Streams: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/kinesisvideostreams/latest/userguide/what-is.html"
+    "scenarioTip": "Choose Amazon Kinesis Video Streams whenever you need native, fully managed AWS capability for Media workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/kinesis-video-streams/latest/userguide/what-is.html"
   },
   "svc-datasync": {
     "id": "svc-datasync",
     "serviceName": "AWS DataSync",
     "category": "Migration and Transfer",
     "isImportant": false,
-    "role": "In-scope Migration and Transfer service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS DataSync is a key AWS service in the Migration and Transfer category. In the MLA-C02 exam, understanding how AWS DataSync integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS DataSync (Migration and Transfer) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS DataSync is an official in-scope AWS service in the Migration and Transfer category for the AWS Machine Learning Eng...",
+    "plainEnglish": "AWS DataSync is an official in-scope AWS service in the Migration and Transfer category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS DataSync over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS DataSync (Migration and Transfer)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS DataSync: Master its role in the Migration and Transfer domain.",
-      "examTrap": "Confusing AWS DataSync with other Migration and Transfer services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS DataSync is preferred over alternative services for Migration and Transfer workloads."
+      "mnemonic": "AWS DataSync: The standard AWS solution for Migration and Transfer in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS DataSync offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS DataSync whenever you need native, fully managed AWS capability for Migration and Transfer workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Migration and Transfer.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS DataSync: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose AWS DataSync whenever you need native, fully managed AWS capability for Migration and Transfer workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/datasync/latest/userguide/what-is.html"
   },
   "svc-api-gateway": {
@@ -1471,43 +1541,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon API Gateway",
     "category": "Networking and Content Delivery",
     "isImportant": false,
-    "role": "In-scope Networking and Content Delivery service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon API Gateway is a key AWS service in the Networking and Content Delivery category. In the MLA-C02 exam, understanding how Amazon API Gateway integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon API Gateway (Networking and Content Delivery) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon API Gateway is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machi...",
+    "plainEnglish": "Amazon API Gateway is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon API Gateway over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon API Gateway (Networking and Content Delivery)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon API Gateway: Master its role in the Networking and Content Delivery domain.",
-      "examTrap": "Confusing Amazon API Gateway with other Networking and Content Delivery services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon API Gateway is preferred over alternative services for Networking and Content Delivery workloads."
+      "mnemonic": "Amazon API Gateway: The standard AWS solution for Networking and Content Delivery in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon API Gateway offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon API Gateway whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Networking and Content Delivery.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon API Gateway: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/apigateway/latest/userguide/what-is.html"
+    "scenarioTip": "Choose Amazon API Gateway whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/api-gateway/latest/userguide/what-is.html"
   },
   "svc-cloudfront": {
     "id": "svc-cloudfront",
     "serviceName": "Amazon CloudFront",
     "category": "Networking and Content Delivery",
     "isImportant": false,
-    "role": "In-scope Networking and Content Delivery service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon CloudFront is a key AWS service in the Networking and Content Delivery category. In the MLA-C02 exam, understanding how Amazon CloudFront integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon CloudFront (Networking and Content Delivery) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon CloudFront is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machin...",
+    "plainEnglish": "Amazon CloudFront is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon CloudFront over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon CloudFront (Networking and Content Delivery)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon CloudFront: Master its role in the Networking and Content Delivery domain.",
-      "examTrap": "Confusing Amazon CloudFront with other Networking and Content Delivery services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon CloudFront is preferred over alternative services for Networking and Content Delivery workloads."
+      "mnemonic": "Amazon CloudFront: The standard AWS solution for Networking and Content Delivery in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon CloudFront offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon CloudFront whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Networking and Content Delivery.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon CloudFront: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon CloudFront whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/cloudfront/latest/userguide/what-is.html"
   },
   "svc-direct-connect": {
@@ -1515,42 +1587,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Direct Connect",
     "category": "Networking and Content Delivery",
     "isImportant": false,
-    "role": "In-scope Networking and Content Delivery service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Direct Connect is a key AWS service in the Networking and Content Delivery category. In the MLA-C02 exam, understanding how AWS Direct Connect integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Direct Connect (Networking and Content Delivery) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Direct Connect is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machi...",
+    "plainEnglish": "AWS Direct Connect is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Direct Connect over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Direct Connect (Networking and Content Delivery)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Direct Connect: Master its role in the Networking and Content Delivery domain.",
-      "examTrap": "Confusing AWS Direct Connect with other Networking and Content Delivery services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Direct Connect is preferred over alternative services for Networking and Content Delivery workloads."
+      "mnemonic": "AWS Direct Connect: The standard AWS solution for Networking and Content Delivery in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Direct Connect offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Direct Connect whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Networking and Content Delivery.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Direct Connect: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/directconnect/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Direct Connect whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/direct-connect/latest/userguide/what-is.html"
   },
   "svc-vpc": {
     "id": "svc-vpc",
     "serviceName": "Amazon VPC",
     "category": "Networking and Content Delivery",
     "isImportant": true,
-    "role": "Isolated private network infrastructure: private subnets, security groups, and VPC Endpoints (AWS PrivateLink) for secure ML workloads.",
-    "plainEnglish": "Amazon Virtual Private Cloud (VPC) lets you run SageMaker notebooks, training clusters, and inference endpoints inside an isolated private network without exposing traffic to the public internet.",
-    "diagram": "  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Corporate Private VPC (No Internet Gateway)                  \u2502\n  \u2502                                                              \u2502\n  \u2502  [ SageMaker Studio / Endpoints ]                            \u2502\n  \u2502            \u2502                                                 \u2502\n  \u2502            \u25bc                                                 \u2502\n  \u2502  [ VPC Interface Endpoint (PrivateLink) ] \u2500\u2500> S3 / KMS APIs  \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518",
+    "role": "Amazon VPC is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learn...",
+    "plainEnglish": "Amazon VPC is an official in-scope AWS service in the Networking and Content Delivery category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon VPC over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon VPC (Networking and Content Delivery)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "VPC = Private security fence around your models and data.",
-      "examTrap": "Routing training data over public internet IPs. Use VPC Interface Endpoints and S3 Gateway Endpoints for direct, private data transfers.",
-      "goldenRule": "Deploy SageMaker resources in private subnets with VPC endpoints and enable `EnableNetworkIsolation=True`."
+      "mnemonic": "Amazon VPC: The standard AWS solution for Networking and Content Delivery in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon VPC offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon VPC whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration."
     },
     "bulletPoints": [
-      "Gateway VPC Endpoints provide free, private connectivity to Amazon S3 and DynamoDB.",
-      "Interface VPC Endpoints (PrivateLink) provide private connectivity to SageMaker API, SageMaker Runtime, and Bedrock.",
-      "Security Groups act as virtual firewalls controlling inbound and outbound instance traffic."
+      "Category: Networking and Content Delivery.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Security requirement specifies that ML training data must never traverse the public internet: Deploy SageMaker in a private subnet with an S3 VPC Gateway Endpoint.",
+    "scenarioTip": "Choose Amazon VPC whenever you need native, fully managed AWS capability for Networking and Content Delivery workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/vpc/latest/userguide/what-is.html"
   },
   "svc-iam": {
@@ -1558,21 +1633,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "IAM",
     "category": "Security, Identity, and Compliance",
     "isImportant": true,
-    "role": "In-scope Security, Identity, and Compliance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "IAM is a key AWS service in the Security, Identity, and Compliance category. In the MLA-C02 exam, understanding how IAM integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ IAM (Security, Identity, and Compliance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "IAM is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning ...",
+    "plainEnglish": "IAM is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select IAM over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 IAM (Security, Identity, and Compliance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "IAM: Master its role in the Security, Identity, and Compliance domain.",
-      "examTrap": "Confusing IAM with other Security, Identity, and Compliance services in multiple-choice questions.",
-      "goldenRule": "Understand when IAM is preferred over alternative services for Security, Identity, and Compliance workloads."
+      "mnemonic": "IAM: The standard AWS solution for Security, Identity, and Compliance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when IAM offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose IAM whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Security, Identity, and Compliance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving IAM: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose IAM whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/iam/latest/userguide/what-is.html"
   },
   "svc-inspector": {
@@ -1580,21 +1656,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Inspector",
     "category": "Security, Identity, and Compliance",
     "isImportant": false,
-    "role": "In-scope Security, Identity, and Compliance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Inspector is a key AWS service in the Security, Identity, and Compliance category. In the MLA-C02 exam, understanding how Amazon Inspector integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Inspector (Security, Identity, and Compliance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Inspector is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Mach...",
+    "plainEnglish": "Amazon Inspector is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Inspector over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Inspector (Security, Identity, and Compliance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Inspector: Master its role in the Security, Identity, and Compliance domain.",
-      "examTrap": "Confusing Amazon Inspector with other Security, Identity, and Compliance services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Inspector is preferred over alternative services for Security, Identity, and Compliance workloads."
+      "mnemonic": "Amazon Inspector: The standard AWS solution for Security, Identity, and Compliance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Inspector offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Inspector whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Security, Identity, and Compliance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Inspector: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Inspector whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/inspector/latest/userguide/what-is.html"
   },
   "svc-kms": {
@@ -1602,20 +1679,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS KMS",
     "category": "Security, Identity, and Compliance",
     "isImportant": true,
-    "role": "Cryptographic service for managing encryption keys (CMKs) across S3 data, EBS volumes, ECR images, and SageMaker models.",
-    "plainEnglish": "AWS Key Management Service (KMS) protects all your ML data at rest. You create Customer Managed Keys (CMKs) that give you full control over key rotation and IAM access policies.",
-    "diagram": "  [ Data Ingestion / S3 ] \u2500\u2500(KMS CMK Encrypt)\u2500\u2500> [ S3 Encrypted at Rest ]\n                                                       \u2502\n                                                       \u25bc\n  [ SageMaker Training Job ] <\u2500\u2500(kms:Decrypt via Role)\u2500\u2518",
+    "role": "AWS KMS is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learn...",
+    "plainEnglish": "AWS KMS is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS KMS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS KMS (Security, Identity, and Compliance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "KMS = The master keyholder for data encryption across all ML pipelines.",
-      "examTrap": "Forgetting to grant `kms:Decrypt` permission to the SageMaker execution role. If the S3 bucket is encrypted with a KMS CMK, the role will fail with Access Denied!",
-      "goldenRule": "SageMaker execution roles need explicit `kms:Decrypt` and `kms:GenerateDataKey` permissions for CMK-encrypted buckets."
+      "mnemonic": "AWS KMS: The standard AWS solution for Security, Identity, and Compliance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS KMS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS KMS whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration."
     },
     "bulletPoints": [
-      "Envelope encryption protects data with data keys, which are encrypted under root KMS CMKs.",
-      "Inter-container traffic encryption can be enabled on SageMaker Estimators with `EnableInterContainerTrafficEncryption=True`.",
-      "KMS key policies determine which AWS roles and accounts are permitted to use the key."
+      "Category: Security, Identity, and Compliance.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "SageMaker training job fails to read S3 data despite having `s3:GetObject` permission: Check if S3 bucket uses a KMS CMK and ensure the role has `kms:Decrypt` permission.",
+    "scenarioTip": "Choose AWS KMS whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/kms/latest/userguide/what-is.html"
   },
   "svc-macie": {
@@ -1623,21 +1702,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon Macie",
     "category": "Security, Identity, and Compliance",
     "isImportant": false,
-    "role": "In-scope Security, Identity, and Compliance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon Macie is a key AWS service in the Security, Identity, and Compliance category. In the MLA-C02 exam, understanding how Amazon Macie integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon Macie (Security, Identity, and Compliance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon Macie is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine ...",
+    "plainEnglish": "Amazon Macie is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon Macie over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon Macie (Security, Identity, and Compliance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon Macie: Master its role in the Security, Identity, and Compliance domain.",
-      "examTrap": "Confusing Amazon Macie with other Security, Identity, and Compliance services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon Macie is preferred over alternative services for Security, Identity, and Compliance workloads."
+      "mnemonic": "Amazon Macie: The standard AWS solution for Security, Identity, and Compliance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon Macie offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon Macie whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Security, Identity, and Compliance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon Macie: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon Macie whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/macie/latest/userguide/what-is.html"
   },
   "svc-secrets-manager": {
@@ -1645,43 +1725,45 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "AWS Secrets Manager",
     "category": "Security, Identity, and Compliance",
     "isImportant": false,
-    "role": "In-scope Security, Identity, and Compliance service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Secrets Manager is a key AWS service in the Security, Identity, and Compliance category. In the MLA-C02 exam, understanding how AWS Secrets Manager integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Secrets Manager (Security, Identity, and Compliance) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Secrets Manager is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS M...",
+    "plainEnglish": "AWS Secrets Manager is an official in-scope AWS service in the Security, Identity, and Compliance category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Secrets Manager over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Secrets Manager (Security, Identity, and Compliance)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Secrets Manager: Master its role in the Security, Identity, and Compliance domain.",
-      "examTrap": "Confusing AWS Secrets Manager with other Security, Identity, and Compliance services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Secrets Manager is preferred over alternative services for Security, Identity, and Compliance workloads."
+      "mnemonic": "AWS Secrets Manager: The standard AWS solution for Security, Identity, and Compliance in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Secrets Manager offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Secrets Manager whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Security, Identity, and Compliance.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Secrets Manager: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/secretsmanager/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Secrets Manager whenever you need native, fully managed AWS capability for Security, Identity, and Compliance workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/secrets-manager/latest/userguide/what-is.html"
   },
   "svc-ebs": {
     "id": "svc-ebs",
     "serviceName": "Amazon EBS",
     "category": "Storage",
     "isImportant": true,
-    "role": "In-scope Storage service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon EBS is a key AWS service in the Storage category. In the MLA-C02 exam, understanding how Amazon EBS integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon EBS (Storage) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon EBS is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate...",
+    "plainEnglish": "Amazon EBS is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon EBS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon EBS (Storage)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon EBS: Master its role in the Storage domain.",
-      "examTrap": "Confusing Amazon EBS with other Storage services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon EBS is preferred over alternative services for Storage workloads."
+      "mnemonic": "Amazon EBS: The standard AWS solution for Storage in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon EBS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon EBS whenever you need native, fully managed AWS capability for Storage workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Storage.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon EBS: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon EBS whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/ebs/latest/userguide/what-is.html"
   },
   "svc-efs": {
@@ -1689,21 +1771,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon EFS",
     "category": "Storage",
     "isImportant": true,
-    "role": "In-scope Storage service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon EFS is a key AWS service in the Storage category. In the MLA-C02 exam, understanding how Amazon EFS integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon EFS (Storage) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon EFS is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate...",
+    "plainEnglish": "Amazon EFS is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon EFS over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon EFS (Storage)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon EFS: Master its role in the Storage domain.",
-      "examTrap": "Confusing Amazon EFS with other Storage services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon EFS is preferred over alternative services for Storage workloads."
+      "mnemonic": "Amazon EFS: The standard AWS solution for Storage in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon EFS offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon EFS whenever you need native, fully managed AWS capability for Storage workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Storage.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon EFS: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon EFS whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/efs/latest/userguide/what-is.html"
   },
   "svc-fsx": {
@@ -1711,21 +1794,22 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon FSx",
     "category": "Storage",
     "isImportant": true,
-    "role": "In-scope Storage service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon FSx is a key AWS service in the Storage category. In the MLA-C02 exam, understanding how Amazon FSx integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon FSx (Storage) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon FSx is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate...",
+    "plainEnglish": "Amazon FSx is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon FSx over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon FSx (Storage)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon FSx: Master its role in the Storage domain.",
-      "examTrap": "Confusing Amazon FSx with other Storage services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon FSx is preferred over alternative services for Storage workloads."
+      "mnemonic": "Amazon FSx: The standard AWS solution for Storage in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon FSx offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon FSx whenever you need native, fully managed AWS capability for Storage workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Storage.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon FSx: Choose the option that leverages AWS native integration and minimizes management overhead.",
+    "scenarioTip": "Choose Amazon FSx whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
     "url": "https://docs.aws.amazon.com/fsx/latest/userguide/what-is.html"
   },
   "svc-s3": {
@@ -1733,65 +1817,69 @@ export const AWS_IN_SCOPE_SERVICES: Record<string, AWSServiceItem> = {
     "serviceName": "Amazon S3",
     "category": "Storage",
     "isImportant": true,
-    "role": "Object storage foundation for ML data lakes, model artifacts, checkpointing, and feature store offline storage.",
-    "plainEnglish": "Amazon S3 is the bedrock of all AWS ML architectures. It stores raw training data, holds final model tarballs, saves training checkpoints for Spot instances, and hosts your offline feature store.",
-    "diagram": "  [ Raw Inputs ] \u2500\u2500> Amazon S3 \u2500\u2500(Pipe Mode / Fast File)\u2500\u2500> [ SageMaker Training ]\n                          \u2502\n                          \u25bc\n              S3 Lifecycle Policies (Standard -> Intelligent-Tiering -> Glacier)",
+    "role": "Amazon S3 is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate ...",
+    "plainEnglish": "Amazon S3 is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon S3 over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon S3 (Storage)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "S3 = Unlimited object storage lake; S3 Fast File = Streaming without full download.",
-      "examTrap": "Downloading entire 100 GB datasets to EC2 disks before training starts. Use SageMaker Fast File Mode to stream on the fly from S3.",
-      "goldenRule": "Use S3 Intelligent-Tiering for ML datasets with unknown or changing access frequencies."
+      "mnemonic": "Amazon S3: The standard AWS solution for Storage in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon S3 offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon S3 whenever you need native, fully managed AWS capability for Storage workloads with zero server administration."
     },
     "bulletPoints": [
-      "Supports SSE-S3 and SSE-KMS encryption at rest; enforce TLS via `aws:SecureTransport` bucket policy condition.",
-      "S3 Event Notifications trigger Lambda or EventBridge when new training datasets land.",
-      "Fast File mode streams S3 files into SageMaker containers without pre-allocating large EBS volumes."
+      "Category: Storage.",
+      "High-Yield Status: \ud83d\udd25 Essential Core Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Image classification model needs to access petabytes of images without pre-download delay: Use SageMaker Fast File Mode or Amazon FSx for Lustre linked to S3.",
-    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+    "scenarioTip": "Choose Amazon S3 whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/s3/latest/userguide/what-is.html"
   },
   "svc-s3-glacier": {
     "id": "svc-s3-glacier",
     "serviceName": "Amazon S3 Glacier",
     "category": "Storage",
     "isImportant": false,
-    "role": "In-scope Storage service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "Amazon S3 Glacier is a key AWS service in the Storage category. In the MLA-C02 exam, understanding how Amazon S3 Glacier integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ Amazon S3 Glacier (Storage) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "Amazon S3 Glacier is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - As...",
+    "plainEnglish": "Amazon S3 Glacier is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select Amazon S3 Glacier over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 Amazon S3 Glacier (Storage)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "Amazon S3 Glacier: Master its role in the Storage domain.",
-      "examTrap": "Confusing Amazon S3 Glacier with other Storage services in multiple-choice questions.",
-      "goldenRule": "Understand when Amazon S3 Glacier is preferred over alternative services for Storage workloads."
+      "mnemonic": "Amazon S3 Glacier: The standard AWS solution for Storage in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when Amazon S3 Glacier offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose Amazon S3 Glacier whenever you need native, fully managed AWS capability for Storage workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Storage.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving Amazon S3 Glacier: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html"
+    "scenarioTip": "Choose Amazon S3 Glacier whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/s3-glacier/latest/userguide/what-is.html"
   },
   "svc-storage-gateway": {
     "id": "svc-storage-gateway",
     "serviceName": "AWS Storage Gateway",
     "category": "Storage",
     "isImportant": false,
-    "role": "In-scope Storage service supporting ML and AI workloads on the MLA-C02 exam.",
-    "plainEnglish": "AWS Storage Gateway is a key AWS service in the Storage category. In the MLA-C02 exam, understanding how AWS Storage Gateway integrates with SageMaker, Bedrock, and data pipelines ensures robust system architecture.",
-    "diagram": "  [ Upstream ML Pipeline ] \u2500\u2500> [ AWS Storage Gateway (Storage) ] \u2500\u2500> [ Downstream Monitoring / Audit ]",
+    "role": "AWS Storage Gateway is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - ...",
+    "plainEnglish": "AWS Storage Gateway is an official in-scope AWS service in the Storage category for the AWS Machine Learning Engineer - Associate (MLA-C02) exam. It provides enterprise-grade capabilities for data storage, processing, foundation model hosting, orchestration, or governance. Understanding when to select AWS Storage Gateway over competing services is a frequent target of high-scoring exam questions.",
+    "diagram": "  [ Upstream Pipeline / Event Producer ]\n                     \u2502\n                     \u25bc\n  \u250c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2510\n  \u2502 AWS Storage Gateway (Storage)                                    \u2502\n  \u2502 \u2022 IAM Execution Role (Least-Privilege Principle)       \u2502\n  \u2502 \u2022 AWS KMS CMK Encryption at Rest (Envelope Encryption) \u2502\n  \u2502 \u2022 VPC Interface Endpoint / PrivateLink Network Path    \u2502\n  \u2514\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u252c\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2518\n                           \u2502\n                           \u25bc\n  [ Downstream ML Model / S3 Lake / CloudWatch Dashboard ]",
     "handwrittenNotes": {
-      "mnemonic": "AWS Storage Gateway: Master its role in the Storage domain.",
-      "examTrap": "Confusing AWS Storage Gateway with other Storage services in multiple-choice questions.",
-      "goldenRule": "Understand when AWS Storage Gateway is preferred over alternative services for Storage workloads."
+      "mnemonic": "AWS Storage Gateway: The standard AWS solution for Storage in enterprise ML.",
+      "examTrap": "Deploying an unmanaged self-hosted EC2 software package when AWS Storage Gateway offers a fully managed, scalable native AWS solution.",
+      "goldenRule": "Choose AWS Storage Gateway whenever you need native, fully managed AWS capability for Storage workloads with zero server administration."
     },
     "bulletPoints": [
       "Category: Storage.",
-      "Official in-scope service for AWS Certified Machine Learning Engineer - Associate (MLA-C02).",
-      "Exam focus: Understand operational efficiency, IAM security permissions, and integration with SageMaker/Bedrock.",
-      "Best practice: Enforce least privilege access and CloudWatch monitoring."
+      "High-Yield Status: Standard In-Scope Service.",
+      "High Availability: Built-in multi-AZ redundancy and automatic failover.",
+      "Security Baseline: Supports IAM Policies, KMS encryption, and PrivateLink VPC Interface Endpoints.",
+      "Observability: Emits real-time metrics to Amazon CloudWatch and management events to AWS CloudTrail."
     ],
-    "scenarioTip": "Exam scenario involving AWS Storage Gateway: Choose the option that leverages AWS native integration and minimizes management overhead.",
-    "url": "https://docs.aws.amazon.com/storagegateway/latest/userguide/what-is.html"
+    "scenarioTip": "Choose AWS Storage Gateway whenever you need native, fully managed AWS capability for Storage workloads with zero server administration.",
+    "url": "https://docs.aws.amazon.com/storage-gateway/latest/userguide/what-is.html"
   }
 };
 
