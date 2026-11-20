@@ -89,8 +89,37 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
 
   const importantCount = activeTasks.filter(t => t.isImportant).length;
 
-  // Extract unique topics for this goal
-  const topicsList = Array.from(new Set(activeTasks.map(t => t.topic))).sort();
+  const DSA_ROADMAP_ORDER: string[] = [
+    'Arrays & Hashing',
+    'Two Pointers',
+    'Sliding Window',
+    'Prefix Sum & Subarrays',
+    'Intervals',
+    'Stack & Queue',
+    'Linked List',
+    'Binary Search',
+    'Binary Tree',
+    'Binary Search Tree',
+    'Heap / Priority Queue',
+    'Matrix',
+    'Trie',
+    'Recursion & Backtracking',
+    'Graph',
+    'Dynamic Programming',
+    'Bit Manipulation & Math'
+  ];
+
+  // Extract unique topics for this goal sorted by canonical roadmap order
+  const topicsList = Array.from(new Set(activeTasks.map(t => t.topic))).sort((a, b) => {
+    if (isDsa) {
+      const idxA = DSA_ROADMAP_ORDER.indexOf(a);
+      const idxB = DSA_ROADMAP_ORDER.indexOf(b);
+      if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+      if (idxA !== -1) return -1;
+      if (idxB !== -1) return 1;
+    }
+    return a.localeCompare(b);
+  });
 
   // Filter tasks
   const filteredTasks = activeTasks.filter(t => {
@@ -475,7 +504,18 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
         </div>
       ) : (
         <div className="space-y-4">
-          {Object.entries(groupedByTopic).map(([topic, topicTasks]) => {
+          {Object.entries(groupedByTopic)
+            .sort(([topicA], [topicB]) => {
+              if (isDsa) {
+                const idxA = DSA_ROADMAP_ORDER.indexOf(topicA);
+                const idxB = DSA_ROADMAP_ORDER.indexOf(topicB);
+                if (idxA !== -1 && idxB !== -1) return idxA - idxB;
+                if (idxA !== -1) return -1;
+                if (idxB !== -1) return 1;
+              }
+              return topicA.localeCompare(topicB);
+            })
+            .map(([topic, topicTasks]) => {
             const isCollapsed = Boolean(collapsedTopics[topic]);
             const topicCompleted = topicTasks.filter(t => t.completed).length;
             const topicAllDone = topicCompleted === topicTasks.length;
@@ -517,165 +557,177 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
                 {/* Questions / Tasks in Topic */}
                 {!isCollapsed && (
                   <div className="divide-y divide-slate-100">
-                    {topicTasks.map(task => {
-                      const isToday = task.completed && task.completedDate === todayStr;
-                      const isNoteOpen = Boolean(expandedNotes[task.id]);
+                    {(() => {
+                      // Sort tasks: Incomplete first in curated roadmap order, Completed go last
+                      const sortedTasks = [...topicTasks].sort((a, b) => {
+                        if (a.completed !== b.completed) {
+                          return a.completed ? 1 : -1;
+                        }
+                        const idxA = activeTasks.findIndex(t => t.id === a.id);
+                        const idxB = activeTasks.findIndex(t => t.id === b.id);
+                        return idxA - idxB;
+                      });
 
-                      return (
-                        <div
-                          key={task.id}
-                          className={`p-4 transition-colors ${
-                            task.completed ? 'bg-slate-50/40' : 'hover:bg-slate-50/60'
-                          }`}
-                        >
-                          <div className="flex items-center justify-between gap-3">
-                            {/* Checkbox and Task Title */}
-                            <div className="flex items-center gap-3.5 flex-1 min-w-0">
-                              <button
-                                type="button"
-                                onClick={() => handleToggle(task)}
-                                title={task.completed ? 'Mark incomplete' : 'Mark completed'}
-                                className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all shrink-0 ${
-                                  task.completed
-                                    ? 'bg-emerald-600 text-white shadow-xs'
-                                    : 'border-2 border-slate-300 hover:border-indigo-600 bg-white'
-                                }`}
-                              >
-                                {task.completed && <Check className="w-4 h-4 stroke-[3]" />}
-                              </button>
+                      return sortedTasks.map(task => {
+                        const isToday = task.completed && task.completedDate === todayStr;
+                        const isNoteOpen = Boolean(expandedNotes[task.id]);
 
-                              <div className="min-w-0">
-                                <div className="flex items-center gap-2 flex-wrap">
-                                  <span
-                                    onClick={() => openNotepad(task)}
-                                    className={`text-sm font-semibold block cursor-pointer hover:text-indigo-600 transition-colors ${
-                                      task.completed
-                                        ? 'text-slate-400 line-through'
-                                        : 'text-slate-900'
+                        return (
+                          <div
+                            key={task.id}
+                            className={`p-4 transition-colors ${
+                              task.completed ? 'bg-slate-50/40' : 'hover:bg-slate-50/60'
+                            }`}
+                          >
+                            <div className="flex items-center justify-between gap-3">
+                              {/* Checkbox and Task Title */}
+                              <div className="flex items-center gap-3.5 flex-1 min-w-0">
+                                <button
+                                  type="button"
+                                  onClick={() => handleToggle(task)}
+                                  title={task.completed ? 'Mark incomplete' : 'Mark completed'}
+                                  className={`w-6 h-6 rounded-lg flex items-center justify-center transition-all shrink-0 ${
+                                    task.completed
+                                      ? 'bg-emerald-600 text-white shadow-xs'
+                                      : 'border-2 border-slate-300 hover:border-indigo-600 bg-white'
+                                  }`}
+                                >
+                                  {task.completed && <Check className="w-4 h-4 stroke-[3]" />}
+                                </button>
+
+                                <div className="min-w-0">
+                                  <div className="flex items-center gap-2 flex-wrap">
+                                    <span
+                                      onClick={() => openNotepad(task)}
+                                      className={`text-sm font-semibold block cursor-pointer hover:text-indigo-600 transition-colors ${
+                                        task.completed
+                                          ? 'text-slate-400 line-through'
+                                          : 'text-slate-900'
+                                      }`}
+                                      title="Click to open full Study Notepad"
+                                    >
+                                      {task.title}
+                                    </span>
+
+                                    {task.isImportant && (
+                                      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-amber-50 text-amber-800 border border-amber-200">
+                                        <Sparkles className="w-2.5 h-2.5 text-amber-600" />
+                                        HIGH YIELD
+                                      </span>
+                                    )}
+
+                                    {task.subtopic && (
+                                      <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
+                                        {task.subtopic}
+                                      </span>
+                                    )}
+                                  </div>
+
+                                  <div className="flex items-center gap-2 mt-0.5">
+                                    {isToday && (
+                                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
+                                        <Sparkles className="w-2.5 h-2.5" /> Completed Today
+                                      </span>
+                                    )}
+                                    {task.completed && !isToday && task.completedDate && (
+                                      <span className="text-[10px] text-slate-400">
+                                        Completed on {task.completedDate}
+                                      </span>
+                                    )}
+                                    {task.duration && (
+                                      <span className="text-[10px] text-slate-400">
+                                        ⏱️ ~{task.duration} mins
+                                      </span>
+                                    )}
+                                  </div>
+                                </div>
+                              </div>
+
+                              {/* Actions & Badges */}
+                              <div className="flex items-center gap-2 shrink-0">
+                                <button
+                                  type="button"
+                                  onClick={() => openNotepad(task)}
+                                  className="px-2.5 py-1 text-xs font-bold rounded-lg border transition flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100/90 text-amber-900 border-amber-200/90 shadow-2xs"
+                                  title="Open Study Notepad on right side screen"
+                                >
+                                  <StickyNote className="w-3.5 h-3.5 text-amber-600" />
+                                  <span className="hidden sm:inline">Study Notepad</span>
+                                </button>
+
+                                {(task.notes || task.description) && (
+                                  <button
+                                    type="button"
+                                    onClick={() => toggleNote(task.id)}
+                                    className={`px-2.5 py-1 text-xs font-semibold rounded-lg border transition flex items-center gap-1.5 ${
+                                      isNoteOpen
+                                        ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs'
+                                        : 'bg-indigo-50/70 hover:bg-indigo-100/80 text-indigo-700 border-indigo-200/80'
                                     }`}
-                                    title="Click to open full Study Notepad"
                                   >
-                                    {task.title}
+                                    <BookOpen className="w-3.5 h-3.5" />
+                                    <span className="hidden sm:inline">{isNoteOpen ? 'Hide Notes' : 'Revision Notes'}</span>
+                                    <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isNoteOpen ? 'rotate-180' : ''}`} />
+                                  </button>
+                                )}
+
+                                {task.difficulty && (
+                                  <span
+                                    className={`text-[11px] font-bold px-2 py-0.5 rounded-md border ${
+                                      task.difficulty === 'Easy'
+                                        ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                        : task.difficulty === 'Medium'
+                                        ? 'bg-amber-50 text-amber-700 border-amber-200'
+                                        : 'bg-rose-50 text-rose-700 border-rose-200'
+                                    }`}
+                                  >
+                                    {task.difficulty}
                                   </span>
+                                )}
 
-                                  {task.isImportant && (
-                                    <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-amber-50 text-amber-800 border border-amber-200">
-                                      <Sparkles className="w-2.5 h-2.5 text-amber-600" />
-                                      HIGH YIELD
-                                    </span>
-                                  )}
-
-                                  {task.subtopic && (
-                                    <span className="text-[11px] font-medium text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">
-                                      {task.subtopic}
-                                    </span>
-                                  )}
-                                </div>
-
-                                <div className="flex items-center gap-2 mt-0.5">
-                                  {isToday && (
-                                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200 flex items-center gap-1">
-                                      <Sparkles className="w-2.5 h-2.5" /> Completed Today
-                                    </span>
-                                  )}
-                                  {task.completed && !isToday && task.completedDate && (
-                                    <span className="text-[10px] text-slate-400">
-                                      Completed on {task.completedDate}
-                                    </span>
-                                  )}
-                                  {task.duration && (
-                                    <span className="text-[10px] text-slate-400">
-                                      ⏱️ ~{task.duration} mins
-                                    </span>
-                                  )}
-                                </div>
+                                {task.url && (
+                                  <a
+                                    href={task.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    title={isDsa ? 'Open on LeetCode' : 'Open AWS Official Documentation'}
+                                    className="px-2.5 py-1 bg-slate-100 hover:bg-indigo-50 border border-slate-200 text-slate-600 hover:text-indigo-700 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1"
+                                  >
+                                    <span>{isDsa ? 'LeetCode' : 'AWS Docs'}</span>
+                                    <ExternalLink className="w-3 h-3" />
+                                  </a>
+                                )}
                               </div>
                             </div>
 
-                            {/* Actions & Badges */}
-                            <div className="flex items-center gap-2 shrink-0">
-                              <button
-                                type="button"
-                                onClick={() => openNotepad(task)}
-                                className="px-2.5 py-1 text-xs font-bold rounded-lg border transition flex items-center gap-1.5 bg-amber-50 hover:bg-amber-100/90 text-amber-900 border-amber-200/90 shadow-2xs"
-                                title="Open Study Notepad on right side screen"
-                              >
-                                <StickyNote className="w-3.5 h-3.5 text-amber-600" />
-                                <span className="hidden sm:inline">Study Notepad</span>
-                              </button>
+                            {/* Quick Revision Notes & Exam Tips Drawer */}
+                            {isNoteOpen && (task.notes || task.description) && (
+                              <div className="mt-3.5 pt-3.5 border-t border-slate-100 pl-9 space-y-2.5 text-xs">
+                                {task.description && (
+                                  <div className="text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-200/80">
+                                    <div className="flex items-center gap-1.5 font-bold text-slate-800 mb-1">
+                                      <Info className="w-3.5 h-3.5 text-indigo-600" />
+                                      <span>{isDsa ? 'Problem Overview & Algorithmic Mental Model' : 'Topic Overview & Exam Objective'}</span>
+                                    </div>
+                                    <p>{task.description}</p>
+                                  </div>
+                                )}
 
-                              {(task.notes || task.description) && (
-                                <button
-                                  type="button"
-                                  onClick={() => toggleNote(task.id)}
-                                  className={`px-2.5 py-1 text-xs font-semibold rounded-lg border transition flex items-center gap-1.5 ${
-                                    isNoteOpen
-                                      ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs'
-                                      : 'bg-indigo-50/70 hover:bg-indigo-100/80 text-indigo-700 border-indigo-200/80'
-                                  }`}
-                                >
-                                  <BookOpen className="w-3.5 h-3.5" />
-                                  <span className="hidden sm:inline">{isNoteOpen ? 'Hide Notes' : 'Revision Notes'}</span>
-                                  <ChevronDown className={`w-3.5 h-3.5 transition-transform ${isNoteOpen ? 'rotate-180' : ''}`} />
-                                </button>
-                              )}
-
-                              {task.difficulty && (
-                                <span
-                                  className={`text-[11px] font-bold px-2 py-0.5 rounded-md border ${
-                                    task.difficulty === 'Easy'
-                                      ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                                      : task.difficulty === 'Medium'
-                                      ? 'bg-amber-50 text-amber-700 border-amber-200'
-                                      : 'bg-rose-50 text-rose-700 border-rose-200'
-                                  }`}
-                                >
-                                  {task.difficulty}
-                                </span>
-                              )}
-
-                              {task.url && (
-                                <a
-                                  href={task.url}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  title={isDsa ? 'Open on LeetCode' : 'Open AWS Official Documentation'}
-                                  className="px-2.5 py-1 bg-slate-100 hover:bg-indigo-50 border border-slate-200 text-slate-600 hover:text-indigo-700 text-xs font-semibold rounded-lg transition-colors flex items-center gap-1"
-                                >
-                                  <span>{isDsa ? 'LeetCode' : 'AWS Docs'}</span>
-                                  <ExternalLink className="w-3 h-3" />
-                                </a>
-                              )}
-                            </div>
+                                {task.notes && (
+                                  <div className="bg-gradient-to-r from-amber-50/90 to-amber-100/60 p-3.5 rounded-xl border border-amber-200/80 text-amber-950 leading-relaxed shadow-xs">
+                                    <div className="flex items-center gap-1.5 font-extrabold text-amber-900 mb-1">
+                                      <Lightbulb className="w-4 h-4 text-amber-600 shrink-0" />
+                                      <span>{isDsa ? '🎯 Key Algorithmic Pattern & Complexity' : '🎯 1000/1000 Revision Tip & Exam Trap'}</span>
+                                    </div>
+                                    <p className="font-medium">{task.notes}</p>
+                                  </div>
+                                )}
+                              </div>
+                            )}
                           </div>
-
-                          {/* Quick Revision Notes & Exam Tips Drawer */}
-                          {isNoteOpen && (task.notes || task.description) && (
-                            <div className="mt-3.5 pt-3.5 border-t border-slate-100 pl-9 space-y-2.5 text-xs">
-                              {task.description && (
-                                <div className="text-slate-600 leading-relaxed bg-slate-50 p-3 rounded-xl border border-slate-200/80">
-                                  <div className="flex items-center gap-1.5 font-bold text-slate-800 mb-1">
-                                    <Info className="w-3.5 h-3.5 text-indigo-600" />
-                                    <span>Topic Overview & Exam Objective</span>
-                                  </div>
-                                  <p>{task.description}</p>
-                                </div>
-                              )}
-
-                              {task.notes && (
-                                <div className="bg-gradient-to-r from-amber-50/90 to-amber-100/60 p-3.5 rounded-xl border border-amber-200/80 text-amber-950 leading-relaxed shadow-xs">
-                                  <div className="flex items-center gap-1.5 font-extrabold text-amber-900 mb-1">
-                                    <Lightbulb className="w-4 h-4 text-amber-600 shrink-0" />
-                                    <span>🎯 1000/1000 Revision Tip & Exam Trap</span>
-                                  </div>
-                                  <p className="font-medium">{task.notes}</p>
-                                </div>
-                              )}
-                            </div>
-                          )}
-                        </div>
-                      );
-                    })}
+                        );
+                      });
+                    })()}
                   </div>
                 )}
               </div>

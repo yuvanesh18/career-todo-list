@@ -128,10 +128,15 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
           <header className="p-5 sm:p-6 border-b border-slate-100 bg-gradient-to-b from-slate-50/90 to-white sticky top-0 z-10">
             <div className="flex items-center justify-between gap-4">
               <div className="flex items-center gap-2 flex-wrap">
-                {studyGuide && (
+                {studyGuide ? (
                   <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-100">
                     <BrainCircuit className="w-3.5 h-3.5 text-indigo-600" />
                     {studyGuide.skillNumber === 'SVC' ? 'AWS In-Scope Service' : `Skill ${studyGuide.skillNumber}`}
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-bold bg-indigo-50 text-indigo-700 border border-indigo-100">
+                    <Code2 className="w-3.5 h-3.5 text-indigo-600" />
+                    DSA Learning Roadmap
                   </span>
                 )}
                 {task.isImportant && (
@@ -362,9 +367,13 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                   </div>
                   <div>
                     <h3 className="font-extrabold text-sm text-slate-900 tracking-tight">
-                      What Is This? (Comprehensive Technical & Revision Guide)
+                      {isAwsTask ? 'What Is This? (Comprehensive Technical & Revision Guide)' : 'Problem Overview & Algorithmic Strategy'}
                     </h3>
-                    <p className="text-xs text-slate-500">Core architecture, foundational concepts, and exam revision context</p>
+                    <p className="text-xs text-slate-500">
+                      {isAwsTask
+                        ? 'Core architecture, foundational concepts, and exam revision context'
+                        : 'Problem requirements, mental model, and algorithmic breakdown'}
+                    </p>
                   </div>
                 </div>
 
@@ -465,7 +474,7 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
               </section>
             )}
 
-            {/* SECTION 4: Architecture & Workflow Diagram */}
+            {/* SECTION 4: Architecture & Workflow Diagram / Algorithmic Flow */}
             {(activeSection === 'all' || activeSection === 'diagram') && (
               <section className="bg-slate-900 rounded-2xl p-5 border border-slate-800 text-slate-100 shadow-md">
                 <div className="flex items-center justify-between gap-3 mb-3">
@@ -475,9 +484,13 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                     </div>
                     <div>
                       <h3 className="font-extrabold text-sm text-white tracking-tight">
-                        Architecture & Data Flow Diagram
+                        {isAwsTask ? 'Architecture & Data Flow Diagram' : 'Algorithmic Pattern & Execution Trace'}
                       </h3>
-                      <p className="text-xs text-slate-400">Visual mapping of services, boundaries & data paths</p>
+                      <p className="text-xs text-slate-400">
+                        {isAwsTask
+                          ? 'Visual mapping of services, boundaries & data paths'
+                          : 'Visual mental model of state transitions, pointers, and memory layout'}
+                      </p>
                     </div>
                   </div>
 
@@ -493,7 +506,7 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
 
                 <div className="bg-slate-950 rounded-xl p-4 border border-slate-800/80 overflow-x-auto shadow-inner">
                   <pre className="font-mono text-xs sm:text-xs text-emerald-300/90 leading-relaxed whitespace-pre font-medium">
-                    {studyGuide ? studyGuide.diagram : `  [ Input Request / Trigger ]\n              │\n              ▼\n  ┌─────────────────────────────────────────┐\n  │ Service: ${task.title}                  │\n  └───────────────────┬─────────────────────┘\n                      ▼\n  [ Verified Output & Production Monitoring ]`}
+                    {studyGuide ? studyGuide.diagram : `  [ Input Data / Starting State ]\n              │\n              ▼\n  ┌─────────────────────────────────────────────────────────┐\n  │ Pattern: ${task.subtopic || task.topic}                 \n  │ Problem: ${task.title}                                  \n  └───────────────────────────┬─────────────────────────────┘\n                              ▼\n  [ Optimal Solution: Checked Boundaries & Handled Edge Cases ]`}
                   </pre>
                 </div>
               </section>
@@ -537,10 +550,14 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                   </div>
                   <div>
                     <h3 className="font-extrabold text-sm text-amber-950 tracking-tight flex items-center gap-1.5">
-                      <span>Exam Hacker Sticky Notes</span>
+                      <span>{isAwsTask ? 'Exam Hacker Sticky Notes' : 'Algorithm Master Revision Notes'}</span>
                       <Sparkles className="w-3.5 h-3.5 text-amber-600 fill-amber-500" />
                     </h3>
-                    <p className="text-xs text-amber-800">1000/1000 memory hooks, traps, and golden decision rules</p>
+                    <p className="text-xs text-amber-800">
+                      {isAwsTask
+                        ? '1000/1000 memory hooks, traps, and golden decision rules'
+                        : 'Core mental models, optimal time/space complexity, and traps'}
+                    </p>
                   </div>
                 </div>
 
@@ -578,10 +595,23 @@ export const StudyNotepadDrawer: React.FC<StudyNotepadDrawerProps> = ({
                       </div>
                     </>
                   ) : (
-                    <div className="bg-white/80 border border-amber-200 rounded-xl p-3">
-                      <p className="text-xs text-amber-900 font-medium">
-                        {task.notes || 'Master key algorithm patterns, edge cases, and time-space tradeoffs.'}
-                      </p>
+                    <div className="space-y-3">
+                      <div className="bg-white/90 border border-amber-200 rounded-xl p-3.5 shadow-xs">
+                        <span className="font-extrabold text-amber-900 block mb-1">
+                          🎯 Algorithmic Pattern & Strategy:
+                        </span>
+                        <p className="text-xs sm:text-xs text-amber-950 font-semibold leading-relaxed">
+                          {task.subtopic || task.topic}
+                        </p>
+                      </div>
+                      <div className="bg-emerald-50/90 border border-emerald-200 rounded-xl p-3.5 shadow-xs text-emerald-950">
+                        <span className="font-extrabold text-emerald-900 block mb-1">
+                          ⚡ Key Takeaway & Time-Space Complexity:
+                        </span>
+                        <p className="text-xs sm:text-xs text-emerald-900 font-medium leading-relaxed">
+                          {task.notes || 'Master key algorithm patterns, edge cases, and time-space tradeoffs.'}
+                        </p>
+                      </div>
                     </div>
                   )}
                 </div>
