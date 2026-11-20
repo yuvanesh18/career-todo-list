@@ -98,13 +98,14 @@ export const GoalDetailView: React.FC<GoalDetailViewProps> = ({
     'Stack & Queue',
     'Linked List',
     'Binary Search',
+    'Matrix',
     'Binary Tree',
     'Binary Search Tree',
     'Heap / Priority Queue',
-    'Matrix',
     'Trie',
     'Recursion & Backtracking',
     'Graph',
+    'Greedy',
     'Dynamic Programming',
     'Bit Manipulation & Math'
   ];
