@@ -228,21 +228,25 @@ class Database {
         await this.batchInsertTasks(tasks);
         console.log('✅ Postgres successfully seeded with default user and roadmaps.');
       } else {
-        // Update goals in Postgres if they already exist
-        const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
-        for (const g of goals) {
-          await this.pool.query(
-            `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
-             VALUES ($1, $2, $3, $4, $5, $6, $7)
-             ON CONFLICT (id) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, category = EXCLUDED.category, icon = EXCLUDED.icon`,
-            [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
-          );
-        }
+        // Query all existing users in Postgres and sync roadmaps for EVERY user
+        const allUsersRes = await this.pool.query('SELECT id FROM users');
+        const userIds: string[] = allUsersRes.rows.map(r => r.id);
+        if (!userIds.includes(DEFAULT_USER_ID)) userIds.push(DEFAULT_USER_ID);
 
-        // Always UPSERT all seed tasks into Postgres so updated topics, notes, descriptions, and new tasks sync automatically (preserves user completion status)
-        console.log(`Syncing ${tasks.length} curriculum roadmap tasks into Postgres (preserving completion status)...`);
-        await this.batchInsertTasks(tasks);
-        console.log(`✅ Successfully synced ${tasks.length} curriculum roadmap tasks into Postgres.`);
+        console.log(`Syncing roadmap tasks for ${userIds.length} user(s) into Postgres (preserving completion status)...`);
+        for (const uid of userIds) {
+          const { goals, tasks } = createUserDataForUser(uid);
+          for (const g of goals) {
+            await this.pool.query(
+              `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
+               VALUES ($1, $2, $3, $4, $5, $6, $7)
+               ON CONFLICT (id) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, category = EXCLUDED.category, icon = EXCLUDED.icon`,
+              [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
+            );
+          }
+          await this.batchInsertTasks(tasks);
+        }
+        console.log(`✅ Successfully synced curriculum roadmap for all ${userIds.length} existing user(s).`);
       }
     } catch (err: any) {
       console.error('❌ Error initializing PostgreSQL tables:', err.message);
@@ -371,47 +375,59 @@ class Database {
     }
   }
 
-  public syncJsonFromSeed(): { updated: number; added: number } {
-    const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
-
-    // Ensure default goals exist and have latest metadata
-    for (const g of goals) {
-      const existingGoalIdx = this.state.goals.findIndex(eg => eg.id === g.id);
-      if (existingGoalIdx >= 0) {
-        this.state.goals[existingGoalIdx] = {
-          ...this.state.goals[existingGoalIdx],
-          title: g.title,
-          description: g.description,
-          category: g.category,
-          icon: g.icon
-        };
-      } else {
-        this.state.goals.push(g);
-      }
-    }
-
+  public syncJsonFromSeed(): { updated: number; added: number; userCount: number } {
     let updated = 0;
     let added = 0;
-    const taskMap = new Map<string, Task>();
-    this.state.tasks.forEach(t => taskMap.set(t.id, t));
 
-    for (const t of tasks) {
-      const existing = taskMap.get(t.id);
-      if (existing) {
-        existing.title = t.title;
-        existing.topic = t.topic;
-        existing.difficulty = t.difficulty;
-        existing.url = t.url;
-        existing.duration = t.duration;
-        existing.subtopic = t.subtopic;
-        existing.isImportant = t.isImportant;
-        existing.description = t.description;
-        existing.notes = t.notes;
-        updated++;
-      } else {
-        this.state.tasks.push(t);
-        taskMap.set(t.id, t);
-        added++;
+    const usersToSync = this.state.users && this.state.users.length > 0
+      ? this.state.users
+      : [{ id: DEFAULT_USER_ID } as User];
+
+    for (const u of usersToSync) {
+      const { goals, tasks } = createUserDataForUser(u.id);
+
+      // Ensure goals exist and have latest metadata for this user
+      for (const g of goals) {
+        const existingGoalIdx = this.state.goals.findIndex(
+          eg => eg.id === g.id && (eg.userId === u.id || (!eg.userId && u.id === DEFAULT_USER_ID))
+        );
+        if (existingGoalIdx >= 0) {
+          this.state.goals[existingGoalIdx] = {
+            ...this.state.goals[existingGoalIdx],
+            title: g.title,
+            description: g.description,
+            category: g.category,
+            icon: g.icon
+          };
+        } else {
+          this.state.goals.push(g);
+        }
+      }
+
+      // Map tasks belonging to this user
+      const taskMap = new Map<string, Task>();
+      this.state.tasks
+        .filter(t => t.userId === u.id || (!t.userId && u.id === DEFAULT_USER_ID))
+        .forEach(t => taskMap.set(t.id, t));
+
+      for (const t of tasks) {
+        const existing = taskMap.get(t.id);
+        if (existing) {
+          existing.title = t.title;
+          existing.topic = t.topic;
+          existing.difficulty = t.difficulty;
+          existing.url = t.url;
+          existing.duration = t.duration;
+          existing.subtopic = t.subtopic;
+          existing.isImportant = t.isImportant;
+          existing.description = t.description;
+          existing.notes = t.notes;
+          updated++;
+        } else {
+          this.state.tasks.push(t);
+          taskMap.set(t.id, t);
+          added++;
+        }
       }
     }
 
@@ -419,26 +435,35 @@ class Database {
       this.persistJson();
     }
 
-    return { updated, added };
+    return { updated, added, userCount: usersToSync.length };
   }
 
-  public async syncRoadmap(): Promise<{ total: number }> {
+  public async syncRoadmap(): Promise<{ total: number; userCount: number }> {
     await this.init();
-    const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
     if (this.pool) {
-      for (const g of goals) {
-        await this.pool.query(
-          `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
-           VALUES ($1, $2, $3, $4, $5, $6, $7)
-           ON CONFLICT (id) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, category = EXCLUDED.category, icon = EXCLUDED.icon`,
-          [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
-        );
+      const allUsersRes = await this.pool.query('SELECT id FROM users');
+      const userIds: string[] = allUsersRes.rows.map(r => r.id);
+      if (!userIds.includes(DEFAULT_USER_ID)) userIds.push(DEFAULT_USER_ID);
+
+      let totalTasksSynced = 0;
+      for (const uid of userIds) {
+        const { goals, tasks } = createUserDataForUser(uid);
+        for (const g of goals) {
+          await this.pool.query(
+            `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
+             VALUES ($1, $2, $3, $4, $5, $6, $7)
+             ON CONFLICT (id) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, category = EXCLUDED.category, icon = EXCLUDED.icon`,
+            [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
+          );
+        }
+        await this.batchInsertTasks(tasks);
+        totalTasksSynced += tasks.length;
       }
-      await this.batchInsertTasks(tasks);
+      return { total: totalTasksSynced, userCount: userIds.length };
     } else {
-      this.syncJsonFromSeed();
+      const res = this.syncJsonFromSeed();
+      return { total: res.updated + res.added, userCount: res.userCount };
     }
-    return { total: tasks.length };
   }
 
   // --- UNIFIED DATA ACCESS METHODS ---

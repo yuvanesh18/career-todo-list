@@ -436,3 +436,63 @@ ON CONFLICT (id) DO UPDATE SET
   is_important = EXCLUDED.is_important,
   description = EXCLUDED.description,
   notes = EXCLUDED.notes;
+
+-- ==============================================================================
+-- SYNC TO ALL REGISTERED USERS (Existing User Accounts)
+-- Updates topics, categories, notes, descriptions, and URLs for all registered
+-- accounts while preserving their completion status (completed, dates, streaks).
+-- ==============================================================================
+
+-- 1. Propagate Goals to all registered users
+INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
+SELECT 
+  base_goal.id || '-' || u.id AS id,
+  u.id AS user_id,
+  base_goal.title,
+  base_goal.description,
+  base_goal.category,
+  base_goal.icon,
+  NOW() AS created_at
+FROM goals base_goal
+CROSS JOIN users u
+WHERE base_goal.user_id = 'user-default'
+  AND u.id != 'user-default'
+ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  description = EXCLUDED.description,
+  category = EXCLUDED.category,
+  icon = EXCLUDED.icon;
+
+-- 2. Propagate and Upsert all Tasks to all registered users
+INSERT INTO tasks (id, user_id, goal_id, title, topic, difficulty, url, duration, completed, completed_at, completed_date, created_at, subtopic, is_important, description, notes)
+SELECT 
+  base_task.id || '-' || u.id AS id,
+  u.id AS user_id,
+  base_task.goal_id || '-' || u.id AS goal_id,
+  base_task.title,
+  base_task.topic,
+  base_task.difficulty,
+  base_task.url,
+  base_task.duration,
+  FALSE AS completed,
+  NULL AS completed_at,
+  NULL AS completed_date,
+  NOW() AS created_at,
+  base_task.subtopic,
+  base_task.is_important,
+  base_task.description,
+  base_task.notes
+FROM tasks base_task
+CROSS JOIN users u
+WHERE base_task.user_id = 'user-default'
+  AND u.id != 'user-default'
+ON CONFLICT (id) DO UPDATE SET
+  title = EXCLUDED.title,
+  topic = EXCLUDED.topic,
+  difficulty = EXCLUDED.difficulty,
+  url = EXCLUDED.url,
+  duration = EXCLUDED.duration,
+  subtopic = EXCLUDED.subtopic,
+  is_important = EXCLUDED.is_important,
+  description = EXCLUDED.description,
+  notes = EXCLUDED.notes;

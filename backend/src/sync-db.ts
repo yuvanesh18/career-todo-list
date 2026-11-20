@@ -9,14 +9,14 @@ try {
 dotenv.config();
 
 async function runSync() {
-  console.log('🔄 Starting database synchronization...');
+  console.log('🔄 Starting database synchronization for all users...');
   const isPg = Boolean(process.env.DATABASE_URL);
   console.log(`Target: ${isPg ? 'PostgreSQL / Supabase Remote Database' : 'Local JSON Database'}`);
 
   try {
     await db.init();
     const result = await db.syncRoadmap();
-    console.log(`✅ Success! Synced ${result.total} curriculum tasks into ${isPg ? 'Supabase/PostgreSQL' : 'local database'}.`);
+    console.log(`✅ Success! Synced ${result.total} curriculum tasks across ${result.userCount} user(s) into ${isPg ? 'Supabase/PostgreSQL' : 'local database'}.`);
     process.exit(0);
   } catch (err: any) {
     console.error('❌ Failed to sync database:', err.message || err);
