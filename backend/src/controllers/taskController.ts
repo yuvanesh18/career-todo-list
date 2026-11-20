@@ -252,6 +252,15 @@ export const resetData = async (_req: Request, res: Response): Promise<void> => 
   }
 };
 
+export const syncRoadmap = async (_req: Request, res: Response): Promise<void> => {
+  try {
+    const result = await taskService.syncRoadmap();
+    res.json({ success: true, message: `Successfully synced ${result.total} tasks from seed data.`, data: result });
+  } catch (err: any) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+};
+
 export const backupDatabase = async (_req: Request, res: Response): Promise<void> => {
   try {
     const data = await taskService.exportData();

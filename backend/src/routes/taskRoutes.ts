@@ -14,6 +14,7 @@ import {
   register,
   resetData,
   restoreDatabase,
+  syncRoadmap,
   toggleTask,
   updateGoal,
   updateTask
@@ -30,6 +31,8 @@ router.get('/auth/me', getMe);
 router.get('/summary', getSummary);
 router.get('/daily-activity', getDailyActivity);
 router.post('/seed', resetData);
+router.post('/sync', syncRoadmap);
+router.get('/sync', syncRoadmap);
 router.get('/backup', backupDatabase);
 router.post('/restore', restoreDatabase);
 

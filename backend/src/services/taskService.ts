@@ -324,6 +324,10 @@ export class TaskService {
     return db.resetSeed();
   }
 
+  public async syncRoadmap() {
+    return db.syncRoadmap();
+  }
+
   public async exportData() {
     return db.exportData();
   }

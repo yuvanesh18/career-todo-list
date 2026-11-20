@@ -239,17 +239,10 @@ class Database {
           );
         }
 
-        // Check if goal-aws tasks exist
-        const awsTaskCheck = await this.pool.query(
-          "SELECT COUNT(*) FROM tasks WHERE goal_id = 'goal-aws' AND user_id = $1",
-          [DEFAULT_USER_ID]
-        );
-        if (parseInt(awsTaskCheck.rows[0].count, 10) === 0) {
-          console.log('Seeding AWS Certified Machine Learning Engineer - Associate (MLA-C02) roadmap into Postgres...');
-          const awsTasks = tasks.filter(t => t.goalId === 'goal-aws');
-          await this.batchInsertTasks(awsTasks);
-          console.log(`✅ Successfully seeded ${awsTasks.length} MLA-C02 tasks.`);
-        }
+        // Always UPSERT all seed tasks into Postgres so updated topics, notes, descriptions, and new tasks sync automatically (preserves user completion status)
+        console.log(`Syncing ${tasks.length} curriculum roadmap tasks into Postgres (preserving completion status)...`);
+        await this.batchInsertTasks(tasks);
+        console.log(`✅ Successfully synced ${tasks.length} curriculum roadmap tasks into Postgres.`);
       }
     } catch (err: any) {
       console.error('❌ Error initializing PostgreSQL tables:', err.message);
@@ -327,6 +320,8 @@ class Database {
         this.state = JSON.parse(raw);
         if (!this.state.users || this.state.users.length === 0) {
           this.initDefaultUserJson();
+        } else {
+          this.syncJsonFromSeed();
         }
       } else {
         this.initDefaultUserJson();
@@ -374,6 +369,76 @@ class Database {
     } catch (err) {
       console.error('Error persisting database:', err);
     }
+  }
+
+  public syncJsonFromSeed(): { updated: number; added: number } {
+    const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
+
+    // Ensure default goals exist and have latest metadata
+    for (const g of goals) {
+      const existingGoalIdx = this.state.goals.findIndex(eg => eg.id === g.id);
+      if (existingGoalIdx >= 0) {
+        this.state.goals[existingGoalIdx] = {
+          ...this.state.goals[existingGoalIdx],
+          title: g.title,
+          description: g.description,
+          category: g.category,
+          icon: g.icon
+        };
+      } else {
+        this.state.goals.push(g);
+      }
+    }
+
+    let updated = 0;
+    let added = 0;
+    const taskMap = new Map<string, Task>();
+    this.state.tasks.forEach(t => taskMap.set(t.id, t));
+
+    for (const t of tasks) {
+      const existing = taskMap.get(t.id);
+      if (existing) {
+        existing.title = t.title;
+        existing.topic = t.topic;
+        existing.difficulty = t.difficulty;
+        existing.url = t.url;
+        existing.duration = t.duration;
+        existing.subtopic = t.subtopic;
+        existing.isImportant = t.isImportant;
+        existing.description = t.description;
+        existing.notes = t.notes;
+        updated++;
+      } else {
+        this.state.tasks.push(t);
+        taskMap.set(t.id, t);
+        added++;
+      }
+    }
+
+    if (updated > 0 || added > 0) {
+      this.persistJson();
+    }
+
+    return { updated, added };
+  }
+
+  public async syncRoadmap(): Promise<{ total: number }> {
+    await this.init();
+    const { goals, tasks } = createUserDataForUser(DEFAULT_USER_ID);
+    if (this.pool) {
+      for (const g of goals) {
+        await this.pool.query(
+          `INSERT INTO goals (id, user_id, title, description, category, icon, created_at)
+           VALUES ($1, $2, $3, $4, $5, $6, $7)
+           ON CONFLICT (id) DO UPDATE SET title = EXCLUDED.title, description = EXCLUDED.description, category = EXCLUDED.category, icon = EXCLUDED.icon`,
+          [g.id, g.userId, g.title, g.description, g.category, g.icon, g.createdAt]
+        );
+      }
+      await this.batchInsertTasks(tasks);
+    } else {
+      this.syncJsonFromSeed();
+    }
+    return { total: tasks.length };
   }
 
   // --- UNIFIED DATA ACCESS METHODS ---
